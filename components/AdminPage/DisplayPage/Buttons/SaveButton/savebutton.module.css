@@ -1,0 +1,9 @@
+.save_btn {
+    position: fixed;
+    bottom: 50px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,41 @@
+.video {
+  position: fixed;
+  overflow: hidden;
+}
+
+.video_media {
+  position: relative;
+  z-index: -3;
+  width: 100%;
+  height: 100vh;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.header_wrapper {
+  width: 100%;
+  max-width: 1512px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 40px; */
+}
+.header_text {
+  -webkit-text-stroke: 1px rgba(224, 42, 114, 1);
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.header_text_2 {
+  -webkit-text-stroke: 1px rgba(67, 42, 224, 1);
+}
+
+.header_logo {
+  width: 40%;
+  height: 400px;
+}

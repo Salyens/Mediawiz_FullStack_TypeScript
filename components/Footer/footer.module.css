@@ -1,0 +1,10 @@
+.footer_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Roboto" serif;
+  background: linear-gradient(180deg, #7f069d 0%, #1700a4 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}

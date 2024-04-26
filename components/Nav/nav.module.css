@@ -1,0 +1,23 @@
+.navLinks {
+  margin-right: 8px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: border-bottom 0.4s ease, color 0.4s ease;
+}
+
+.navLinks:hover {
+  border-bottom: 2px solid rgba(151, 71, 255, 1);
+}
+
+.bg {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: rgba(180, 58, 237, 0.2);
+}
+
+.currentPage {
+  border-bottom: 2px solid rgba(151, 71, 255, 1);
+}

@@ -1,0 +1,25 @@
+.header {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  left: 0;
+  min-height: 1000px;
+}
+
+.underline_title {
+  position: absolute;
+  font-size: 36px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(233, 58, 237, 1);
+  width: auto;
+  box-shadow: 0px 2px 5px rgba(124, 58, 237, 1),
+    0px 2px 20px rgba(124, 58, 237, 0.5), 0px 2px 50px rgba(124, 58, 237, 1),
+    0px 2px 150px rgba(124, 58, 237, 1);
+}
+
+.item_container {
+  width: 48%;
+}
