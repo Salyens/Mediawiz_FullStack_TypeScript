@@ -1,12 +1,29 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import TextArea from "../TextArea";
-import UploadMediaFile from "../Buttons/UploadMediaFile";
 import DeleteButton from "../Buttons/DeleteButton";
 import AddButton from "../Buttons/AddButton";
+import { MainPageData } from "@interfaces";
+import UploadMediaFile from "../Buttons/UploadMediaFile";
+import { SnackbarSeverityType } from "../../../../types/admin";
 
-const DataRenderer = ({ data, setData, setEmptyFields, snackbarSeverity, setFormData }) => {
-  const renderData = (dataToRender, currentPath = "") => {
+
+interface RenderDataProps {
+  data: MainPageData;
+  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
+  setEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
+  snackbarSeverity: SnackbarSeverityType;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+}
+
+const RenderData: React.FC<RenderDataProps> = ({
+  data,
+  setData,
+  setEmptyFields,
+  snackbarSeverity,
+  setFormData,
+}) => {
+  const renderData = (dataToRender: MainPageData, currentPath = "") => {
     return (
       <>
         {Object.entries(dataToRender).map(([key, value], index) => {
@@ -92,7 +109,6 @@ const DataRenderer = ({ data, setData, setEmptyFields, snackbarSeverity, setForm
                 <AddButton
                   currentPath={newPath}
                   item={value[0] || {}}
-                  data={data}
                   setData={setData}
                 />
               </React.Fragment>
@@ -113,4 +129,4 @@ const DataRenderer = ({ data, setData, setEmptyFields, snackbarSeverity, setForm
   return renderData(data);
 };
 
-export default DataRenderer;
+export default RenderData;

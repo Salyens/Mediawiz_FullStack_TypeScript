@@ -3,8 +3,18 @@ import { TextareaAutosize } from "@mui/material";
 import styles from "../displaydata.module.css";
 import _ from "lodash";
 import { debounce } from "lodash";
+import { MainPageData } from "@interfaces";
 
-const TextArea = ({
+interface TextAreaProps {
+  itemKey: string;
+  initialValue: string;
+  mainKey: string;
+  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
+  currentPath: string;
+  onSetEmptyFields: (callback: (prevEmptyFields: string[]) => string[]) => void;
+}
+
+const TextArea: React.FC<TextAreaProps> = ({
   itemKey,
   initialValue,
   mainKey,
@@ -16,7 +26,7 @@ const TextArea = ({
   const fullPath = `${currentPath}.${mainKey}`;
 
   const updateEmptyFields = useCallback(
-    (isEmpty) => {
+    (isEmpty: boolean) => {
       onSetEmptyFields((prevEmptyFields) => {
         if (isEmpty) {
           return [...prevEmptyFields, fullPath];
@@ -35,7 +45,7 @@ const TextArea = ({
     []
   );
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value;
     setValue(newValue);
     debouncedUpdate(newValue);
@@ -44,8 +54,12 @@ const TextArea = ({
   const handleBlur = () => {
     if (value !== "") {
       setData((prevData) => {
-        _.set(prevData, fullPath, value);
-        return { ...prevData };
+        if (prevData === null) {
+          return null;
+        }
+        const newData = _.cloneDeep(prevData);
+        _.set(newData, fullPath, value);
+        return newData;
       });
     } else {
       updateEmptyFields(true);

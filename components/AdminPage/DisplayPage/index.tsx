@@ -2,23 +2,27 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./displaydata.module.css";
-import DataRenderer from "./RenderData";
-import SaveButton from "./Buttons/SaveButton";
-import SaveSnackbar from "./Buttons/SaveButton/Snackbar";
 import { MainPageData } from "@interfaces";
 import PageHeader from "./PageHeader";
+import RenderData from "./RenderData";
+import SaveButton from "./Buttons/SaveButton";
+import SaveSnackbar from "./Buttons/SaveButton/Snackbar";
 
 interface DisplayPageProps {
   endPoint: string;
 }
 
 const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
-  const [data, setData] = useState<MainPageData | {}>({});
-  const [emptyFields, setEmptyFields] = useState([]);
-  const [formData, setFormData] = useState(new FormData());
+  const [data, setData] = useState<MainPageData | null>(null);
+  const [emptyFields, setEmptyFields] = useState<string[]>([]);
+  const [formData, setFormData] = useState<FormData>(new FormData());
   const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("");
+  const [snackbarMessage, setSnackbarMessage] = useState<string>("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState<
+    "success" | "error" | "warning" | "info" | ""
+  >("");
+
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +30,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
         const response = await axios.get(`/api/${endPoint}`);
         setData(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        setError("Something went wrong");
       }
     };
 
@@ -35,10 +39,11 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      {Object.keys(data).length > 0 && (
+      {error && <p className="text-red-700 text-center">{error}</p>}
+      {data && (
         <>
-          <PageHeader data={data as MainPageData} />
-          <DataRenderer
+          <PageHeader data={data} />
+          <RenderData
             data={data}
             setData={setData}
             setEmptyFields={setEmptyFields}

@@ -1,6 +1,10 @@
-import { MainPageData } from "@interfaces";
+import {MainPageData } from "@interfaces";
 
-const PageHeader = ({ data }: { data: MainPageData }) => {
+interface PageHeaderProps {
+  data: MainPageData;
+}
+
+const PageHeader = ({ data }:PageHeaderProps ) => {
   return (
     <h2 className="text-center text-3xl">
       Редактирование страницы "{data.languages.ru.pageName}"

@@ -1,7 +1,15 @@
 import React from "react";
 import { Alert, Snackbar } from "@mui/material";
+import { SnackbarSeverityType } from "../../../../../../types/admin";
 
-const SaveSnackbar = ({
+interface SaveSnackbarProps {
+  snackbarOpen: boolean;
+  setSnackbarOpen: (open: boolean) => void;
+  snackbarSeverity: SnackbarSeverityType
+  snackbarMessage: string;
+}
+
+const SaveSnackbar: React.FC<SaveSnackbarProps> = ({
   snackbarOpen,
   setSnackbarOpen,
   snackbarSeverity,
@@ -17,7 +25,7 @@ const SaveSnackbar = ({
     >
       <Alert
         onClose={() => setSnackbarOpen(false)}
-        severity={snackbarSeverity}
+        severity={snackbarSeverity || "info"} 
         sx={{ width: "100%" }}
       >
         {snackbarMessage}

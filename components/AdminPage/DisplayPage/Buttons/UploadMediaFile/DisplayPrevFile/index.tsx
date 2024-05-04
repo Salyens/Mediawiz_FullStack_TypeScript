@@ -2,7 +2,18 @@ import { Box, Button, Typography } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Image from "next/image";
 
-const DisplayPrevFile = ({
+interface DisplayPrevFileProps {
+  file: File | null;
+  type: 'image' | 'video';
+  previews: string | null;
+  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  setPreviews: React.Dispatch<React.SetStateAction<string | null>>;
+  setFile: React.Dispatch<React.SetStateAction<File | null>>;
+  fileInputRef: React.RefObject<HTMLInputElement>;
+  lodashPath: string;
+}
+
+const DisplayPrevFile: React.FC<DisplayPrevFileProps> = ({
   file,
   type,
   previews,
@@ -16,14 +27,14 @@ const DisplayPrevFile = ({
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
-    onSetFormData((prevFormData) => {
+    onSetFormData(prevFormData => {
       const newFormData = new FormData();
-      for (let item of prevFormData) {
-        if (item[1].name !== lodashPath) {
-          newFormData.append("files", item[1], item[1].name);
-        }
-      }
+      prevFormData.forEach((value, key) => {
 
+        if (!(value instanceof File && key === lodashPath)) {
+          newFormData.append(key, value);
+        }
+      });
       return newFormData;
     });
     setPreviews(null);
@@ -70,7 +81,7 @@ const DisplayPrevFile = ({
           width={150}
           height={150}
           alt="Preview"
-          src={previews}
+          src={previews || "/file_placeholder.jpg"}
         />
       ) : (
         <Button onClick={() => console.log("ssss")} sx={{ cursor: "pointer" }}>
@@ -81,7 +92,7 @@ const DisplayPrevFile = ({
               border: "1px solid blue",
               cursor: "pointer",
             }}
-            src={previews}
+            src={previews || "/file_placeholder.jpg"}
             autoPlay
             muted
             loop

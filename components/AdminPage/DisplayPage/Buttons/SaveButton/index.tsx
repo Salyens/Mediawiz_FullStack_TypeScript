@@ -4,15 +4,33 @@ import _ from "lodash";
 import styles from "./savebutton.module.css";
 import axios from "axios";
 import { useState } from "react";
+import { MainPageData } from "@interfaces";
+import { SnackbarSeverityType } from "../../../../../types/admin";
 
-const SaveButton = ({
+interface SaveButtonProps {
+  emptyFields: string[];
+  formData: FormData;
+  data: MainPageData | null;
+  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
+  setSnackbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSnackbarMessage: React.Dispatch<React.SetStateAction<string>>;
+  setSnackbarSeverity: React.Dispatch<React.SetStateAction<SnackbarSeverityType>>;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+}
+
+interface IUpdatesFile {
+  filePath: string;
+  newUrl: string;
+}
+
+const SaveButton: React.FC<SaveButtonProps> = ({
   emptyFields,
-  setSnackbarSeverity,
-  setSnackbarMessage,
   formData,
   data,
   setData,
   setSnackbarOpen,
+  setSnackbarMessage,
+  setSnackbarSeverity,
   setFormData,
 }) => {
   const [loading, setLoading] = useState(false);
@@ -32,9 +50,9 @@ const SaveButton = ({
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
       const result = await axios.patch("/api/mainPage", formDataToSend);
-      const { updates } = result.data;
+      const { updates }: { updates: IUpdatesFile[] } = result.data;
 
-      if (updates && updates.length) {
+      if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);
         updates.forEach((update) => {
           _.set(newData, update.filePath, update.newUrl);
@@ -48,7 +66,7 @@ const SaveButton = ({
       setLoading(false);
       setFormData(new FormData());
     } catch (error) {
-        console.log('error: ', error);
+      console.log("error: ", error);
       setSnackbarMessage("Something went wrong");
       setSnackbarSeverity("error");
       setSnackbarOpen(true);

@@ -1,16 +1,31 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./",
+    "paths": {
+      "@*": [
+        "./*"
+      ],
+      "@types/*": [
+        "types/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es6"
+    ],
+    "target": "es2015",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noImplicitAny": true, 
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -19,18 +34,15 @@
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@*": ["./*"]
-    }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "utils/getComparator.js",
-    "app/api/auth/[...nextauth]/route.ts"
-, "tailwind.config.js", "components/Buttons/index.js", "app/api/mainPage/route.ts", "components/Provider/index.tsx", "utils/uploadthing.js", "app/api/uploadthing/route.js", "app/api/uploadthing/core.js", "app/login/page.tsx", "app/admin/layout.tsx", "components/AdminPage/ClientList/index.js", "app/admin/clients/page.js"  ],
-  "exclude": ["node_modules"]
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

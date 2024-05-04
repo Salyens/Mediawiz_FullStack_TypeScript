@@ -6,8 +6,18 @@ import styles from "../../../DisplayPage/displaydata.module.css";
 import DisplayPrevFile from "./DisplayPrevFile";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
+import { MainPageData } from "@interfaces";
+import { SnackbarSeverityType } from "../../../../../types/admin";
 
-const UploadMediaFile = ({
+interface UploadMediaFileProps {
+  type: 'image' | 'video';
+  path: string;
+  data: MainPageData;
+  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  snackbarSeverity: SnackbarSeverityType;
+}
+
+const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   type,
   path,
   data,
@@ -15,10 +25,10 @@ const UploadMediaFile = ({
   snackbarSeverity,
 }) => {
   const lodashPath = path.replace(/\[(\d+)\]/g, ".$1");
-  const [fileURL, setFileURL] = useState(_.get(data, lodashPath));
-  const fileInputRef = useRef();
-  const [file, setFile] = useState(null);
-  const [previews, setPreviews] = useState(null);
+  const [fileURL, setFileURL] = useState<string>(_.get(data, lodashPath));
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [previews, setPreviews] = useState<string | null>(null);
 
   useEffect(() => {
     if (!file) return;
@@ -42,7 +52,7 @@ const UploadMediaFile = ({
   }, [data]);
 
   const handleButtonClick = () => {
-    fileInputRef.current.click();
+    fileInputRef.current?.click();
   };
 
   return (
