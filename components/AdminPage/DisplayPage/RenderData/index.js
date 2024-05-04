@@ -6,7 +6,6 @@ import DeleteButton from "../Buttons/DeleteButton";
 import AddButton from "../Buttons/AddButton";
 
 const DataRenderer = ({ data, setData, setEmptyFields, snackbarSeverity, setFormData }) => {
-  console.log('data: ', data);
   const renderData = (dataToRender, currentPath = "") => {
     return (
       <>

@@ -2,8 +2,9 @@
 
 import MyPages from "@components/AdminPage/MyPages";
 
-const page = () => {
+
+const AllPages = () => {
   return <MyPages />;
 };
 
-export default page;
+export default AllPages;

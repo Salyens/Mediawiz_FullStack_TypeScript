@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "utils/getComparator.js",
-    "app/api/auth/[...nextauth]/route.js"
-, "tailwind.config.js", "components/Buttons/index.js", "app/api/mainPage/route.js", "components/Provider/index.js", "utils/uploadthing.js", "app/api/uploadthing/route.js", "app/api/uploadthing/core.js", "app/login/page.js"  ],
+    "app/api/auth/[...nextauth]/route.ts"
+, "tailwind.config.js", "components/Buttons/index.js", "app/api/mainPage/route.ts", "components/Provider/index.tsx", "utils/uploadthing.js", "app/api/uploadthing/route.js", "app/api/uploadthing/core.js", "app/login/page.tsx", "app/admin/layout.tsx", "components/AdminPage/ClientList/index.js", "app/admin/clients/page.js"  ],
   "exclude": ["node_modules"]
 }

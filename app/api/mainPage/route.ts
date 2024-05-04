@@ -4,7 +4,23 @@ import _ from "lodash";
 import { UTApi } from "uploadthing/server";
 import MainPage from "@models/MainPage";
 
-export async function POST(req) {
+interface File {
+  size: number;
+  type: string;
+  name: string;
+  lastModified: number;
+}
+
+interface File extends Blob {
+  size: number;
+  type: string;
+  name: string;
+  lastModified: number;
+  customId?: string | null;
+}
+
+
+export async function POST(req: Request) {
   try {
     await connectToDB();
     const info = await req.json();
@@ -36,35 +52,24 @@ export async function GET() {
   }
 }
 
-export async function PATCH(req) {
+export async function PATCH(req: Request) {
   const utapi = new UTApi();
   const formData = await req.formData();
-  const files = [];
-
-  const filePaths = [];
-  const filesToDeletePaths = [];
-  const jsonData = JSON.parse(formData.get("jsonData"));
-  const allFiles = formData.getAll("files");
-
-  for (const file of allFiles) {
-    const path = file.name;
-    files.push(file);
-
-    filePaths.push(path);
-    const url = _.get(jsonData, path);
-    const trimmedPath = url.replace("https://utfs.io/f/", "");
-    filesToDeletePaths.push(trimmedPath);
-  }
+  const files: File[] = formData.getAll("files") as File[];
+  const filePaths: string[] = files.map(file => file.name);
+  const jsonData = JSON.parse(formData.get("jsonData") as string);
 
   try {
-    console.log("filesToDeletePaths: ", filesToDeletePaths);
+    const filesToDeletePaths = files.map(file => _.get(jsonData, file.name).replace("https://utfs.io/f/", ""));
     if (filesToDeletePaths.length) await utapi.deleteFiles(filesToDeletePaths);
 
-    const uploadResponses = await utapi.uploadFiles(files);
+    const uploadResponses = await utapi.uploadFiles(files as File[]);
     uploadResponses.forEach((uploadResponse, index) => {
-      const filePath = filePaths[index];
-      const newUrl = uploadResponse.data.url;
-      _.set(jsonData, filePath, newUrl);
+      if (uploadResponse && uploadResponse.data) { 
+        const filePath = filePaths[index];
+        const newUrl = uploadResponse.data.url;
+        _.set(jsonData, filePath, newUrl);
+      }
     });
 
     await connectToDB();
@@ -89,14 +94,18 @@ export async function PATCH(req) {
     return NextResponse.json(
       {
         message: "Data successfully updated",
-        updates: uploadResponses.map((res, idx) => ({
-          filePath: filePaths[idx],
-          newUrl: res.data.url,
-        })),
+        updates: uploadResponses.filter(ur => ur.data !== null).map((res, idx) => {
+          return { 
+            filePath: filePaths[idx],
+            newUrl: res.data ? res.data.url : null 
+          };
+        }),
       },
       { status: 200 }
     );
+    
   } catch (error) {
+    console.error("Error during PATCH operation:", error);
     return NextResponse.json({ message: "Something went wrong", status: 500 });
   }
 }

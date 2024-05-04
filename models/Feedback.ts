@@ -22,7 +22,7 @@ const FeedbackSchema = new Schema<IFeedback>({
   },
   sendTime: {
     type: Number,
-    default: Date.now(),
+    default: Date.now, 
   },
 });
 
