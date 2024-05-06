@@ -30,7 +30,7 @@ const Login = () => {
         setIsLoading(false);
         return setError("Invalid email or password");
       }
-      router.replace("/admin/clients");
+      router.replace("/admin");
     } catch (error: any) {
       setIsLoading(false);
       setError(error.response?.data?.message || "An error occurred");
