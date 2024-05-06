@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box } from "@mui/material";
 import _ from "lodash";
 import MotionDivImg from "./MotionDivImg";
 import styles from "../../../DisplayPage/displaydata.module.css";
@@ -56,13 +55,8 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   };
 
   return (
-    <Box className={styles.text_area}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 2,
-        }}
+    <div className={styles.text_area}>
+      <div className="flex items-center gap-2"
       >
         <UploadInput
           type={type}
@@ -94,8 +88,8 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
           type={type}
           handleButtonClick={handleButtonClick}
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 

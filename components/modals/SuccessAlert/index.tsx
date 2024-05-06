@@ -20,7 +20,7 @@ const SuccessAlert: React.FC<SuccessAlertProps> = ({ success, setSuccess }) => {
     const timer = setTimeout(() => {
       setVisible(false);
       setSuccess(false);
-    }, 4000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [success]);

@@ -33,9 +33,18 @@ const UploadInput: React.FC<UploadInputProps> = ({
         return;
       }
       setFile(file);
-      const updatedFormData = new FormData();
-      updatedFormData.append("files", file, lodashPath);
-      onSetFormData(updatedFormData);
+      onSetFormData((prevFormData) => {
+        const updatedFormData = new FormData();
+        prevFormData.forEach((value, key) => {
+          if (value instanceof File) {
+            updatedFormData.append(key, value, value.name); 
+          } else {
+            updatedFormData.append(key, value); 
+          }
+        });
+        updatedFormData.append("files", file, lodashPath);
+        return updatedFormData;
+      });
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviews(reader.result as string);

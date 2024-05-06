@@ -19,7 +19,6 @@ interface File extends Blob {
   customId?: string | null;
 }
 
-
 export async function POST(req: Request) {
   try {
     await connectToDB();
@@ -56,16 +55,18 @@ export async function PATCH(req: Request) {
   const utapi = new UTApi();
   const formData = await req.formData();
   const files: File[] = formData.getAll("files") as File[];
-  const filePaths: string[] = files.map(file => file.name);
+  const filePaths: string[] = files.map((file) => file.name);
   const jsonData = JSON.parse(formData.get("jsonData") as string);
 
   try {
-    const filesToDeletePaths = files.map(file => _.get(jsonData, file.name).replace("https://utfs.io/f/", ""));
+    const filesToDeletePaths = files.map((file) =>
+      _.get(jsonData, file.name).replace("https://utfs.io/f/", "")
+    );
     if (filesToDeletePaths.length) await utapi.deleteFiles(filesToDeletePaths);
 
     const uploadResponses = await utapi.uploadFiles(files as File[]);
     uploadResponses.forEach((uploadResponse, index) => {
-      if (uploadResponse && uploadResponse.data) { 
+      if (uploadResponse && uploadResponse.data) {
         const filePath = filePaths[index];
         const newUrl = uploadResponse.data.url;
         _.set(jsonData, filePath, newUrl);
@@ -94,16 +95,17 @@ export async function PATCH(req: Request) {
     return NextResponse.json(
       {
         message: "Data successfully updated",
-        updates: uploadResponses.filter(ur => ur.data !== null).map((res, idx) => {
-          return { 
-            filePath: filePaths[idx],
-            newUrl: res.data ? res.data.url : null 
-          };
-        }),
+        updates: uploadResponses
+          .filter((ur) => ur.data !== null)
+          .map((res, idx) => {
+            return {
+              filePath: filePaths[idx],
+              newUrl: res.data ? res.data.url : null,
+            };
+          }),
       },
       { status: 200 }
     );
-    
   } catch (error) {
     console.error("Error during PATCH operation:", error);
     return NextResponse.json({ message: "Something went wrong", status: 500 });
