@@ -2,8 +2,8 @@ import { MainSection } from "@interfaces";
 import styles from "./header.module.css";
 import HeaderLogo from "./HeaderLogo";
 import { MotionDiv } from "@components/MotionDiv";
-import MainForm from "@components/modals/FeedbackForm";
-import FeedbackModal from "../../modals/FeedbackModal";
+// import FeedbackModal from "../../modals/FeedbackModal";
+import { DialogDemo } from "@components/modals/DialogClient";
 
 const Header = ({ main }: { main: MainSection }) => {
   const { imgURL } = main.media.logo;
@@ -42,9 +42,9 @@ const Header = ({ main }: { main: MainSection }) => {
                 </p>
               </div>
 
-              {/* <MainForm /> */}
+              <DialogDemo />
 
-              <FeedbackModal/>
+              {/* <FeedbackModal /> */}
             </div>
           </MotionDiv>
         </div>

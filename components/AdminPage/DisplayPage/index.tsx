@@ -6,7 +6,8 @@ import { MainPageData } from "@interfaces";
 import PageHeader from "./PageHeader";
 import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";
-import SaveSnackbar from "./Buttons/SaveButton/Snackbar";
+import SaveAlert from "./Buttons/SaveButton/SaveAlert";
+import { SaveAlertProps } from "../../../types/admin";
 
 interface DisplayPageProps {
   endPoint: string;
@@ -16,12 +17,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
   const [data, setData] = useState<MainPageData | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
   const [formData, setFormData] = useState<FormData>(new FormData());
-  const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
-  const [snackbarMessage, setSnackbarMessage] = useState<string>("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState<
-    "success" | "error" | "warning" | "info" | ""
-  >("");
-
+  const [saveStatus, setSaveStatus] = useState<SaveAlertProps>("");
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -46,8 +42,8 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
           <RenderData
             data={data}
             setData={setData}
+            saveStatus={saveStatus}
             setEmptyFields={setEmptyFields}
-            snackbarSeverity={snackbarSeverity}
             setFormData={setFormData}
           />
           <SaveButton
@@ -56,16 +52,11 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
             setFormData={setFormData}
             data={data}
             setData={setData}
-            setSnackbarOpen={setSnackbarOpen}
-            setSnackbarSeverity={setSnackbarSeverity}
-            setSnackbarMessage={setSnackbarMessage}
+            setSaveStatus={setSaveStatus}
           />
-          <SaveSnackbar
-            snackbarOpen={snackbarOpen}
-            setSnackbarOpen={setSnackbarOpen}
-            snackbarSeverity={snackbarSeverity}
-            snackbarMessage={snackbarMessage}
-          />
+          {saveStatus && (
+            <SaveAlert saveStatus={saveStatus} setSaveStatus={setSaveStatus} />
+          )}
         </>
       )}
     </div>

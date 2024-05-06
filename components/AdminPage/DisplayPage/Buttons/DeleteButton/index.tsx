@@ -1,7 +1,14 @@
-import { Button, Box } from "@mui/material";
-import _, { forEach } from "lodash";
+import { MainPageData } from "@interfaces";
+import _ from "lodash";
 
-const DeleteButton = ({
+interface DeleteButtonProps {
+  currentPath: string;
+  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
+  onSetEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
+  item: { [key: string]: string };
+}
+
+const DeleteButton: React.FC<DeleteButtonProps> = ({
   currentPath,
   setData,
   onSetEmptyFields,
@@ -22,33 +29,32 @@ const DeleteButton = ({
       return updatedEmptyFields;
     });
     setData((prevData) => {
-      const newData = _.cloneDeep(prevData);
+      const newData = _.cloneDeep(prevData as MainPageData);
       const pathArray = lodashPath.split(".");
-      const index = parseInt(pathArray.pop(), 10);
+      const index = parseInt(pathArray.pop() || "", 10);
       const parentPath = pathArray.join(".");
 
       const parentArray = _.get(newData, parentPath, []);
 
-      if (index > -1 && parentArray.length > index) {
+      if (parentArray.length <= 1) {
+        alert("You cannot delete the last item.");
+      } else {
         parentArray.splice(index, 1);
         _.set(newData, parentPath, parentArray);
       }
-
       return newData;
     });
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <Button
-        sx={{ mt: 0.5 }}
+    <div className="flex mt-1">
+      <button
         onClick={deleteItem}
-        variant="contained"
-        color="error"
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-1 text-sm"
       >
-        Delete block
-      </Button>
-    </Box>
+        УДАЛИТЬ БЛОК
+      </button>
+    </div>
   );
 };
 

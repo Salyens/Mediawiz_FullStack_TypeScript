@@ -1,21 +1,19 @@
-import { Box, Button, CircularProgress, Tooltip } from "@mui/material";
-import SaveIcon from "@mui/icons-material/Save";
 import _ from "lodash";
 import styles from "./savebutton.module.css";
 import axios from "axios";
 import { useState } from "react";
 import { MainPageData } from "@interfaces";
-import { SnackbarSeverityType } from "../../../../../types/admin";
+import LoadingCircle from "@components/LoadingCircle";
+import Tooltip from "./SaveTooltip";
+type SaveAlertProps = "error" | "saved" | "";
 
 interface SaveButtonProps {
   emptyFields: string[];
   formData: FormData;
   data: MainPageData | null;
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
-  setSnackbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setSnackbarMessage: React.Dispatch<React.SetStateAction<string>>;
-  setSnackbarSeverity: React.Dispatch<React.SetStateAction<SnackbarSeverityType>>;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  setSaveStatus: React.Dispatch<React.SetStateAction<SaveAlertProps>>;
 }
 
 interface IUpdatesFile {
@@ -28,20 +26,17 @@ const SaveButton: React.FC<SaveButtonProps> = ({
   formData,
   data,
   setData,
-  setSnackbarOpen,
-  setSnackbarMessage,
-  setSnackbarSeverity,
   setFormData,
+  setSaveStatus,
 }) => {
   const [loading, setLoading] = useState(false);
   const isDisabled = Boolean(emptyFields.length);
   const buttonContent = isDisabled
     ? "Please fill in all required fields"
-    : "Save";
+    : null;
 
   const handleSaveData = async () => {
     setLoading(true);
-    setSnackbarSeverity("");
     const formDataToSend = new FormData();
 
     for (let pair of formData.entries()) {
@@ -59,38 +54,36 @@ const SaveButton: React.FC<SaveButtonProps> = ({
         });
         setData(newData);
       }
-
-      setSnackbarMessage("Data successfully saved");
-      setSnackbarSeverity("success");
-      setSnackbarOpen(true);
-      setLoading(false);
       setFormData(new FormData());
+      setSaveStatus("saved");
     } catch (error) {
-      console.log("error: ", error);
-      setSnackbarMessage("Something went wrong");
-      setSnackbarSeverity("error");
-      setSnackbarOpen(true);
+      setSaveStatus("error");
+    } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Box className={styles.save_btn}>
-      <Tooltip title={buttonContent}>
+    <div className={styles.save_btn}>
+      <Tooltip content={buttonContent}>
         <span>
-          <Button
-            sx={{ width: 250 }}
-            disabled={isDisabled}
-            variant="contained"
-            onClick={handleSaveData}
-            startIcon={<SaveIcon />}
+          <button
             style={{ backgroundColor: isDisabled ? "#ff9999" : "" }}
+            disabled={isDisabled}
+            onClick={handleSaveData}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm w-56"
           >
-            {loading ? <CircularProgress size={24} color="inherit" /> : "Save"}
-          </Button>
+            {loading ? (
+              <div className="w-6 h-6 ml-auto mr-auto">
+                <LoadingCircle />
+              </div>
+            ) : (
+              "СОХРАНИТЬ"
+            )}
+          </button>
         </span>
       </Tooltip>
-    </Box>
+    </div>
   );
 };
 

@@ -1,77 +1,66 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
 import TextArea from "../TextArea";
 import DeleteButton from "../Buttons/DeleteButton";
-import AddButton from "../Buttons/AddButton";
 import { MainPageData } from "@interfaces";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
-import { SnackbarSeverityType } from "../../../../types/admin";
-
+import AddButton from "../Buttons/AddButton";
+import { SaveAlertProps } from "../../../../types/admin";
 
 interface RenderDataProps {
   data: MainPageData;
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   setEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
-  snackbarSeverity: SnackbarSeverityType;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  saveStatus: SaveAlertProps;
 }
 
 const RenderData: React.FC<RenderDataProps> = ({
   data,
   setData,
   setEmptyFields,
-  snackbarSeverity,
   setFormData,
+  saveStatus,
 }) => {
   const renderData = (dataToRender: MainPageData, currentPath = "") => {
     return (
-      <>
+      <div className="text-xl">
         {Object.entries(dataToRender).map(([key, value], index) => {
           if (key === "_id" || key === "pageName") return null;
           const newPath = currentPath ? `${currentPath}.${key}` : key;
           const itemKey = `${newPath}-${index}`;
 
-          if (key === "forAdmin")
-            return (
-              <Typography key={itemKey} variant="h6">
-                {value}
-              </Typography>
-            );
+          if (key === "forAdmin") return <h6 key={itemKey}>{value}</h6>;
           else if (key === "forAdminHeader")
             return (
-              <Typography
-                sx={{ textAlign: "center", mt: 2, fontStyle: "italic" }}
-                key={itemKey}
-                variant="h5"
-              >
+              <h5 className="text-center mt-2" key={itemKey}>
                 {value}
-              </Typography>
+              </h5>
             );
           else if (key === "imgURL") {
             return (
               <UploadMediaFile
                 type="image"
+                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
                 data={data}
                 key={itemKey}
                 onSetFormData={setFormData}
-                snackbarSeverity={snackbarSeverity}
               />
             );
           } else if (key === "videoURL")
             return (
               <UploadMediaFile
                 type="video"
+                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
                 data={data}
                 key={itemKey}
                 onSetFormData={setFormData}
-                snackbarSeverity={snackbarSeverity}
               />
             );
           else if (typeof value === "string" && key !== "forAdmin") {
             return (
-              <Box sx={{ mb: 2 }} key={key}>
+              <div className="mb-2" key={key}>
                 <TextArea
                   itemKey={itemKey}
                   initialValue={value}
@@ -80,16 +69,14 @@ const RenderData: React.FC<RenderDataProps> = ({
                   currentPath={currentPath}
                   onSetEmptyFields={setEmptyFields}
                 />
-              </Box>
+              </div>
             );
           } else if (Array.isArray(value)) {
             return (
               <React.Fragment key={itemKey}>
                 {value.map((item, arrayIndex) => (
                   <React.Fragment key={`${newPath}-${arrayIndex}`}>
-                    <Typography variant="h6">{`Блок-${
-                      arrayIndex + 1
-                    }`}</Typography>
+                    <h6>{`Блок-${arrayIndex + 1}`}</h6>
 
                     {typeof item === "object" ? (
                       <>
@@ -122,7 +109,7 @@ const RenderData: React.FC<RenderDataProps> = ({
           }
           return null;
         })}
-      </>
+      </div>
     );
   };
 

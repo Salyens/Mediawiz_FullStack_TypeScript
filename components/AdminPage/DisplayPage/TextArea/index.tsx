@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { TextareaAutosize } from "@mui/material";
 import styles from "../displaydata.module.css";
 import _ from "lodash";
 import { debounce } from "lodash";
@@ -77,7 +76,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <div key={itemKey} className={styles.container}>
-      <TextareaAutosize
+      <textarea
         className={
           value === ""
             ? `${styles.text_area} ${styles.error}`

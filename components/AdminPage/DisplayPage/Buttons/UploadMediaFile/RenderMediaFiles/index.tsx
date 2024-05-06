@@ -1,7 +1,12 @@
 import Image from "next/image";
-import React from "react";
 
-const RenderMediaFiles = ({ fileURL, type, handleButtonClick }) => {
+interface RenderMediaFilesProps {
+  fileURL: string;
+  type: 'image' | 'video';
+  handleButtonClick: () => void;
+}
+
+const RenderMediaFiles: React.FC<RenderMediaFilesProps> = ({ fileURL, type, handleButtonClick }) => {
   if (!fileURL) return null;
   else if (type === "video")
     return (

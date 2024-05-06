@@ -1,7 +1,17 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import UploadFileButton from "./UploadFileButton";
 
-const UploadInput = ({
+interface UploadInputProps {
+  type: 'image' | 'video';
+  handleButtonClick: () => void;
+  fileInputRef: React.RefObject<HTMLInputElement>;
+  setFile: React.Dispatch<React.SetStateAction<File | null>>;
+  setPreviews: React.Dispatch<React.SetStateAction<string | null>>;
+  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  lodashPath: string;
+}
+
+const UploadInput: React.FC<UploadInputProps> = ({
   type,
   handleButtonClick,
   fileInputRef,
@@ -10,10 +20,10 @@ const UploadInput = ({
   onSetFormData,
   lodashPath,
 }) => {
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
     if (file) {
-      const maxSize = type === "image" ? 5 * 1024 * 1024 : 40 * 1024 * 1024;
+      const maxSize = type === "image" ? 5 * 1024 * 1024 : 30 * 1024 * 1024;
       if (file.size > maxSize) {
         setFile(null);
         setPreviews(null);
@@ -23,17 +33,12 @@ const UploadInput = ({
         return;
       }
       setFile(file);
-      onSetFormData((prevFormData) => {
-        const updatedFormData = new FormData();
-        for (let item of prevFormData) {
-          updatedFormData.append("files", item[1], item[1].name);
-        }
-        updatedFormData.append("files", file, lodashPath);
-        return updatedFormData;
-      });
+      const updatedFormData = new FormData();
+      updatedFormData.append("files", file, lodashPath);
+      onSetFormData(updatedFormData);
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPreviews(reader.result);
+        setPreviews(reader.result as string);
       };
       reader.readAsDataURL(file);
     }

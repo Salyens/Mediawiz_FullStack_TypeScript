@@ -1,20 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box,} from "@mui/material";
+import { Box } from "@mui/material";
 import _ from "lodash";
 import MotionDivImg from "./MotionDivImg";
 import styles from "../../../DisplayPage/displaydata.module.css";
-import DisplayPrevFile from "./DisplayPrevFile";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
 import { MainPageData } from "@interfaces";
-import { SnackbarSeverityType } from "../../../../../types/admin";
+import { SaveAlertProps } from "../../../../../types/admin";
+import DisplayNewFile from "./DisplayNewFile";
 
 interface UploadMediaFileProps {
-  type: 'image' | 'video';
+  type: "image" | "video";
   path: string;
   data: MainPageData;
   onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  snackbarSeverity: SnackbarSeverityType;
+  saveStatus: SaveAlertProps;
 }
 
 const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
@@ -22,7 +22,7 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   path,
   data,
   onSetFormData,
-  snackbarSeverity,
+  saveStatus,
 }) => {
   const lodashPath = path.replace(/\[(\d+)\]/g, ".$1");
   const [fileURL, setFileURL] = useState<string>(_.get(data, lodashPath));
@@ -41,11 +41,11 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   }, [file]);
 
   useEffect(() => {
-    if (snackbarSeverity === "success") {
+    if (saveStatus === "saved") {
       setPreviews(null);
       setFile(null);
     }
-  }, [snackbarSeverity]);
+  }, [saveStatus]);
 
   useEffect(() => {
     setFileURL(_.get(data, lodashPath));
@@ -76,7 +76,7 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
 
         <MotionDivImg isVisible={!!previews}>
           {previews && (
-            <DisplayPrevFile
+            <DisplayNewFile
               file={file}
               type={type}
               previews={previews}

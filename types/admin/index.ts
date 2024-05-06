@@ -1,1 +1,1 @@
-export type SnackbarSeverityType = "success" | "error" | "warning" | "info" | "";
+export type SaveAlertProps = "error" | "saved" | "";
