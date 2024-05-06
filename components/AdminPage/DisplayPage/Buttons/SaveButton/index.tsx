@@ -74,7 +74,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm w-56"
           >
             {loading ? (
-              <div className="w-6 h-6 ml-auto mr-auto">
+              <div className="w-5 h-5 ml-auto mr-auto">
                 <LoadingCircle />
               </div>
             ) : (
