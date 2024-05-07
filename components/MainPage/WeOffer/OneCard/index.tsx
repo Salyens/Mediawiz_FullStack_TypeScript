@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./onecard.module.css";
-import { OfferList } from "@interfaces";
+import { OffersList } from "@interfaces";
+import Link from "next/link";
 
-const OneCard = ({ header, description }: OfferList) => {
+const OneCard = ({ header, description, href }: OffersList) => {
   return (
-    <div
+    <Link
+      href={href}
       className={`${styles.wrapper} p-4 sm:p-8 md:p-12 lg:p-14 xl:p-18 h-72 sm:h-96`}
     >
       <div className="flex_column w-full ">
@@ -30,7 +32,7 @@ const OneCard = ({ header, description }: OfferList) => {
           alt="arrow"
         />
       </div>
-    </div>
+    </Link>
   );
 };
 

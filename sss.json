@@ -43,19 +43,25 @@
           "offersList": [
             {
               "header": "РАЗРАБОТКА ВЕБ-САЙТОВ",
-              "description": "Сайты-визитки, корпоративные сайты, интернет-магазины"
+              "description": "Сайты-визитки, корпоративные сайты, интернет-магазины",
+              "href":"/web"
+
             },
             {
               "header": "SMM: ВЕДЕНИЕ И ПРОДВИЖЕНИЕ СОЦСЕТЕЙ С НУЛЯ",
-              "description": "Instagram, Facebook, Telegram, YouTube, VKontakte"
+              "description": "Instagram, Facebook, Telegram, YouTube, VKontakte",
+              "href":"/smm"
+
             },
             {
               "header": "РЕКЛАМА В СОЦСЕТЯХ",
-              "description": "Таргетированная реклама"
+              "description": "Таргетированная реклама",
+              "href":"/smmAds"
             },
             {
               "header": "РЕКЛАМА САЙТОВ В GOOGLE ADS, ЯНДЕКС.ДИРЕКТ",
-              "description": "Контекстная реклама"
+              "description": "Контекстная реклама",
+              "href":"/webAd"
             }
           ]
         }

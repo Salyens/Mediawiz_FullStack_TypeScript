@@ -14,6 +14,7 @@ export type Text = string;
 export interface OffersList {
   header: string;
   description: string;
+  href: string;
 }
 
 export interface Offers {

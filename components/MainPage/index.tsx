@@ -2,13 +2,16 @@ import Image from "next/image";
 import Header from "./Header";
 import WeOffer from "./WeOffer";
 import { MainPageData } from "../../interfaces";
+import Socials from "./Socials";
+import OnePerson from "./QuotesList/OnePerson";
+import QuotesList from "./QuotesList";
 
 const MainPage = ({ data }: { data: MainPageData }) => {
   const { main } = data.languages.ru;
   const { weOffer } = data.languages.ru;
+  const { quotesList } = data.languages.ru.quotes;
 
   return (
-
     // <div
     //   style={{
     //     zIndex: 1,
@@ -49,6 +52,8 @@ const MainPage = ({ data }: { data: MainPageData }) => {
     <div>
       <Header main={main} />
       <WeOffer weOffer={weOffer} />
+      <Socials />
+      <QuotesList quotesList={quotesList}/>
     </div>
 
     // </div>

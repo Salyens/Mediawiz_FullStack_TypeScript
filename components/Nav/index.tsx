@@ -37,7 +37,7 @@ export default function Nav() {
           width={40}
           height={40}
           alt={link}
-          priority={false}
+          priority={true}
         />
       </Link>
     ));
@@ -70,11 +70,9 @@ export default function Nav() {
                     <Image
                       priority={true}
                       alt="Logo"
-                      width={90}
-                      quality={100}
-                      height={50}
+                      width={130}
+                      height={90}
                       src="/logo.png"
-                      className="w-auto h-12 md:h-16"
                     />
                   </Link>
                 </div>

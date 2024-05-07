@@ -21,4 +21,12 @@
     box-shadow: 0px 4px 20px 0px rgba(255, 57, 199, 0.7),
       0px 4px 4px 0px rgba(255, 57, 199, 0.25);
   }
+
+  .DialogContent {
+    position: fixed;
+    bottom: auto; /* Изменение с 'bottom: 0' на 'auto' */
+    top: 10%; /* Держать модальное окно ближе к верху экрана */
+    transform: translate(-50%, 0%);
+  }
+  
   

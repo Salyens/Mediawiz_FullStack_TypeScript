@@ -21,6 +21,7 @@ import { Schema, model, models } from "mongoose";
 const offerListSchema = new Schema<OffersList>({
   header: { type: String, required: true },
   description: { type: String, required: true },
+  href: { type: String, required: true },
 });
 
 const TextSchema = new Schema<TextContent>({

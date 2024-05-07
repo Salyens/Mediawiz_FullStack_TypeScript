@@ -18,7 +18,7 @@ import validator from "validator";
 import LoadingCircle from "@components/LoadingCircle";
 import SuccessAlert from "../SuccessAlert";
 
-export function DialogDemo() {
+const DialogClient = () => {
   const [info, setInfo] = useState({
     name: "",
     phoneNumber: null as number | null,
@@ -42,7 +42,7 @@ export function DialogDemo() {
       setError("");
       setLoading(false);
       setIsOpen(false);
-      setSuccess(true)
+      setSuccess(true);
       return res;
     } catch (error) {
       setError("Something went wrong");
@@ -63,14 +63,13 @@ export function DialogDemo() {
 
   return (
     <>
-      {" "}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
           <button className={`${styles.btn} w-full sm:w-80 mb-20`}>
             Оставить заявку
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] text-gray-500">
+        <DialogContent className={`sm:max-w-[425px] max-w-[325px] text-gray-500 ${styles.DialogContent}`}>
           <DialogHeader>
             <DialogTitle>Edit profile</DialogTitle>
             <DialogDescription>
@@ -131,8 +130,8 @@ export function DialogDemo() {
               />
             </div>
           </div>
-          <DialogFooter>
-            <button onClick={handleSubmit}>
+          <DialogFooter className="flex items-center justify-center">
+            <button className="ml-auto mr-auto" onClick={handleSubmit}>
               {loading ? (
                 <div className="w-5">
                   <LoadingCircle />
@@ -147,4 +146,6 @@ export function DialogDemo() {
       {success && <SuccessAlert success={success} setSuccess={setSuccess} />}
     </>
   );
-}
+};
+
+export default DialogClient;

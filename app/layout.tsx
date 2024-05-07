@@ -2,6 +2,7 @@ import Nav from "@components/Nav";
 import "../styles/globals.css";
 import Footer from "@components/Footer";
 import { Play, Roboto } from "next/font/google";
+import Provider from "@components/Provider";
 
 export const inter = Play({
   weight: ["400", "700"],
@@ -16,9 +17,11 @@ export const roboto = Roboto({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  session,
+}: {
   children: React.ReactNode;
-}>) {
+  session: any;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -29,11 +32,13 @@ export default function RootLayout({
             minHeight: "100vh",
           }}
         >
-          <Nav />
-          <main style={{ flexGrow: 1, marginTop: 100 }}>{children}</main>
-          <div style={{ marginTop: "auto" }}>
-            <Footer />
-          </div>
+          <Provider session={session}>
+            <Nav />
+            <main style={{ flexGrow: 1, marginTop: 100 }}>{children}</main>
+            <div style={{ marginTop: "auto" }}>
+              <Footer />
+            </div>
+          </Provider>
         </div>
       </body>
     </html>
