@@ -1,5 +1,10 @@
+"use client";
+
+import { MotionDiv } from "@components/MotionDiv";
+import { useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 interface SocialIcon {
   name: string;
@@ -13,6 +18,13 @@ const Socials = () => {
     { name: "Instagram", src: "/IG" },
     { name: "Facebook", src: "/FB" },
   ];
+  const [isAnimate, setIsAnimate] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) setIsAnimate(true);
+  }, [isInView]);
 
   const renderSocialLinks = () => {
     return socialIcons.map((item) => (
@@ -25,6 +37,7 @@ const Socials = () => {
           src={`/social_icons${item.src}.png`}
           alt={item.name}
           fill={true}
+          sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
           style={{ objectFit: "contain" }}
         />
       </Link>
@@ -32,16 +45,30 @@ const Socials = () => {
   };
 
   return (
-    <div className="main_container pr-6 pl-6">
-      <div className="flex justify-between items-center flex-col lg:flex-row min-h-40 xl:min-h-80 pt-8 pb-8 sm:gap-8">
-        <p className="font-bold md:text-4xl xl:text-5xl 2xl:text-6xl sm:text-3xl text-lg">
-          МЫ В СОЦИАЛЬНЫХ СЕТЯХ
-        </p>
-        <div className="flex justify-between items-center">
-          {renderSocialLinks()}
-        </div>
-      </div>
-    </div>
+    <>
+      <span ref={ref}></span>
+      {isAnimate && (
+        <MotionDiv
+          initial={{
+            y: 1000,
+            opacity: 0,
+          }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+        >
+          <div className="main_container pr-6 pl-6">
+            <div className="flex sm:justify-between items-center flex-col lg:flex-row min-h-40 xl:min-h-80 pb-2 gap-2 sm:gap-8">
+              <p className="font-bold md:text-4xl xl:text-5xl 2xl:text-6xl sm:text-3xl text-lg">
+                МЫ В СОЦИАЛЬНЫХ СЕТЯХ
+              </p>
+              <div className="flex justify-between items-center">
+                {renderSocialLinks()}
+              </div>
+            </div>
+          </div>
+        </MotionDiv>
+      )}
+    </>
   );
 };
 
