@@ -24,7 +24,7 @@ const TogetherBlock: React.FC<TogetherBlockProps> = ({ imgURL }) => {
       {isAnimate && (
         <MotionDiv
           initial={{
-            y: 300,
+            y: 700,
             opacity: 0,
           }}
           animate={{ y: 0, opacity: 1 }}
@@ -38,8 +38,8 @@ const TogetherBlock: React.FC<TogetherBlockProps> = ({ imgURL }) => {
                 <div className={`${styles.img_wrapper}`}>
                   <Image
                     src={imgURL}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{objectFit:"cover"}}
                     alt="Together photo"
                   />
                 </div>

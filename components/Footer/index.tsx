@@ -40,7 +40,7 @@ const Footer = () => {
       <div className="flex flex-col sm:flex-row gap-2">
         {renderSocialLinks()}
       </div>
-      <div>8903375000000</div>
+      <Link href="tel:+79033750261">8-903-375-02-61</Link>
       <div className="font-bold">Политика конфеденциальности</div>
     </div>
   );

@@ -51,3 +51,15 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+
+.stroke_text {
+  -webkit-text-stroke: 1px rgba(224, 42, 114, 1);
+  /* font-weight: 700; */
+  line-height: 140%;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.stroke_text_2 {
+  -webkit-text-stroke: 1px rgba(67, 42, 224, 1);
+}

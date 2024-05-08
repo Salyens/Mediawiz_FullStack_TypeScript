@@ -1,5 +1,4 @@
 .bg_div {
-    /* position: relative; */
     background-color: #A104C8;
     width: 100%;
     border-top-left-radius: 40px;
@@ -9,7 +8,7 @@
   
   .img_wrapper {
     position: absolute;
-    height: 120%;
+    height: 130%;
     width: auto;
     left: 0;
     right: 0;

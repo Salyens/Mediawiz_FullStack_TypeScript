@@ -27,8 +27,8 @@ const Header = ({ main }: { main: MainSection }) => {
             }}
           >
             <div className="flex_column">
-              <p className={`${styles.header_text}`}>{main["header_1"].text}</p>
-              <p className={`${styles.header_text} ${styles.header_text_2}`}>
+              <p className="stroke_text font-bold">{main["header_1"].text}</p>
+              <p className="stroke_text font-bold stroke_text_2">
                 {main["header_2"].text}
               </p>
 
