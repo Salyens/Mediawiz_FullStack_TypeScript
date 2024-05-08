@@ -34,12 +34,12 @@ const OnePerson: React.FC<QuoteProps> = ({
       <span className="absolute sm:top-1/2" ref={ref}></span>
       {isAnimate && (
         <MotionDiv
-          initial={{ x: 1000 }}
+          initial={{ x: isOdd ? -2000 : 2000 }}
           animate={{ x: 0 }}
           transition={{
             ease: "easeOut",
-            duration: 1.5,
-            delay: 0.5
+            duration: 1,
+            delay: 0.5,
           }}
         >
           <div className="main_container mb-10 md:mb-36 mt-28 relative p-6">

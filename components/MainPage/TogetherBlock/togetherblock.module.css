@@ -1,0 +1,21 @@
+.bg_div {
+    /* position: relative; */
+    background-color: #A104C8;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: 50px;
+  }
+  
+  .img_wrapper {
+    position: absolute;
+    height: 120%;
+    width: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+  }
+  
