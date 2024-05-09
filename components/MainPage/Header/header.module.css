@@ -21,10 +21,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-bottom: 40px; */
 }
 
 .header_logo {
   width: 40%;
   height: 400px;
+}
+
+.form_wrapper {
+  background-image: url("/form_bg.png");
+  width: 100%;
+  margin-top: 100px;
+  min-height: 400px;
 }

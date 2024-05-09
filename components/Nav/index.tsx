@@ -60,7 +60,7 @@ export default function Nav() {
       <Disclosure as="nav" className={styles.bg}>
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl pl-2 pr-2 lg:pl-6 lg:pr-6 h-24 flex justify-between items-center max_width">
+            <div className="mx-auto max-w-7xl pl-2 pr-2 lg:pl-6 lg:pr-6 h-12 sm:h-16 lg:h-20 xl:h-24 flex justify-between items-center max_width">
               <div className="relative flex h-16 items-center justify-between w-full">
                 <div className="absolute inset-y-0 right-0 flex items-center lg:hidden ">
                   <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -75,12 +75,12 @@ export default function Nav() {
                 </div>
                 <div className="flex flex-1 items-center">
                   <div className="flex items-center">
-                    <Link href="/" className="logo">
+                    <Link href="/" className="w-14 h-7 sm:w-[76px] sm:h-10 lg:w-24 lg:h-12 relative">
                       <Image
                         priority={true}
                         alt="Logo"
-                        width={115}
-                        height={60}
+                        fill
+                        style={{ objectFit: "contain" }}
                         src="/logo.png"
                       />
                     </Link>

@@ -1,9 +1,3 @@
-.form_wrapper {
-  background-image: url("/form_bg.png");
-  width: 100%;
-  min-height: 400px;
-}
-
 .my_form {
   box-sizing: border-box;
   border: 4px solid rgb(204, 0, 255);
@@ -46,7 +40,25 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.btn_apply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin-top: 25px;
+  background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.btn,
+.btn_apply:hover {
   transition: 0.2s ease-in;
   background: linear-gradient(180deg, #ff39c7 0%, #770cff 100%);
   box-shadow: 0px 4px 20px 0px rgba(255, 57, 199, 0.7),
@@ -59,18 +71,3 @@
   letter-spacing: 0%;
   text-transform: uppercase;
 }
-
-/* 
-
-.input_email::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background-color: rgba(233, 58, 237, 1);
-  box-shadow: 0px 2px 5px rgba(124, 58, 237, 1),
-    0px 2px 20px rgba(124, 58, 237, 0.5), 0px 2px 50px rgba(124, 58, 237, 1),
-    0px 2px 150px rgba(124, 58, 237, 1);
-} */

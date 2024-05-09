@@ -17,54 +17,15 @@ const MainPage = ({ data }: { data: MainPageData }) => {
   const { goalsList } = data.languages.ru.ourGoals.goals;
 
   return (
-    // <div
-    //   style={{
-    //     zIndex: 1,
-    //     minWidth: "100vw",
-    //     minHeight: "100vh",
-    //   }}
-    // >
-    //   <div
-    //     style={{
-    //       position: "absolute",
-    //       zIndex: -1,
-    //       left: "20%",
-    //       top: 0,
-    //     }}
-    //   >
-    //     <Image
-    //       src="/mainPage/ellipse-4.svg"
-    //       width={1700}
-    //       height={1700}
-    //       alt="ellipse-right"
-    //     />
-    //   </div>
-    //   <div
-    //     style={{
-    //       position: "absolute",
-    //       zIndex: -1,
-    //       right: "75%",
-    //       top: "75vh",
-    //     }}
-    //   >
-    //     <Image
-    //       src="/mainPage/ellipse-4.svg"
-    //       width={800}
-    //       height={800}
-    //       alt="ellipse-left"
-    //     />
-    //   </div>
-    <div>
+    <div className="w-full h-full overflow-hidden relative">
       <Header main={main} />
       <WeOffer weOffer={weOffer} />
       <Socials />
       <QuotesList quotesList={quotesList} />
       <TogetherBlock imgURL={imgURL} />
-      <OurGoals goalsList={goalsList}/>
-      <FeedbackForm/>
+      <OurGoals goalsList={goalsList} />
+      <FeedbackForm />
     </div>
-
-    // </div>
   );
 };
 export default MainPage;

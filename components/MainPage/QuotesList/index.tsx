@@ -12,7 +12,6 @@ interface QuotesListProps {
 }
 
 const QuotesList: React.FC<QuotesListProps> = ({ quotesList }) => {
-
   const renderOnePerson = () => {
     return quotesList.map((person, index) => (
       <OnePerson
@@ -23,7 +22,7 @@ const QuotesList: React.FC<QuotesListProps> = ({ quotesList }) => {
         index={index}
       />
     ));
-  }
+  };
 
   return <div>{renderOnePerson()}</div>;
 };

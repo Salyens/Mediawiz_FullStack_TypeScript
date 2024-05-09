@@ -30,87 +30,98 @@ const OnePerson: React.FC<QuoteProps> = ({
   }, [isInView]);
 
   return (
-    <div className="relative min-h-80 overflow-x-hidden">
-      <span className="absolute sm:top-1/2" ref={ref}></span>
-      {isAnimate && (
-        <MotionDiv
-          initial={{ x: isOdd ? -2000 : 2000 }}
-          animate={{ x: 0 }}
-          transition={{
-            ease: "easeOut",
-            duration: 1,
-            delay: 0.5,
-          }}
-        >
-          <div className="main_container mb-10 md:mb-36 mt-28 relative p-6">
-            <div className="flex justify-center">
-              <div
-                className={`${
-                  styles.rectangle
-                }  md:w-2/3 w-11/12 h-auto mt-72 md:mt-0  ${
-                  isOdd ? "ml-auto" : "mr-auto"
-                }`}
-              >
-                <Image
-                  src="/mainPage/q.png"
-                  alt="inverted commas"
-                  width={400}
-                  height={350}
-                  className={`absolute md:-top-24 md:w-48 w-40 -top-20 lg:w-96 lg:-top-48 ${
-                    isOdd ? "md:-right-5 -right-6" : " md:-left-5 -left-6 "
+    <>
+      <div className="relative min-h-80">
+        <Image
+          src="/mainPage/ellipse-4.svg"
+          width={1000}
+          height={1000}
+          alt="ellipse-left"
+          className={`absolute -z-10 blur-3xl ${
+            isOdd ? "left-0 top-0" : "right-0 top-0"
+          }`}
+        />
+        <span className="absolute sm:top-1/2" ref={ref}></span>
+        {isAnimate && (
+          <MotionDiv
+            initial={{ x: isOdd ? -2000 : 2000 }}
+            animate={{ x: 0 }}
+            transition={{
+              ease: "easeOut",
+              duration: 1,
+              delay: 0.5,
+            }}
+          >
+            <div className="main_container mb-10 md:mb-36 mt-36 relative p-6">
+              <div className="flex justify-center">
+                <div
+                  className={`${
+                    styles.rectangle
+                  }  md:w-2/3 w-11/12 h-auto mt-72 md:mt-0  ${
+                    isOdd ? "ml-auto" : "mr-auto"
                   }`}
-                />
+                >
+                  <Image
+                    src="/mainPage/q.png"
+                    alt="inverted commas"
+                    width={400}
+                    height={350}
+                    className={` absolute md:-top-24 md:w-48 w-40 -top-20 lg:w-96 lg:-top-48 ${
+                      isOdd ? "md:-right-5 -right-6" : " md:-left-5 -left-6 "
+                    }`}
+                  />
 
-                <div className="xl:p-24 p-8 ">
-                  <h5 className={`${styles.name} text-2xl mb-3 pt-5`}>
-                    {name}
-                  </h5>
-                  <div className={styles.left_line}>
-                    <p
-                      className={`${styles.desc} text-lg md:text-lg 2xl:text-2xl`}
+                  <div className="xl:p-24 p-8 ">
+                    <h5 className={`${styles.name} text-2xl mb-3 pt-5`}>
+                      {name}
+                    </h5>
+                    <div className={styles.left_line}>
+                      <p
+                        className={`${styles.desc} text-lg md:text-lg 2xl:text-2xl`}
+                      >
+                        {description}
+                      </p>
+                    </div>
+
+                    <Link
+                      className={`flex ml-auto relative z-30 text-3xl mt-2 lg:mt-8 -left-2`}
+                      href="#"
                     >
-                      {description}
-                    </p>
+                      <span className={`text-2xl 2xl:text-3xl ${styles.link}`}>
+                        Узнать больше
+                      </span>
+                      <Image
+                        className="pl-3"
+                        src="/arrow.png"
+                        alt="arrow"
+                        width={49}
+                        height={39}
+                        style={{ objectFit: "contain" }}
+                      />
+                    </Link>
                   </div>
+                </div>
 
-                  <Link
-                    className={`flex ml-auto relative z-30 text-3xl mt-2 lg:mt-8 -left-2`}
-                    href="#"
-                  >
-                    <span className={`text-2xl 2xl:text-3xl ${styles.link}`}>
-                      Узнать больше
-                    </span>
+                <div
+                  className={`absolute -top-28 z-20 w-full h-[420px] md:-top-28 
+          md:w-1/3 md:h-[500px] xl:h-[600px] ${isOdd ? "left-0" : "right-0"}`}
+                >
+                  {imgURL && (
                     <Image
-                      className="pl-3"
-                      src="/arrow.png"
-                      alt="arrow"
-                      width={49}
-                      height={39}
+                      src={imgURL}
+                      alt={name}
+                      fill={true}
+                      sizes="(max-width: 768px) 70vw, (max-width: 1200px) 80vw, 65vw"
                       style={{ objectFit: "contain" }}
                     />
-                  </Link>
+                  )}
                 </div>
               </div>
-
-              <div
-                className={`absolute -top-28 z-20 w-full h-[420px] md:-top-28 
-          md:w-1/3 md:h-[500px] xl:h-[600px] ${isOdd ? "left-0" : "right-0"}`}
-              >
-                {imgURL && (
-                  <Image
-                    src={imgURL}
-                    alt={name}
-                    fill={true}
-                    sizes="(max-width: 768px) 70vw, (max-width: 1200px) 80vw, 65vw"
-                    style={{ objectFit: "contain" }}
-                  />
-                )}
-              </div>
             </div>
-          </div>
-        </MotionDiv>
-      )}
-    </div>
+          </MotionDiv>
+        )}
+      </div>
+    </>
   );
 };
 

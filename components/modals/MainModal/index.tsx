@@ -1,13 +1,13 @@
 "use client";
-
-import React, { useState, FormEvent } from "react";
-import LoadingCircle from "@components/LoadingCircle";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import styles from "./dialogclient.module.css";
+import { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import validator from "validator";
-import styles from "../feedbackform.module.css";
-import SuccessAlert from "@components/modals/SuccessAlert";
+import LoadingCircle from "@components/LoadingCircle";
+import SuccessAlert from "../SuccessAlert";
 
-const CustomForm = () => {
+const MainModal = () => {
   const [info, setInfo] = useState({
     name: "",
     phoneNumber: "",
@@ -15,11 +15,11 @@ const CustomForm = () => {
   });
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!info.name || !info.phoneNumber || !info.email) {
       return setError("All fields are required");
     } else if (!validator.isEmail(info.email)) {
@@ -31,8 +31,8 @@ const CustomForm = () => {
       const res = await axios.post("/api/feedback", info);
       setError("");
       setLoading(false);
+      setIsOpen(false);
       setSuccess(true);
-      setInfo({ name: "", phoneNumber: "", email: "" });
       return res;
     } catch (error) {
       setError("Something went wrong");
@@ -40,15 +40,30 @@ const CustomForm = () => {
     }
   };
 
+  useEffect(() => {
+    if (!isOpen) {
+      setError("");
+      setInfo({
+        name: "",
+        phoneNumber: "",
+        email: "",
+      });
+    }
+  }, [isOpen]);
+
   return (
     <>
-      <div
-        className={`flex min-h-[400px] min-w-80 w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black ${styles.my_form}`}
-      >
-        <div className="mt-2">
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogTrigger asChild onClick={() => setIsOpen(true)}>
+          <button className={`${styles.btn_apply} w-full sm:w-80 mb-20`}>
+            Оставить заявку
+          </button>
+        </DialogTrigger>
+        <DialogContent
+          className={`top-1/3 sm:top-1/2 flex min-h-[400px] min-w-80 w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black ${styles.my_form}`}
+        >
           <form onSubmit={handleSubmit}>
-            <div>{error && <p className="text-red-500">{error}</p>}</div>
-
+            {error && <p className="text-red-500">{error}</p>}
             <div className="mt-2 w-full">
               <input
                 id="name"
@@ -94,7 +109,6 @@ const CustomForm = () => {
                 className={styles.input_email}
               />
             </div>
-
             <div>
               <button type="submit" className={styles.btn}>
                 {loading ? (
@@ -107,11 +121,11 @@ const CustomForm = () => {
               </button>
             </div>
           </form>
-        </div>
-      </div>
+        </DialogContent>
+      </Dialog>
       {success && <SuccessAlert success={success} setSuccess={setSuccess} />}
     </>
   );
 };
 
-export default CustomForm;
+export default MainModal;

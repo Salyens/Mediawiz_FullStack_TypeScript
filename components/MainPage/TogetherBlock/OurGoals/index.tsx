@@ -6,6 +6,7 @@ import styles from "./ourgoals.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { MotionDiv } from "@components/MotionDiv";
+import Image from "next/image";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[];
@@ -35,6 +36,21 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList }) => {
       ref={ref}
       className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-36 xl:pr-36  mt-24 md:mt-28 mb-12 lg:mt-40 relative main_container"
     >
+      <Image
+        src="/mainPage/ellipse-4.svg"
+        width={800}
+        height={800}
+        alt="ellipse-left"
+        className="absolute -z-10 blur-3xl -left-1/3 bottom-0"
+      />
+      <Image
+        src="/mainPage/ellipse-4.svg"
+        width={800}
+        height={800}
+        alt="ellipse-left"
+        className="absolute -z-10 blur-3xl -right-1/3 bottom-0"
+      />
+
       {isAnimate && (
         <>
           <MotionDiv
@@ -59,6 +75,21 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
           >
+            <Image
+              src="/mainPage/ellipse-4.svg"
+              width={900}
+              height={900}
+              alt="ellipse-left"
+              className="absolute -z-10 blur-3xl right-0 bottom-0"
+            />
+            <Image
+              src="/mainPage/ellipse-4.svg"
+              width={900}
+              height={900}
+              alt="ellipse-left"
+              className="absolute -z-10 blur-3xl left-0 bottom-0"
+            />
+
             <div className="flex flex-col gap-3">{renderGoals()}</div>
           </MotionDiv>
         </>

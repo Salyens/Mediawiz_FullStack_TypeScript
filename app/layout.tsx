@@ -34,7 +34,7 @@ export default function RootLayout({
         >
           <Provider session={session}>
             <Nav />
-            <main style={{ flexGrow: 1, marginTop: 100 }}>{children}</main>
+            <main className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24" style={{ flexGrow: 1}}>{children}</main>
             <div style={{ marginTop: "auto" }}>
               <Footer />
             </div>

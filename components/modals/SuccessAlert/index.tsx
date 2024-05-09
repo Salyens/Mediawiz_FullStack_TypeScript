@@ -31,7 +31,10 @@ const SuccessAlert: React.FC<SuccessAlertProps> = ({ success, setSuccess }) => {
         visible ? "opacity-100" : "opacity-0 transition-opacity duration-1000"
       }`}
     >
-      <Alert variant={!success ? "destructive" : "default"}>
+      <Alert
+        className={styles.alert_wrapper}
+        variant={!success ? "destructive" : "default"}
+      >
         <AlertTitle>{alertInfo.title}</AlertTitle>
         <AlertDescription>{alertInfo.description}</AlertDescription>
       </Alert>
