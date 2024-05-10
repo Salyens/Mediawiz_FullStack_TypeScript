@@ -46,8 +46,8 @@
 }
 
 .card_description {
-  font-family: "Roboto" serif;
   color: rgba(156, 163, 175, 1);
+  /* font-family: "Roboto" serif; */
 }
 
 .circle_wrapper {

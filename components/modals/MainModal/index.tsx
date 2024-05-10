@@ -1,6 +1,6 @@
 "use client";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import styles from "./dialogclient.module.css";
+import styles from ".//mainmodal.module.css";
 import { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import validator from "validator";
@@ -12,6 +12,7 @@ const MainModal = () => {
     name: "",
     phoneNumber: "",
     email: "",
+    accepted: false,
   });
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -24,7 +25,10 @@ const MainModal = () => {
       return setError("All fields are required");
     } else if (!validator.isEmail(info.email)) {
       return setError("Invalid email format");
-    }
+    } else if (!info.accepted)
+      return setError(
+        "Пожалуйста, оставьте согласие на обработку персональных данных"
+      );
 
     setLoading(true);
     try {
@@ -47,6 +51,7 @@ const MainModal = () => {
         name: "",
         phoneNumber: "",
         email: "",
+        accepted:false
       });
     }
   }, [isOpen]);
@@ -109,6 +114,29 @@ const MainModal = () => {
                 className={styles.input_email}
               />
             </div>
+            <div className="flex">
+              <div className="flex items-center p-2">
+                <input
+                  id="default-checkbox"
+                  type="checkbox"
+                  checked={info.accepted}
+                  onChange={(e) =>
+                    setInfo((prev) => ({
+                      ...prev,
+                      accepted: !prev.accepted,
+                    }))
+                  }
+                  className="w-4 h-4 text-blue-900 bg-black border-gray-300 border-2 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+              </div>
+
+              <p>
+                Я ознакомлен (а) с{" "}
+                <span className="font-bold">Политикой конфедециальности</span> и
+                согласен (а) на обработку персональных данных
+              </p>
+            </div>
+
             <div>
               <button type="submit" className={styles.btn}>
                 {loading ? (

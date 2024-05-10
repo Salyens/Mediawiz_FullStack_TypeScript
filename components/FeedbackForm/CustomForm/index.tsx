@@ -12,6 +12,7 @@ const CustomForm = () => {
     name: "",
     phoneNumber: "",
     email: "",
+    accepted: false,
   });
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -21,18 +22,21 @@ const CustomForm = () => {
     e.preventDefault();
 
     if (!info.name || !info.phoneNumber || !info.email) {
-      return setError("All fields are required");
+      return setError("Пожалуйста, заполните все поля");
     } else if (!validator.isEmail(info.email)) {
-      return setError("Invalid email format");
-    }
-
+      return setError("Неверный формат E-Mail адреса");
+    } else if (!info.accepted)
+      return setError(
+        "Пожалуйста, оставьте согласие на обработку персональных данных"
+      );
     setLoading(true);
+    
     try {
       const res = await axios.post("/api/feedback", info);
       setError("");
       setLoading(false);
       setSuccess(true);
-      setInfo({ name: "", phoneNumber: "", email: "" });
+      setInfo({ name: "", phoneNumber: "", email: "", accepted: false });
       return res;
     } catch (error) {
       setError("Something went wrong");
@@ -93,6 +97,29 @@ const CustomForm = () => {
                 required
                 className={styles.input_email}
               />
+            </div>
+
+            <div className="flex">
+              <div className="flex items-center p-2">
+                <input
+                  id="default-checkbox"
+                  type="checkbox"
+                  checked={info.accepted}
+                  onChange={(e) =>
+                    setInfo((prev) => ({
+                      ...prev,
+                      accepted: !prev.accepted,
+                    }))
+                  }
+                  className="w-4 h-4 text-blue-900 bg-black border-gray-300 border-2 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+              </div>
+
+              <p>
+                Я ознакомлен (а) с{" "}
+                <span className="font-bold">Политикой конфедециальности</span> и
+                согласен (а) на обработку персональных данных
+              </p>
             </div>
 
             <div>

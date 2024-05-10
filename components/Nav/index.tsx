@@ -8,6 +8,7 @@ import Image from "next/image";
 import styles from "./nav.module.css";
 import { usePathname } from "next/navigation";
 import { MotionDiv } from "@components/MotionDiv";
+import LanguageDropdown from "./LanguageDropdown";
 
 interface NavItem {
   name: string;
@@ -75,7 +76,10 @@ export default function Nav() {
                 </div>
                 <div className="flex flex-1 items-center">
                   <div className="flex items-center">
-                    <Link href="/" className="w-14 h-7 sm:w-[76px] sm:h-10 lg:w-24 lg:h-12 relative">
+                    <Link
+                      href="/"
+                      className="w-14 h-7 sm:w-[76px] sm:h-10 lg:w-24 lg:h-12 relative"
+                    >
                       <Image
                         priority={true}
                         alt="Logo"
@@ -108,6 +112,8 @@ export default function Nav() {
                 <div className="absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 hidden lg:flex">
                   {renderSocialLinks(socialLinks)}
                 </div>
+
+                <LanguageDropdown />
               </div>
             </div>
 

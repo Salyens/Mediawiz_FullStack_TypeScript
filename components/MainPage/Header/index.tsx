@@ -11,9 +11,9 @@ const Header = ({ main }: { main: MainSection }) => {
   return (
     <>
       <div
-        className=" sm:flex-row
+        className="sm:flex-row
         items-center sm:justify-between
-        mt-8 md:mt-0 ml-auto mr-auto max-w-screen-2xl relative main_container pl-2 pr-2 lg:pl-6 lg:pr-6"
+        mt-8 md:mt-0 relative w-screen pl-2 pr-2 lg:pl-6 lg:pr-6"
       >
         <Image
           src="/mainPage/ellipse-4.svg"
@@ -23,8 +23,16 @@ const Header = ({ main }: { main: MainSection }) => {
           className="absolute -z-10 blur-3xl top-1/2 -right-1/3"
         />
 
+        <Image
+          src={`/mainPage/Group.svg?v=${new Date().getTime()}`}
+          fill
+          style={{ objectFit: "contain" }}
+          alt="Header line"
+          className="absolute -z-10 top-1/2 -right-1/3"
+        />
+
         <div
-          className={`${styles.header_wrapper} flex-col sm:flex-row md:h-screen`}
+          className={`${styles.header_wrapper} main_container flex-col sm:flex-row md:h-screen`}
         >
           <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl ">
             <MotionDiv

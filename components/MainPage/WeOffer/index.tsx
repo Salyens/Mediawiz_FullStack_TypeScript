@@ -75,7 +75,7 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
             <MotionDiv
               initial={{ y: 600 }}
               animate={{ y: 0 }}
-              transition={{ ease: "easeOut", duration: 1 }}
+              transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
             >
               <UnderlinedTitle text={text} />
 
