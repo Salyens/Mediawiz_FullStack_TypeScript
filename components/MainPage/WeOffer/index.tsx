@@ -1,7 +1,7 @@
 "use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import OneCard from "./OneCard";
-
 import { MotionDiv } from "@components/MotionDiv";
 import styles from "./weoffer.module.css";
 import UnderlinedTitle from "./UnderlinedTitle";
@@ -9,7 +9,9 @@ import Image from "next/image";
 import { WeOfferSection } from "@interfaces";
 import { useInView } from "framer-motion";
 
+
 const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
+
   const { text } = weOffer.title;
   const offersList = weOffer.offers.offersList;
   const [isAnimate, setIsAnimate] = useState(false);

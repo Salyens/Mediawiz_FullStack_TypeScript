@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./footer.module.css";
-import { roboto } from "@app/layout";
+import { roboto } from "@app/[locale]/layout";
 
 interface SocialIcon {
   name: string;

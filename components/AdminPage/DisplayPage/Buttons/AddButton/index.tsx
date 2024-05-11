@@ -35,7 +35,7 @@ const AddButton: React.FC<AddButtonProps> = ({
         ...(currentSection[lastKey] || []),
         createEmptyItem(),
       ];
-      console.log("newData: ", newData);
+
       return newData;
     });
   };

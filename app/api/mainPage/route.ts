@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "User saved" }, { status: 200 });
   } catch (error) {
-    console.log("error: ", error);
+    console.log('error: ', error);
 
     return NextResponse.json(
       { message: "Something went wrong" },
@@ -68,6 +68,7 @@ export async function PATCH(req: Request) {
     uploadResponses.forEach((uploadResponse, index) => {
       if (uploadResponse && uploadResponse.data) {
         const filePath = filePaths[index];
+        console.log('filePath: ', filePath);
         const newUrl = uploadResponse.data.url;
         _.set(jsonData, filePath, newUrl);
       }

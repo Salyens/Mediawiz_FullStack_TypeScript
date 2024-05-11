@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const Header = ({ main }: { main: MainSection }) => {
   const { imgURL } = main.media.logo;
+  
 
   return (
     <>

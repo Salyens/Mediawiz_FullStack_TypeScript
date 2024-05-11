@@ -81,7 +81,6 @@ const mainBGVideoSchema = new Schema<Video>({
 const mainMediaSectionSchema = new Schema<MainMedia>({
   forAdminHeader: { type: String, required: true },
   logo: { type: imgSchema, required: true },
-  background: { type: mainBGVideoSchema, required: true },
 });
 
 const mainSectionSchema = new Schema<MainSection>({
@@ -103,7 +102,7 @@ const languageContentSchema = new Schema<LanguageContent>({
 
 const languagesSchema = new Schema<Languages>({
   ru: { type: languageContentSchema, required: true },
-  en: { type: languageContentSchema, required: false },
+  en: { type: languageContentSchema, required: true },
 });
 
 const MainPageSchema = new Schema<MainPageData>({

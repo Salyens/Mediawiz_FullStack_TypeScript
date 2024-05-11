@@ -6,8 +6,11 @@ import axios from "axios";
 import validator from "validator";
 import LoadingCircle from "@components/LoadingCircle";
 import SuccessAlert from "../SuccessAlert";
+import { useTranslations } from "next-intl";
 
 const MainModal = () => {
+  const t = useTranslations("Feedback");
+
   const [info, setInfo] = useState({
     name: "",
     phoneNumber: "",
@@ -61,7 +64,7 @@ const MainModal = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
           <button className={`${styles.btn_apply} w-full sm:w-80 mb-20`}>
-            Оставить заявку
+            {t("request")}
           </button>
         </DialogTrigger>
         <DialogContent

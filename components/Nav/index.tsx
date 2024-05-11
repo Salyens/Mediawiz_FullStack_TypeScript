@@ -8,25 +8,28 @@ import Image from "next/image";
 import styles from "./nav.module.css";
 import { usePathname } from "next/navigation";
 import { MotionDiv } from "@components/MotionDiv";
-import LanguageDropdown from "./LanguageDropdown";
+import LocalSwitcher from "./LocalSwitcher";
+import { useTranslations } from "next-intl";
 
 interface NavItem {
   name: string;
   href: string;
 }
 
-const navigation: NavItem[] = [
-  { name: "РAЗРАБОТКА САЙТА", href: "/web" },
-  { name: "КОНТЕКСТНАЯ РЕКЛАМА", href: "/webAd" },
-  { name: "ВЕДЕНИЕ СОЦСЕТЕЙ", href: "/smm" },
-  { name: "ТАРГЕТИРОВАННАЯ РЕКЛАМА", href: "/smmAds" },
-];
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Nav() {
+  const t = useTranslations("Navigation");
+
+  const navigation: NavItem[] = [
+    { name: t("web"), href: "/web" },
+    { name: t("webAd"), href: "/webAd" },
+    { name: t("smm"), href: "/smm" },
+    { name: t("smmAd"), href: "/smmAd" },
+  ];
+
   const pathname = usePathname();
   const [current, setCurrent] = useState<string>(pathname);
   const socialLinks = ["FB", "IG", "TG", "VK"];
@@ -113,7 +116,7 @@ export default function Nav() {
                   {renderSocialLinks(socialLinks)}
                 </div>
 
-                <LanguageDropdown />
+                <LocalSwitcher />
               </div>
             </div>
 

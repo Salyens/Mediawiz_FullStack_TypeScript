@@ -40,7 +40,7 @@ export const authOptions = {
         if (!credentials) return null;
         try {
           const user = await login(credentials as ICredentials);
-          console.log("user: ", user);
+
           return user;
         } catch (error) {
           throw new Error("Failed to login");
