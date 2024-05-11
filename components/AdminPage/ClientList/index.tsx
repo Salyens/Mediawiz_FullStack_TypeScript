@@ -55,8 +55,7 @@ const ClientList = () => {
         setIsLoading(false);
       }
     };
-
-    fetchData();
+   fetchData();
   }, []);
 
   const table = useReactTable({

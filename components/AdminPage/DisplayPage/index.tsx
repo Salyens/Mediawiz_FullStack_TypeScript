@@ -9,6 +9,7 @@ import SaveButton from "./Buttons/SaveButton";
 import SaveAlert from "./Buttons/SaveButton/SaveAlert";
 import { SaveAlertProps } from "../../../types/admin";
 
+
 interface DisplayPageProps {
   endPoint: string;
 }
@@ -38,7 +39,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps) => {
       {error && <p className="text-red-700 text-center">{error}</p>}
       {data && (
         <>
-          <PageHeader data={data}/>
+          <PageHeader data={data} />
           <RenderData
             data={data}
             setData={setData}

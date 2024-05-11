@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-
 const Login = () => {
   const localActive = useLocale();
   const [data, setData] = useState({ email: "", password: "" });
@@ -15,13 +14,14 @@ const Login = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { status } = useSession();
-  console.log('status: ', status);
+
 
   useEffect(() => {
+
     if (status === "authenticated") {
       router.replace(`/${localActive}/admin`);
     }
-  }, [status, router]);
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,6 +41,7 @@ const Login = () => {
         setIsLoading(false);
         return setError("Invalid email or password");
       }
+
       router.replace(`/${localActive}/admin`);
     } catch (error: any) {
       setIsLoading(false);
