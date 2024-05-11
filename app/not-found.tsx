@@ -1,18 +1,29 @@
+"use client";
+
+import Error from "next/error";
 import Link from "next/link";
+
+// Render the default Next.js 404 page when a route
+// is requested that doesn't match the middleware and
+// therefore doesn't have a locale associated with it.
 
 export default function NotFound() {
   return (
-    <div
-      className="flex items-center justify-center flex-col text-xl"
-      style={{ height: "calc(100vh - 100px)" }}
-    >
-      <div>
-        <h2 className="mb-2">Not Found</h2>
-        <p className="mb-2">Could not find requested resource</p>
-        <Link style={{ color: "rgba(151, 71, 255, 1)" }} href="/">
-          Return Home
-        </Link>
-      </div>
-    </div>
+    <html lang="en">
+      <body>
+        <div
+          className="flex items-center justify-center flex-col text-xl"
+          style={{ height: "calc(100vh - 100px)" }}
+        >
+          <div>
+            <h2 className="mb-2">Not Found</h2>
+            <p className="mb-2">Could not find requested resource</p>
+            <Link style={{ color: "rgba(151, 71, 255, 1)" }} href="/">
+              Return Home
+            </Link>
+          </div>
+        </div>
+      </body>
+    </html>
   );
 }

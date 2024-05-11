@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MainPageData } from "@interfaces";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
+import { useTranslations } from "next-intl";
 type SaveAlertProps = "error" | "saved" | "";
 
 interface SaveButtonProps {
@@ -34,6 +35,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
   const buttonContent = isDisabled
     ? "Please fill in all required fields"
     : null;
+  const t = useTranslations("AdminEditPage");
 
   const handleSaveData = async () => {
     setLoading(true);
@@ -78,7 +80,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
                 <LoadingCircle />
               </div>
             ) : (
-              "СОХРАНИТЬ"
+              t("SaveBtn")
             )}
           </button>
         </span>

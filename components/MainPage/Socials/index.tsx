@@ -2,6 +2,7 @@
 
 import { MotionDiv } from "@components/MotionDiv";
 import { useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -21,6 +22,7 @@ const Socials = () => {
   const [isAnimate, setIsAnimate] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const t = useTranslations("MainPage");
 
   useEffect(() => {
     if (isInView) setIsAnimate(true);
@@ -59,7 +61,7 @@ const Socials = () => {
           <div className="main_container pr-6 pl-6 mt-10">
             <div className="flex sm:justify-between items-center flex-col lg:flex-row min-h-40 xl:min-h-80 pb-2 gap-2 sm:gap-8">
               <p className="font-bold md:text-4xl xl:text-5xl 2xl:text-6xl sm:text-3xl text-xl mb-4 md:mb-0">
-                МЫ В СОЦИАЛЬНЫХ СЕТЯХ
+                {t("weInSocial")}
               </p>
               <div className="flex justify-between items-center">
                 {renderSocialLinks()}

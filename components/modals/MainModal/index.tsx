@@ -9,7 +9,7 @@ import SuccessAlert from "../SuccessAlert";
 import { useTranslations } from "next-intl";
 
 const MainModal = () => {
-  const t = useTranslations("Feedback");
+  const t = useTranslations("MainForm");
 
   const [info, setInfo] = useState({
     name: "",
@@ -54,7 +54,7 @@ const MainModal = () => {
         name: "",
         phoneNumber: "",
         email: "",
-        accepted:false
+        accepted: false,
       });
     }
   }, [isOpen]);
@@ -64,7 +64,7 @@ const MainModal = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
           <button className={`${styles.btn_apply} w-full sm:w-80 mb-20`}>
-            {t("request")}
+            {t("request_2")}
           </button>
         </DialogTrigger>
         <DialogContent
@@ -78,7 +78,7 @@ const MainModal = () => {
                 value={info.name}
                 name="name"
                 type="text"
-                placeholder="Имя"
+                placeholder={t("name")}
                 onChange={(e) =>
                   setInfo((prev) => ({ ...prev, name: e.target.value }))
                 }
@@ -93,7 +93,7 @@ const MainModal = () => {
                 name="phoneNumber"
                 type="number"
                 value={info.phoneNumber}
-                placeholder="Телефон"
+                placeholder={t("phone")}
                 onChange={(e) =>
                   setInfo((prev) => ({ ...prev, phoneNumber: e.target.value }))
                 }
@@ -134,9 +134,9 @@ const MainModal = () => {
               </div>
 
               <p>
-                Я ознакомлен (а) с{" "}
-                <span className="font-bold">Политикой конфедециальности</span> и
-                согласен (а) на обработку персональных данных
+                {t("policy_1")}
+                <span className="font-bold">{t("policy_2")}</span>{" "}
+                {t("policy_3")}
               </p>
             </div>
 
@@ -147,7 +147,7 @@ const MainModal = () => {
                     <LoadingCircle />
                   </div>
                 ) : (
-                  "Оставить заявку"
+                  t("request_2")
                 )}
               </button>
             </div>

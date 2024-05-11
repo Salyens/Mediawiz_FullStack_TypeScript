@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { MotionDiv } from "@components/MotionDiv";
 import LocalSwitcher from "./LocalSwitcher";
 import { useTranslations } from "next-intl";
+import { ILocal } from "@interfaces/mainPage";
 
 interface NavItem {
   name: string;
@@ -20,7 +21,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Nav() {
+export default function Nav({ locale }: ILocal) {
   const t = useTranslations("Navigation");
 
   const navigation: NavItem[] = [
@@ -97,7 +98,7 @@ export default function Nav() {
                       {navigation.map((item) => (
                         <Link
                           key={item.name}
-                          href={item.href}
+                          href={`/${locale}/${item.href}`}
                           className={classNames(
                             item.href === current
                               ? `${styles.currentPage}`
@@ -116,7 +117,7 @@ export default function Nav() {
                   {renderSocialLinks(socialLinks)}
                 </div>
 
-                <LocalSwitcher />
+                <LocalSwitcher locale={locale} />
               </div>
             </div>
 

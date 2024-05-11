@@ -6,6 +6,7 @@ import styles from "./oneperson.module.css";
 import Link from "next/link";
 import { useInView } from "framer-motion";
 import { MotionDiv } from "@components/MotionDiv";
+import { useTranslations } from "next-intl";
 
 interface QuoteProps {
   name: string;
@@ -24,6 +25,7 @@ const OnePerson: React.FC<QuoteProps> = ({
   const [isAnimate, setIsAnimate] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const t = useTranslations("MainPage");
 
   useEffect(() => {
     if (isInView) setIsAnimate(true);
@@ -88,7 +90,7 @@ const OnePerson: React.FC<QuoteProps> = ({
                       href="#"
                     >
                       <span className={`text-2xl 2xl:text-3xl ${styles.link}`}>
-                        Узнать больше
+                        {t("findMore")}
                       </span>
                       <Image
                         className="pl-3"

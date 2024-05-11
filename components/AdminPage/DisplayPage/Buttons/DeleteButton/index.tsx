@@ -1,5 +1,6 @@
 import { MainPageData } from "@interfaces";
 import _ from "lodash";
+import { useTranslations } from "next-intl";
 
 interface DeleteButtonProps {
   currentPath: string;
@@ -16,6 +17,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 }) => {
   const lodashPath = currentPath.replace(/\[(\d+)\]/g, ".$1");
   const itemKeys = Object.keys(item);
+  const t = useTranslations("AdminEditPage");
 
   const deleteItem = () => {
     onSetEmptyFields((prevEmptyFields) => {
@@ -52,7 +54,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
         onClick={deleteItem}
         className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-1 text-sm"
       >
-        УДАЛИТЬ БЛОК
+        {t("deleteBlock")}
       </button>
     </div>
   );

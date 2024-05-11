@@ -7,11 +7,13 @@ import CustomForm from "./CustomForm";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { MotionDiv } from "@components/MotionDiv";
+import { useTranslations } from "next-intl";
 
 const FeedbackForm = () => {
   const [isAnimate, setIsAnimate] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const t = useTranslations("MainForm");
 
   useEffect(() => {
     if (isInView) setIsAnimate(true);
@@ -36,7 +38,7 @@ const FeedbackForm = () => {
                 }}
                 className={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 w-full lg:w-2/5 xl:w-2/5 sm:items-center lg:items-start ${styles.description}`}
               >
-                <p>ЕСЛИ У ВАС ОСТАЛИСЬ ВОПРОСЫ - СВЯЖИТЕСЬ С НАМИ</p>
+                <p>{t("description")}</p>
                 <Link href="tel:+79033750261">
                   <div className="flex items-center gap-2">
                     <Image
@@ -48,7 +50,7 @@ const FeedbackForm = () => {
                     <span>8-903-375-02-61</span>
                   </div>
                 </Link>
-                <p>ИЛИ ОСТАВЬТЕ ЗАЯВКУ</p>
+                <p>{t("request")}</p>
               </MotionDiv>
               <MotionDiv
                 initial={{ x: 2000 }}

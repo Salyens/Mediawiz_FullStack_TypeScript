@@ -5,6 +5,7 @@ import { MainPageData } from "@interfaces";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
 import { SaveAlertProps } from "../../../../types/admin";
+import { useTranslations } from "next-intl";
 
 interface RenderDataProps {
   data: MainPageData;
@@ -25,7 +26,7 @@ const RenderData: React.FC<RenderDataProps> = ({
     return (
       <div className="text-xl">
         {Object.entries(dataToRender).map(([key, value], index) => {
-          if (key === "_id" || key === "pageName") return null;
+          if (key === "_id" || key === "pageName" || key === "href") return null;
           const newPath = currentPath ? `${currentPath}.${key}` : key;
           const itemKey = `${newPath}-${index}`;
 
@@ -76,7 +77,9 @@ const RenderData: React.FC<RenderDataProps> = ({
               <React.Fragment key={itemKey}>
                 {value.map((item, arrayIndex) => (
                   <React.Fragment key={`${newPath}-${arrayIndex}`}>
-                    <h6>{`Блок-${arrayIndex + 1}`}</h6>
+                    <h6>{`№${
+                      arrayIndex + 1
+                    }`}</h6>
 
                     {typeof item === "object" ? (
                       <>

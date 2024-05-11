@@ -2,12 +2,12 @@ import DisplayPage from "@components/AdminPage/DisplayPage";
 
 interface SinglePageProps {
   params: {
-    pageName: string; 
+    pageName: string;
   };
 }
 
-const SinglePage = ({ params }:SinglePageProps) => {
-  return <DisplayPage endPoint={params.pageName} />;
+const SinglePage = ({ params: { pageName } }: SinglePageProps) => {
+  return <DisplayPage endPoint={pageName} />;
 };
 
 export default SinglePage;

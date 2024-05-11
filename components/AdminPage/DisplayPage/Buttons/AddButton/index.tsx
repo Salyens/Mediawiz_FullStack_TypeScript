@@ -1,4 +1,5 @@
 import { MainPageData } from "@interfaces";
+import { useTranslations } from "next-intl";
 
 interface AddButtonProps {
   currentPath: string;
@@ -11,6 +12,7 @@ const AddButton: React.FC<AddButtonProps> = ({
   item,
   setData,
 }) => {
+  const t = useTranslations("AdminEditPage");
   const createEmptyItem = () => {
     return Object.keys(item).reduce((acc, key) => {
       if (key !== "_id") acc[key] = "";
@@ -46,7 +48,7 @@ const AddButton: React.FC<AddButtonProps> = ({
         onClick={addItem}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm"
       >
-        ДОБАВИТЬ НОВЫЙ БЛОК
+        {t("addBlock")}
       </button>
     </div>
   );

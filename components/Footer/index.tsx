@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./footer.module.css";
 import { roboto } from "@app/[locale]/layout";
+import { useTranslations } from "next-intl";
 
 interface SocialIcon {
   name: string;
@@ -10,6 +11,7 @@ interface SocialIcon {
 }
 
 const Footer = () => {
+  const t = useTranslations("Footer");
   const socialIcons: SocialIcon[] = [
     { name: "Telegram", src: "/TG" },
     { name: "VKontakte", src: "/VK" },
@@ -41,7 +43,7 @@ const Footer = () => {
         {renderSocialLinks()}
       </div>
       <Link href="tel:+79033750261">8-903-375-02-61</Link>
-      <div className="font-bold">Политика конфеденциальности</div>
+      <div className="font-bold">{t("policy")}</div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import axios from "axios";
 import validator from "validator";
 import styles from "../feedbackform.module.css";
 import SuccessAlert from "@components/modals/SuccessAlert";
+import { useTranslations } from "next-intl";
 
 const CustomForm = () => {
   const [info, setInfo] = useState({
@@ -17,6 +18,7 @@ const CustomForm = () => {
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
+  const t = useTranslations("MainForm");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,7 +32,7 @@ const CustomForm = () => {
         "Пожалуйста, оставьте согласие на обработку персональных данных"
       );
     setLoading(true);
-    
+
     try {
       const res = await axios.post("/api/feedback", info);
       setError("");
@@ -59,7 +61,7 @@ const CustomForm = () => {
                 value={info.name}
                 name="name"
                 type="text"
-                placeholder="Имя"
+                placeholder={t("name")}
                 onChange={(e) =>
                   setInfo((prev) => ({ ...prev, name: e.target.value }))
                 }
@@ -74,7 +76,7 @@ const CustomForm = () => {
                 name="phoneNumber"
                 type="number"
                 value={info.phoneNumber}
-                placeholder="Телефон"
+                placeholder={t("phone")}
                 onChange={(e) =>
                   setInfo((prev) => ({ ...prev, phoneNumber: e.target.value }))
                 }
@@ -116,9 +118,9 @@ const CustomForm = () => {
               </div>
 
               <p>
-                Я ознакомлен (а) с{" "}
-                <span className="font-bold">Политикой конфедециальности</span> и
-                согласен (а) на обработку персональных данных
+                {t("policy_1")}
+                <span className="font-bold">{t("policy_2")}</span>{" "}
+                {t("policy_3")}
               </p>
             </div>
 
@@ -129,7 +131,7 @@ const CustomForm = () => {
                     <LoadingCircle />
                   </div>
                 ) : (
-                  "Оставить заявку"
+                  t("request_2")
                 )}
               </button>
             </div>

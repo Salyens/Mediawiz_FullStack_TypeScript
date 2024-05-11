@@ -2,7 +2,6 @@
 
 import MyPages from "@components/AdminPage/MyPages";
 
-
 const AllPages = () => {
   return <MyPages />;
 };

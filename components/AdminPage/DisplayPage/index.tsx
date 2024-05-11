@@ -13,7 +13,7 @@ interface DisplayPageProps {
   endPoint: string;
 }
 
-const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
+const DisplayPage = ({ endPoint }: DisplayPageProps) => {
   const [data, setData] = useState<MainPageData | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
   const [formData, setFormData] = useState<FormData>(new FormData());
@@ -38,7 +38,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps): JSX.Element => {
       {error && <p className="text-red-700 text-center">{error}</p>}
       {data && (
         <>
-          <PageHeader data={data} />
+          <PageHeader data={data}/>
           <RenderData
             data={data}
             setData={setData}

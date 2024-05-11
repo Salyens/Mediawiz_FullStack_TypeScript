@@ -1,23 +1,42 @@
 {
-    "IndexPage": {
-      "title": "English",
-      "description": "Welcome to the Next.js Internationalization (i18n) example! This demo showcases the power of the App Router and how to manage multilingual content seamlessly using next-intl."
-    },
-    "NotFoundPage": {
-      "title": "Page Not Found",
-      "description": "Oops! It seems like you've stumbled upon a page that doesn't exist. Don't worry, our internationalization magic is still hard at work on other parts of the app. Feel free to navigate back to explore more!"
-    },
-    "Navigation": {
-      "web": "WEB DEVELOPMENT",
-      "webAd": "WEBSITE PROMOTION",
-      "smm": "SMM",
-      "smmAd": "SMM PROMOTION"
-    },
-    "Feedback": {
-      "request": "Leave a request"
-    },
-
-    "Footer": {
-      "copyright": "© 2024 Your App. All rights reserved."
-    }
+  "MainPage": {
+    "weInSocial": "IF YOU HAVE ANY QUESTIONS - CONTACT US",
+    "findMore": "Find out more"
+  },
+  "MainForm": {
+    "description": "WE ARE IN SOCIAL MEDIA",
+    "request": "OR LEAVE A REQUEST",
+    "policy_1": "I agree with",
+    "policy_2": "the Privacy Policy",
+    "policy_3": "and consent to the processing of personal data",
+    "request_2": "Leave a request",
+    "name": "Name",
+    "phone": "Phone number"
+  },
+  "NotFoundPage": {
+    "title": "Page Not Found",
+    "description": "Oops! It seems like you've stumbled upon a page that doesn't exist. Don't worry, our internationalization magic is still hard at work on other parts of the app. Feel free to navigate back to explore more!"
+  },
+  "Navigation": {
+    "web": "WEB DEVELOPMENT",
+    "webAd": "WEBSITE PROMOTION",
+    "smm": "SMM",
+    "smmAd": "SMM PROMOTION",
+    "home": "HOME PAGE",
+    "myClients": "MY PAGES"
+  },
+  "Feedback": {
+    "request": "Leave a request"
+  },
+  "Footer": {
+    "policy": "The Privacy Policy"
+  },
+  "AdminEditPage": {
+    "Editing": "Editing page",
+    "SaveBtn": "SAVE",
+    "uploadBtn": "UPLOAD FILE",
+    "deleteBlock": "DELETE BLOCK",
+    "addBlock": "ADD A NEW BLOCK",
+    "block": "Block"
   }
+}

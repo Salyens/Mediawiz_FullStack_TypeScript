@@ -1,9 +1,6 @@
 import MainPage from "@components/MainPage";
 import { LanguageContent, MainPageData } from "../../interfaces";
-
-type HomePageProps = {
-  params: { locale: "en" | "ru" };
-};
+import { useLocale } from "next-intl";
 
 export const metadata = {
   title: "Home page",
@@ -19,8 +16,10 @@ async function getData(): Promise<MainPageData> {
   return data;
 }
 
-export default async function Home({ params: { locale } }: HomePageProps) {
+export default async function Home() {
+  const localActive = useLocale();
   const data = await getData();
 
-  return <MainPage data={data.languages[locale] as LanguageContent}/>
+  if (localActive === "en" || localActive === "ru")
+    return <MainPage data={data.languages[localActive] as LanguageContent} />;
 }

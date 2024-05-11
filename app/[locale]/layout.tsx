@@ -21,7 +21,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
   session: any;
   params: {
-    locale: string;
+    locale: "en" | "ru";
   };
 }
 
@@ -43,7 +43,7 @@ export default async function RootLayout({
         >
           <Provider session={session}>
             <NextIntlClientProvider messages={messages}>
-              <Nav />
+              <Nav locale={locale} />
               <main
                 className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24"
                 style={{ flexGrow: 1 }}

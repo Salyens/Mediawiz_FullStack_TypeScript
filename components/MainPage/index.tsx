@@ -6,7 +6,6 @@ import QuotesList from "./QuotesList";
 import TogetherBlock from "./TogetherBlock/OurPhoto";
 import OurGoals from "./TogetherBlock/OurGoals";
 import FeedbackForm from "@components/FeedbackForm";
-import { useTranslations } from "next-intl";
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;
