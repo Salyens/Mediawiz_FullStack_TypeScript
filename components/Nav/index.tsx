@@ -17,10 +17,6 @@ interface NavItem {
   href: string;
 }
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Nav({ locale }: ILocal) {
   const t = useTranslations("Navigation");
 
@@ -62,10 +58,10 @@ export default function Nav({ locale }: ILocal) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
     >
-      <Disclosure as="nav" className={styles.bg}>
+      <Disclosure as="nav">
         {({ open }) => (
-          <>
-            <div className="mx-auto max-w-7xl pl-2 pr-2 lg:pl-6 lg:pr-6 h-12 sm:h-16 lg:h-20 xl:h-24 flex justify-between items-center max_width">
+          <div className={`${styles.bg} ${open && "border-0 shadow-none"}`}>
+            <div className=" mx-auto max-w-7xl pl-2 pr-2 lg:pl-6 lg:pr-6 h-12 sm:h-16 lg:h-20 xl:h-24 flex justify-between items-center max_width">
               <div className="relative flex h-16 items-center justify-between w-full">
                 <div className="absolute inset-y-0 right-0 flex items-center lg:hidden ">
                   <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -99,13 +95,9 @@ export default function Nav({ locale }: ILocal) {
                         <Link
                           key={item.name}
                           href={`/${locale}/${item.href}`}
-                          className={classNames(
-                            item.href === current
-                              ? `${styles.currentPage}`
-                              : "",
-                            ` px-1 py-1 text-sm md:text-base  ${styles.navLinks}`
-                          )}
-                          aria-current={item.href ? "page" : undefined}
+                          className={`${
+                            item.href === current ? styles.currentPage : ""
+                          } px-1 py-1 text-sm md:text-base ${styles.navLinks}`}
                         >
                           {item.name}
                         </Link>
@@ -117,31 +109,28 @@ export default function Nav({ locale }: ILocal) {
                   {renderSocialLinks(socialLinks)}
                 </div>
 
-                <LocalSwitcher locale={locale} />
+                <div className="hidden lg:flex ml-5 2xl:ml-16 xl:ml-10 lg:ml-8">
+                  <LocalSwitcher />
+                </div>
               </div>
             </div>
 
             <Disclosure.Panel className="lg:hidden">
-              <div className="space-y-1 px-2 pb-3 pt-2">
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.href
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block rounded-md px-3 py-2 text-base font-medium"
-                    )}
-                    aria-current={item.href ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
+              <div className="flex flex-col items-center gap-4 ">
+                <div className={`${styles.line_mini} gap-2 pb-8`}>
+                  {navigation.map((item) => (
+                    <Disclosure.Button key={item.name} as="a" href={item.href}>
+                      {item.name}
+                    </Disclosure.Button>
+                  ))}
+                </div>
+                <div className="flex">{renderSocialLinks(socialLinks)}</div>
+                <div>
+                  <LocalSwitcher />
+                </div>
               </div>
             </Disclosure.Panel>
-          </>
+          </div>
         )}
       </Disclosure>
     </MotionDiv>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import styles from "./successalert.module.css";
+import { useTranslations } from "next-intl";
 
 interface SuccessAlertProps {
   success: boolean;
@@ -8,19 +9,18 @@ interface SuccessAlertProps {
 }
 
 const SuccessAlert: React.FC<SuccessAlertProps> = ({ success, setSuccess }) => {
+  const t = useTranslations("SuccessForm");
   const [visible, setVisible] = useState(true);
   const alertInfo = {
-    title: !success ? "Ошибка" : "Выполнено",
-    description: !success
-      ? "Что-то пошло не так"
-      : "Ваша заявка успешно принята",
+    title: !success ? t("error") : t("success"),
+    description: !success ? t("request_error") : t("request_ok"),
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(false);
       setSuccess(false);
-    }, 2500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [success]);

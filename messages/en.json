@@ -11,7 +11,16 @@
     "policy_3": "and consent to the processing of personal data",
     "request_2": "Leave a request",
     "name": "Name",
-    "phone": "Phone number"
+    "phone": "Phone number",
+    "fillPolicy": "Please provide your consent for the processing of personal data",
+    "fillFields":"Please fill in all the fields",
+    "errorEmail":"Invalid E-Mail address format"
+  },
+  "SuccessForm": {
+    "success": "Success",
+    "error": "Error",
+    "request_ok": "Your application has been successfully accepted",
+    "request_error": "Something went wrong"
   },
   "NotFoundPage": {
     "title": "Page Not Found",

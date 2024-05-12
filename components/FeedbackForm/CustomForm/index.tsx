@@ -24,13 +24,10 @@ const CustomForm = () => {
     e.preventDefault();
 
     if (!info.name || !info.phoneNumber || !info.email) {
-      return setError("Пожалуйста, заполните все поля");
+      return setError(t("fillFields"));
     } else if (!validator.isEmail(info.email)) {
-      return setError("Неверный формат E-Mail адреса");
-    } else if (!info.accepted)
-      return setError(
-        "Пожалуйста, оставьте согласие на обработку персональных данных"
-      );
+      return setError(t("errorEmail"));
+    } else if (!info.accepted) return setError(t("fillPolicy"));
     setLoading(true);
 
     try {
