@@ -44,6 +44,7 @@ export default function LocalSwitcher() {
                     width={34}
                     height={16}
                     alt="flag"
+                    priority
                   />
                   <span className="text-lg">{item.toUpperCase()}</span>
                 </div>

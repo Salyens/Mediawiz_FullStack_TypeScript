@@ -14,7 +14,7 @@ const PageHeader = ({ data }: PageHeaderProps) => {
       : "";
   return (
     <h2 className="text-center text-3xl">
-      {t("Editing")} "{pageName}"
+      Editing page "{pageName}"
     </h2>
   );
 };

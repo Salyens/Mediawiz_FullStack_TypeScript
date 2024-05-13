@@ -1,105 +1,5 @@
 {
   "languages": {
-    "ru": {
-      "pageName": "Главная",
-      "main": {
-        "forAdminHeader": "Раздел 'Главная'",
-        "media": {
-          "forAdminHeader": "Медиа-файлы",
-          "logo": {
-            "forAdmin": "Логотип",
-            "imgURL": "/media/1711969596096.png"
-          }
-        },
-        "header_1": {
-          "forAdmin": "Заголовок-1",
-          "text": "СОЗДАЕМ УНИКАЛЬНЫЕ СТРАТЕГИИ"
-        },
-        "header_2": {
-          "forAdmin": "Заголовок-2",
-          "text": "ДЛЯ ВАШЕГО БИЗНЕСА"
-        },
-        "description_1": {
-          "forAdmin": "Описание-1",
-          "text": "Мы - команда MediaWiz"
-        },
-        "description_2": {
-          "forAdmin": "Описание-2",
-          "text": "Берем на себя все от А до Я"
-        }
-      },
-      "weOffer": {
-        "forAdminHeader": "Раздел 'Мы предлагаем'",
-        "title": {
-          "forAdmin": "Заголовок",
-          "text": "МЫ ПРЕДЛАГАЕМ КОМПЛЕКСНЫЙ ПОДХОД, КОТОРЫЙ ВКЛЮЧАЕТ В СЕБЯ:"
-        },
-        "offers": {
-          "forAdmin": "Наши предложения",
-          "offersList": [
-            {
-              "header": "РАЗРАБОТКА ВЕБ-САЙТОВ",
-              "description": "Сайты-визитки, корпоративные сайты, интернет-магазины",
-              "href": "/web"
-            },
-            {
-              "header": "SMM: ВЕДЕНИЕ И ПРОДВИЖЕНИЕ СОЦСЕТЕЙ С НУЛЯ",
-              "description": "Instagram, Facebook, Telegram, YouTube, VKontakte",
-              "href": "/smm"
-            },
-            {
-              "header": "РЕКЛАМА В СОЦСЕТЯХ",
-              "description": "Таргетированная реклама",
-              "href": "/smmAds"
-            },
-            {
-              "header": "РЕКЛАМА САЙТОВ В GOOGLE ADS, ЯНДЕКС.ДИРЕКТ",
-              "description": "Контекстная реклама",
-              "href": "/webAd"
-            }
-          ]
-        }
-      },
-      "quotes": {
-        "forAdminHeader": "Раздел 'Цитаты'",
-        "quotesList": [
-          {
-            "name": "Анна",
-            "imgURL": "/media/1711969596096.png",
-            "description": "Помогаю бизнесам найти их голос в социальных сетях. Мой подход - это сочетание креатива и стратегии, чтобы каждый пост не только привлекал внимание, но и работал на ваш бизнес."
-          },
-          {
-            "name": "Артем",
-            "imgURL": "/media/1711969596096.png",
-            "description": "Создаю сайты с мощными инструментами для продвижения и помогаю компаниям выходить на новый уровень в интернет-пространстве."
-          }
-        ]
-      },
-
-      "ourGoals": {
-        "forAdminHeader": "Раздел 'Наши цели'",
-        "ourPhoto": {
-          "forAdmin": "Общее фото",
-          "imgURL": "/media/1711969596096.png"
-        },
-
-        "goals": {
-          "forAdmin": "Цели",
-          "goalsList": [
-            {
-              "partOne": "Наша цель - сделать ваш бизнес успешным",
-              "and": "и",
-              "partTwo": "узнаваемым в цифровой эпохе"
-            },
-            {
-              "partOne": "Наш подход - не просто выполнить задачу,",
-              "and": "а",
-              "partTwo": "добиться результата!"
-            }
-          ]
-        }
-      }
-    },
     "en": {
       "pageName": "Home",
       "main": {
@@ -193,6 +93,106 @@
               "partOne": "Our approach is not just to complete the task,",
               "and": "but",
               "partTwo": "to achieve results!"
+            }
+          ]
+        }
+      }
+    },
+    "ru": {
+      "pageName": "Home",
+      "main": {
+        "forAdminHeader": "Раздел 'Главная'",
+        "media": {
+          "forAdminHeader": "Медиа-файлы",
+          "logo": {
+            "forAdmin": "Логотип",
+            "imgURL": "/media/1711969596096.png"
+          }
+        },
+        "header_1": {
+          "forAdmin": "Заголовок-1",
+          "text": "СОЗДАЕМ УНИКАЛЬНЫЕ СТРАТЕГИИ"
+        },
+        "header_2": {
+          "forAdmin": "Заголовок-2",
+          "text": "ДЛЯ ВАШЕГО БИЗНЕСА"
+        },
+        "description_1": {
+          "forAdmin": "Описание-1",
+          "text": "Мы - команда MediaWiz"
+        },
+        "description_2": {
+          "forAdmin": "Описание-2",
+          "text": "Берем на себя все от А до Я"
+        }
+      },
+      "weOffer": {
+        "forAdminHeader": "Раздел 'Мы предлагаем'",
+        "title": {
+          "forAdmin": "Заголовок",
+          "text": "МЫ ПРЕДЛАГАЕМ КОМПЛЕКСНЫЙ ПОДХОД, КОТОРЫЙ ВКЛЮЧАЕТ В СЕБЯ:"
+        },
+        "offers": {
+          "forAdmin": "Наши предложения",
+          "offersList": [
+            {
+              "header": "РАЗРАБОТКА ВЕБ-САЙТОВ",
+              "description": "Сайты-визитки, корпоративные сайты, интернет-магазины",
+              "href": "/web"
+            },
+            {
+              "header": "SMM: ВЕДЕНИЕ И ПРОДВИЖЕНИЕ СОЦСЕТЕЙ С НУЛЯ",
+              "description": "Instagram, Facebook, Telegram, YouTube, VKontakte",
+              "href": "/smm"
+            },
+            {
+              "header": "РЕКЛАМА В СОЦСЕТЯХ",
+              "description": "Таргетированная реклама",
+              "href": "/smmAds"
+            },
+            {
+              "header": "РЕКЛАМА САЙТОВ В GOOGLE ADS, ЯНДЕКС.ДИРЕКТ",
+              "description": "Контекстная реклама",
+              "href": "/webAd"
+            }
+          ]
+        }
+      },
+      "quotes": {
+        "forAdminHeader": "Раздел 'Цитаты'",
+        "quotesList": [
+          {
+            "name": "Анна",
+            "imgURL": "/media/1711969596096.png",
+            "description": "Помогаю бизнесам найти их голос в социальных сетях. Мой подход - это сочетание креатива и стратегии, чтобы каждый пост не только привлекал внимание, но и работал на ваш бизнес."
+          },
+          {
+            "name": "Артем",
+            "imgURL": "/media/1711969596096.png",
+            "description": "Создаю сайты с мощными инструментами для продвижения и помогаю компаниям выходить на новый уровень в интернет-пространстве."
+          }
+        ]
+      },
+
+      "ourGoals": {
+        "forAdminHeader": "Раздел 'Наши цели'",
+        "ourPhoto": {
+          "forAdmin": "Общее фото",
+          "imgURL": "/media/1711969596096.png"
+        },
+
+        "goals": {
+          "forAdmin": "Цели",
+          "goalsList": [
+            {
+              "partOne": "Наша цель - сделать ваш бизнес успешным",
+              "and": "и",
+              "partTwo": "узнаваемым в цифровой эпохе"
+            },
+            {
+              "partOne": "Наш подход - не просто выполнить задачу,",
+              "and": "а",
+              "partTwo": "добиться результата!"
             }
           ]
         }

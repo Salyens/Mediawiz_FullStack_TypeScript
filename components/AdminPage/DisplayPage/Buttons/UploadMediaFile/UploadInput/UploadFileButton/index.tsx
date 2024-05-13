@@ -16,7 +16,7 @@ const UploadFileButton: React.FC<UploadFileButtonProps> = ({
         onClick={handleButtonClick}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm"
       >
-        {t("uploadBtn")}
+       UPLOAD FILE
       </button>
       <span className="sm:text-xs">
         {type === "image" ? "Max size 5 MB" : "Max size 30 MB"}

@@ -5,7 +5,7 @@ import { MainPageData } from "@interfaces";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
 import { SaveAlertProps } from "../../../../types/admin";
-import { useTranslations } from "next-intl";
+import styles from "../displaydata.module.css";
 
 interface RenderDataProps {
   data: MainPageData;
@@ -22,11 +22,19 @@ const RenderData: React.FC<RenderDataProps> = ({
   setFormData,
   saveStatus,
 }) => {
-  const renderData = (dataToRender: MainPageData, currentPath = "") => {
+  const renderData = (dataToRender: any, currentPath = "") => {
+    const sortedKeys = Object.keys(dataToRender).sort((a, b) => {
+      if (a === "en" && b === "ru") return -1;
+      if (a === "ru" && b === "en") return 1;
+      return 0;
+    });
     return (
       <div className="text-xl">
-        {Object.entries(dataToRender).map(([key, value], index) => {
-          if (key === "_id" || key === "pageName" || key === "href") return null;
+        {sortedKeys.map((key, index) => {
+          const value = dataToRender[key];
+          if (key === "_id" || key === "pageName" || key === "href")
+            return null;
+
           const newPath = currentPath ? `${currentPath}.${key}` : key;
           const itemKey = `${newPath}-${index}`;
 
@@ -59,7 +67,18 @@ const RenderData: React.FC<RenderDataProps> = ({
                 onSetFormData={setFormData}
               />
             );
-          else if (typeof value === "string" && key !== "forAdmin") {
+          else if (key === "en" || key === "ru") {
+            return (
+              <>
+                <h3 className="text-center m-3 font-bold">
+                  {key === "en" ? "English" : "Russian"}
+                </h3>
+                <div className={styles.lang_style} key={itemKey}>
+                  {renderData(value, newPath)}
+                </div>
+              </>
+            );
+          } else if (typeof value === "string" && key !== "forAdmin") {
             return (
               <div className="mb-2" key={key}>
                 <TextArea
@@ -77,9 +96,7 @@ const RenderData: React.FC<RenderDataProps> = ({
               <React.Fragment key={itemKey}>
                 {value.map((item, arrayIndex) => (
                   <React.Fragment key={`${newPath}-${arrayIndex}`}>
-                    <h6>{`№${
-                      arrayIndex + 1
-                    }`}</h6>
+                    <h6>{`№${arrayIndex + 1}`}</h6>
 
                     {typeof item === "object" ? (
                       <>

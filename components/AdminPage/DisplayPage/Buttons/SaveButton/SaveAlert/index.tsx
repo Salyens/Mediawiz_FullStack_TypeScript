@@ -11,10 +11,10 @@ const SaveAlert: React.FC<SaveAlertProps> = ({ saveStatus, setSaveStatus }) => {
   const [visible, setVisible] = useState(true);
   const isErrorResponse = saveStatus === "error";
   const alertInfo = {
-    title: isErrorResponse ? "Ошибка" : "Выполнено",
+    title: isErrorResponse ? "Error" : "Success",
     description: isErrorResponse
-      ? "Что-то пошло не так"
-      : "Данные успешно сохранены",
+      ? "Something went wrong"
+      : "Data successfully saved",
   };
 
   useEffect(() => {

@@ -80,7 +80,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
                 <LoadingCircle />
               </div>
             ) : (
-              t("SaveBtn")
+              "SAVE"
             )}
           </button>
         </span>

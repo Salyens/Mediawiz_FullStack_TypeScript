@@ -6,16 +6,16 @@ const MyPages = () => {
   const localActive = useLocale();
   const t = useTranslations("Navigation");
   const pages = [
-    { pageName: t("home"), endPoint: "mainPage" },
-    { pageName: t("web"), endPoint: "webPage" },
-    { pageName: t("webAd"), endPoint: "webAdPage" },
-    { pageName: t("smm"), endPoint: "smm" },
-    { pageName: t("smmAd"), endPoint: "smmAds" },
+    { pageName: "HOME PAGE", endPoint: "mainPage" },
+    { pageName: "WEB DEVELOPMENT" , endPoint: "webPage" },
+    { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
+    { pageName: "SMM", endPoint: "smm" },
+    { pageName: "SMM PROMOTION", endPoint: "smmAds" },
   ];
 
   return (
     <>
-      <h2 className="text-center text-2xl mt-2 mb-2">{t("myClients")}</h2>
+      <h2 className="text-center text-2xl mt-2 mb-2">MY PAGES</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
         {pages.map((page, index) => (
