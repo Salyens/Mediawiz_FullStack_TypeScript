@@ -14,7 +14,7 @@ const UploadFileButton: React.FC<UploadFileButtonProps> = ({
     <div className="flex flex-col items-center justify-center">
       <button
         onClick={handleButtonClick}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs sm:text-sm "
       >
        UPLOAD FILE
       </button>

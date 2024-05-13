@@ -7,8 +7,7 @@ import PageHeader from "./PageHeader";
 import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";
 import SaveAlert from "./Buttons/SaveButton/SaveAlert";
-import { SaveAlertProps } from "../../../types/admin";
-
+import { SaveAlertProps } from "../../../../types/admin";
 
 interface DisplayPageProps {
   endPoint: string;

@@ -1,4 +1,4 @@
-import DisplayPage from "@components/AdminPage/DisplayPage";
+import DisplayPage from "@components/Pages/AdminPage/DisplayPage";
 
 interface SinglePageProps {
   params: {

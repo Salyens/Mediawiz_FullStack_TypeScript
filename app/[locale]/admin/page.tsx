@@ -1,8 +1,7 @@
-import ClientList from "@components/AdminPage/ClientList";
+import ClientList from "@components/Pages/AdminPage/ClientList";
 
 const AdminPage = () => {
-  
-  return <ClientList/>;
+  return <ClientList />;
 };
 
 export default AdminPage;

@@ -54,7 +54,6 @@ a:hover {
 
 .stroke_text {
   -webkit-text-stroke: 1px rgba(224, 42, 114, 1);
-  /* font-weight: 700; */
   line-height: 140%;
   letter-spacing: 0;
   text-align: left;
@@ -62,4 +61,10 @@ a:hover {
 
 .stroke_text_2 {
   -webkit-text-stroke: 1px rgba(67, 42, 224, 1);
+}
+
+.header_description {
+  color: rgb(252, 231, 243);
+  font-family: Roboto;
+  font-weight: 400;
 }

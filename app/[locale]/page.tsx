@@ -1,4 +1,4 @@
-import MainPage from "@components/MainPage";
+import MainPage from "@components/Pages/MainPage";
 import { LanguageContent, MainPageData } from "../../interfaces";
 import { useLocale } from "next-intl";
 

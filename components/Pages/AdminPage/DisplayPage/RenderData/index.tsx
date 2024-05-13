@@ -4,7 +4,7 @@ import DeleteButton from "../Buttons/DeleteButton";
 import { MainPageData } from "@interfaces";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
-import { SaveAlertProps } from "../../../../types/admin";
+import { SaveAlertProps } from "../../../../../types/admin";
 import styles from "../displaydata.module.css";
 
 interface RenderDataProps {

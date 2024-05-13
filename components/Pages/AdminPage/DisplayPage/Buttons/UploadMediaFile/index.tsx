@@ -5,7 +5,7 @@ import styles from "../../../DisplayPage/displaydata.module.css";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
 import { MainPageData } from "@interfaces";
-import { SaveAlertProps } from "../../../../../types/admin";
+import { SaveAlertProps } from "../../../../../../types/admin";
 import DisplayNewFile from "./DisplayNewFile";
 
 interface UploadMediaFileProps {
@@ -56,8 +56,7 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
 
   return (
     <div className={styles.text_area}>
-      <div className="flex items-center gap-2"
-      >
+      <div className="flex items-center gap-2">
         <UploadInput
           type={type}
           handleButtonClick={handleButtonClick}

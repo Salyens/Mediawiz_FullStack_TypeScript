@@ -1,6 +1,6 @@
 import Header from "./Header";
 import WeOffer from "./WeOffer";
-import { LanguageContent } from "../../interfaces";
+import { LanguageContent } from "../../../interfaces";
 import Socials from "./Socials";
 import QuotesList from "./QuotesList";
 import TogetherBlock from "./TogetherBlock/OurPhoto";

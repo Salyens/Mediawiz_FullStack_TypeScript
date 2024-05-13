@@ -1,4 +1,4 @@
-interface ForAdminHeader {
+export interface ForAdminHeader {
   forAdminHeader: string;
 }
 
