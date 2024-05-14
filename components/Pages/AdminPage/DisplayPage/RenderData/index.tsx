@@ -69,14 +69,14 @@ const RenderData: React.FC<RenderDataProps> = ({
             );
           else if (key === "en" || key === "ru") {
             return (
-              <>
+              <div key={key}>
                 <h3 className="text-center m-3 font-bold">
                   {key === "en" ? "English" : "Russian"}
                 </h3>
                 <div className={styles.lang_style} key={itemKey}>
                   {renderData(value, newPath)}
                 </div>
-              </>
+              </div>
             );
           } else if (typeof value === "string" && key !== "forAdmin") {
             return (

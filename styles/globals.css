@@ -68,3 +68,20 @@ a:hover {
   font-family: Roboto;
   font-weight: 400;
 }
+
+.header_logo {
+  width: 40%;
+  height: 400px;
+}
+
+.second_title {
+  color: rgb(249, 168, 212);
+}
+
+.second_desc {
+  color: rgb(252, 231, 243);
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: left;
+}

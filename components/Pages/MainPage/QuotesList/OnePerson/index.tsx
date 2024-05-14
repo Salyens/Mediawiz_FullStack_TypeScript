@@ -3,10 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./oneperson.module.css";
-import Link from "next/link";
 import { useInView } from "framer-motion";
 import { MotionDiv } from "@components/MotionDiv";
 import { useTranslations } from "next-intl";
+import FindMoreLink from "@components/FindMoreLink";
 
 interface QuoteProps {
   name: string;
@@ -74,33 +74,14 @@ const OnePerson: React.FC<QuoteProps> = ({
                   />
 
                   <div className="xl:p-24 p-8 ">
-                    <h5 className={`${styles.name} text-2xl mb-3 pt-5`}>
-                      {name}
-                    </h5>
+                    <h5 className="second_title text-2xl mb-3 pt-5">{name}</h5>
                     <div className={styles.left_line}>
-                      <p
-                        className={`${styles.desc} text-lg md:text-lg 2xl:text-2xl`}
-                      >
+                      <p className="second_desc text-lg md:text-lg 2xl:text-2xl">
                         {description}
                       </p>
                     </div>
 
-                    <Link
-                      className={`flex ml-auto relative z-30 text-3xl mt-2 lg:mt-8 -left-2`}
-                      href="#"
-                    >
-                      <span className={`text-2xl 2xl:text-3xl ${styles.link}`}>
-                        {t("findMore")}
-                      </span>
-                      <Image
-                        className="pl-3"
-                        src="/arrow.png"
-                        alt="arrow"
-                        width={49}
-                        height={39}
-                        style={{ objectFit: "contain" }}
-                      />
-                    </Link>
+                    <FindMoreLink />
                   </div>
                 </div>
 

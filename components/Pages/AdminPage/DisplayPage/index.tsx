@@ -53,6 +53,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps) => {
             data={data}
             setData={setData}
             setSaveStatus={setSaveStatus}
+            endPoint={endPoint}
           />
           {saveStatus && (
             <SaveAlert saveStatus={saveStatus} setSaveStatus={setSaveStatus} />

@@ -57,7 +57,7 @@ const Header = ({ main }: { main: MainSection }) => {
             </div>
           </MotionDiv>
         </div>
-        <div className={`hidden sm:flex ${styles.header_logo}`}>
+        <div className="hidden sm:flex header_logo">
           <HeaderLogo imgURL={imgURL} />
         </div>
       </div>

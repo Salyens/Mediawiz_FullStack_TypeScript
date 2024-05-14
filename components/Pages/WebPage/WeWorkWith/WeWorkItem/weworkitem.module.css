@@ -1,0 +1,27 @@
+.rectangle {
+  position: relative;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  padding: 1rem;
+}
+
+.rectangle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  background: linear-gradient(rgb(255, 0, 230), rgb(36, 0, 255));
+  z-index: -1;
+}
+
+.title {
+  border-radius: 12px;
+  background: rgb(161, 0, 187);
+}
+
+.desc {
+  color: rgb(252, 231, 243);
+}

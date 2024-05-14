@@ -15,6 +15,7 @@ interface SaveButtonProps {
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   setSaveStatus: React.Dispatch<React.SetStateAction<SaveAlertProps>>;
+  endPoint: string;
 }
 
 interface IUpdatesFile {
@@ -29,6 +30,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
   setData,
   setFormData,
   setSaveStatus,
+  endPoint,
 }) => {
   const [loading, setLoading] = useState(false);
   const isDisabled = Boolean(emptyFields.length);
@@ -46,7 +48,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     }
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
-      const result = await axios.patch("/api/mainPage", formDataToSend);
+      const result = await axios.patch(`/api/${endPoint}`, formDataToSend);
       const { updates }: { updates: IUpdatesFile[] } = result.data;
 
       if (data && updates && updates.length) {

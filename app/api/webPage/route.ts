@@ -78,6 +78,7 @@ export async function PATCH(req: Request) {
 
     await connectToDB();
     const page = await WebPage.findOne();
+    console.log('page: ', page);
 
     if (!page) {
       console.error("Page not found");

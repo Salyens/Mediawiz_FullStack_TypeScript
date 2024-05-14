@@ -3,7 +3,7 @@ import { IWebLanguageContent, IWebPageData } from "@interfaces/webPage";
 import { useLocale } from "next-intl";
 
 export const metadata = {
-  title: "Home page",
+  title: "WebDev page",
   description: "",
 };
 

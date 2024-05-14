@@ -1,0 +1,4 @@
+.link {
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease-in;
+  }

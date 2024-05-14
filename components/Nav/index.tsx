@@ -77,7 +77,7 @@ export default function Nav({ locale }: ILocal) {
                 <div className="flex flex-1 items-center">
                   <div className="flex items-center">
                     <Link
-                      href="/"
+                      href={`/${locale}`}
                       className="w-14 h-7 sm:w-[76px] sm:h-10 lg:w-24 lg:h-12 relative"
                     >
                       <Image
