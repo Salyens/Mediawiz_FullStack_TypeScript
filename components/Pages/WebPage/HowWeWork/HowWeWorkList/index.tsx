@@ -1,8 +1,15 @@
 import { IItem } from "@interfaces/webPage";
 import HowWeWorkItem from "../HowWeWorkItem";
 import Image from "next/image";
+import AnimationWrapper from "@components/AnimationWrapper";
+import UnderlinedTitle from "@components/Pages/MainPage/WeOffer/UnderlinedTitle";
 
-const HowWeWorkList = ({ list }: { list: IItem[] }) => {
+interface HowWeWorkProps {
+  list: IItem[];
+  header: string;
+}
+
+const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
   const middleIndex = Math.ceil(list.length / 2);
   const firstHalf = list.slice(0, middleIndex);
   const secondHalf = list.slice(middleIndex);
@@ -25,34 +32,97 @@ const HowWeWorkList = ({ list }: { list: IItem[] }) => {
   };
 
   return (
-    <div className="flex flex-wrap gap-6">
-      <div className=" flex justify-between relative md:static ">
-        <div className="w-full sm:w-2/3 md:w-[45%] flex flex-col gap-6">
-          {renderHowWeWorkItem(firstHalf)}
+    <div className="flex flex-wrap gap-6 mb-8 md:mb-14 lg:mb-20 relative">
+      <AnimationWrapper
+        initial={{ x: -2000 }}
+        animate={{ x: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 1,
+          delay: 0.5,
+        }}
+        classes="w-full sm:w-2/3 lg:w-[45%]"
+      >
+        <UnderlinedTitle text={header} />
+        <div className=" flex justify-between relative lg:static">
+          <div className="flex flex-col gap-6 ">
+            {renderHowWeWorkItem(firstHalf)}
+          </div>
         </div>
+      </AnimationWrapper>
 
-        <div className="w-[45%] h-[500px] flex items-center justify-center absolute md:static right-0 ">
+      <AnimationWrapper
+        initial={{ x: 2000 }}
+        animate={{ x: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 1,
+          delay: 0.5,
+        }}
+        classes="md:w-[45%]"
+      >
+        <AnimationWrapper
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 5,
+            ease: "linear",
+          }}
+          classes="flex items-center justify-center absolute z-20 lg:static w-2/3 sm:w-1/2 lg:w-full right-0 -top-1/3"
+        >
           <Image
             src="/webPage/circle_right.png"
             width={500}
             height={500}
             alt="circle"
           />
-        </div>
-      </div>
-      <div className=" flex justify-between mt-20">
-        <div className="w-[45%] h-[500px] flex items-center justify-center ">
+        </AnimationWrapper>
+      </AnimationWrapper>
+
+      <AnimationWrapper
+        initial={{ x: -2000 }}
+        animate={{ x: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 1,
+          delay: 0.5,
+        }}
+        classes="md:w-[45%]"
+      >
+        <AnimationWrapper
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 5,
+            ease: "linear",
+          }}
+          classes="flex items-center justify-center absolute w-2/3 sm:w-1/2 lg:w-full lg:static left-0 -bottom-0"
+        >
           <Image
             src="/webPage/circle_left.png"
             width={500}
             height={500}
             alt="circle"
           />
+        </AnimationWrapper>
+      </AnimationWrapper>
+
+      <AnimationWrapper
+        initial={{ x: 2000 }}
+        animate={{ x: 0 }}
+        transition={{
+          ease: "easeOut",
+          duration: 1,
+          delay: 0.5,
+        }}
+        classes="w-full sm:w-2/3 lg:w-[45%] flex flex-col gap-6 items-end mt-12"
+      >
+        <div className=" flex relative lg:static ">
+          <div className="flex flex-col gap-6 ">
+            {renderHowWeWorkItem(secondHalf, beginWith)}
+          </div>
         </div>
-        <div className="w-[45%] flex flex-col gap-6">
-          {renderHowWeWorkItem(secondHalf, beginWith)}
-        </div>
-      </div>
+      </AnimationWrapper>
     </div>
   );
 };

@@ -5,25 +5,37 @@
   flex-direction: column;
   background-color: transparent;
   margin-bottom: 8px;
-  transition: 0.4s ease;
   position: relative;
   border-radius: 40px;
-  border: 1px solid rgb(124, 58, 237);
   transition: all 0.2s ease-in-out;
-}
-
-
-.wrapper:hover {
-  border: 1px solid #ff00b8;
-  box-shadow: 0px 2px 10px 0px rgba(124, 58, 237, 0.5),
-    0px 0px 20px 0px rgb(124, 58, 237);
   background-color: #1a1a1a;
 }
 
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 42px; 
+  background: linear-gradient(rgb(255, 0, 230), rgb(36, 0, 255));
+  z-index: -1;
+}
+
+.wrapper:hover {
+  background-color: black;
+  box-shadow: 0px 4px 60px 0px rgba(255, 0, 184, 0.4),
+    0px 4px 20px 0px rgb(255, 0, 184);
+}
+
+.wrapper:hover::before {
+  border-radius: 40px;
+}
+
 .wrapper:hover .circle_wrapper {
-  border-color: #ff00b8;
-  box-shadow: 0px 2px 10px 0px rgba(124, 58, 237, 0.5),
-    0px 0px 20px 0px rgb(124, 58, 237);
+  box-shadow: 0px 4px 60px 0px rgba(255, 0, 184, 0.4),
+    0px 4px 20px 0px rgb(255, 0, 184);
 }
 
 .card_header {
@@ -40,7 +52,9 @@
   top: 0;
   bottom: 0;
   border: 2px solid rgb(233, 58, 237);
-  box-shadow: 0px 4px 5px 0px rgb(124, 58, 237),0px 4px 20px 0px rgba(124, 58, 237, 0.5),0px 4px 100px 0px rgb(124, 58, 237),0px 4px 250px 0px rgb(124, 58, 237);
+  box-shadow: 0px 4px 5px 0px rgb(124, 58, 237),
+    0px 4px 20px 0px rgba(124, 58, 237, 0.5),
+    0px 4px 100px 0px rgb(124, 58, 237), 0px 4px 250px 0px rgb(124, 58, 237);
 }
 
 .card_description {

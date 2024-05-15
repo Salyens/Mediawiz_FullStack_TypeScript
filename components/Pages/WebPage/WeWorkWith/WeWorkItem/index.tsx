@@ -7,12 +7,12 @@ const WeWorkItem = ({ data }: { data: IItem }) => {
   const t = useTranslations("MainPage");
   return (
     <div
-      className={`${styles.rectangle} w-full md:w-[45%] flex-grow lg:w-[30%] h-64 xl:h-80 flex flex-col justify-between m-2 lg::m-3`}
+      className={`${styles.rectangle} w-full md:w-[45%] flex-grow lg:w-[30%] h-64 xl:h-80 flex flex-col justify-between m-2 lg:m-3`}
     >
-      <h3 className={`${styles.title} text-base sm:text:lg xl:text-2xl p-3 mt-4 mb-2`}>
+      <h3 className={`${styles.title} text-base sm:text-lg xl:text-2xl p-3 mt-4 mb-2`}>
         {data.title}
       </h3>
-      <p className={`${styles.desc}text-sm xl:text-2xl mt-2`}>
+      <p className={`${styles.desc} text-sm xl:text-2xl mt-2`}>
         {data.description}
       </p>
 

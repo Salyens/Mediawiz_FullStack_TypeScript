@@ -45,7 +45,6 @@ export default async function RootLayout({
             <NextIntlClientProvider messages={messages}>
               <Nav locale={locale} />
               <main
-                className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24"
                 style={{ flexGrow: 1 }}
               >
                 {children}

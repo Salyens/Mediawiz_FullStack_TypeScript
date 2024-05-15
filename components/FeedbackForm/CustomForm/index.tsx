@@ -44,7 +44,7 @@ const CustomForm = () => {
   };
 
   return (
-    <>
+    <div className="w-full">
       <div
         className={`flex min-h-[400px] min-w-80 w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black ${styles.my_form}`}
       >
@@ -136,7 +136,7 @@ const CustomForm = () => {
         </div>
       </div>
       {success && <SuccessAlert success={success} setSuccess={setSuccess} />}
-    </>
+    </div>
   );
 };
 

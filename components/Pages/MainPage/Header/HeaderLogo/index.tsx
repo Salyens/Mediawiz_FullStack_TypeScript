@@ -1,12 +1,12 @@
 "use client";
 
+import { MotionDiv } from "@components/MotionDiv";
 import { ImgURL } from "@interfaces";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const HeaderLogo = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ y: -1000 }}
       animate={{ y: 0 }}
       transition={{
@@ -24,7 +24,7 @@ const HeaderLogo = ({ imgURL }: { imgURL: ImgURL }) => {
         style={{ objectFit: "contain" }}
         priority={true}
       />
-    </motion.div>
+    </MotionDiv>
   );
 };
 
