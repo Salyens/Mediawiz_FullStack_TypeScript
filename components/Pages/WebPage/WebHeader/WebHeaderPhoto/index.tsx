@@ -13,7 +13,6 @@ const WebHeaderPhoto = ({ imgURL }: { imgURL: ImgURL }) => {
         transition={{
           ease: "easeOut",
           duration: 1,
-          delay: 0.5,
         }}
         style={{ position: "relative", width: "100%", height: "100%" }}
       >

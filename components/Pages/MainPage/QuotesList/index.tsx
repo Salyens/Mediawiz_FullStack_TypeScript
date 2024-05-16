@@ -24,7 +24,7 @@ const QuotesList: React.FC<QuotesListProps> = ({ quotesList }) => {
     ));
   };
 
-  return <div>{renderOnePerson()}</div>;
+  return <div className="mb-28 sm:mb-36 md:mb-40 lg:mb-60">{renderOnePerson()}</div>;
 };
 
 export default QuotesList;

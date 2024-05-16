@@ -128,6 +128,135 @@
           }
         ]
       }
+    },
+    "en": {
+      "pageName": "Web development",
+      "main": {
+        "forAdminHeader": "Section 'Main'",
+        "media": {
+          "forAdminHeader": "Media files",
+          "photo": {
+            "forAdmin": "Photo",
+            "imgURL": "/media/1711969596096.png"
+          }
+        },
+        "header_1": {
+          "forAdmin": "Header-1",
+          "text": "WEB DEVELOPMENT"
+        },
+        "header_2": {
+          "forAdmin": "Header-2",
+          "text": "TURNKEY"
+        },
+        "description": {
+          "forAdmin": "Description",
+          "text": "Our professional task is to develop a website that is an important element of your online presence"
+        }
+      },
+      "advantages": {
+        "forAdminHeader": "Section 'Advantages'",
+        "header": "ADVANTAGES OF WORKING WITH US:",
+        "list": [
+          {
+            "title": "Affordable Prices",
+            "description": "I work directly, without intermediaries, so my services are inexpensive, and the quality remains high.",
+            "imgURL": "/media/1711969596096.png"
+          },
+          {
+            "title": "Modern Technologies",
+            "description": "I use the latest development methods to ensure your site works quickly, reliably, and doesn't require constant updates.",
+            "imgURL": "/media/1711969596096.png"
+          },
+          {
+            "title": "All for Promotion",
+            "description": "After creating the site, we promote it, ensuring perfect settings for advertising.",
+            "imgURL": "/media/1711969596096.png"
+          },
+          {
+            "title": "SEO Optimization",
+            "description": "I know how to make the site easily findable on the internet so that more clients can find you.",
+            "imgURL": "/media/1711969596096.png"
+          },
+          {
+            "title": "Working Website",
+            "description": "I don't just create a website; I make it a useful tool for your business by filling it with the right and interesting content.",
+            "imgURL": "/media/1711969596096.png"
+          },
+          {
+            "title": "Unique Approach",
+            "description": "I don't use ready-made templates like Tilda or WordPress. Your site will be created especially for you, with all the necessary functions and creative design.",
+            "imgURL": "/media/1711969596096.png"
+          }
+        ]
+      },
+      "weWorkWith": {
+        "forAdminHeader": "Section 'We Work With'",
+        "header": "WE WORK WITH:",
+        "list": [
+          {
+            "title": "CORPORATE SITES",
+            "description": "Your business online"
+          },
+          {
+            "title": "ONLINE STORES",
+            "description": "Sell online efficiently"
+          },
+          {
+            "title": "BUSINESS CARD SITES",
+            "description": "Your business online"
+          },
+          {
+            "title": "CATALOG SITES",
+            "description": "Conveniently present your range"
+          },
+          {
+            "title": "LANDING PAGES",
+            "description": "Turning visitors into clients"
+          }
+        ]
+      },
+      "howWeWork": {
+        "forAdminHeader": "Section 'How We Work'",
+        "header": "HOW WE WORK:",
+        "list": [
+          {
+            "title": "Discussion of Your Project",
+            "description": "We determine together what you need, and I offer the best solutions."
+          },
+          {
+            "title": "Planning",
+            "description": "I plan how your site will look and work."
+          },
+          {
+            "title": "Design",
+            "description": "I create a beautiful and user-friendly design that you and your clients will love."
+          },
+          {
+            "title": "Layout",
+            "description": "I create site pages based on the design, ensuring they work correctly on any device."
+          },
+          {
+            "title": "Programming",
+            "description": "I configure all the technical aspects to make the site work flawlessly."
+          },
+          {
+            "title": "Content",
+            "description": "I fill the site with useful information and materials that will attract clients."
+          },
+          {
+            "title": "Testing",
+            "description": "I check that everything works perfectly before the site goes live."
+          },
+          {
+            "title": "Launch",
+            "description": "I publish your site on the internet and configure all the necessary tools for its promotion."
+          },
+          {
+            "title": "Support and Updates (if needed)",
+            "description": "I offer ongoing support and updates to keep your site relevant and effective."
+          }
+        ]
+      }
     }
   }
 }

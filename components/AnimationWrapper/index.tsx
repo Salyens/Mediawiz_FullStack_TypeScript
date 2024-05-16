@@ -21,7 +21,7 @@ const AnimationWrapper: React.FC<AnimationWrapperProps> = ({
 }) => {
   const [isAnimate, setIsAnimate] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) setIsAnimate(true);
@@ -30,11 +30,7 @@ const AnimationWrapper: React.FC<AnimationWrapperProps> = ({
   return (
     <div ref={ref} className={`-bottom-12 ${classes}`}>
       {isAnimate && (
-        <MotionDiv
-          initial={initial}
-          animate={animate}
-          transition={transition}
-        >
+        <MotionDiv initial={initial} animate={animate} transition={transition}>
           {children}
         </MotionDiv>
       )}

@@ -16,18 +16,18 @@ const WebPage = ({ data }: { data: IWebLanguageContent }) => {
   return (
     <div className="w-full h-full overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24">
       <Image
-        src="/webPage/ellipse-1.png"
+        src="/ellipses/ellipse-1.png"
         width={2500}
         height={2500}
         alt="ellipse-right"
-        className="absolute -z-10 xl:-top-72 -left-1/4"
+        className="absolute -z-10 blur-3xl xl:-top-72 -left-1/4"
       />
       <Image
-        src="/webPage/ellipse-2.png"
+        src="/ellipses/ellipse-2.png"
         width={3500}
         height={3500}
         alt="ellipse-right"
-        className="absolute -z-10 top-1/4 -right-1/3"
+        className="absolute -z-10 blur-3xl top-1/4 -right-1/3"
       />
       <WebHeader main={main} />
       <Advantages advantages={advantages} />

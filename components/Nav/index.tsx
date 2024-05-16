@@ -84,6 +84,7 @@ export default function Nav({ locale }: ILocal) {
                         priority={true}
                         alt="Logo"
                         fill
+                        sizes="10vh"
                         style={{ objectFit: "contain" }}
                         src="/logo.png"
                       />

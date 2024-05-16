@@ -40,7 +40,7 @@ const RequestAndSocial = () => {
 
   return (
     <div className={`${styles.bg} w-full`}>
-      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-6 pt-12 pb-12">
+      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-2 md:p-6 pt-12 pb-12">
         <AnimationWrapper
           initial={{ x: -2000 }}
           animate={{ x: 0 }}

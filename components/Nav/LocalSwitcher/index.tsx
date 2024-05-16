@@ -6,6 +6,7 @@ import { useTransition, Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import styles from "./localswitcher.module.css";
+import { setCookie } from 'nookies';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -16,6 +17,9 @@ export default function LocalSwitcher() {
 
   const handleOnClick = (lang: string) => {
     const newPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, `/${lang}$1`);
+
+    // Записываем локаль в куки
+    setCookie(null, 'NEXT_LOCALE', lang, { path: '/' });
 
     startTransition(() => {
       router.replace(newPath);

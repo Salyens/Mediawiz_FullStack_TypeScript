@@ -26,18 +26,9 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
 
   return (
     <div className="relative">
-      <Image
-        src="/mainPage/ellipse-4.svg"
-        width={1200}
-        height={1200}
-        alt="ellipse-left"
-        className="absolute -z-10 blur-3xl top-1/3 -left-1/4"
-        style={{ top: "30%", left: "-10%" }}
-      />
 
       <div className="main_container min-h-screen pl-2 pr-2 lg:pl-6 lg:pr-6">
         <BGLines />
-
         <AnimationWrapper
           initial={{ y: 600 }}
           animate={{ y: 0 }}

@@ -6,31 +6,16 @@ interface TogetherBlockProps {
   imgURL: string;
 }
 
-const TogetherBlock: React.FC<TogetherBlockProps> = ({ imgURL }) => {
+const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
   return (
     <div className="min-h-36 relative">
-      <Image
-        src="/mainPage/ellipse-4.svg"
-        width={1500}
-        height={1500}
-        alt="ellipse-left"
-        className="absolute -z-10 blur-3xl -left-1/3 top-0"
-      />
-      <Image
-        src="/mainPage/ellipse-4.svg"
-        width={1500}
-        height={1500}
-        alt="ellipse-left"
-        className="absolute -z-10 blur-3xl -right-1/3 bottom-0"
-      />
-
       <AnimationWrapper
         initial={{
           y: 700,
           opacity: 0,
         }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 1.5 }}
+        transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
         classes="main_container"
       >
         <div
@@ -41,6 +26,7 @@ const TogetherBlock: React.FC<TogetherBlockProps> = ({ imgURL }) => {
               <Image
                 src={imgURL}
                 fill
+                sizes="100vh"
                 style={{ objectFit: "cover" }}
                 alt="Together photo"
               />
@@ -52,4 +38,4 @@ const TogetherBlock: React.FC<TogetherBlockProps> = ({ imgURL }) => {
   );
 };
 
-export default TogetherBlock;
+export default OurPhoto;

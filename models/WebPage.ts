@@ -64,7 +64,7 @@ const languageContentSchema = new Schema<IWebLanguageContent>({
 
 const languagesSchema = new Schema<Languages>({
   ru: { type: languageContentSchema, required: true },
-  // en: { type: languageContentSchema, required: true },
+  en: { type: languageContentSchema, required: true },
 });
 
 const WebPageSchema = new Schema<MainPageData>({

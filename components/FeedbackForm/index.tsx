@@ -10,7 +10,7 @@ const FeedbackForm = () => {
 
   return (
     <div className={styles.form_wrapper}>
-      <div className="main_container p-6 items-center pt-24 pb-24">
+      <div className="main_container p-2 md:p-6 items-center pt-24 pb-24">
         <div className="flex items-center justify-between flex-col lg:flex-row m-auto">
           <AnimationWrapper
             initial={{ x: -2000 }}

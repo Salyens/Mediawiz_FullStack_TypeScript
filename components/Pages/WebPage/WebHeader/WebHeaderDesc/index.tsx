@@ -15,7 +15,6 @@ const WebHeaderDesc: React.FC<WebHeaderProps> = ({ main }) => {
       transition={{
         ease: "easeOut",
         duration: 1,
-        delay: 0.5,
       }}
     >
       <div className=" flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full mt-4 sm:mt-0 sm:w-2/3">

@@ -48,7 +48,7 @@
 .card_header::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -2px;
   top: 0;
   bottom: 0;
   border: 2px solid rgb(233, 58, 237);

@@ -9,7 +9,7 @@ export default function NotFound() {
       <div>
         <h2 className="mb-2">Not Found</h2>
         <p className="mb-2">Could not find requested resource</p>
-        <Link style={{ color: "rgba(151, 71, 255, 1)" }} href="/">
+        <Link className="second_color" href="/">
           Return Home
         </Link>
       </div>

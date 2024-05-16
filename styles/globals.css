@@ -30,6 +30,10 @@ a:hover {
   max-width: 1512px;
 }
 
+.second_color {
+  color: rgba(151, 71, 255, 1);
+}
+
 .main_container {
   max-width: 1536px;
   margin-left: auto;
@@ -65,7 +69,6 @@ a:hover {
 
 .header_description {
   color: rgb(252, 231, 243);
-  font-family: Roboto;
   font-weight: 400;
 }
 
