@@ -38,15 +38,9 @@ export interface Video {
   videoURL: string;
 }
 
-export interface MainMedia {
-  forAdminHeader: ForAdminHeader;
-  logo: Img;
-  background: Video;
-}
-
 export interface MainSection {
   forAdminHeader: ForAdminHeader;
-  media: MainMedia;
+  logo: Img;
   header_1: { forAdmin: ForAdmin; text: Text };
   header_2: { forAdmin: ForAdmin; text: Text };
   description_1: { forAdmin: ForAdmin; text: Text };

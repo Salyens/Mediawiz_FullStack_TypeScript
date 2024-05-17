@@ -16,17 +16,16 @@ const OnePerson: React.FC<QuoteProps> = ({
   description,
   index,
 }) => {
-  const isOdd = index % 2 !== 0; 
+  const isOdd = index % 2 !== 0;
 
   return (
-    <div className="relative min-h-80">
+    <div className={`relative min-h-80 bg_item_1 ${isOdd ? "bg_item_left" : "bg_item_right"}`}>
       <AnimationWrapper
         initial={{ x: -2000 }}
         animate={{ x: 0 }}
         transition={{
           ease: "easeOut",
-          duration: 1,
-          delay: 0.5,
+          duration: 1
         }}
         classes="main_container mb-10 md:mb-36 mt-36 relative p-6"
       >
@@ -34,7 +33,7 @@ const OnePerson: React.FC<QuoteProps> = ({
           <div
             className={`${
               styles.rectangle
-            }  md:w-2/3 w-11/12 h-auto mt-72 md:mt-0 ${
+            }  md:w-2/3 w-full h-auto mt-72 md:mt-0 ${
               isOdd ? "ml-auto" : "mr-auto"
             }`}
           >
@@ -72,7 +71,7 @@ const OnePerson: React.FC<QuoteProps> = ({
                 fill
                 sizes="(max-width: 768px) 70vw, (max-width: 1200px) 80vw, 65vw"
                 style={{ objectFit: "contain" }}
-                priority // Установим приоритет загрузки
+                priority
               />
             )}
           </div>

@@ -1,0 +1,20 @@
+.bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 400vh;
+  }
+  
+  .bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("/ellipses/ellipse-1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(70px);
+    z-index: -1; 
+  }
+  

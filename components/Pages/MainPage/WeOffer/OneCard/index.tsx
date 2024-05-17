@@ -11,7 +11,7 @@ const OneCard = ({ header, description, href }: OffersList) => {
     >
       <div className="flex_column w-full ">
         <h4
-          className={`${styles.card_header} xl:text-4xl lg:text-3xl md:text-4xl sm:text-4xl text-2xl`}
+          className={`${styles.card_header} xl:text-4xl lg:text-3xl md:text-4xl sm:text-4xl text-2xl mb-4`}
         >
           {header}
         </h4>

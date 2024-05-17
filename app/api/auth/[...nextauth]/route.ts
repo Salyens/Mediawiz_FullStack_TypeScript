@@ -37,7 +37,6 @@ export const authOptions = {
       name: "credentials",
       credentials: {},
       async authorize(credentials) {
-        console.log('credentials: ', credentials);
         if (!credentials) return null;
         try {
           const user = await login(credentials as ICredentials);

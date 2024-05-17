@@ -1,4 +1,4 @@
-import UnderlinedTitle from "@components/Pages/MainPage/WeOffer/UnderlinedTitle";
+import UnderlinedTitle from "@components/UnderlinedTitle";
 import { IAdvantages } from "@interfaces/webPage";
 import AdvantagesList from "./AdvantagesList";
 import BGLines from "@components/BGLines";
@@ -10,7 +10,7 @@ interface AdvantagesProps {
 
 const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {
   return (
-    <>
+    <div className="bg_item_right">
       <BGLines />
       <div className="main_container p-6 relative min-h-96">
         <AnimationWrapper
@@ -22,7 +22,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {
           <AdvantagesList list={advantages.list} />
         </AnimationWrapper>
       </div>
-    </>
+    </div>
   );
 };
 

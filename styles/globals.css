@@ -88,3 +88,62 @@ a:hover {
   letter-spacing: 0%;
   text-align: left;
 }
+
+.bg_item_right {
+  position: relative;
+  min-height: 50vh;
+}
+
+.bg_item_right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40%;
+  bottom: 0;
+  left: 0;
+  background-image: url("/ellipses/ellipse-1.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(70px);
+  z-index: -1; 
+}
+
+.bg_item_left {
+  position: relative;
+
+}
+
+.bg_item_left::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: -40%;
+  background-image: url("/ellipses/ellipse-1.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(100px);
+  z-index: -1; 
+}
+
+.bg_item_left_blue {
+  position: relative;
+  min-height: 50vh;
+}
+
+.bg_item_left_blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -20%;
+  background-image: url("/ellipses/ellipse-2.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(70px);
+  z-index: -1; 
+}
+
+

@@ -4,7 +4,6 @@ import {
   Img,
   LanguageContent,
   Languages,
-  MainMedia,
   MainPageData,
   MainSection,
   Offers,
@@ -73,19 +72,10 @@ const ourGoalsSectionSchema = new Schema<OurGoals>({
   goals: goalsSchema,
 });
 
-const mainBGVideoSchema = new Schema<Video>({
-  forAdmin: { type: String, required: true },
-  videoURL: { type: String },
-});
-
-const mainMediaSectionSchema = new Schema<MainMedia>({
-  forAdminHeader: { type: String, required: true },
-  logo: { type: imgSchema, required: true },
-});
 
 const mainSectionSchema = new Schema<MainSection>({
   forAdminHeader: { type: String, required: true },
-  media: { type: mainMediaSectionSchema, required: true },
+  logo: { type: imgSchema, required: true },
   header_1: { type: TextSchema, required: true },
   header_2: { type: TextSchema, required: true },
   description_1: { type: TextSchema, required: true },

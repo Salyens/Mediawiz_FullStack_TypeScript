@@ -32,7 +32,7 @@ const RenderData: React.FC<RenderDataProps> = ({
       <div className="text-xl">
         {sortedKeys.map((key, index) => {
           const value = dataToRender[key];
-          if (key === "_id" || key === "pageName" || key === "href")
+          if (key === "_id" || key === "pageName")
             return null;
 
           const newPath = currentPath ? `${currentPath}.${key}` : key;

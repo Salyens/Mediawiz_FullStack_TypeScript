@@ -1,7 +1,6 @@
 import { IOneGoal } from "@interfaces/mainPage";
 import OneGoal from "./OneGoal";
 import styles from "./ourgoals.module.css";
-import Image from "next/image";
 import AnimationWrapper from "@components/AnimationWrapper";
 
 interface OurGoalsProps {
@@ -22,13 +21,13 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList }) => {
   return (
     <div className="relative">
 
-      <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44  mt-24 md:mt-28 mb-12 lg:mt-40 lg:mb-24 relative main_container">
+      <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-24 md:mt-28 mb-12 lg:mt-40 lg:mb-24 relative main_container">
         <AnimationWrapper
           initial={{
             opacity: 0,
           }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 0.3, delay:1.5 }}
         >
           <div
             className={`absolute top-0 left-4 w-8 h-8 sm:w-14 sm:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 ${styles.corner_top_left}`}

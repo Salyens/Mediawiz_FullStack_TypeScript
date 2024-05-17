@@ -3,6 +3,7 @@ import OurPhoto from "./OurPhoto";
 import OurGoals from "./OurGoals";
 import { IOneGoal } from "@interfaces/mainPage";
 
+
 interface TogetherBlockProps {
   goalsList: IOneGoal[];
   imgURL: string;
@@ -10,7 +11,7 @@ interface TogetherBlockProps {
 
 const TogetherBlock = ({ goalsList, imgURL }: TogetherBlockProps) => {
   return (
-    <div>
+    <div className="bg_item_left_blue">
       <OurPhoto imgURL={imgURL} />
       <OurGoals goalsList={goalsList} />
     </div>

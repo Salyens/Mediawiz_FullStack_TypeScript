@@ -42,7 +42,7 @@ const Socials = () => {
         opacity: 0,
       }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 1, delay: 1 }}
+      transition={{ ease: "easeOut", duration: 1,}}
       classes="main_container pr-6 pl-6 mt-10"
     >
       <div className="flex sm:justify-between items-center flex-col lg:flex-row min-h-40 xl:min-h-80 pb-2 gap-2 sm:gap-8">

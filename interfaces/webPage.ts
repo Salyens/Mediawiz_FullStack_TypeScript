@@ -7,7 +7,7 @@ export interface IMainMedia {
 
 export interface IWebMainSection {
   forAdminHeader: ForAdminHeader;
-  media: IMainMedia;
+  photo: Img;
   header_1: { forAdmin: ForAdmin; text: Text };
   header_2: { forAdmin: ForAdmin; text: Text };
   description: { forAdmin: ForAdmin; text: Text };
@@ -49,13 +49,28 @@ export interface IWebLanguageContent {
   howWeWork: IHowWeWork;
 }
 
+export interface IWebAdLanguageContent {
+  pageName: string;
+  main: IWebMainSection;
+  advantages: IAdvantages;
+  howAdWorks: IHowWeWork;
+  howWeWork: IHowWeWork;
+}
+
 export interface IWebLanguages {
   ru: IWebLanguageContent;
   en?: IWebLanguageContent;
 }
 
+export interface IWebAdLanguages {
+  ru: IWebAdLanguageContent;
+  en: IWebAdLanguageContent;
+}
 
 export interface IWebPageData {
   languages: IWebLanguages;
 }
 
+export interface IWebAdPageData {
+  languages: IWebAdLanguages;
+}

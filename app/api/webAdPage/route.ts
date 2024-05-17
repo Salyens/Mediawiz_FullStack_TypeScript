@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { connectToDB } from "@utils/database";
 import _ from "lodash";
 import { UTApi } from "uploadthing/server";
-import MainPage from "@models/MainPage";
+import WebAdPage from "@models/WebAdPage";
 
 interface File {
   size: number;
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     await connectToDB();
     const info = await req.json();
 
-    await MainPage.create(info);
+    await WebAdPage.create(info);
 
     return NextResponse.json({ message: "User saved" }, { status: 200 });
   } catch (error) {
@@ -40,7 +40,8 @@ export async function POST(req: Request) {
 export async function GET() {
   try {
     await connectToDB();
-    const data = await MainPage.findOne();
+    const data = await WebAdPage.findOne();
+
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
@@ -50,7 +51,6 @@ export async function GET() {
     );
   }
 }
-
 
 export async function PATCH(req: Request) {
   const utapi = new UTApi();
@@ -78,7 +78,7 @@ export async function PATCH(req: Request) {
     });
 
     await connectToDB();
-    const page = await MainPage.findOne();
+    const page = await WebAdPage.findOne();
 
     if (!page) {
       console.error("Page not found");

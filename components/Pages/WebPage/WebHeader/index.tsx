@@ -8,9 +8,9 @@ interface WebHeaderProps {
 }
 
 const WebHeader: React.FC<WebHeaderProps> = ({ main }) => {
-  const { imgURL } = main.media.photo;
+  const { imgURL } = main.photo;
   return (
-    <div className="p-6 main_container relative md:h-screen">
+    <div className="p-6 main_container relative md:h-screen bg_item_left">
       <div className=" flex justify-between items-center">
         <WebHeaderDesc main={main} />
         <WebHeaderPhoto imgURL={imgURL} />

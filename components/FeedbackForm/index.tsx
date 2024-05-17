@@ -18,7 +18,6 @@ const FeedbackForm = () => {
             transition={{
               ease: "easeOut",
               duration: 1,
-              delay: 0.5,
             }}
             classes={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 w-full lg:w-2/5 xl:w-2/5 items-center ${styles.description}`}
           >
@@ -41,7 +40,6 @@ const FeedbackForm = () => {
             transition={{
               ease: "easeOut",
               duration: 1,
-              delay: 0.5,
             }}
             classes="w-full md:w-2/3 lg:w-1/2 xl:w-2/5 mt-24 lg:mt-0"
           >

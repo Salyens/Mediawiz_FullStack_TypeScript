@@ -1,7 +1,6 @@
 import { MainPageData } from "@interfaces";
 import _ from "lodash";
 
-
 interface DeleteButtonProps {
   currentPath: string;
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
@@ -18,7 +17,6 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
   const lodashPath = currentPath.replace(/\[(\d+)\]/g, ".$1");
   const itemKeys = Object.keys(item);
 
-
   const deleteItem = () => {
     onSetEmptyFields((prevEmptyFields) => {
       let updatedEmptyFields = prevEmptyFields;
@@ -30,20 +28,35 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 
       return updatedEmptyFields;
     });
+
     setData((prevData) => {
+      if (!prevData) return null;
       const newData = _.cloneDeep(prevData as MainPageData);
-      const pathArray = lodashPath.split(".");
-      const index = parseInt(pathArray.pop() || "", 10);
-      const parentPath = pathArray.join(".");
 
-      const parentArray = _.get(newData, parentPath, []);
+      // Helper function to delete item from the given locale
+      const deleteItemFromLocale = (localePath: string) => {
+        const pathArray = localePath.split(".");
+        const index = parseInt(pathArray.pop() || "", 10);
+        const parentPath = pathArray.join(".");
 
-      if (parentArray.length <= 1) {
-        alert("You cannot delete the last item.");
-      } else {
-        parentArray.splice(index, 1);
-        _.set(newData, parentPath, parentArray);
-      }
+        const parentArray = _.get(newData, parentPath, []);
+
+        if (parentArray.length <= 1) {
+          alert("You cannot delete the last item.");
+        } else {
+          parentArray.splice(index, 1);
+          _.set(newData, parentPath, parentArray);
+        }
+      };
+
+      // Delete item from both "en" and "ru" locales
+      const basePath = lodashPath.split(".").slice(2).join(".");
+      const enPath = `languages.en.${basePath}`;
+      const ruPath = `languages.ru.${basePath}`;
+
+      deleteItemFromLocale(enPath);
+      deleteItemFromLocale(ruPath);
+
       return newData;
     });
   };

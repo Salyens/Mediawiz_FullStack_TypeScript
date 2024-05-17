@@ -2,7 +2,7 @@ import { IItem } from "@interfaces/webPage";
 import HowWeWorkItem from "../HowWeWorkItem";
 import Image from "next/image";
 import AnimationWrapper from "@components/AnimationWrapper";
-import UnderlinedTitle from "@components/Pages/MainPage/WeOffer/UnderlinedTitle";
+import UnderlinedTitle from "@components/UnderlinedTitle";
 
 interface HowWeWorkProps {
   list: IItem[];

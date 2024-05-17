@@ -3,13 +3,10 @@
     "ru": {
       "pageName": "Web development",
       "main": {
-        "forAdminHeader": "Раздел 'Главная'",
-        "media": {
-          "forAdminHeader": "Медиа-файлы",
-          "photo": {
-            "forAdmin": "Фото",
-            "imgURL": "/media/1711969596096.png"
-          }
+        "forAdminHeader": "Раздел 'Приветствие'",
+        "photo": {
+          "forAdmin": "Фото",
+          "imgURL": "/media/1711969596096.png"
         },
         "header_1": {
           "forAdmin": "Заголовок-1",
@@ -132,13 +129,10 @@
     "en": {
       "pageName": "Web development",
       "main": {
-        "forAdminHeader": "Section 'Main'",
-        "media": {
-          "forAdminHeader": "Media files",
-          "photo": {
-            "forAdmin": "Photo",
-            "imgURL": "/media/1711969596096.png"
-          }
+        "forAdminHeader": "Section 'Welcome'",
+        "photo": {
+          "forAdmin": "Photo",
+          "imgURL": "/media/1711969596096.png"
         },
         "header_1": {
           "forAdmin": "Header-1",

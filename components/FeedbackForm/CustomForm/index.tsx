@@ -116,7 +116,7 @@ const CustomForm = () => {
 
               <p>
                 {t("policy_1")}
-                <span className="font-bold">{t("policy_2")}</span>{" "}
+                <span className="font-bold">{" "}{t("policy_2")}</span>
                 {t("policy_3")}
               </p>
             </div>

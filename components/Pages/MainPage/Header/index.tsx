@@ -6,20 +6,20 @@ import HeaderBgLine from "./HeaderBgLine";
 import HeaderLogo from "./HeaderLogo";
 
 const Header = ({ main }: { main: MainSection }) => {
-  const { imgURL } = main.media.logo;
+  const { imgURL } = main.logo;
 
   return (
     <div
       className="sm:flex-row
         items-center sm:justify-between
-        mt-8 md:mt-0 relative w-screen pl-2 pr-2 lg:pl-6 lg:pr-6"
+        mt-8 md:mt-0 relative w-screen pl-2 pr-2 lg:pl-6 lg:pr-6 bg_item_left"
     >
       <HeaderBgLine />
 
       <div
-        className={`${styles.header_wrapper} main_container flex-col sm:flex-row md:h-screen`}
+        className={`${styles.header_wrapper} main_container flex-col sm:flex-row md:h-screen w-full`}
       >
-        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+        <div className="w-full text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
           <MotionDiv
             initial={{ x: -1500 }}
             animate={{ x: 0 }}

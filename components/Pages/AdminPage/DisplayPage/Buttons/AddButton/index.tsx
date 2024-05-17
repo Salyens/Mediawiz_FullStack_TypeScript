@@ -1,5 +1,4 @@
 import { MainPageData } from "@interfaces";
-import { useTranslations } from "next-intl";
 
 interface AddButtonProps {
   currentPath: string;
@@ -12,7 +11,7 @@ const AddButton: React.FC<AddButtonProps> = ({
   item,
   setData,
 }) => {
-  const t = useTranslations("AdminEditPage");
+
   const createEmptyItem = () => {
     return Object.keys(item).reduce((acc, key) => {
       if (key !== "_id") acc[key] = "";
@@ -25,18 +24,29 @@ const AddButton: React.FC<AddButtonProps> = ({
     setData((prevData) => {
       if (!prevData) return null;
       const newData: MainPageData = { ...(prevData as MainPageData) };
-      const keys = currentPath.split(".");
-      let currentSection: any = newData;
 
-      for (let i = 0; i < keys.length - 1; i++) {
-        currentSection[keys[i]] = { ...(currentSection[keys[i]] || {}) };
-        currentSection = currentSection[keys[i]];
-      }
-      const lastKey = keys[keys.length - 1];
-      currentSection[lastKey] = [
-        ...(currentSection[lastKey] || []),
-        createEmptyItem(),
-      ];
+
+      const addItemToLocale = (localePath: string) => {
+        const keys = localePath.split(".");
+        let currentSection: any = newData;
+
+        for (let i = 0; i < keys.length - 1; i++) {
+          currentSection[keys[i]] = { ...(currentSection[keys[i]] || {}) };
+          currentSection = currentSection[keys[i]];
+        }
+
+        const lastKey = keys[keys.length - 1];
+        currentSection[lastKey] = [
+          ...(currentSection[lastKey] || []),
+          createEmptyItem(),
+        ];
+      };
+
+      const enPath = `languages.en.${currentPath.split(".").slice(2).join(".")}`;
+      const ruPath = `languages.ru.${currentPath.split(".").slice(2).join(".")}`;
+
+      addItemToLocale(enPath);
+      addItemToLocale(ruPath);
 
       return newData;
     });

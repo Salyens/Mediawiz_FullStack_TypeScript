@@ -3,13 +3,10 @@
     "en": {
       "pageName": "Home",
       "main": {
-        "forAdminHeader": "Home Section",
-        "media": {
-          "forAdminHeader": "Media Files",
-          "logo": {
-            "forAdmin": "Logo",
-            "imgURL": "/media/1711969596096.png"
-          }
+        "forAdminHeader": "Section 'Welcome'",
+        "logo": {
+          "forAdmin": "Logo",
+          "imgURL": "/media/1711969596096.png"
         },
         "header_1": {
           "forAdmin": "Header-1",
@@ -85,14 +82,14 @@
           "forAdmin": "Goals",
           "goalsList": [
             {
-              "partOne": "Our goal is to make your business successful",
-              "and": "and",
-              "partTwo": "recognizable in the digital age"
+              "partOne": "OUR GOAL IS TO MAKE YOUR BUSINESS SUCCESSFUL",
+              "and": "AND",
+              "partTwo": "RECOGNIZABLE IN THE DIGITAL AGE"
             },
             {
-              "partOne": "Our approach is not just to complete the task,",
-              "and": "but",
-              "partTwo": "to achieve results!"
+              "partOne": "OUR APPROACH IS NOT JUST TO COMPLETE THE TASK,",
+              "and": "BUT",
+              "partTwo": "TO ACHIEVE RESULT"
             }
           ]
         }
@@ -101,13 +98,10 @@
     "ru": {
       "pageName": "Home",
       "main": {
-        "forAdminHeader": "Раздел 'Главная'",
-        "media": {
-          "forAdminHeader": "Медиа-файлы",
-          "logo": {
-            "forAdmin": "Логотип",
-            "imgURL": "/media/1711969596096.png"
-          }
+        "forAdminHeader": "Раздел 'Приветствие'",
+        "logo": {
+          "forAdmin": "Логотип",
+          "imgURL": "/media/1711969596096.png"
         },
         "header_1": {
           "forAdmin": "Заголовок-1",
@@ -185,14 +179,14 @@
           "forAdmin": "Цели",
           "goalsList": [
             {
-              "partOne": "Наша цель - сделать ваш бизнес успешным",
-              "and": "и",
-              "partTwo": "узнаваемым в цифровой эпохе"
+              "partOne": "НАША ЦЕЛЬ - СДЕЛАТЬ ВАШ БИЗНЕС УСПЕШНЫМ",
+              "and": "И",
+              "partTwo": "УЗНАВАЕМЫМ В ЦИФРОВОЙ ЭПОХЕ"
             },
             {
-              "partOne": "Наш подход - не просто выполнить задачу,",
-              "and": "а",
-              "partTwo": "добиться результата!"
+              "partOne": "НАШ ПОДХОД - НЕ ПРОСТО ВЫПОЛНИТЬ ЗАДАЧУ,",
+              "and": "А",
+              "partTwo": "ДОБИТЬСЯ РЕЗУЛЬТАТА"
             }
           ]
         }

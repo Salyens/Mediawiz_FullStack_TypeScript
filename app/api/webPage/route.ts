@@ -70,15 +70,16 @@ export async function PATCH(req: Request) {
     uploadResponses.forEach((uploadResponse, index) => {
       if (uploadResponse && uploadResponse.data) {
         const filePath = filePaths[index];
-        console.log('filePath: ', filePath);
         const newUrl = uploadResponse.data.url;
-        _.set(jsonData, filePath, newUrl);
+
+        const basePath = filePath.split(".").slice(2).join(".");
+        _.set(jsonData, `languages.en.${basePath}`, newUrl);
+        _.set(jsonData, `languages.ru.${basePath}`, newUrl);
       }
     });
 
     await connectToDB();
     const page = await WebPage.findOne();
-    console.log('page: ', page);
 
     if (!page) {
       console.error("Page not found");
@@ -91,11 +92,12 @@ export async function PATCH(req: Request) {
       const parentPath = filePath.includes(".")
         ? filePath.split(".").slice(0, -1).join(".")
         : filePath;
-      page.markModified(parentPath);
+      page.markModified(`languages.en.${parentPath.split(".").slice(2).join(".")}`);
+      page.markModified(`languages.ru.${parentPath.split(".").slice(2).join(".")}`);
     });
 
     await page.save();
-
+  
     return NextResponse.json(
       {
         message: "Data successfully updated",

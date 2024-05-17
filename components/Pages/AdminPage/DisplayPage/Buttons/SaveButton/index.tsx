@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MainPageData } from "@interfaces";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
-import { useTranslations } from "next-intl";
+
 type SaveAlertProps = "error" | "saved" | "";
 
 interface SaveButtonProps {
@@ -37,7 +37,6 @@ const SaveButton: React.FC<SaveButtonProps> = ({
   const buttonContent = isDisabled
     ? "Please fill in all required fields"
     : null;
-  const t = useTranslations("AdminEditPage");
 
   const handleSaveData = async () => {
     setLoading(true);
@@ -50,11 +49,15 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     try {
       const result = await axios.patch(`/api/${endPoint}`, formDataToSend);
       const { updates }: { updates: IUpdatesFile[] } = result.data;
+      console.log('updates: ', updates);
 
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);
         updates.forEach((update) => {
-          _.set(newData, update.filePath, update.newUrl);
+          // Обновляем данные для обеих локалей
+          const basePath = update.filePath.split(".").slice(2).join(".");
+          _.set(newData, `languages.en.${basePath}`, update.newUrl);
+          _.set(newData, `languages.ru.${basePath}`, update.newUrl);
         });
         setData(newData);
       }

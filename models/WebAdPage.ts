@@ -1,5 +1,5 @@
-import { Img, Languages, MainPageData, TextContent } from "@interfaces";
-import { IAdvantageItem, IAdvantages, IHowWeWork, IItem, IMainMedia, IWeWorkWith, IWebLanguageContent, IWebMainSection } from "@interfaces/webPage";
+import { Img, Languages, TextContent } from "@interfaces";
+import { IAdvantageItem, IAdvantages, IHowWeWork, IItem, IWebAdLanguageContent, IWebAdPageData, IWebMainSection } from "@interfaces/webPage";
 import { Schema, model, models } from "mongoose";
 
 const TextSchema = new Schema<TextContent>({
@@ -23,11 +23,12 @@ const howWeWorkSchema = new Schema<IHowWeWork>({
     list: [listItemSchema],
   });
 
-const weWorkWithSchema = new Schema<IWeWorkWith>({
-  forAdminHeader: { type: String, required: true },
-  header: { type: String, required: true },
-  list: [listItemSchema],
-});
+const howAdWorksSchema = new Schema<IHowWeWork>({
+    forAdminHeader: { type: String, required: true },
+    header: { type: String, required: true },
+    list: [listItemSchema],
+  });
+
 
 const advantagesListItem = new Schema<IAdvantageItem>({
   title: { type: String, required: true },
@@ -50,11 +51,11 @@ const mainSectionSchema = new Schema<IWebMainSection>({
   description: { type: TextSchema, required: true },
 });
 
-const languageContentSchema = new Schema<IWebLanguageContent>({
+const languageContentSchema = new Schema<IWebAdLanguageContent>({
   pageName: { type: String, required: true },
   main: { type: mainSectionSchema, required: true },
   advantages: { type: advantagesSchema, required: true },
-  weWorkWith: { type: weWorkWithSchema, required: true },
+  howAdWorks: { type: howAdWorksSchema, required: true },
   howWeWork: { type: howWeWorkSchema, required: true },
 });
 
@@ -63,11 +64,11 @@ const languagesSchema = new Schema<Languages>({
   en: { type: languageContentSchema, required: true },
 });
 
-const WebPageSchema = new Schema<MainPageData>({
+const WebAdPageSchema = new Schema<IWebAdPageData>({
   languages: { type: languagesSchema, required: true },
 });
 
-const WebPage =
-  models.WebPage || model<MainPageData>("WebPage", WebPageSchema);
+const WebAdPage =
+  models.WebPage || model<IWebAdPageData>("WebAdPage", WebAdPageSchema);
 
-export default WebPage;
+export default WebAdPage;

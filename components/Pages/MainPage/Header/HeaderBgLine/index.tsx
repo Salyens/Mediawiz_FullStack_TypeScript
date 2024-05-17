@@ -9,7 +9,7 @@ const HeaderBgLine = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSvg(true);
-    }, 1500);
+    }, 2300);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,6 +22,7 @@ const HeaderBgLine = () => {
           style={{ objectFit: "contain" }}
           alt="Header line"
           className="absolute -z-10 top-1/2 -right-1/3"
+          priority
         />
       )}
     </>

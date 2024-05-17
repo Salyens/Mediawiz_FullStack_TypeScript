@@ -46,6 +46,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value;
+
     setValue(newValue);
     debouncedUpdate(newValue);
   };

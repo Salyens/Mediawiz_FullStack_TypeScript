@@ -7,7 +7,7 @@ const FindMoreLink = () => {
   const t = useTranslations("MainPage");
   return (
     <Link
-      className={`flex ml-auto text-3xl mt-2 lg:mt-8`}
+      className={`flex ml-auto pt-5 text-3xl mt-2 lg:mt-8`}
       href="#"
     >
       <span className={`text-2xl 2xl:text-3xl ${styles.link}`}>
