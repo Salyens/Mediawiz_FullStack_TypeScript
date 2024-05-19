@@ -15,7 +15,7 @@ const FindMoreLink = () => {
       </span>
       <Image
         className="pl-3"
-        src="/arrow.png"
+        src="/common/arrow.png"
         alt="arrow"
         width={49}
         height={39}

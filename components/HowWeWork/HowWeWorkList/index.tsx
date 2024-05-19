@@ -71,7 +71,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
           classes="flex items-center justify-center absolute z-20 lg:static w-2/3 sm:w-1/2 lg:w-full right-0 -top-1/3"
         >
           <Image
-            src="/webPage/circle_right.png"
+            src="/common/circle_right.svg"
             width={500}
             height={500}
             alt="circle"
@@ -99,7 +99,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
           classes="flex items-center justify-center absolute w-2/3 sm:w-1/2 lg:w-full lg:static left-0 -bottom-0"
         >
           <Image
-            src="/webPage/circle_left.png"
+            src="/common/circle_left.svg"
             width={500}
             height={500}
             alt="circle"

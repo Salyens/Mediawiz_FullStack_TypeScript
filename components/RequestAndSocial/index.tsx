@@ -40,7 +40,7 @@ const RequestAndSocial = () => {
 
   return (
     <div className={`${styles.bg} w-full`}>
-      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-2 md:p-6 pt-12 pb-12">
+      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12">
         <AnimationWrapper
           initial={{ x: -2000 }}
           animate={{ x: 0 }}
@@ -54,7 +54,7 @@ const RequestAndSocial = () => {
           <p className="text-center lg:text-left">{t("description")}</p>
           <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-              <Image src="/phone.png" width={50} height={50} alt="phone" />
+              <Image src="/common/phone.png" width={50} height={50} alt="phone" />
               <span className="text-lg md:text-2xl mt-12 mb-12 font-normal">
                 8-903-375-02-61
               </span>

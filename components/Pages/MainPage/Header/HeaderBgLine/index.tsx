@@ -17,7 +17,7 @@ const HeaderBgLine = () => {
     <>
       {showSvg && (
         <Image
-          src={`/mainPage/Group.svg?v=${new Date().getTime()}`}
+          src={`/mainPage/header_line.svg?v=${new Date().getTime()}`}
           fill
           style={{ objectFit: "contain" }}
           alt="Header line"

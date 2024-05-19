@@ -28,7 +28,7 @@ const OneCard = ({ header, description, href }: OffersList) => {
           priority={false}
           width={49}
           height={39}
-          src="/arrow.png"
+          src="/common/arrow.png"
           alt="arrow"
         />
       </div>

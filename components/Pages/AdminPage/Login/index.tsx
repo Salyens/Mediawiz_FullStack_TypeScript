@@ -57,7 +57,7 @@ const Login = () => {
           height={100}
           className="mx-auto h-10 w-auto"
           sizes="10vh"
-          src="/logo.png"
+          src="/nav/logo.png"
           alt="Mediawiz logo"
         />
         <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight">

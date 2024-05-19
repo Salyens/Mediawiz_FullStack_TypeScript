@@ -1,5 +1,5 @@
 .form_wrapper {
-  background-image: url("/form_bg.png");
+  background-image: url("/common/form_bg.png");
   width: 100%;
   min-height: 400px;
 }
@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   height: 48px;
+  max-width: 320px;
   margin-top: 25px;
   background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
   border-radius: 12px;

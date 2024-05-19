@@ -17,7 +17,7 @@ const WebHeaderDesc: React.FC<WebHeaderProps> = ({ main }) => {
         duration: 1,
       }}
     >
-      <div className=" flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full mt-4 sm:mt-0 sm:w-2/3">
+      <div className=" flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full md:w-3/4 mt-4 sm:mt-0">
         <p className="stroke_text font-bold">{main["header_1"].text}</p>
         <p className="stroke_text font-bold stroke_text_2">
           {main["header_2"].text}

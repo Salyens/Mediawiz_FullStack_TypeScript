@@ -14,7 +14,7 @@
         },
         "header_2": {
           "forAdmin": "Заголовок-2",
-          "text": "ПРЯМОЙ ПУТЬ У ВАШИМ КЛИЕНТАМ"
+          "text": "ПРЯМОЙ ПУТЬ К ВАШИМ КЛИЕНТАМ"
         },
         "description": {
           "forAdmin": "Описание",
@@ -58,15 +58,18 @@
         "list": [
           {
             "title": "НАЙДЕТ ТЕХ, КТО ИЩЕТ ВАС",
-            "description": " Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги"
+            "description": " Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "БОЛЬШЕ КЛИКОВБ БОЛЬШЕ ВНИМАНИЯ",
-            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги"
+            "title": "БОЛЬШЕ КЛИКОВ, БОЛЬШЕ ВНИМАНИЯ",
+            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "БЫСТРО УЗНАЕТЕ РЕЗУЛЬТАТ",
-            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги"
+            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "imgURL": "/media/1711969596096.png"
           }
         ]
       },
@@ -171,15 +174,18 @@
         "list": [
           {
             "title": "FIND THOSE WHO ARE LOOKING FOR YOU",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services."
+            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "MORE CLICKS, MORE ATTENTION",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services."
+            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "YOU WILL KNOW THE RESULT QUICKLY",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services."
+            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "imgURL": "/media/1711969596096.png"
           }
         ]
       },

@@ -86,7 +86,7 @@ export default function Nav({ locale }: ILocal) {
                         fill
                         sizes="10vh"
                         style={{ objectFit: "contain" }}
-                        src="/logo.png"
+                        src="/nav/logo.png"
                       />
                     </Link>
                   </div>

@@ -1,5 +1,13 @@
 import { Img, Languages, TextContent } from "@interfaces";
-import { IAdvantageItem, IAdvantages, IHowWeWork, IItem, IWebAdLanguageContent, IWebAdPageData, IWebMainSection } from "@interfaces/webPage";
+import {
+  IAdvantageItem,
+  IAdvantages,
+  IHowWeWork,
+  IItem,
+  IWebAdLanguageContent,
+  IWebAdPageData,
+  IWebMainSection,
+} from "@interfaces/webPage";
 import { Schema, model, models } from "mongoose";
 
 const TextSchema = new Schema<TextContent>({
@@ -17,23 +25,22 @@ const listItemSchema = new Schema<IItem>({
   description: { type: String, required: true },
 });
 
-const howWeWorkSchema = new Schema<IHowWeWork>({
-    forAdminHeader: { type: String, required: true },
-    header: { type: String, required: true },
-    list: [listItemSchema],
-  });
-
-const howAdWorksSchema = new Schema<IHowWeWork>({
-    forAdminHeader: { type: String, required: true },
-    header: { type: String, required: true },
-    list: [listItemSchema],
-  });
-
-
 const advantagesListItem = new Schema<IAdvantageItem>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   imgURL: { type: String, required: true },
+});
+
+const howWeWorkSchema = new Schema<IHowWeWork>({
+  forAdminHeader: { type: String, required: true },
+  header: { type: String, required: true },
+  list: [listItemSchema],
+});
+
+const howAdWorksSchema = new Schema<IAdvantages>({
+  forAdminHeader: { type: String, required: true },
+  header: { type: String, required: true },
+  list: [advantagesListItem],
 });
 
 const advantagesSchema = new Schema<IAdvantages>({
@@ -41,7 +48,6 @@ const advantagesSchema = new Schema<IAdvantages>({
   header: { type: String, required: true },
   list: [advantagesListItem],
 });
-
 
 const mainSectionSchema = new Schema<IWebMainSection>({
   forAdminHeader: { type: String, required: true },
@@ -69,6 +75,6 @@ const WebAdPageSchema = new Schema<IWebAdPageData>({
 });
 
 const WebAdPage =
-  models.WebPage || model<IWebAdPageData>("WebAdPage", WebAdPageSchema);
+  models.WebAdPage || model<IWebAdPageData>("WebAdPage", WebAdPageSchema);
 
 export default WebAdPage;

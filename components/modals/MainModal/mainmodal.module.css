@@ -38,6 +38,7 @@
   text-transform: none;
   transition: 0.2s ease-in;
   cursor: pointer;
+  max-width: 320px;
 }
 
 .btn_apply {

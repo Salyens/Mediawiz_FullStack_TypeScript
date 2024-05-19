@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const WebHeaderPhoto = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
-    <div className="relative hidden sm:flex w-1/3 sm:w-1/2 h-[600px]">
+    <div className="relative hidden sm:flex sm:w-1/2 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
         initial={{ x: 1000 }}
         animate={{ x: 0 }}

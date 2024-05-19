@@ -17,7 +17,7 @@ const BGLines = () => {
         fill={true}
         sizes="100vw"
         style={{ objectFit: "cover" }}
-        src="/lines-2.png"
+        src="/common/bg_line.svg"
         alt="bg"
       />
     </MotionDiv>

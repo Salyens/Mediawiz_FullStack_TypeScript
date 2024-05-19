@@ -17,7 +17,7 @@ const RenderMediaFiles: React.FC<RenderMediaFilesProps> = ({ fileURL, type, hand
   }, [fileURL]);
 
   const handleError = () => {
-    setSrc('/placeholderIMG.png');
+    setSrc('/admin/placeholderIMG.png');
     setHasError(true);
   };
 

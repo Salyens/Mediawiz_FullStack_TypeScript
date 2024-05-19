@@ -5,7 +5,7 @@ const Preloader = () => {
     <div className={styles.video_container}>
       <video
         className={styles.video_media}
-        src="/preloader.mp4"
+        src="/preloader/preloader.mp4"
         autoPlay
         preload="auto"
         playsInline

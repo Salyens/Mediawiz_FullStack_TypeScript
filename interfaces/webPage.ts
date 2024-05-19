@@ -53,7 +53,7 @@ export interface IWebAdLanguageContent {
   pageName: string;
   main: IWebMainSection;
   advantages: IAdvantages;
-  howAdWorks: IHowWeWork;
+  howAdWorks: IAdvantages;
   howWeWork: IHowWeWork;
 }
 

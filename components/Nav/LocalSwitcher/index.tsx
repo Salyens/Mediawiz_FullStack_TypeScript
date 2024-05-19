@@ -76,7 +76,7 @@ export default function LocalSwitcher() {
             <span>{localActive.toLocaleUpperCase()}</span>
           </div>
           <Image
-            src={isOpen ? "/arrow_nav_top.png" : "/arrow-nav.png"}
+            src={isOpen ? "/nav/arrow_nav_top.png" : "/nav/arrow-nav.png"}
             width={16}
             height={12}
             alt="arrow"

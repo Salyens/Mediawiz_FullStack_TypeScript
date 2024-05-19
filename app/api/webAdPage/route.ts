@@ -42,7 +42,6 @@ export async function GET() {
     await connectToDB();
     const data = await WebAdPage.findOne();
 
-
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
     return NextResponse.json(

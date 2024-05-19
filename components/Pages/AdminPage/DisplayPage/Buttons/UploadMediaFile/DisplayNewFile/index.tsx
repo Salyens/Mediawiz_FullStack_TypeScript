@@ -66,7 +66,7 @@ const DisplayNewFile: React.FC<DisplayPrevFileProps> = ({
           width={150}
           height={150}
           alt="Preview"
-          src={previews || "/file_placeholder.jpg"}
+          src={previews || "/admin/placeholderIMG.png"}
         />
       ) : (
         <button className="cursor-pointer ">
@@ -77,7 +77,7 @@ const DisplayNewFile: React.FC<DisplayPrevFileProps> = ({
               border: "1px solid blue",
               cursor: "pointer",
             }}
-            src={previews || "/file_placeholder.jpg"}
+            src={previews || "/admin/placeholderIMG.png"}
             autoPlay
             muted
             loop

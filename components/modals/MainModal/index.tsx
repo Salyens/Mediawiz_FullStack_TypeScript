@@ -60,7 +60,7 @@ const MainModal = () => {
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
-          <button className={`${styles.btn_apply} w-full sm:w-80 `}>
+          <button className={`${styles.btn_apply} w-80 `}>
             {t("request_2")}
           </button>
         </DialogTrigger>

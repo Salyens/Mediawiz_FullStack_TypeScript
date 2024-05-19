@@ -12,7 +12,9 @@ const AdvantagesList: React.FC<AdvantagesListProps> = ({ list }) => {
     ));
   };
 
-  return <div className="flex flex-wrap justify-between">{renderAdvantages()}</div>;
+  return (
+    <div className="flex flex-wrap justify-between">{renderAdvantages()}</div>
+  );
 };
 
 export default AdvantagesList;
