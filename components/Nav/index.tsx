@@ -85,7 +85,7 @@ export default function Nav({ locale }: ILocal) {
                         alt="Logo"
                         fill
                         sizes="10vh"
-                        style={{ objectFit: "contain" }}
+                        className="object-contain"
                         src="/nav/logo.png"
                       />
                     </Link>

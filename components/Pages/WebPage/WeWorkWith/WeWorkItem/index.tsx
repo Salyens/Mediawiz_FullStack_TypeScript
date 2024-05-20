@@ -1,7 +1,7 @@
-import { IItem } from "@interfaces/webPage";
 import styles from "./weworkitem.module.css";
 import { useTranslations } from "next-intl";
 import FindMoreLink from "@components/FindMoreLink";
+import { IItem } from "@interfaces/common";
 
 const WeWorkItem = ({ data }: { data: IItem }) => {
   const t = useTranslations("MainPage");

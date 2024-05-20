@@ -1,4 +1,4 @@
-import { IItem } from "@interfaces/webPage";
+import { IItem } from "@interfaces/common";
 import WeWorkItem from "../WeWorkItem";
 
 interface AdvantagesListProps {

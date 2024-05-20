@@ -1,10 +1,10 @@
-import { IAdvantageItem, IItem } from "@interfaces/webPage";
-import React from "react";
 import OneAdItem from "../OneAdItem";
+import { IItemAndImg } from "@interfaces/common";
 
 interface AdItemListProps {
-  list: IAdvantageItem[];
+  list: IItemAndImg[];
 }
+
 const AdItemList: React.FC<AdItemListProps> = ({ list }) => {
   const renderAdItems = () => {
     return list.map((item, index) => (

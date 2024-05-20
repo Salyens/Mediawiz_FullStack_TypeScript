@@ -6,7 +6,7 @@ import { useTransition, Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import styles from "./localswitcher.module.css";
-import { setCookie } from 'nookies';
+import { setCookie } from "nookies";
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -18,12 +18,12 @@ export default function LocalSwitcher() {
   const handleOnClick = (lang: string) => {
     const newPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, `/${lang}$1`);
 
-    // Записываем локаль в куки
-    setCookie(null, 'NEXT_LOCALE', lang, { path: '/' });
+    setCookie(null, "NEXT_LOCALE", lang, { path: "/" });
 
     startTransition(() => {
       router.replace(newPath);
     });
+    setIsOpen(false);
   };
 
   const handleOnClickMainBtn = () => {
@@ -43,13 +43,16 @@ export default function LocalSwitcher() {
             <Menu.Item>
               {({ active }) => (
                 <div className="flex cursor-pointer gap-1">
-                  <Image
-                    src={`/flags/${item}.png`}
-                    width={34}
-                    height={16}
-                    alt="flag"
-                    priority
-                  />
+                  <div className="w-8 h-6 relative">
+                    <Image
+                      src={`/flags/${item}.png`}
+                      fill
+                      sizes="5vh"
+                      className="object-contain"
+                      alt="flag"
+                    />
+                  </div>
+
                   <span className="text-lg">{item.toUpperCase()}</span>
                 </div>
               )}
@@ -66,27 +69,35 @@ export default function LocalSwitcher() {
           onClick={handleOnClickMainBtn}
           className="flex w-full justify-center text-lg "
         >
-          <div className="flex gap-1">
-            <Image
-              src={`/flags/${localActive}.png`}
-              width={34}
-              height={16}
-              alt="flag"
-            />
+          <div className="flex gap-1 items-center ">
+            <div className="w-8 h-6 relative">
+              <Image
+                src={`/flags/${localActive}.png`}
+                fill
+                sizes="5vh"
+                className="object-contain"
+                alt="flag"
+              />
+            </div>
+
             <span>{localActive.toLocaleUpperCase()}</span>
           </div>
-          <Image
-            src={isOpen ? "/nav/arrow_nav_top.png" : "/nav/arrow-nav.png"}
-            width={16}
-            height={12}
-            alt="arrow"
-            className="m-auto"
-          />
+          <div className="w-4 h-3 relative">
+            <Image
+              src={isOpen ? "/nav/arrow_nav_top.png" : "/nav/arrow-nav.png"}
+              fill
+              sizes="5vh"
+              className="object-contain"
+              alt="arrow"
+              style={{ top: "50%" }}
+            />
+          </div>
         </Menu.Button>
       </div>
 
       <Transition
         as={Fragment}
+        show={isOpen}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
         enterTo="transform opacity-100 scale-100"
@@ -94,7 +105,11 @@ export default function LocalSwitcher() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 z-50">
+        <Menu.Items
+          className="absolute left-0 z-50"
+          static
+          onClick={() => setIsOpen(false)}
+        >
           {renderMenuItem()}
         </Menu.Items>
       </Transition>

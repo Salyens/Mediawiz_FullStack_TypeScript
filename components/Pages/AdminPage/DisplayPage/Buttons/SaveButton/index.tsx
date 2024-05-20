@@ -49,7 +49,6 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     try {
       const result = await axios.patch(`/api/${endPoint}`, formDataToSend);
       const { updates }: { updates: IUpdatesFile[] } = result.data;
-      console.log("updates: ", updates);
 
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);

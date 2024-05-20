@@ -1,4 +1,4 @@
-import { IWebMainSection } from "@interfaces/webPage";
+import { IWebMainSection } from "@interfaces/common";
 
 interface WebHeaderProps {
     main: IWebMainSection;

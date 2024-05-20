@@ -16,7 +16,7 @@ const BGLines = () => {
       <Image
         fill={true}
         sizes="100vw"
-        style={{ objectFit: "cover" }}
+        className="object-cover"
         src="/common/bg_line.svg"
         alt="bg"
       />

@@ -27,7 +27,7 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
                 src={imgURL}
                 fill
                 sizes="100vh"
-                style={{ objectFit: "cover" }}
+                className="object-cover"
                 alt="Together photo"
               />
             </div>

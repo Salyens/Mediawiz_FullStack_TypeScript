@@ -1,19 +1,5 @@
-import {
-  Img,
-  Languages,
-  MainPageData,
-  TextContent,
-} from "@interfaces/mainPage";
-import {
-  IAdvantageItem,
-  IAdvantages,
-  IHowWeWork,
-  IItem,
-  IMainMedia,
-  IWeWorkWith,
-  IWebLanguageContent,
-  IWebMainSection,
-} from "@interfaces/webPage";
+import { IItem, IItemAndImg, IItemAndImgList, IItemList, IWebMainSection, Img, TextContent } from "@interfaces/common";
+import { IWebLanguageContent, IWebLanguages, IWebPageData } from "@interfaces/webPage";
 import { Schema, model, models } from "mongoose";
 
 const TextSchema = new Schema<TextContent>({
@@ -31,25 +17,25 @@ const listItemSchema = new Schema<IItem>({
   description: { type: String, required: true },
 });
 
-const howWeWorkSchema = new Schema<IHowWeWork>({
+const howWeWorkSchema = new Schema<IItemList>({
   forAdminHeader: { type: String, required: true },
   header: { type: String, required: true },
   list: [listItemSchema],
 });
 
-const weWorkWithSchema = new Schema<IWeWorkWith>({
+const weWorkWithSchema = new Schema<IItemList>({
   forAdminHeader: { type: String, required: true },
   header: { type: String, required: true },
   list: [listItemSchema],
 });
 
-const advantagesListItem = new Schema<IAdvantageItem>({
+const advantagesListItem = new Schema<IItemAndImg>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   imgURL: { type: String, required: true },
 });
 
-const advantagesSchema = new Schema<IAdvantages>({
+const advantagesSchema = new Schema<IItemAndImgList>({
   forAdminHeader: { type: String, required: true },
   header: { type: String, required: true },
   list: [advantagesListItem],
@@ -71,15 +57,15 @@ const languageContentSchema = new Schema<IWebLanguageContent>({
   howWeWork: { type: howWeWorkSchema, required: true },
 });
 
-const languagesSchema = new Schema<Languages>({
+const languagesSchema = new Schema<IWebLanguages>({
   ru: { type: languageContentSchema, required: true },
   en: { type: languageContentSchema, required: true },
 });
 
-const WebPageSchema = new Schema<MainPageData>({
+const WebPageSchema = new Schema<IWebPageData>({
   languages: { type: languagesSchema, required: true },
 });
 
-const WebPage = models.WebPage || model<MainPageData>("WebPage", WebPageSchema);
+const WebPage = models.WebPage || model<IWebPageData>("WebPage", WebPageSchema);
 
 export default WebPage;

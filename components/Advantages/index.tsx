@@ -1,11 +1,12 @@
 import UnderlinedTitle from "@components/UnderlinedTitle";
-import { IAdvantages } from "@interfaces/webPage";
+
 import AdvantagesList from "./AdvantagesList";
 import BGLines from "@components/BGLines";
 import AnimationWrapper from "@components/AnimationWrapper";
+import { IItemAndImgList } from "@interfaces/common";
 
 interface AdvantagesProps {
-  advantages: IAdvantages;
+  advantages: IItemAndImgList;
 }
 
 const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {

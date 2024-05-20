@@ -1,13 +1,13 @@
 "use client";
 
-import { IAdvantageItem } from "@interfaces/webPage";
 import styles from "./oneaditem.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import classNames from "classnames";
+import { IItemAndImg } from "@interfaces/common";
 
 interface OneAdItemProp {
-  data: IAdvantageItem;
+  data: IItemAndImg;
 }
 
 const OneAdItem = ({ data }: OneAdItemProp) => {
@@ -35,8 +35,7 @@ const OneAdItem = ({ data }: OneAdItemProp) => {
         alt="Item image"
         fill
         sizes="70vh"
-        style={{ objectFit: "cover" }}
-        className={`rounded-2xl ${styles.image}`}
+        className={classNames("rounded-2xl object-cover", styles.image)}
       />
       <p
         className={classNames(
@@ -58,7 +57,7 @@ const OneAdItem = ({ data }: OneAdItemProp) => {
           alt="arrow"
           width={48}
           height={48}
-          style={{ objectFit: "contain" }}
+          className="object-contain"
         />
       </div>
       <p

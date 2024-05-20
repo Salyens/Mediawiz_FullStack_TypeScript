@@ -1,11 +1,10 @@
 import UnderlinedTitle from "@components/UnderlinedTitle";
-import { IAdvantages, IHowWeWork } from "@interfaces/webPage";
-import React from "react";
 import AdItemList from "./AdItemList";
 import AnimationWrapper from "@components/AnimationWrapper";
+import { IItemAndImgList } from "@interfaces/common";
 
 interface HowWeWorkProp {
-  data: IAdvantages;
+  data: IItemAndImgList;
 }
 
 const HowAdWorks = ({ data }: HowWeWorkProp) => {

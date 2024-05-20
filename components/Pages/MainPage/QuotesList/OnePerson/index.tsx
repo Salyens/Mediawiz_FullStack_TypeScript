@@ -70,7 +70,7 @@ const OnePerson: React.FC<QuoteProps> = ({
                 alt={name}
                 fill
                 sizes="(max-width: 768px) 70vw, (max-width: 1200px) 80vw, 65vw"
-                style={{ objectFit: "contain" }}
+                className="object-contain"
                 priority
               />
             )}

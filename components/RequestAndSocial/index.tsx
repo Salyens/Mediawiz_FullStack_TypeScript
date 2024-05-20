@@ -32,7 +32,7 @@ const RequestAndSocial = () => {
           alt={item.name}
           fill={true}
           sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
-          style={{ objectFit: "contain" }}
+          className="object-contain"
         />
       </Link>
     ));

@@ -1,4 +1,5 @@
-import { IItem } from "@interfaces/webPage";
+
+import { IItem } from "@interfaces/common";
 import styles from "./howweworkitem.module.css";
 
 interface HowWeWorkProps {

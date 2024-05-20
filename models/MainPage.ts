@@ -1,7 +1,7 @@
+import { Img, TextContent } from "@interfaces/common";
 import {
   Goals,
   GoalsList,
-  Img,
   LanguageContent,
   Languages,
   MainPageData,
@@ -11,8 +11,6 @@ import {
   OurGoals,
   QuotesList,
   QuotesSection,
-  TextContent,
-  Video,
   WeOfferSection,
 } from "@interfaces/mainPage";
 import { Schema, model, models } from "mongoose";

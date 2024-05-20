@@ -33,7 +33,6 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
       if (!prevData) return null;
       const newData = _.cloneDeep(prevData as MainPageData);
 
-      // Helper function to delete item from the given locale
       const deleteItemFromLocale = (localePath: string) => {
         const pathArray = localePath.split(".");
         const index = parseInt(pathArray.pop() || "", 10);
@@ -49,7 +48,6 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
         }
       };
 
-      // Delete item from both "en" and "ru" locales
       const basePath = lodashPath.split(".").slice(2).join(".");
       const enPath = `languages.en.${basePath}`;
       const ruPath = `languages.ru.${basePath}`;

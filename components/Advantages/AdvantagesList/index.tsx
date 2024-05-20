@@ -1,9 +1,9 @@
-import { IAdvantageItem } from "@interfaces/webPage";
 import React from "react";
 import OneAdvantage from "../OneAdvantage";
+import { IItemAndImg } from "@interfaces/common";
 
 interface AdvantagesListProps {
-  list: IAdvantageItem[];
+  list: IItemAndImg[];
 }
 const AdvantagesList: React.FC<AdvantagesListProps> = ({ list }) => {
   const renderAdvantages = () => {

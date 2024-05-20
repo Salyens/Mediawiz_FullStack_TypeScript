@@ -1,16 +1,14 @@
-
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 const MyPages = () => {
   const localActive = useLocale();
-  const t = useTranslations("Navigation");
   const pages = [
     { pageName: "HOME PAGE", endPoint: "mainPage" },
     { pageName: "WEB DEVELOPMENT" , endPoint: "webPage" },
     { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
-    { pageName: "SMM", endPoint: "smm" },
-    { pageName: "SMM PROMOTION", endPoint: "smmAds" },
+    { pageName: "SMM", endPoint: "smmPage" },
+    { pageName: "SMM PROMOTION", endPoint: "smmAd" },
   ];
 
   return (

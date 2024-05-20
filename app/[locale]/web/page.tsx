@@ -1,5 +1,5 @@
 import WebPage from "@components/Pages/WebPage";
-import { IWebLanguageContent, IWebPageData } from "@interfaces/webPage";
+import { IWebPageData } from "@interfaces/webPage";
 import { useLocale } from "next-intl";
 
 export const metadata = {
@@ -16,10 +16,16 @@ async function getData(): Promise<IWebPageData> {
   return data;
 }
 
+const supportedLocales = ["en", "ru"] as const;
+type SupportedLocale = (typeof supportedLocales)[number];
+
 export default async function Web() {
   const localActive = useLocale();
   const data = await getData();
 
-  if (localActive === "en" || localActive === "ru")
-    return <WebPage data={data.languages[localActive] as IWebLanguageContent} />;
+  if (supportedLocales.includes(localActive as SupportedLocale)) {
+    return <WebPage data={data.languages[localActive as SupportedLocale]} />;
+  }
+
+  return <p>Locale not supported</p>;
 }

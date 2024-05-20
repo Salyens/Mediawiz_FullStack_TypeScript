@@ -14,12 +14,11 @@ const FindMoreLink = () => {
         {t("findMore")}
       </span>
       <Image
-        className="pl-3"
+        className="pl-3 object-contain"
         src="/common/arrow.png"
         alt="arrow"
         width={49}
         height={39}
-        style={{ objectFit: "contain" }}
       />
     </Link>
   );

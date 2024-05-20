@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionDiv } from "@components/MotionDiv";
-import { ImgURL } from "@interfaces/mainPage";
+import { ImgURL } from "@interfaces/common";
 import Image from "next/image";
 
 const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
@@ -21,7 +21,7 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
           alt="Photo"
           fill={true}
           sizes="50vw"
-          style={{ objectFit: "contain" }}
+          className="object-contain"
           priority={true}
         />
       </MotionDiv>

@@ -19,9 +19,8 @@ const HeaderBgLine = () => {
         <Image
           src={`/mainPage/header_line.svg?v=${new Date().getTime()}`}
           fill
-          style={{ objectFit: "contain" }}
           alt="Header line"
-          className="absolute -z-10 top-1/2 -right-1/3"
+          className="absolute -z-10 top-1/2 -right-1/3 object-contain"
           priority
         />
       )}

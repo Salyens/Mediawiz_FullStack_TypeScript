@@ -1,15 +1,4 @@
-export interface ForAdminHeader {
-  forAdminHeader: string;
-}
-
-export interface TextContent {
-  forAdmin: ForAdmin;
-  text: Text;
-}
-
-export type ImgURL = string;
-export type ForAdmin = string;
-export type Text = string;
+import { ForAdmin, ForAdminHeader, Img, ImgURL, Text, TextContent } from "./common";
 
 export interface OffersList {
   header: string;
@@ -26,11 +15,6 @@ export interface WeOfferSection {
   forAdminHeader: ForAdminHeader;
   title: TextContent;
   offers: Offers;
-}
-
-export interface Img {
-  forAdmin: string;
-  imgURL: string;
 }
 
 export interface Video {
@@ -85,7 +69,7 @@ export interface LanguageContent {
 
 export interface Languages {
   ru: LanguageContent;
-  en?: LanguageContent;
+  en: LanguageContent;
 }
 
 export interface MainPageData {

@@ -1,9 +1,10 @@
-import { IAdvantageItem } from "@interfaces/webPage";
+
+import { IItemAndImg } from "@interfaces/common";
 import Image from "next/image";
 import React from "react";
 
 interface OneAdvantageProps {
-  data: IAdvantageItem;
+  data: IItemAndImg;
 }
 const OneAdvantage: React.FC<OneAdvantageProps> = ({ data }) => {
   return (

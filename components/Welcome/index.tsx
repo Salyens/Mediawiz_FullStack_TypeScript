@@ -1,12 +1,14 @@
-import { IWebMainSection } from "@interfaces/webPage";
+
 import { MainSection } from "@interfaces/mainPage";
 import WelcomeImg from "./WelcomeImg";
 import WelcomeDesc from "./WelcomeDesc";
 import HeaderBgLine from "./HeaderBgLine";
+import { IWebMainSection } from "@interfaces/common";
+import { ISmmMainSection } from "@interfaces/smmPage";
 
 interface WebHeaderProps {
-  main: IWebMainSection | MainSection;
-  page: "home" | "web";
+  main: IWebMainSection | MainSection | ISmmMainSection;
+  page: "home" | "web" | "smm";
 }
 
 const Welcome: React.FC<WebHeaderProps> = ({ main, page }) => {

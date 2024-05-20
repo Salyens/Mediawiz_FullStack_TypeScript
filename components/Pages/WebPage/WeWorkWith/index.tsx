@@ -1,10 +1,10 @@
 import React from "react";
-import { IWeWorkWith } from "@interfaces/webPage";
 import UnderlinedTitle from "@components/UnderlinedTitle";
 import WeWorkWithList from "./WeWorkWithList";
 import AnimationWrapper from "@components/AnimationWrapper";
+import { IItemList } from "@interfaces/common";
 
-const WeWorkWith = ({ data }: { data: IWeWorkWith }) => {
+const WeWorkWith = ({ data }: { data: IItemList }) => {
   return (
     <div className="bg_item_left_blue">
       <AnimationWrapper

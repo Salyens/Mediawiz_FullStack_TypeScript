@@ -1,6 +1,5 @@
 import { IOneGoal } from "@interfaces/webPage";
 
-
 const OneGoal: React.FC<IOneGoal> = ({ partOne, and, partTwo }) => {
   return (
     <div className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-base sm:text-center">
