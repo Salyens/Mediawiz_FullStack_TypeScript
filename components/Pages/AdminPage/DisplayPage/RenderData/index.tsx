@@ -1,7 +1,7 @@
 import React from "react";
 import TextArea from "../TextArea";
 import DeleteButton from "../Buttons/DeleteButton";
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
 import { SaveAlertProps } from "../../../../../types/admin";
@@ -32,8 +32,7 @@ const RenderData: React.FC<RenderDataProps> = ({
       <div className="text-xl">
         {sortedKeys.map((key, index) => {
           const value = dataToRender[key];
-          if (key === "_id" || key === "pageName")
-            return null;
+          if (key === "_id" || key === "pageName") return null;
 
           const newPath = currentPath ? `${currentPath}.${key}` : key;
           const itemKey = `${newPath}-${index}`;

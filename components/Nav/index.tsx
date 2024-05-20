@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { MotionDiv } from "@components/MotionDiv";
 import LocalSwitcher from "./LocalSwitcher";
 import { useTranslations } from "next-intl";
-import { ILocal } from "@interfaces/mainPage";
+import { ILocal } from "@interfaces/common";
 
 interface NavItem {
   name: string;

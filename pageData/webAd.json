@@ -4,7 +4,7 @@
       "pageName": "Web Ad",
       "main": {
         "forAdminHeader": "Раздел 'Приветствие'",
-        "photo": {
+        "img": {
           "forAdmin": "Фото",
           "imgURL": "/media/1711969596096.png"
         },
@@ -120,7 +120,7 @@
       "pageName": "Web Ad",
       "main": {
         "forAdminHeader": "Section 'Greeting'",
-        "photo": {
+        "img": {
           "forAdmin": "Photo",
           "imgURL": "/media/1711969596096.png"
         },

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./displaydata.module.css";
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import PageHeader from "./PageHeader";
 import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";

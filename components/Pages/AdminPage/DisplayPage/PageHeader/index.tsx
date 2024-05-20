@@ -1,4 +1,4 @@
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import { useLocale, useTranslations } from "next-intl";
 
 interface PageHeaderProps {
@@ -12,11 +12,7 @@ const PageHeader = ({ data }: PageHeaderProps) => {
     localActive === "en" || localActive === "ru"
       ? data.languages[localActive]?.pageName
       : "";
-  return (
-    <h2 className="text-center text-3xl">
-      Editing page "{pageName}"
-    </h2>
-  );
+  return <h2 className="text-center text-3xl">Editing page "{pageName}"</h2>;
 };
 
 export default PageHeader;

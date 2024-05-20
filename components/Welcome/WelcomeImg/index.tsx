@@ -1,10 +1,10 @@
 "use client";
 
 import { MotionDiv } from "@components/MotionDiv";
-import { ImgURL } from "@interfaces";
+import { ImgURL } from "@interfaces/mainPage";
 import Image from "next/image";
 
-const WebHeaderPhoto = ({ imgURL }: { imgURL: ImgURL }) => {
+const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
     <div className="relative hidden sm:flex sm:w-1/2 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
@@ -29,4 +29,4 @@ const WebHeaderPhoto = ({ imgURL }: { imgURL: ImgURL }) => {
   );
 };
 
-export default WebHeaderPhoto;
+export default WelcomeImg;

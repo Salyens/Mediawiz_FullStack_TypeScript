@@ -1,12 +1,10 @@
-import Header from "./Header";
 import WeOffer from "./WeOffer";
-import { LanguageContent } from "../../../interfaces";
+import { LanguageContent } from "../../../interfaces/mainPage";
 import Socials from "./Socials";
 import QuotesList from "./QuotesList";
 import FeedbackForm from "@components/FeedbackForm";
-import Image from "next/image";
 import TogetherBlock from "./TogetherBlock";
-import styles from "./mainpage.module.css"
+import Welcome from "@components/Welcome";
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;
@@ -16,8 +14,10 @@ const MainPage = ({ data }: { data: LanguageContent }) => {
   const { goalsList } = data.ourGoals.goals;
 
   return (
-    <div className={`w-full h-full min-h-screen overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24 `}>
-      <Header main={main} />
+    <div
+      className={`w-full h-full min-h-screen overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24 `}
+    >
+      <Welcome main={main} page="home" />
       <WeOffer weOffer={weOffer} />
       <Socials />
       <QuotesList quotesList={quotesList} />

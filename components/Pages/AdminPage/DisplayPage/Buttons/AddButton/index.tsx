@@ -1,4 +1,4 @@
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 
 interface AddButtonProps {
   currentPath: string;
@@ -11,7 +11,6 @@ const AddButton: React.FC<AddButtonProps> = ({
   item,
   setData,
 }) => {
-
   const createEmptyItem = () => {
     return Object.keys(item).reduce((acc, key) => {
       if (key !== "_id") acc[key] = "";
@@ -24,7 +23,6 @@ const AddButton: React.FC<AddButtonProps> = ({
     setData((prevData) => {
       if (!prevData) return null;
       const newData: MainPageData = { ...(prevData as MainPageData) };
-
 
       const addItemToLocale = (localePath: string) => {
         const keys = localePath.split(".");
@@ -42,8 +40,14 @@ const AddButton: React.FC<AddButtonProps> = ({
         ];
       };
 
-      const enPath = `languages.en.${currentPath.split(".").slice(2).join(".")}`;
-      const ruPath = `languages.ru.${currentPath.split(".").slice(2).join(".")}`;
+      const enPath = `languages.en.${currentPath
+        .split(".")
+        .slice(2)
+        .join(".")}`;
+      const ruPath = `languages.ru.${currentPath
+        .split(".")
+        .slice(2)
+        .join(".")}`;
 
       addItemToLocale(enPath);
       addItemToLocale(ruPath);

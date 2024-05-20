@@ -4,7 +4,7 @@
       "pageName": "Home",
       "main": {
         "forAdminHeader": "Section 'Welcome'",
-        "logo": {
+        "img": {
           "forAdmin": "Logo",
           "imgURL": "/media/1711969596096.png"
         },
@@ -99,7 +99,7 @@
       "pageName": "Home",
       "main": {
         "forAdminHeader": "Раздел 'Приветствие'",
-        "logo": {
+        "img": {
           "forAdmin": "Логотип",
           "imgURL": "/media/1711969596096.png"
         },

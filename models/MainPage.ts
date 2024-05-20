@@ -14,7 +14,7 @@ import {
   TextContent,
   Video,
   WeOfferSection,
-} from "@interfaces";
+} from "@interfaces/mainPage";
 import { Schema, model, models } from "mongoose";
 
 const offerListSchema = new Schema<OffersList>({
@@ -72,10 +72,9 @@ const ourGoalsSectionSchema = new Schema<OurGoals>({
   goals: goalsSchema,
 });
 
-
 const mainSectionSchema = new Schema<MainSection>({
   forAdminHeader: { type: String, required: true },
-  logo: { type: imgSchema, required: true },
+  img: { type: imgSchema, required: true },
   header_1: { type: TextSchema, required: true },
   header_2: { type: TextSchema, required: true },
   description_1: { type: TextSchema, required: true },

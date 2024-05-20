@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./onecard.module.css";
-import { OffersList } from "@interfaces";
+import { OffersList } from "@interfaces/mainPage";
 import Link from "next/link";
 
 const OneCard = ({ header, description, href }: OffersList) => {

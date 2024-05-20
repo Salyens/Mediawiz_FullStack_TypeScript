@@ -1,4 +1,5 @@
-import { IOneGoal } from "@interfaces/mainPage";
+import { IOneGoal } from "@interfaces/webPage";
+
 
 const OneGoal: React.FC<IOneGoal> = ({ partOne, and, partTwo }) => {
   return (

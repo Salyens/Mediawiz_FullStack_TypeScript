@@ -4,7 +4,7 @@
       "pageName": "Web development",
       "main": {
         "forAdminHeader": "Раздел 'Приветствие'",
-        "photo": {
+        "img": {
           "forAdmin": "Фото",
           "imgURL": "/media/1711969596096.png"
         },
@@ -130,7 +130,7 @@
       "pageName": "Web development",
       "main": {
         "forAdminHeader": "Section 'Welcome'",
-        "photo": {
+        "img": {
           "forAdmin": "Photo",
           "imgURL": "/media/1711969596096.png"
         },

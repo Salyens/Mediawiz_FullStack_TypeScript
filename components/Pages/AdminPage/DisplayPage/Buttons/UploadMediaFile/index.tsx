@@ -4,7 +4,7 @@ import MotionDivImg from "./MotionDivImg";
 import styles from "../../../DisplayPage/displaydata.module.css";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import { SaveAlertProps } from "../../../../../../types/admin";
 import DisplayNewFile from "./DisplayNewFile";
 

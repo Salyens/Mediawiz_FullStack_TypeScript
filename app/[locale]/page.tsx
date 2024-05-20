@@ -1,5 +1,5 @@
 import MainPage from "@components/Pages/MainPage";
-import { LanguageContent, MainPageData } from "../../interfaces";
+import { LanguageContent, MainPageData } from "../../interfaces/mainPage";
 import { useLocale } from "next-intl";
 
 export const metadata = {

@@ -1,5 +1,5 @@
 import OneCard from "./OneCard";
-import { WeOfferSection } from "@interfaces";
+import { WeOfferSection } from "@interfaces/mainPage";
 import BGLines from "@components/BGLines";
 import AnimationWrapper from "@components/AnimationWrapper";
 import UnderlinedTitle from "@components/UnderlinedTitle";

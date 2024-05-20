@@ -1,7 +1,8 @@
 import React from "react";
 import OurPhoto from "./OurPhoto";
 import OurGoals from "./OurGoals";
-import { IOneGoal } from "@interfaces/mainPage";
+import { IOneGoal } from "@interfaces/webPage";
+
 
 
 interface TogetherBlockProps {

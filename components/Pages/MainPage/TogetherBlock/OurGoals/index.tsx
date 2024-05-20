@@ -1,4 +1,5 @@
-import { IOneGoal } from "@interfaces/mainPage";
+
+import { IOneGoal } from "@interfaces/webPage";
 import OneGoal from "./OneGoal";
 import styles from "./ourgoals.module.css";
 import AnimationWrapper from "@components/AnimationWrapper";

@@ -2,7 +2,7 @@ import _ from "lodash";
 import styles from "./savebutton.module.css";
 import axios from "axios";
 import { useState } from "react";
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
 
@@ -49,7 +49,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     try {
       const result = await axios.patch(`/api/${endPoint}`, formDataToSend);
       const { updates }: { updates: IUpdatesFile[] } = result.data;
-      console.log('updates: ', updates);
+      console.log("updates: ", updates);
 
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);

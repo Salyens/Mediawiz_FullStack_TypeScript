@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import styles from "../displaydata.module.css";
 import _ from "lodash";
 import { debounce } from "lodash";
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 
 interface TextAreaProps {
   itemKey: string;

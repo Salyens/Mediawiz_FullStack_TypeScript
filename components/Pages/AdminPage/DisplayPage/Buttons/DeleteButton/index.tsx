@@ -1,4 +1,4 @@
-import { MainPageData } from "@interfaces";
+import { MainPageData } from "@interfaces/mainPage";
 import _ from "lodash";
 
 interface DeleteButtonProps {

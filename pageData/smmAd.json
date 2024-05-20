@@ -1,0 +1,140 @@
+{
+  "languages": {
+    "ru": {
+      "pageName": "SMM Ad",
+      "main": {
+        "forAdminHeader": "Раздел 'Приветствие'",
+        "img": {
+          "forAdmin": "Фото",
+          "imgURL": "/media/1711969596096.png"
+        },
+        "header": {
+          "forAdmin": "Заголовок",
+          "text": "ВЕДЕНИЕ СОЦИАЛЬНЫХ СЕТЕЙ"
+        },
+        "description": {
+          "forAdmin": "Описание",
+          "text": "В SMM наши клиенты получают не только продвижение, но и комплексный подход. А маркетинговая стратегия, анализ конкурентов и целевой аудитории, — идут вам бонусом, совершенно бесплатно!"
+        }
+      },
+      "weWorkWith": {
+        "forAdminHeader": "Раздел 'С чем мы работаем'",
+        "header": "С ЧЕМ МЫ РАБОТАЕМ:",
+        "list": [
+          {
+            "title": "УНИКАЛЬНЫЙ ДИЗАЙН ВАШИХ СОЦИАЛЬНЫХ СЕТЕЙ",
+            "description": "Логотип и фирменный стиль и многое другое"
+          },
+          {
+            "title": "КОНТЕНТ-ПЛАН",
+            "description": "Написание текстов, описывающих ваш продукт"
+          },
+          {
+            "title": "ПРОДАЮЩИЕ ТЕКСТЫ",
+            "description": "Ваш бизнес в интернете"
+          },
+          {
+            "title": " ПРОДВИЖЕНИЕ",
+            "description": "Применение разных способов продвижения"
+          },
+          {
+            "title": "REELS",
+            "description": "Создание REELS и видео о вашем продукте"
+          }
+        ]
+      },
+      "result": {
+        "forAdminHeader": "Результат",
+        "partOne": "РЕЗУЛЬТАТЫ? ЗАМЕТНЫ СРАЗУ: БОЛЬШЕ ВНИМАНИЯ К",
+        "partTwo": "ВАШЕМУ БИЗНЕСУ, АКТИВНОСТЬ В ДИРЕКТЕ"
+      },
+      "myProjects": {
+        "forAdminHeader": "Раздел 'С чем мы работаем'",
+        "header": "НАШИ РАБОТЫ:",
+        "list": [
+          { "title": "project-1", "imgURL": "/media/1711969596096.png" },
+          { "title": "project-2", "imgURL": "/media/1711969596096.png" }
+        ]
+      },
+      "quotes": {
+        "forAdminHeader": "Раздел 'Цитаты'",
+        "quotesList": [
+          {
+            "description": "Мы ценим результат, четкость и грамотность. Давайте сделаем ваш бизнес запоминающимся вместе!            Выбирая грамотный маркетинг в соцсетях и таргетированную рекламу, ваши продажи увеличиваются."
+          },
+          {
+            "description": "Как это происходит? Ваш продукт видит множество людей! Привлекаются новые покупатели, а старые доверяют вам больше и остаются с вами."
+          }
+        ]
+      }
+    },
+    "en": {
+      "pageName": "SMM Ad",
+      "main": {
+        "forAdminHeader": "Section 'Welcome'",
+        "img": {
+          "forAdmin": "Photo",
+          "imgURL": "/media/1711969596096.png"
+        },
+        "header": {
+          "forAdmin": "Header",
+          "text": "SOCIAL MEDIA MANAGEMENT"
+        },
+        "description": {
+          "forAdmin": "Description",
+          "text": "In SMM, our clients receive not only promotion but also a comprehensive approach. And marketing strategy, competitor and audience analysis are included for you as a bonus, absolutely free!"
+        }
+      },
+      "weWorkWith": {
+        "forAdminHeader": "Section 'What We Work With'",
+        "header": "WHAT WE WORK WITH:",
+        "list": [
+          {
+            "title": "UNIQUE DESIGN OF YOUR SOCIAL MEDIA",
+            "description": "Logo and corporate identity and much more"
+          },
+          {
+            "title": "CONTENT PLAN",
+            "description": "Writing texts describing your product"
+          },
+          {
+            "title": "SALES TEXTS",
+            "description": "Your business on the internet"
+          },
+          {
+            "title": "PROMOTION",
+            "description": "Using different promotion methods"
+          },
+          {
+            "title": "REELS",
+            "description": "Creating REELS and videos about your product"
+          }
+        ]
+      },
+      "result": {
+        "forAdminHeader": "Result",
+        "partOne": "RESULTS? IMMEDIATELY NOTICEABLE: MORE ATTENTION TO",
+        "partTwo": "YOUR BUSINESS, ACTIVITY IN DIRECT"
+      },
+      "myProjects": {
+        "forAdminHeader": "Section 'What We Work With'",
+        "header": "OUR WORKS:",
+        "list": [
+          { "title": "project-1", "imgURL": "/media/1711969596096.png" },
+          { "title": "project-2", "imgURL": "/media/1711969596096.png" }
+        ]
+      },
+      "quotes": {
+        "forAdminHeader": "Section 'Quotes'",
+        "quotesList": [
+          {
+            "description": "We value results, clarity, and literacy. Let's make your business memorable together! By choosing competent social media marketing and targeted advertising, your sales increase."
+          },
+          {
+            "description": "How does it work? Your product is seen by many people! New buyers are attracted, and old ones trust you more and stay with you."
+          }
+        ]
+      }
+    }
+  }
+}

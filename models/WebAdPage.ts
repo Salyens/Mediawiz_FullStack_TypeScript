@@ -1,4 +1,4 @@
-import { Img, Languages, TextContent } from "@interfaces";
+import { Img, Languages, TextContent } from "@interfaces/mainPage";
 import {
   IAdvantageItem,
   IAdvantages,

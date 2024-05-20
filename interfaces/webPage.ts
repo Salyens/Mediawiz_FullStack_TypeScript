@@ -1,13 +1,19 @@
-import { ForAdmin, ForAdminHeader, Img, Text } from "@interfaces";
+import { ForAdmin, ForAdminHeader, Img, Text } from "@interfaces/mainPage";
 
 export interface IMainMedia {
   forAdminHeader: ForAdminHeader;
   photo: Img;
 }
 
+export interface IOneGoal {
+  partOne: string;
+  and: string;
+  partTwo: string;
+}
+
 export interface IWebMainSection {
   forAdminHeader: ForAdminHeader;
-  photo: Img;
+  img: Img;
   header_1: { forAdmin: ForAdmin; text: Text };
   header_2: { forAdmin: ForAdmin; text: Text };
   description: { forAdmin: ForAdmin; text: Text };
