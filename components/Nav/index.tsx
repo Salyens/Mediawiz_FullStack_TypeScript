@@ -8,9 +8,9 @@ import Image from "next/image";
 import styles from "./nav.module.css";
 import { usePathname } from "next/navigation";
 import { MotionDiv } from "@components/MotionDiv";
-import LocalSwitcher from "./LocalSwitcher";
 import { useTranslations } from "next-intl";
 import { ILocal } from "@interfaces/common";
+import LocalSwitcher from "./LocalSwitcher";
 
 interface NavItem {
   name: string;
@@ -111,7 +111,7 @@ export default function Nav({ locale }: ILocal) {
                 </div>
 
                 <div className="hidden lg:flex ml-5 2xl:ml-16 xl:ml-10 lg:ml-8">
-                  <LocalSwitcher />
+                <LocalSwitcher/>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Nav({ locale }: ILocal) {
                 </div>
                 <div className="flex">{renderSocialLinks(socialLinks)}</div>
                 <div>
-                  <LocalSwitcher />
+                  <LocalSwitcher/>
                 </div>
               </div>
             </Disclosure.Panel>

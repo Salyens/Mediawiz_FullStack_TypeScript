@@ -41,7 +41,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "components/ui/menubar.tsx"  ],
   "exclude": [
     "node_modules"
   ]
