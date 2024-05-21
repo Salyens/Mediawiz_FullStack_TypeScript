@@ -12,7 +12,7 @@ const WebDesc: React.FC<WebHeaderProps> = ({ main }) => {
         {main["header_2"].text}
       </p>
 
-      <div className="text-base md:text-lg lg:text-2xl mt-2 header_description">
+      <div className="text-base md:text-lg w-full sm:w-2/3 lg:text-2xl mt-2 header_description">
         <p>{main["description"].text}</p>
       </div>
     </>

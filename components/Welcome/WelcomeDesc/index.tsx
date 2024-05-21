@@ -22,13 +22,12 @@ const WelcomeDesc: React.FC<WebHeaderProps> = ({ main, page }) => {
         ease: "easeOut",
         duration: 1,
       }}
+      className="flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full lg:w-3/4 xl:w-7/12 mt-4 sm:mt-0"
     >
-      <div className=" flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full mt-4 sm:mt-0">
-        {page === "home" && <HomeDesc main={main as MainSection} />}
-        {page === "web" && <WebDesc main={main as IWebMainSection} />}
-        {page === "smm" && <SmmDesc main={main as ISmmMainSection} />}
-        <MainModal />
-      </div>
+      {page === "home" && <HomeDesc main={main as MainSection} />}
+      {page === "web" && <WebDesc main={main as IWebMainSection} />}
+      {page === "smm" && <SmmDesc main={main as ISmmMainSection} />}
+      <MainModal />
     </MotionDiv>
   );
 };

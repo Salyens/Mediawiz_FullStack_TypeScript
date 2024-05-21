@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
-    <div className="relative hidden sm:flex sm:w-1/2 sm:h-[300px] lg:h-[600px]">
+    <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
         initial={{ x: 1000 }}
         animate={{ x: 0 }}
@@ -14,7 +14,7 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
           ease: "easeOut",
           duration: 1,
         }}
-        style={{ position: "relative", width: "100%", height: "100%" }}
+        className="relative w-full h-full"
       >
         <Image
           src={imgURL}

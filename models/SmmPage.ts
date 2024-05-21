@@ -4,7 +4,8 @@ import {
   IProjectsList,
   IQuoteItem,
   IQuotesList,
-  IResult,
+  IResultItem,
+  IResultList,
   ISmmLanguageContent,
   ISmmLanguages,
   ISmmMainSection,
@@ -47,10 +48,14 @@ const projectsSchema = new Schema<IProjectsList>({
   list: [projectItemSchema],
 });
 
-const resultSchema = new Schema<IResult>({
-  forAdminHeader: { type: String, required: true },
+const resultItemSchema = new Schema<IResultItem>({
   partOne: { type: String, required: true },
   partTwo: { type: String, required: true },
+});
+
+const resultSchema = new Schema<IResultList>({
+  forAdminHeader: { type: String, required: true },
+  list: [resultItemSchema],
 });
 
 const weWorkWithSchema = new Schema<IItemList>({
@@ -70,7 +75,7 @@ const languageContentSchema = new Schema<ISmmLanguageContent>({
   pageName: { type: String, required: true },
   main: { type: mainSectionSchema, required: true },
   weWorkWith: { type: weWorkWithSchema, required: true },
-  result: { type: resultSchema, required: true },
+  results: { type: resultSchema, required: true },
   myProjects: { type: projectsSchema, required: true },
   quotes: { type: quotesSchema, required: true },
 });

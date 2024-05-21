@@ -1,7 +1,7 @@
 {
   "languages": {
     "ru": {
-      "pageName": "SMM Ad",
+      "pageName": "SMM",
       "main": {
         "forAdminHeader": "Раздел 'Приветствие'",
         "img": {
@@ -43,10 +43,14 @@
           }
         ]
       },
-      "result": {
+      "results": {
         "forAdminHeader": "Результат",
-        "partOne": "РЕЗУЛЬТАТЫ? ЗАМЕТНЫ СРАЗУ: БОЛЬШЕ ВНИМАНИЯ К",
-        "partTwo": "ВАШЕМУ БИЗНЕСУ, АКТИВНОСТЬ В ДИРЕКТЕ"
+        "list": [
+          {
+            "partOne": "РЕЗУЛЬТАТЫ? ЗАМЕТНЫ СРАЗУ: БОЛЬШЕ ВНИМАНИЯ К",
+            "partTwo": "ВАШЕМУ БИЗНЕСУ, АКТИВНОСТЬ В ДИРЕКТЕ"
+          }
+        ]
       },
       "myProjects": {
         "forAdminHeader": "Раздел 'С чем мы работаем'",
@@ -69,7 +73,7 @@
       }
     },
     "en": {
-      "pageName": "SMM Ad",
+      "pageName": "SMM",
       "main": {
         "forAdminHeader": "Section 'Welcome'",
         "img": {
@@ -111,10 +115,14 @@
           }
         ]
       },
-      "result": {
+      "results": {
         "forAdminHeader": "Result",
-        "partOne": "RESULTS? IMMEDIATELY NOTICEABLE: MORE ATTENTION TO",
-        "partTwo": "YOUR BUSINESS, ACTIVITY IN DIRECT"
+        "list": [
+          {
+            "partOne": "RESULTS? IMMEDIATELY NOTICEABLE: MORE ATTENTION TO",
+            "partTwo": "YOUR BUSINESS, ACTIVITY IN DIRECT"
+          }
+        ]
       },
       "myProjects": {
         "forAdminHeader": "Section 'What We Work With'",

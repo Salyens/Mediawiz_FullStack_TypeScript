@@ -1,10 +1,11 @@
 import { IWebLanguageContent } from "@interfaces/webPage";
 import RequestAndSocial from "@components/RequestAndSocial";
-import WeWorkWith from "./WeWorkWith";
+
 import FeedbackForm from "@components/FeedbackForm";
 import Welcome from "@components/Welcome";
 import Advantages from "@components/Advantages";
 import HowWeWork from "@components/HowWeWork";
+import WeWorkWith from "@components/WeWorkWith";
 
 const WebPage = ({ data }: { data: IWebLanguageContent }) => {
   const { main } = data;

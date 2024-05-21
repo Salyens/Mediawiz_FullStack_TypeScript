@@ -7,6 +7,7 @@ import validator from "validator";
 import LoadingCircle from "@components/LoadingCircle";
 import SuccessAlert from "../SuccessAlert";
 import { useTranslations } from "next-intl";
+import classNames from "classnames";
 
 const MainModal = () => {
   const t = useTranslations("MainForm");
@@ -60,7 +61,7 @@ const MainModal = () => {
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
-          <button className={`${styles.btn_apply} w-80 `}>
+          <button className={classNames("w-80 m-auto sm:m-0", styles.btn_apply)}>
             {t("request_2")}
           </button>
         </DialogTrigger>
@@ -132,13 +133,13 @@ const MainModal = () => {
 
               <p>
                 {t("policy_1")}
-                <span className="font-bold">{" "}{t("policy_2")}</span>{" "}
+                <span className="font-bold"> {t("policy_2")}</span>{" "}
                 {t("policy_3")}
               </p>
             </div>
 
             <div>
-              <button type="submit" className={styles.btn}>
+              <button type="submit" className={classNames(styles.btn)}>
                 {loading ? (
                   <div className="w-5">
                     <LoadingCircle />

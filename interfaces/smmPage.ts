@@ -7,8 +7,12 @@ export interface ISmmMainSection {
   description: { forAdmin: ForAdmin; text: Text };
 }
 
-export interface IResult {
+export interface IResultList {
   forAdminHeader: ForAdminHeader;
+  list: IResultItem[];
+}
+
+export interface IResultItem {
   partOne: string;
   partTwo: string;
 }
@@ -33,17 +37,11 @@ export interface IQuotesList {
   list: IQuoteItem[];
 }
 
-export interface IResult {
-  forAdminHeader: ForAdminHeader;
-  partOne: string;
-  partTwo: string;
-}
-
 export interface ISmmLanguageContent {
   pageName: string;
   main: ISmmMainSection;
   weWorkWith: IItemList;
-  result: IResult;
+  results: IResultList;
   myProjects: IProjectsList;
   quotes: IQuotesList;
 }
@@ -54,6 +52,5 @@ export interface ISmmLanguages {
 }
 
 export interface ISmmPageData {
-    languages: ISmmLanguages;
-  }
-  
+  languages: ISmmLanguages;
+}
