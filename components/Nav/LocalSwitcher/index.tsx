@@ -5,6 +5,7 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import classNames from "classnames";
 import { ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import Image from "next/image";
@@ -46,7 +47,20 @@ const LocalSwitcher = () => {
             <span className="text-lg">{localActive.toUpperCase()}</span>
           </div>
 
-          <ChevronDown className={isOpen ? "rotate-180" : ""} />
+          <div className="w-4 h-4 m-auto relative">
+            <Image
+              src="/nav/arrow-nav.png"
+              fill
+              sizes="5vh"
+              className={classNames(
+                "object-contain ml-2",
+                isOpen ? "rotate-180" : ""
+              )}
+              alt="flag"
+            />
+          </div>
+
+          {/* <ChevronDown className={} /> */}
         </MenubarTrigger>
         <MenubarContent>
           <MenubarItem>

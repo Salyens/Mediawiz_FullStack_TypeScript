@@ -4,6 +4,7 @@ import WelcomeDesc from "./WelcomeDesc";
 import HeaderBgLine from "./HeaderBgLine";
 import { IWebMainSection } from "@interfaces/common";
 import { ISmmMainSection } from "@interfaces/smmPage";
+import BgEllipse from "@components/BgEllipse";
 
 interface WebHeaderProps {
   main: IWebMainSection | MainSection | ISmmMainSection;
@@ -15,9 +16,10 @@ const Welcome: React.FC<WebHeaderProps> = ({ main, page }) => {
 
   const { imgURL } = main.img;
   return (
-    <div className="relative lg:h-screen bg_item_left 2xl:pt-16">
+    <div className="relative lg:h-screen 2xl:pt-16">
+      <BgEllipse/>
       {page === "home" && <HeaderBgLine />}
-      <div className=" flex justify-between items-center main_container   p-3 sm:p-4 md:p-5 xl:p-6">
+      <div className=" flex justify-between items-center main_container p-3 sm:p-4 md:p-5 xl:p-6">
         <WelcomeDesc main={main} page={page} />
         <WelcomeImg imgURL={imgURL} />
       </div>

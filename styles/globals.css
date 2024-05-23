@@ -100,7 +100,7 @@ a:hover {
   right: -40%;
   bottom: 0;
   left: 0;
-  background-image: url("/ellipses/ellipse-1.png");
+  background-image: url("/ellipses/ellipse-2.svg");
   background-size: cover;
   background-position: center;
   filter: blur(70px);
@@ -118,7 +118,7 @@ a:hover {
   right: 0;
   bottom: 0;
   left: -40%;
-  background-image: url("/ellipses/ellipse-1.png");
+  background-image: url("/ellipses/ellipse-1.svg");
   background-size: cover;
   background-position: center;
   filter: blur(100px);
@@ -137,7 +137,7 @@ a:hover {
   right: 0;
   bottom: 0;
   left: -20%;
-  background-image: url("/ellipses/ellipse-2.png");
+  background-image: url("/ellipses/ellipse-2.svg");
   background-size: cover;
   background-position: center;
   filter: blur(70px);

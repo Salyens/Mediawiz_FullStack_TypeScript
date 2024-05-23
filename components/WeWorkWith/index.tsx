@@ -6,7 +6,6 @@ import { IItemList } from "@interfaces/common";
 
 const WeWorkWith = ({ data }: { data: IItemList }) => {
   return (
-    <div className="bg_item_left_blue">
       <AnimationWrapper
         initial={{ y: 600 }}
         animate={{ y: 0 }}
@@ -16,7 +15,6 @@ const WeWorkWith = ({ data }: { data: IItemList }) => {
         <UnderlinedTitle text={data.header} />
         <WeWorkWithList list={data.list} />
       </AnimationWrapper>
-    </div>
   );
 };
 

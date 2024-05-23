@@ -9,6 +9,7 @@ interface SuccessAlertProps {
 }
 
 const SuccessAlert: React.FC<SuccessAlertProps> = ({ success, setSuccess }) => {
+  console.log('success: ', success);
   const t = useTranslations("SuccessForm");
   const [visible, setVisible] = useState(true);
   const alertInfo = {

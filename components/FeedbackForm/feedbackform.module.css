@@ -36,6 +36,8 @@
   height: 48px;
   max-width: 320px;
   margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
   background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
   border-radius: 12px;
   font-size: 18px;

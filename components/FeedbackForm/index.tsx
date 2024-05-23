@@ -4,6 +4,7 @@ import Image from "next/image";
 import CustomForm from "./CustomForm";
 import { useTranslations } from "next-intl";
 import AnimationWrapper from "@components/AnimationWrapper";
+import MainModal from "@components/modals/MainModal";
 
 const FeedbackForm = () => {
   const t = useTranslations("MainForm");
