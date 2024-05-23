@@ -3,6 +3,7 @@ import { WeOfferSection } from "@interfaces/mainPage";
 import BGLines from "@components/BGLines";
 import AnimationWrapper from "@components/AnimationWrapper";
 import UnderlinedTitle from "@components/UnderlinedTitle";
+import BgEllipse from "@components/BgEllipse";
 
 const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
   const { text } = weOffer.title;
@@ -27,6 +28,7 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
     <div className="relative bg_item_right">
       <div className="main_container min-h-screen pl-2 pr-2 lg:pl-6 lg:pr-6">
         <BGLines />
+        <BgEllipse variant={1} position="-right-1/3 -top-1/3" width={2000} height={2000} />
         <AnimationWrapper
           initial={{ y: 600 }}
           animate={{ y: 0 }}

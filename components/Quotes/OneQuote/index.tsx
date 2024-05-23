@@ -5,6 +5,7 @@ import AnimationWrapper from "@components/AnimationWrapper";
 import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
+import BgEllipse from "@components/BgEllipse";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -16,15 +17,15 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
   const withImg = "imgURL" in item;
 
   return (
-    <div
-      className={classNames(
-        "relative bg_item_1",
-        isOdd ? "bg_item_left" : "bg_item_right",
-        withImg && " mt-36"
+    <div className={classNames("relative", withImg && " mt-36")}>
+      {isOdd ? (
+        <BgEllipse variant={2} position="md:-left-1/4 md:-top-1/3" width={1300} height={1300} />
+      ) : (
+        <BgEllipse variant={2} position="md:-right-1/4 md:-top-1/3" width={1300} height={1300} />
       )}
-    >
+
       <AnimationWrapper
-        initial={{ x: isOdd ? -2000  : 2000 }}
+        initial={{ x: isOdd ? -2000 : 2000 }}
         animate={{ x: 0 }}
         transition={{
           ease: "easeOut",

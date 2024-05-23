@@ -6,6 +6,7 @@ import TogetherBlock from "./TogetherBlock";
 import Welcome from "@components/Welcome";
 import Quotes from "@components/Quotes";
 import { useAppContext } from "@context";
+import BgEllipse from "@components/BgEllipse";
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;
@@ -18,7 +19,6 @@ const MainPage = ({ data }: { data: LanguageContent }) => {
     <div
       className={`w-full h-full min-h-screen overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24 `}
     >
-
       <Welcome main={main} page="home" />
       <WeOffer weOffer={weOffer} />
       <Socials />
