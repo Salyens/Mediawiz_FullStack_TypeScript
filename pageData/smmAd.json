@@ -1,0 +1,116 @@
+{
+  "languages": {
+    "ru": {
+      "pageName": "SMM Ad",
+      "main": {
+        "forAdminHeader": "Раздел 'Приветствие'",
+        "img": {
+          "forAdmin": "Фото",
+          "imgURL": "/media/1711969596096.png"
+        },
+        "header": {
+          "forAdmin": "Заголовок",
+          "text": "ТАРГЕТИРОВАННАЯ РЕКЛАМА"
+        },
+        "description": {
+          "forAdmin": "Описание",
+          "text": "В современном мире SMM не ограничивается только контентом в социальных сетях. Таргетированная реклама — это ключ к привлечению правильной аудитории и увеличению продаж."
+        }
+      },
+      "weWorkWith": {
+        "forAdminHeader": "Раздел 'С чем мы работаем'",
+        "header": "С ЧЕМ МЫ РАБОТАЕМ:",
+        "list": [
+          {
+            "title": "ПЕРСОНАЛИЗИРОВАННЫЙ РЕКЛАМНЫЕ КФМПАНИИ",
+            "description": "Разрабатываем стратегии, ориентированные на вашу целевую аудиторию, чтобы гарантировать максимальную отдачу от вложений."
+          },
+          {
+            "title": "ОПТИМИЗАЦИЯ БЮДЖЕТА     ",
+            "description": "Управляем вашим рекламным бюджетом с максимальной эффективностью."
+          },
+          {
+            "title": "АНАЛИТИКА И ОТЧЕТНОСТЬ",
+            "description": "Предоставляем полный анализ и отчеты о результатах кампаний, чтобы вы всегда были в курсе эффективности рекламы."
+          }
+        ]
+      },
+      "results": {
+        "forAdminHeader": "Результат",
+        "list": [
+          {
+            "partOne": "ДАВАЙТЕ ИСПОЛЬЗУЕМ МОЩЬ ТАРГЕТИРОВАННОЙ РЕКЛАМЫ",
+            "partTwo": "ЧТОБЫ ВАШ БРЕНД НЕ ПРОСТО ЗАМЕТИЛИ, НО И ВЫБРАЛИ"
+          }
+        ]
+      },
+      "quotes": {
+        "forAdminHeader": "Раздел 'Цитаты'",
+        "list": [
+          {
+            "description": "Выбирая грамотный маркетинг в соцсетях и таргетированную рекламу, ваши продажи увеличиваются."
+          },
+          {
+            "description": "Как это происходит? Ваш продукт видит множество людей! Привлекаются новые покупатели, а старые доверяют вам больше и остаются с вами."
+          }
+        ]
+      }
+    },
+    "en": {
+      "pageName": "SMM Ad",
+      "main": {
+        "forAdminHeader": "Section 'Greeting'",
+        "img": {
+          "forAdmin": "Photo",
+          "imgURL": "/media/1711969596096.png"
+        },
+        "header": {
+          "forAdmin": "Header",
+          "text": "TARGETED ADVERTISING"
+        },
+        "description": {
+          "forAdmin": "Description",
+          "text": "In the modern world, SMM is not limited to just social media content. Targeted advertising is the key to attracting the right audience and increasing sales."
+        }
+      },
+      "weWorkWith": {
+        "forAdminHeader": "Section 'What We Work With'",
+        "header": "WHAT WE WORK WITH:",
+        "list": [
+          {
+            "title": "PERSONALIZED AD CAMPAIGNS",
+            "description": "We develop strategies tailored to your target audience to ensure maximum return on investment."
+          },
+          {
+            "title": "BUDGET OPTIMIZATION",
+            "description": "We manage your advertising budget with maximum efficiency."
+          },
+          {
+            "title": "ANALYTICS AND REPORTING",
+            "description": "We provide comprehensive analysis and reports on campaign results so you are always aware of the effectiveness of your ads."
+          }
+        ]
+      },
+      "results": {
+        "forAdminHeader": "Results",
+        "list": [
+          {
+            "partOne": "LET'S USE THE POWER OF TARGETED ADVERTISING",
+            "partTwo": "TO ENSURE YOUR BRAND IS NOT JUST NOTICED BUT CHOSEN"
+          }
+        ]
+      },
+      "quotes": {
+        "forAdminHeader": "Section 'Quotes'",
+        "list": [
+          {
+            "description": "Choosing competent social media marketing and targeted advertising increases your sales."
+          },
+          {
+            "description": "How does it work? Many people see your product! New customers are attracted, and old ones trust you more and stay with you."
+          }
+        ]
+      }
+    }
+  }
+}

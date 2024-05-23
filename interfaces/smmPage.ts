@@ -22,19 +22,19 @@ export interface IProjectItem {
   imgURL: string;
 }
 
-export interface IProjectsList {
+export interface IProjects {
   forAdminHeader: ForAdminHeader;
   header: string;
   list: IProjectItem[];
 }
 
-export interface IQuoteItem {
+export interface ISmmQuoteItem {
   description: string;
 }
 
 export interface IQuotesList {
   forAdminHeader: ForAdminHeader;
-  list: IQuoteItem[];
+  list: ISmmQuoteItem[];
 }
 
 export interface ISmmLanguageContent {
@@ -42,7 +42,7 @@ export interface ISmmLanguageContent {
   main: ISmmMainSection;
   weWorkWith: IItemList;
   results: IResultList;
-  myProjects: IProjectsList;
+  myProjects: IProjects;
   quotes: IQuotesList;
 }
 

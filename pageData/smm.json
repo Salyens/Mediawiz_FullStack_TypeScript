@@ -22,7 +22,7 @@
         "header": "С ЧЕМ МЫ РАБОТАЕМ:",
         "list": [
           {
-            "title": "УНИКАЛЬНЫЙ ДИЗАЙН ВАШИХ СОЦИАЛЬНЫХ СЕТЕЙ",
+            "title": "УНИКАЛЬНЫЙ ДИЗАЙН",
             "description": "Логотип и фирменный стиль и многое другое"
           },
           {
@@ -62,7 +62,7 @@
       },
       "quotes": {
         "forAdminHeader": "Раздел 'Цитаты'",
-        "quotesList": [
+        "list": [
           {
             "description": "Мы ценим результат, четкость и грамотность. Давайте сделаем ваш бизнес запоминающимся вместе!            Выбирая грамотный маркетинг в соцсетях и таргетированную рекламу, ваши продажи увеличиваются."
           },
@@ -94,7 +94,7 @@
         "header": "WHAT WE WORK WITH:",
         "list": [
           {
-            "title": "UNIQUE DESIGN OF YOUR SOCIAL MEDIA",
+            "title": "UNIQUE DESIGN",
             "description": "Logo and corporate identity and much more"
           },
           {
@@ -134,7 +134,7 @@
       },
       "quotes": {
         "forAdminHeader": "Section 'Quotes'",
-        "quotesList": [
+        "list": [
           {
             "description": "We value results, clarity, and literacy. Let's make your business memorable together! By choosing competent social media marketing and targeted advertising, your sales increase."
           },

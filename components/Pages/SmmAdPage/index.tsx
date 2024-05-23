@@ -4,15 +4,13 @@ import Quotes from "@components/Quotes";
 import RequestAndSocial from "@components/RequestAndSocial";
 import WeWorkWith from "@components/WeWorkWith";
 import Welcome from "@components/Welcome";
-import { ISmmLanguageContent } from "@interfaces/smmPage";
-import Projects from "./Progects";
+import { ISmmAdLanguageContent } from "@interfaces/smmAd";
 
-const SmmPage = ({ data }: { data: ISmmLanguageContent }) => {
+const SmmAdPage = ({ data }: { data: ISmmAdLanguageContent }) => {
   const { main } = data;
   const { weWorkWith } = data;
   const { list } = data.results;
   const { list: quotesList } = data.quotes;
-  const { myProjects } = data;
 
   return (
     <div className="w-full h-full overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24">
@@ -20,10 +18,9 @@ const SmmPage = ({ data }: { data: ISmmLanguageContent }) => {
       <WeWorkWith data={weWorkWith} />
       <RequestAndSocial />
       <OurGoals goalsList={list} page="smm" />
-      <Projects myProjects={myProjects}/>
       <Quotes quotesList={quotesList} />
       <FeedbackForm />
     </div>
   );
 };
-export default SmmPage;
+export default SmmAdPage;

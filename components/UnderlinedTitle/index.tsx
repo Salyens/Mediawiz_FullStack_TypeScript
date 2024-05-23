@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "./uderlinedtitle.module.css";
-import { Text } from "@interfaces/mainPage";
+import { Text } from "@interfaces/common";
 
 const UnderlinedTitle = ({ text }: { text: Text }) => {
   return (

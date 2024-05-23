@@ -91,7 +91,6 @@ a:hover {
 
 .bg_item_right {
   position: relative;
-  min-height: 50vh;
 }
 
 .bg_item_right::before {
@@ -110,7 +109,6 @@ a:hover {
 
 .bg_item_left {
   position: relative;
-
 }
 
 .bg_item_left::before {
@@ -144,6 +142,12 @@ a:hover {
   background-position: center;
   filter: blur(70px);
   z-index: -1; 
+}
+
+.arrows:hover {
+  background: transparent;
+  width: 110%;
+  height: 110%;
 }
 
 

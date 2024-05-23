@@ -1,14 +1,10 @@
 import { IItem, IItemList, Img, TextContent } from "@interfaces/common";
+import { ISmmAdLanguageContent, ISmmAdLanguages, ISmmAdPageData } from "@interfaces/smmAd";
 import {
-  IProjectItem,
-  IProjects,
   IQuotesList,
   IResultItem,
   IResultList,
-  ISmmLanguageContent,
-  ISmmLanguages,
   ISmmMainSection,
-  ISmmPageData,
   ISmmQuoteItem,
 } from "@interfaces/smmPage";
 import { Schema, model, models } from "mongoose";
@@ -28,11 +24,6 @@ const listItemSchema = new Schema<IItem>({
   description: { type: String, required: true },
 });
 
-const projectItemSchema = new Schema<IProjectItem>({
-  title: { type: String, required: true },
-  imgURL: { type: String, required: true },
-});
-
 const quoteItemSchema = new Schema<ISmmQuoteItem>({
   description: { type: String, required: true },
 });
@@ -40,12 +31,6 @@ const quoteItemSchema = new Schema<ISmmQuoteItem>({
 const quotesSchema = new Schema<IQuotesList>({
   forAdminHeader: { type: String, required: true },
   list: [quoteItemSchema],
-});
-
-const projectsSchema = new Schema<IProjects>({
-  forAdminHeader: { type: String, required: true },
-  header: { type: String, required: true },
-  list: [projectItemSchema],
 });
 
 const resultItemSchema = new Schema<IResultItem>({
@@ -71,24 +56,23 @@ const mainSectionSchema = new Schema<ISmmMainSection>({
   description: { type: TextSchema, required: true },
 });
 
-const languageContentSchema = new Schema<ISmmLanguageContent>({
+const languageContentSchema = new Schema<ISmmAdLanguageContent>({
   pageName: { type: String, required: true },
   main: { type: mainSectionSchema, required: true },
   weWorkWith: { type: weWorkWithSchema, required: true },
   results: { type: resultSchema, required: true },
-  myProjects: { type: projectsSchema, required: true },
   quotes: { type: quotesSchema, required: true },
 });
 
-const languagesSchema = new Schema<ISmmLanguages>({
+const languagesSchema = new Schema<ISmmAdLanguages>({
   ru: { type: languageContentSchema, required: true },
   en: { type: languageContentSchema, required: true },
 });
 
-const SmmPageSchema = new Schema<ISmmPageData>({
+const SmmAdPageSchema = new Schema<ISmmAdPageData>({
   languages: { type: languagesSchema, required: true },
 });
 
-const SmmPage = models.SmmPage || model<ISmmPageData>("SmmPage", SmmPageSchema);
+const SmmAdPage = models.SmmAdPage || model<ISmmAdPageData>("SmmAdPage", SmmAdPageSchema);
 
-export default SmmPage;
+export default SmmAdPage;

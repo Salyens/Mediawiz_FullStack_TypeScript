@@ -19,7 +19,6 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 5px 0px rgba(204, 0, 255, 0.2), /* Уменьшение яркости */
               0px 0px 25px 0px rgba(204, 0, 255, 0.1); /* Уменьшение размера и яркости */
-  /* Удален filter: blur(3px); */
 }
 
 .left_line {

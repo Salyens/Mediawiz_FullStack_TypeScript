@@ -31,15 +31,16 @@ export interface MainSection {
   description_2: { forAdmin: ForAdmin; text: Text };
 }
 
-export interface QuotesList {
+export interface QuoteItem {
   name: string;
   imgURL?: ImgURL;
   description: string;
+  href?:string
 }
 
-export interface QuotesSection {
+export interface QuotesList {
   forAdminHeader: ForAdminHeader;
-  quotesList: QuotesList[];
+  quotesList: QuoteItem[];
 }
 
 export interface GoalsList {
@@ -63,7 +64,7 @@ export interface LanguageContent {
   pageName: string;
   main: MainSection;
   weOffer: WeOfferSection;
-  quotes: QuotesSection;
+  quotes: QuotesList;
   ourGoals: OurGoals;
 }
 

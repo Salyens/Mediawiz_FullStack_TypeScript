@@ -9,8 +9,8 @@ import {
   Offers,
   OffersList,
   OurGoals,
+  QuoteItem,
   QuotesList,
-  QuotesSection,
   WeOfferSection,
 } from "@interfaces/mainPage";
 import { Schema, model, models } from "mongoose";
@@ -42,15 +42,16 @@ const weOfferSectionSchema = new Schema<WeOfferSection>({
   offers: OffersSchema,
 });
 
-const quotesListSchema = new Schema<QuotesList>({
+const quoteItemSchema = new Schema<QuoteItem>({
   name: { type: String, required: true },
   imgURL: { type: String },
   description: { type: String, required: true },
+  href:{ type: String, required: true },
 });
 
-const quotesSectionSchema = new Schema<QuotesSection>({
+const quotesSectionSchema = new Schema<QuotesList>({
   forAdminHeader: { type: String, required: true },
-  quotesList: [quotesListSchema],
+  quotesList: [quoteItemSchema],
 });
 
 const goalsListSchema = new Schema<GoalsList>({

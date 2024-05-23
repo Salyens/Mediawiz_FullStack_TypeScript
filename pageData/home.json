@@ -63,12 +63,14 @@
           {
             "name": "Anna",
             "imgURL": "/media/1711969596096.png",
-            "description": "I help businesses find their voice on social networks. My approach combines creativity and strategy so that every post not only attracts attention but also works for your business."
+            "description": "I help businesses find their voice on social networks. My approach combines creativity and strategy so that every post not only attracts attention but also works for your business.",
+            "href":"/smm"
           },
           {
             "name": "Artem",
             "imgURL": "/media/1711969596096.png",
-            "description": "I create websites with powerful tools for promotion and help companies reach a new level in the online space."
+            "description": "I create websites with powerful tools for promotion and help companies reach a new level in the online space.",
+            "href":"/web"
           }
         ]
       },
@@ -158,12 +160,14 @@
           {
             "name": "Анна",
             "imgURL": "/media/1711969596096.png",
-            "description": "Помогаю бизнесам найти их голос в социальных сетях. Мой подход - это сочетание креатива и стратегии, чтобы каждый пост не только привлекал внимание, но и работал на ваш бизнес."
+            "description": "Помогаю бизнесам найти их голос в социальных сетях. Мой подход - это сочетание креатива и стратегии, чтобы каждый пост не только привлекал внимание, но и работал на ваш бизнес.",
+            "href":"/smm"
           },
           {
             "name": "Артем",
             "imgURL": "/media/1711969596096.png",
-            "description": "Создаю сайты с мощными инструментами для продвижения и помогаю компаниям выходить на новый уровень в интернет-пространстве."
+            "description": "Создаю сайты с мощными инструментами для продвижения и помогаю компаниям выходить на новый уровень в интернет-пространстве.",
+            "href":"/web"
           }
         ]
       },

@@ -8,7 +8,7 @@ const MyPages = () => {
     { pageName: "WEB DEVELOPMENT" , endPoint: "webPage" },
     { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
     { pageName: "SMM", endPoint: "smmPage" },
-    { pageName: "SMM PROMOTION", endPoint: "smmAd" },
+    { pageName: "SMM PROMOTION", endPoint: "smmAdPage" },
   ];
 
   return (
