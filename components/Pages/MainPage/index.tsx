@@ -5,8 +5,6 @@ import FeedbackForm from "@components/FeedbackForm";
 import TogetherBlock from "./TogetherBlock";
 import Welcome from "@components/Welcome";
 import Quotes from "@components/Quotes";
-import { useAppContext } from "@context";
-import BgEllipse from "@components/BgEllipse";
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;

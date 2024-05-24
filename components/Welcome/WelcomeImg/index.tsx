@@ -1,10 +1,10 @@
-"use client";
-
+import BlurImg from "@components/BlurImg";
 import { MotionDiv } from "@components/MotionDiv";
 import { ImgURL } from "@interfaces/common";
 import Image from "next/image";
 
 const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
+
   return (
     <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
@@ -16,14 +16,15 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
         }}
         className="relative w-full h-full"
       >
-        <Image
+        <BlurImg imgURL={imgURL}/>
+        {/* <Image
           src={imgURL}
           alt="Photo"
           fill={true}
           sizes="50vw"
           className="object-contain"
           priority={true}
-        />
+        /> */}
       </MotionDiv>
     </div>
   );

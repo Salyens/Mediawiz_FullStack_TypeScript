@@ -6,6 +6,7 @@ import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import BgEllipse from "@components/BgEllipse";
+import BlurImg from "@components/BlurImg";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -19,9 +20,19 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
   return (
     <div className={classNames("relative", withImg && " mt-36")}>
       {isOdd ? (
-        <BgEllipse variant={2} position="md:-left-1/4 md:-top-1/3" width={1300} height={1300} />
+        <BgEllipse
+          variant={2}
+          position="md:-left-1/4 md:-top-1/3"
+          width={1300}
+          height={1300}
+        />
       ) : (
-        <BgEllipse variant={2} position="md:-right-1/4 md:-top-1/3" width={1300} height={1300} />
+        <BgEllipse
+          variant={2}
+          position="md:-right-1/4 md:-top-1/3"
+          width={1300}
+          height={1300}
+        />
       )}
 
       <AnimationWrapper
@@ -71,14 +82,7 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
               className={`absolute -top-32  w-full h-[420px] md:-top-28 
           md:w-1/3 md:h-[500px] xl:h-[600px] ${isOdd ? "left-0" : "right-0"}`}
             >
-              <Image
-                src={item.imgURL}
-                alt={item.name}
-                fill
-                sizes="(max-width: 768px) 70vw, (max-width: 1200px) 80vw, 65vw"
-                className="object-contain z-10"
-                priority
-              />
+              <BlurImg imgURL={item.imgURL} name={item.name} />
             </div>
           )}
         </div>

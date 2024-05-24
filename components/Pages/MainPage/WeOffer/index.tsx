@@ -30,9 +30,9 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
         <BGLines />
         <BgEllipse variant={1} position="-right-1/3 -top-1/3" width={2000} height={2000} />
         <AnimationWrapper
-          initial={{ y: 600 }}
+          initial={{ y: 450 }}
           animate={{ y: 0 }}
-          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 1 }}
         >
           <UnderlinedTitle text={text} />
           <div className="flex flex-wrap justify-between items-center gap-2">
