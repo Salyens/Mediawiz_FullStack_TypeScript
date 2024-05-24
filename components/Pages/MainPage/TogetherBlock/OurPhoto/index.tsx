@@ -19,12 +19,10 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
         classes="main_container"
       >
         <div
-          className={`${styles.bg_div} h-64 sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2x:h-[750px] p-3 sm:p-5 md:p-7 lg:p-10 xl:p-14`}
+          className={`${styles.bg_div} relative h-64 sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2x:h-[750px] p-3 sm:p-5 md:p-7 lg:p-10 xl:p-14`}
         >
-          <div className="relative w-full h-full">
-            <div className={`${styles.img_wrapper}`}>
-              <BlurImg imgURL={imgURL} name="Our photo" />
-            </div>
+          <div className={`${styles.img_wrapper}`}>
+            <BlurImg imgURL={imgURL} name="Our photo" classes="object-cover" />
           </div>
         </div>
       </AnimationWrapper>

@@ -6,18 +6,19 @@ import { useEffect, useState } from "react";
 
 interface BgEllipseProps {
   variant: 1 | 2;
-  position: string;
+  position?: string;
   width: number;
   height: number;
+  delay?:number
 }
 
-const BgEllipse = ({ variant, position, width, height }: BgEllipseProps) => {
+const BgEllipse = ({ variant, position, width, height, delay }: BgEllipseProps) => {
   const [showImg, setShowImg] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowImg(true);
-    }, 1500);
+    }, delay || 2000);
 
     return () => clearTimeout(timer);
   }, []);

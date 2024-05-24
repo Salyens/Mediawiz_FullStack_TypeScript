@@ -25,6 +25,7 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           position="md:-left-1/4 md:-top-1/3"
           width={1300}
           height={1300}
+          delay={2000}
         />
       ) : (
         <BgEllipse
@@ -32,6 +33,7 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           position="md:-right-1/4 md:-top-1/3"
           width={1300}
           height={1300}
+          delay={1600}
         />
       )}
 
@@ -42,12 +44,12 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           ease: "easeOut",
           duration: 1,
         }}
-        classes="main_container relative p-3 sm:p-4 md:p-5 xl:p-6"
+        classes="main_container relative"
       >
-        <div className="flex justify-center">
+        <div className="flex justify-center p-3 sm:p-4 md:p-5 xl:p-6">
           <div
             className={classNames(
-              "md:w-2/3 w-full h-auto  md:mt-0",
+              "md:w-2/3 w-full h-auto md:mt-0",
               styles.rectangle,
               isOdd ? "ml-auto" : "mr-auto",
               withImg && " mt-72"

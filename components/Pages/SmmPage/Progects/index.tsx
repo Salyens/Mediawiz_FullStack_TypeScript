@@ -7,8 +7,8 @@ import styles from "./ProjectCarousel/projectscarousel.module.css"
 
 const Projects = ({ myProjects }: { myProjects: IProjects }) => {
   return (
-    <div className="relative">
-      <div className= {classNames("w-full lg:w-2/3 h-[800px] absolute", styles.img_bg)}>
+    <div className={classNames("relative mb-28 pb-44 pt-44", styles.container)}>
+      <div className= {classNames("w-full lg:w-2/3 h-full absolute", styles.img_bg)}>
         <Image
           className="object-contain absolute"
           src="/smmPage/projectsBG.svg"
@@ -16,7 +16,7 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
           fill
         />
       </div>
-      <div className="main_container p-3 sm:p-4 md:p-5 xl:p-6 mb-36">
+      <div className="main_container p-3 sm:p-4 md:p-5 xl:p-6">
         <UnderlinedTitle text={myProjects.header} />
         <ProjectCarousel list={myProjects.list} />
       </div>

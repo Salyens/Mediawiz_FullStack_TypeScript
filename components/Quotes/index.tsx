@@ -19,7 +19,7 @@ const Quotes: React.FC<QuotesListProps> = ({ quotesList }) => {
     ));
   };
 
-  return <div className="mb-24 sm:mb-28 md:mb-40 lg:mb-52">{renderOnePerson()}</div>;
+  return <div className="mb-24 sm:mb-28 md:mb-40 lg:mb-52 flex flex-col gap-10">{renderOnePerson()}</div>;
 };
 
 export default Quotes;

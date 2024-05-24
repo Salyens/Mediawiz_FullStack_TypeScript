@@ -61,9 +61,9 @@ const RequestAndSocial = () => {
             duration: 1,
             delay: 0.5,
           }}
-          classes={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 min-h-72 md:min-h-80 xl:min-h-96 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug ${styles.description}`}
+          classes={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 min-h-52 md:min-h-80 xl:min-h-96 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug ${styles.description}`}
         >
-          <p className="text-center lg:text-left">{t("description")}</p>
+          <p className="sm:min text-center lg:text-left">{t("description")}</p>
           <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
             <div className="flex items-center gap-2 justify-center lg:justify-start">
               <Image src="/common/phone.png" width={50} height={50} alt="phone" />

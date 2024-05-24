@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -15,25 +14,28 @@ import classNames from "classnames";
 
 const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
   return (
-    <Carousel className={classNames("w-full sm:w-2/3 md:w-2/3 lg:w-2/3 m-auto lg:m-0")}>
+    <Carousel className="lg:w-2/3 xl:w-1/2">
       <CarouselContent>
         {list.map((item, index) => (
           <CarouselItem key={item.title + index}>
             <div>
-              <p className="text-base sm:text-lg xl:text-2xl mb-4">{item.title}</p>
+              <p className="text-base sm:text-lg xl:text-2xl md:mb-4">{item.title}</p>
               <Card className={styles.bg}>
                 <CardContent
                   className={classNames(
-                    "flex aspect-square items-center justify-center p-6 relative h-[300px] md:h-[400px] lg:w-[500px] xl:w-[700px]",
-                    styles.bg
+                    "flex items-center justify-center relative bg-transparent",
+                    styles.bg,styles.aspect,
+                    
                   )}
                 >
-                  <Image
-                    src={item.imgURL}
-                    fill
-                    className="object-contain"
-                    alt={item.title}
-                  />
+                  <div className="absolute inset-0">
+                    <Image
+                      src={item.imgURL}
+                      alt={item.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </div>
