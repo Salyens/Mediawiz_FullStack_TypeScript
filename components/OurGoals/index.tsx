@@ -26,7 +26,7 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
   };
   return (
     <div className="relative">
-      <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-24 md:mt-28 mb-12 lg:mt-40 lg:mb-24 relative main_container">
+      <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
         <AnimationWrapper
           initial={{
             opacity: 0,
