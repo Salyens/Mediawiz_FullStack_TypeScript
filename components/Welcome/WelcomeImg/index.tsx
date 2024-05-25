@@ -1,7 +1,6 @@
 import BlurImg from "@components/BlurImg";
 import { MotionDiv } from "@components/MotionDiv";
 import { ImgURL } from "@interfaces/common";
-import Image from "next/image";
 
 const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
 
@@ -16,15 +15,8 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
         }}
         className="relative w-full h-full"
       >
-        <BlurImg imgURL={imgURL}/>
-        {/* <Image
-          src={imgURL}
-          alt="Photo"
-          fill={true}
-          sizes="50vw"
-          className="object-contain"
-          priority={true}
-        /> */}
+        <BlurImg imgURL={imgURL} name="Welcome image"/>
+
       </MotionDiv>
     </div>
   );

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./onecard.module.css";
 import { OffersList } from "@interfaces/mainPage";
 import Link from "next/link";
@@ -26,14 +25,7 @@ const OneCard = ({ header, description, href }: OffersList) => {
         className={`${styles.circle_wrapper}  flex_center ml-auto h-20 w-20 sm:h-32 sm:w-32`}
       >
         <div className={classNames("w-12 h-9", styles.arrow)}></div>
-{/*         
-        <Image
-          priority={false}
-          width={49}
-          height={39}
-          src="/common/arrow.png"
-          alt="arrow"
-        /> */}
+
       </div>
     </Link>
   );

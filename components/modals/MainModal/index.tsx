@@ -5,12 +5,12 @@ import { useTranslations } from "next-intl";
 import classNames from "classnames";
 import CommonForm from "@components/FeedbackForm/CommonForm";
 import { useState } from "react";
-import SuccessAlert from "../SuccessAlert"; 
+import SuccessAlert from "../SuccessAlert";
 
 const MainModal = () => {
   const t = useTranslations("MainForm");
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false); 
+  const [success, setSuccess] = useState<boolean>(false);
 
   return (
     <>
@@ -23,9 +23,13 @@ const MainModal = () => {
           </button>
         </DialogTrigger>
         <DialogContent
-          className={`top-1/3 sm:top-1/2 flex min-h-[400px] min-w-80 w-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-black ${styles.my_form}`}
+          className={`top-1/3 sm:top-1/2 flex min-w-80 w-full flex-1 flex-col justify-center lg:px-8 bg-black ${styles.my_form}`}
         >
-          <CommonForm setIsOpen={setIsOpen} isModal={true} setSuccess={setSuccess} /> 
+          <CommonForm
+            setIsOpen={setIsOpen}
+            isModal={true}
+            setSuccess={setSuccess}
+          />
         </DialogContent>
       </Dialog>
       {success && <SuccessAlert success={success} setSuccess={setSuccess} />}

@@ -11,14 +11,15 @@ const BGLines = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="absolute -z-10 w-full left-0 min-h-[1000px]"
+      className="absolute -z-20 w-full left-0 min-h-[1000px]"
     >
       <Image
         fill={true}
-        sizes="100vw"
+        sizes="200vw"
         className="object-cover"
         src="/common/bg_line.svg"
         alt="bg"
+        priority
       />
     </MotionDiv>
   );

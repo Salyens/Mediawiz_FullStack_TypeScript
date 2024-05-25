@@ -11,7 +11,8 @@
     "policy_3": "and consent to the processing of personal data",
     "request_2": "Leave a request",
     "name": "Name",
-    "phone": "Phone number",
+    "phoneNumber": "Phone number",
+    "email":"E-Mail",
     "fillPolicy": "Please provide your consent for the processing of personal data",
     "fillFields":"Please fill in all the fields",
     "errorEmail":"Invalid E-Mail address format"

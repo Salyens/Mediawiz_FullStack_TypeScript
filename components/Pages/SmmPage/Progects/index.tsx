@@ -29,6 +29,7 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
           src="/smmPage/projectsBG.svg"
           alt="projectsBG"
           fill
+          sizes="100vh"
         />
       </AnimationWrapper>
 

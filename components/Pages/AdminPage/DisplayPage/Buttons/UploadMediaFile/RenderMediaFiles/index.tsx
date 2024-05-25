@@ -51,11 +51,7 @@ const RenderMediaFiles: React.FC<RenderMediaFilesProps> = ({ fileURL, type, hand
     return (
       <Image
         key={src}
-        style={{
-          marginLeft: 30,
-          border: "1px solid blue",
-          cursor: "pointer",
-        }}
+        className="ml-8 border-2 cursor-pointer"
         width={150}
         height={150}
         src={src}

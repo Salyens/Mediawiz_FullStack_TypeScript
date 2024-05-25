@@ -16,7 +16,7 @@ const BlurImg = async ({ imgURL, name, classes }: BlurImgProps) => {
       src={imgURL}
       alt={name}
       fill={true}
-      sizes="50vw"
+      sizes="70vw"
       className={classNames("object-contain", classes)}
       placeholder="blur"
       blurDataURL={base64}

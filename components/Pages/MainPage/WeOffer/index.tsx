@@ -25,14 +25,14 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
   };
 
   return (
-    <div className="relative bg_item_right">
-      <div className="main_container min-h-screen pl-2 pr-2 lg:pl-6 lg:pr-6">
+    <div className="relative mt-6">
+      <div className="main_container min-h-screen pl-2 pr-2 lg:pl-6 lg:pr-6 ">
         <BGLines />
         <BgEllipse variant={1} position="-right-1/3 top-1/2" width={2000} height={2000} delay={2500} />
         <AnimationWrapper
           initial={{ y: 450 }}
           animate={{ y: 0 }}
-          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
         >
           <UnderlinedTitle text={text} />
           <div className="flex flex-wrap justify-between items-center gap-2">

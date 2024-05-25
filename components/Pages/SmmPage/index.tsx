@@ -15,7 +15,7 @@ const SmmPage = ({ data }: { data: ISmmLanguageContent }) => {
   const { myProjects } = data;
 
   return (
-    <div className="w-full h-full overflow-hidden relative pt-12 sm:pt-16 lg:pt-20 xl:pt-24">
+    <div className="w-full h-full min-h-screen overflow-hidden relative">
       <Welcome main={main} page="smm" />
       <WeWorkWith data={weWorkWith} />
       <RequestAndSocial />

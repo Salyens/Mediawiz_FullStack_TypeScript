@@ -33,6 +33,7 @@ const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
                       src={item.imgURL}
                       alt={item.title}
                       fill
+                      sizes="90vw"
                       className="object-contain"
                     />
                   </div>
