@@ -1,3 +1,4 @@
+
 import {
   Menubar,
   MenubarContent,
@@ -6,7 +7,6 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import classNames from "classnames";
-import { ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";

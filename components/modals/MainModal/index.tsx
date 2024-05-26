@@ -23,7 +23,7 @@ const MainModal = () => {
           </button>
         </DialogTrigger>
         <DialogContent
-          className={`top-1/3 sm:top-1/2 flex min-w-80 w-full flex-1 flex-col justify-center lg:px-8 bg-black ${styles.my_form}`}
+          className={`top-1/3 sm:top-1/2 flex min-w-80 w-full max-w-[500px] flex-1 flex-col justify-center lg:px-8 bg-black ${styles.my_form}`}
         >
           <CommonForm
             setIsOpen={setIsOpen}

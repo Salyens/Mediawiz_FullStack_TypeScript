@@ -4,7 +4,8 @@
     "findMore": "Find out more"
   },
   "MainForm": {
-    "description":"IF YOU HAVE ANY QUESTIONS - CONTACT US",
+    "description-1":"IF YOU HAVE ANY QUESTIONS -",
+    "description-2":"CONTACT US",
     "request": "OR LEAVE A REQUEST",
     "policy_1": "I agree with",
     "policy_2": "the Privacy Policy",

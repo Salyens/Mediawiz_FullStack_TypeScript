@@ -62,7 +62,6 @@ const CommonForm: React.FC<CommonFormProps> = ({
   };
 
   return (
-    <>
       <form onSubmit={handleSubmit}>
         {error && <p className="text-red-500">{error}</p>}
         <InputList info={info} setInfo={setInfo} />
@@ -78,7 +77,6 @@ const CommonForm: React.FC<CommonFormProps> = ({
           )}
         </button>
       </form>
-    </>
   );
 };
 

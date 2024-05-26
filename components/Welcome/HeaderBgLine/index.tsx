@@ -19,6 +19,7 @@ const HeaderBgLine = () => {
         <Image
           src={`/mainPage/header_line.svg?v=${new Date().getTime()}`}
           fill
+          sizes="100vh"
           alt="Header line"
           className="absolute -z-10 top-1/2 -right-1/3 object-contain"
           priority

@@ -3,6 +3,7 @@ import OneGoal from "./OneGoal";
 import styles from "./ourgoals.module.css";
 import AnimationWrapper from "@components/AnimationWrapper";
 import { IResultItem } from "@interfaces/smmPage";
+import BgEllipse from "@components/BgEllipse";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
@@ -26,6 +27,18 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
   };
   return (
     <div className="relative">
+      <BgEllipse
+        variant={2}
+        position="-top-1/2 -left-1/4"
+        width={2000}
+        height={2000}
+      />
+      <BgEllipse
+        variant={2}
+        position="-right-1/4 -bottom-1/3"
+        width={2000}
+        height={2000}
+      />
       <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
         <AnimationWrapper
           initial={{

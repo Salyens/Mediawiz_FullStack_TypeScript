@@ -8,11 +8,7 @@ import MainModal from "@components/modals/MainModal";
 import AnimationWrapper from "@components/AnimationWrapper";
 import { useAppContext } from "@context";
 import { useEffect, useRef } from "react";
-
-interface SocialIcon {
-  name: string;
-  src: string;
-}
+import { socialLinks } from "@constants";
 
 const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
@@ -27,22 +23,18 @@ const RequestAndSocial = () => {
   }, [scrollToRef]);
 
   const renderSocialLinks = () => {
-    const socialIcons: SocialIcon[] = [
-      { name: "Telegram", src: "/TG" },
-      { name: "VKontakte", src: "/VK" },
-      { name: "Instagram", src: "/IG" },
-      { name: "Facebook", src: "/FB" },
-    ];
-    return socialIcons.map((item) => (
+    return socialLinks.map((item) => (
       <Link
-        className="w-14 h-14 md:w-20 md:h-20 xl:w-14 xl:h-14 2xl:w-20 2xl:h-20 relative"
-        href="#"
-        key={item.name + item.src}
+        className="w-20 h-20 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-40 2xl:h-40 relative"
+        href={item.href}
+        key={item.name + item.href}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <Image
-          src={`/social_icons${item.src}.png`}
+          src={`/social_icons/${item.name}.png`}
           alt={item.name}
-          fill={true}
+          fill
           sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
           className="object-contain"
         />
@@ -52,7 +44,7 @@ const RequestAndSocial = () => {
 
   return (
     <div ref={sectionRef} className={`${styles.bg} w-full`}>
-      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12">
+      <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
         <AnimationWrapper
           initial={{ x: -2000 }}
           animate={{ x: 0 }}
@@ -61,13 +53,23 @@ const RequestAndSocial = () => {
             duration: 1,
             delay: 0.5,
           }}
-          classes={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 min-h-52 md:min-h-80 xl:min-h-96 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug ${styles.description}`}
+          classes={`flex flex-col xl:text-3xl 2xl:text-4xl md:text:xl lg:text-2xl text-lg gap-3 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug ${styles.description}`}
         >
-          <p className="sm:min text-center lg:text-left">{t("description")}</p>
+          <p className="sm:min text-center lg:text-left">
+            {t("description-1")}
+          </p>
+          <p className="sm:min text-center lg:text-left">
+            {t("description-2")}
+          </p>
           <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
             <div className="flex items-center gap-2 justify-center lg:justify-start">
-              <Image src="/common/phone.png" width={50} height={50} alt="phone" />
-              <span className="text-lg md:text-2xl mt-12 mb-12 font-normal">
+              <Image
+                src="/common/phone.png"
+                width={50}
+                height={50}
+                alt="phone"
+              />
+              <span className="text-lg md:text-2xl mt-4 mb-4 font-normal">
                 8-903-375-02-61
               </span>
             </div>
@@ -88,10 +90,10 @@ const RequestAndSocial = () => {
           }}
           classes="mb-auto mt-6 lg:mt-0"
         >
-          <p className="font-bold xl:text-2xl 2xl:text-4xl md:text-xl text-lg mb-4 md:mb-0 text-center">
+          <p className="font-bold xl:text-3xl 2xl:text-4xl lg:text-2xl md:text-xl text-lg mb-4 md:mb-0 text-center">
             {s("weInSocial")}
           </p>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-center items-center">
             {renderSocialLinks()}
           </div>
         </AnimationWrapper>

@@ -45,7 +45,7 @@ export default async function RootLayout({
           <Provider session={session}>
             <AppWrapper>
               <NextIntlClientProvider messages={messages}>
-                <Nav locale={locale} />
+                <Nav/>
                 <main style={{ flexGrow: 1 }}>{children}</main>
                 <div style={{ marginTop: "auto" }}>
                   <Footer />

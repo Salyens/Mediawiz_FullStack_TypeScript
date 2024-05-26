@@ -14,7 +14,7 @@ const BGLines = () => {
       className="absolute -z-20 w-full left-0 min-h-[1000px]"
     >
       <Image
-        fill={true}
+        fill
         sizes="200vw"
         className="object-cover"
         src="/common/bg_line.svg"
