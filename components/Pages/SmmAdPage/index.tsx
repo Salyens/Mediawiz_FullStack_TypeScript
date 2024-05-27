@@ -14,8 +14,10 @@ const SmmAdPage = ({ data }: { data: ISmmAdLanguageContent }) => {
 
   return (
     <div className="w-full h-full min-h-screen overflow-hidden relative">
-      <Welcome main={main} page="smm" />
-      <WeWorkWith data={weWorkWith} />
+      <div className="min-h-screen">
+        <Welcome main={main} page="smm" />
+        <WeWorkWith data={weWorkWith} />
+      </div>
       <RequestAndSocial />
       <OurGoals goalsList={list} page="smm" />
       <Quotes quotesList={quotesList} />

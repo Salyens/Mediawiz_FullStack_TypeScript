@@ -66,7 +66,7 @@ const Login = () => {
       </div>
 
       <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="">
+        <form onSubmit={handleSubmit}>
           <div className="sm:min-h-7">
             {error && <p className="text-red-500">{error}</p>}
           </div>

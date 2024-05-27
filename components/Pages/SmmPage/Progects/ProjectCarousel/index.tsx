@@ -8,9 +8,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { IProjectItem } from "@interfaces/smmPage";
-import Image from "next/image";
 import styles from "./projectscarousel.module.css";
 import classNames from "classnames";
+import BlurImg from "@components/BlurImg";
 
 const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
   return (
@@ -19,23 +19,19 @@ const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
         {list.map((item, index) => (
           <CarouselItem key={item.title + index}>
             <div>
-              <p className="text-base sm:text-lg xl:text-2xl md:mb-4">{item.title}</p>
+              <p className="text-base sm:text-lg xl:text-2xl md:mb-4">
+                {item.title}
+              </p>
               <Card className={styles.bg}>
                 <CardContent
                   className={classNames(
                     "flex items-center justify-center relative bg-transparent",
-                    styles.bg,styles.aspect,
-                    
+                    styles.bg,
+                    styles.aspect
                   )}
                 >
                   <div className="absolute inset-0">
-                    <Image
-                      src={item.imgURL}
-                      alt={item.title}
-                      fill
-                      sizes="90vw"
-                      className="object-contain"
-                    />
+                    <BlurImg imgURL={item.imgURL} name={item.title} />
                   </div>
                 </CardContent>
               </Card>

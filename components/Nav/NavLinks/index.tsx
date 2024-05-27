@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./navlinks.module.css";
 import { NavLink } from "@interfaces/special";
+import classNames from "classnames";
 
 const NavLinks = () => {
   const pathname = usePathname();
@@ -30,9 +31,11 @@ const NavLinks = () => {
           <Link
             key={item.name}
             href={`/${localActive}/${item.href}`}
-            className={`${
+            className={classNames(
+              "px-1 py-1 text-sm md:text-base",
+              styles.navLinks,
               item.href === current ? styles.currentPage : ""
-            } px-1 py-1 text-sm md:text-base ${styles.navLinks}`}
+            )}
           >
             {item.name}
           </Link>

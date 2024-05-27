@@ -81,8 +81,10 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           </div>
           {"imgURL" in item && item.imgURL && (
             <div
-              className={`absolute -top-32  w-full h-[420px] md:-top-28 
-          md:w-1/3 md:h-[500px] xl:h-[600px] ${isOdd ? "left-0" : "right-0"}`}
+              className={classNames(
+                "absolute -top-32  w-full h-[420px] md:-top-28 md:w-1/3 md:h-[500px] xl:h-[600px]",
+                isOdd ? "left-0" : "right-0"
+              )}
             >
               <BlurImg imgURL={item.imgURL} name={item.name} />
             </div>

@@ -40,7 +40,7 @@ const LocalSwitcher = () => {
                 src={`/flags/${localActive}.png`}
                 fill
                 sizes="5vh"
-                className="object-contain"
+                className="object-cover"
                 alt="flag"
               />
             </div>
@@ -59,8 +59,6 @@ const LocalSwitcher = () => {
               alt="flag"
             />
           </div>
-
-          {/* <ChevronDown className={} /> */}
         </MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
@@ -73,7 +71,7 @@ const LocalSwitcher = () => {
                   src={`/flags/${anotherLocale}.png`}
                   fill
                   sizes="5vh"
-                  className="object-contain"
+                  className="object-cover"
                   alt="flag"
                 />
               </div>

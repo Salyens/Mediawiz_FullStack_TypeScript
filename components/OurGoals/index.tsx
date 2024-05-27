@@ -4,6 +4,7 @@ import styles from "./ourgoals.module.css";
 import AnimationWrapper from "@components/AnimationWrapper";
 import { IResultItem } from "@interfaces/smmPage";
 import BgEllipse from "@components/BgEllipse";
+import classNames from "classnames";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
@@ -48,10 +49,16 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
           transition={{ ease: "easeOut", duration: 0.3, delay: 1.5 }}
         >
           <div
-            className={`absolute top-0 left-4 w-8 h-8 sm:w-14 sm:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 ${styles.corner_top_left}`}
+            className={classNames(
+              "absolute top-0 left-4 w-8 h-8 sm:w-14 sm:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24",
+              styles.corner_top_left
+            )}
           ></div>
           <div
-            className={`absolute bottom-0 right-4 w-8 h-8 sm:w-14 sm:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24 ${styles.corner_bottom_right}`}
+            className={classNames(
+              "absolute bottom-0 right-4 w-8 h-8 sm:w-14 sm:h-14 lg:w-20 lg:h-20 xl:w-24 xl:h-24",
+              styles.corner_bottom_right
+            )}
           ></div>
         </AnimationWrapper>
         <AnimationWrapper

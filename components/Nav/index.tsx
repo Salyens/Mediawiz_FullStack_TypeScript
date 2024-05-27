@@ -9,6 +9,7 @@ import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import NavLinksSmallScreen from "./NavLinksSmallScreen";
 import NavLogo from "./NavLogo";
+import classNames from "classnames";
 
 const Nav = () => {
   return (
@@ -22,7 +23,9 @@ const Nav = () => {
     >
       <Disclosure as="nav">
         {({ open }) => (
-          <div className={`${styles.bg} ${open && "border-0 shadow-none"}`}>
+          <div
+            className={classNames(styles.bg, open && "border-0 shadow-none")}
+          >
             <div className=" mx-auto max-w-7xl pl-2 pr-2 lg:pl-6 lg:pr-6 h-12 sm:h-16 lg:h-20 xl:h-24 flex justify-between items-center max_width">
               <div className="relative flex h-16 items-center justify-between w-full">
                 <div className="absolute inset-y-0 right-0 flex items-center lg:hidden ">

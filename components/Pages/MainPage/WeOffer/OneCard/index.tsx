@@ -7,7 +7,10 @@ const OneCard = ({ header, description, href }: OffersList) => {
   return (
     <Link
       href={href}
-      className={`${styles.wrapper} p-8 sm:p-8 md:p-12 lg:p-14 xl:p-18 h-72 sm:h-96`}
+      className={classNames(
+        "p-8 sm:p-8 md:p-12 lg:p-14 xl:p-18 h-72 sm:h-96",
+        styles.wrapper
+      )}
     >
       <div className="flex_column w-full ">
         <h4
@@ -22,10 +25,12 @@ const OneCard = ({ header, description, href }: OffersList) => {
         </p>
       </div>
       <div
-        className={`${styles.circle_wrapper}  flex_center ml-auto h-20 w-20 sm:h-32 sm:w-32`}
+        className={classNames(
+          "flex_center ml-auto h-20 w-20 sm:h-32 sm:w-32",
+          styles.circle_wrapper
+        )}
       >
         <div className={classNames("w-12 h-9", styles.arrow)}></div>
-
       </div>
     </Link>
   );

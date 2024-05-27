@@ -1,6 +1,7 @@
 "use client";
 
 import { MotionDiv } from "@components/MotionDiv";
+import classNames from "classnames";
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState, ReactNode } from "react";
 
@@ -28,7 +29,7 @@ const AnimationWrapper: React.FC<AnimationWrapperProps> = ({
   }, [isInView]);
 
   return (
-    <div ref={ref} className={`-bottom-12 ${classes}`}>
+    <div ref={ref} className={classNames("-bottom-12", classes)}>
       {isAnimate && (
         <MotionDiv initial={initial} animate={animate} transition={transition}>
           {children}

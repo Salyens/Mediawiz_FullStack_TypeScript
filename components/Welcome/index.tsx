@@ -27,7 +27,7 @@ const Welcome: React.FC<WebHeaderProps> = ({ main, page }) => {
         />
       )}
 
-      <div className=" flex justify-between w-full items-center main_container mb-8 p-3 sm:p-4 md:p-5 xl:p-6 pt-16 sm:pt-24 md:pt-32 ">
+      <div className="flex justify-between w-full items-center main_container mb-8 p-3 sm:p-4 md:p-5 xl:p-6 pt-16 sm:pt-24 md:pt-32 ">
         <WelcomeDesc main={main} page={page} />
         <WelcomeImg imgURL={imgURL} />
       </div>

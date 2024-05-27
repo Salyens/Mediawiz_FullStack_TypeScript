@@ -1,5 +1,4 @@
 import UnderlinedTitle from "@components/UnderlinedTitle";
-
 import AdvantagesList from "./AdvantagesList";
 import BGLines from "@components/BGLines";
 import AnimationWrapper from "@components/AnimationWrapper";

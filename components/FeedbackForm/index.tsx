@@ -4,6 +4,7 @@ import Image from "next/image";
 import CustomForm from "./CustomForm";
 import { useTranslations } from "next-intl";
 import AnimationWrapper from "@components/AnimationWrapper";
+import classNames from "classnames";
 
 const FeedbackForm = () => {
   const t = useTranslations("MainForm");
@@ -19,13 +20,21 @@ const FeedbackForm = () => {
               ease: "easeOut",
               duration: 1,
             }}
-            classes={`flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 w-full lg:w-2/5 xl:w-1/2 items-center mb-16 ${styles.description}`}
+            classes={classNames(
+              "flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 w-full lg:w-2/5 xl:w-1/2  mb-16",
+              styles.description
+            )}
           >
             <p className="text-center lg:text-left">{t("description-1")}</p>
             <p className="text-center lg:text-left">{t("description-2")}</p>
             <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
               <div className="flex items-center gap-2">
-                <Image src="/common/phone.png" width={50} height={50} alt="phone" />
+                <Image
+                  src="/common/phone.png"
+                  width={50}
+                  height={50}
+                  alt="phone"
+                />
                 <span className="text-lg md:text-2xl mt-4 mb-4 sm:mt-6 sm:mb-6 md:mt-8 md:mb-8 xl:mt-12 xl:mb-12 font-normal">
                   8-903-375-02-61
                 </span>

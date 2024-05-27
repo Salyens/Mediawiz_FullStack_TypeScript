@@ -3,6 +3,7 @@ import Image from "next/image";
 import AnimationWrapper from "@components/AnimationWrapper";
 import UnderlinedTitle from "@components/UnderlinedTitle";
 import { IItem } from "@interfaces/common";
+import BgEllipse from "@components/BgEllipse";
 
 interface HowWeWorkProps {
   list: IItem[];
@@ -50,6 +51,14 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
           </div>
         </div>
       </AnimationWrapper>
+
+      <BgEllipse
+        variant={2}
+        position="-left-1/4 -top-1/4"
+        width={2000}
+        height={2000}
+        delay={1000}
+      />
 
       <AnimationWrapper
         initial={{ x: 2000 }}
@@ -117,7 +126,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         }}
         classes="w-full sm:w-2/3 lg:w-[45%] flex flex-col gap-6 items-end mt-12"
       >
-        <div className=" flex relative lg:static ">
+        <div className="flex relative lg:static ">
           <div className="flex flex-col gap-6 ">
             {renderHowWeWorkItem(secondHalf, beginWith)}
           </div>

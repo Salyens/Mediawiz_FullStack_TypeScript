@@ -1,6 +1,7 @@
 import styles from "./togetherblock.module.css";
 import AnimationWrapper from "@components/AnimationWrapper";
 import BlurImg from "@components/BlurImg";
+import classNames from "classnames";
 
 interface TogetherBlockProps {
   imgURL: string;
@@ -19,9 +20,12 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
         classes="main_container mb-20 md:mb-40 lg:mb-60 xl:mb-64"
       >
         <div
-          className={`${styles.bg_div} relative h-64  sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2x:h-[750px] p-3 sm:p-5 md:p-7 lg:p-10 xl:p-14`}
+          className={classNames(
+            "relative h-64  sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2x:h-[750px] p-3 sm:p-5 md:p-7 lg:p-10 xl:p-14",
+            styles.bg_div
+          )}
         >
-          <div className={`${styles.img_wrapper}`}>
+          <div className={styles.img_wrapper}>
             <BlurImg imgURL={imgURL} name="Our photo" classes="object-cover" />
           </div>
         </div>

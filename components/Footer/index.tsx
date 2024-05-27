@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./footer.module.css";
-import { roboto } from "@app/[locale]/layout";
 import { useTranslations } from "next-intl";
+import classNames from "classnames";
 
 interface SocialIcon {
   name: string;
@@ -20,7 +20,11 @@ const Footer = () => {
       shortName: "IG",
       href: "https://www.instagram.com/mediawiz_marketing",
     },
-    { name: "WhatsApp", shortName: "WA", href: "https://wa.me/89033750261" },
+    {
+      name: "WhatsApp",
+      shortName: "WA",
+      href: "https://wa.me/message/VK65WBLSQRUBL1",
+    },
   ];
 
   const renderSocialLinks = () => {
@@ -46,7 +50,10 @@ const Footer = () => {
 
   return (
     <div
-      className={`${styles.footer_wrapper} ${roboto.className} pt-10 pb-10 gap-4 `}
+      className={classNames(
+        "pt-10 pb-10 gap-4",
+        styles.footer_wrapper,
+      )}
     >
       <div className="flex gap-2">{renderSocialLinks()}</div>
       <Link href="tel:+79033750261">8-903-375-02-61</Link>

@@ -9,6 +9,7 @@ import AnimationWrapper from "@components/AnimationWrapper";
 import { useAppContext } from "@context";
 import { useEffect, useRef } from "react";
 import { socialLinks } from "@constants";
+import classNames from "classnames";
 
 const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
@@ -43,7 +44,7 @@ const RequestAndSocial = () => {
   };
 
   return (
-    <div ref={sectionRef} className={`${styles.bg} w-full`}>
+    <div ref={sectionRef} className={styles.bg}>
       <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
         <AnimationWrapper
           initial={{ x: -2000 }}
@@ -53,7 +54,10 @@ const RequestAndSocial = () => {
             duration: 1,
             delay: 0.5,
           }}
-          classes={`flex flex-col xl:text-3xl 2xl:text-4xl md:text:xl lg:text-2xl text-lg gap-3 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug ${styles.description}`}
+          classes={classNames(
+            "flex flex-col xl:text-3xl 2xl:text-4xl md:text:xl lg:text-2xl text-lg gap-3 w-full lg:w-1/2 sm:items-center lg:items-start leading-snug",
+            styles.description
+          )}
         >
           <p className="sm:min text-center lg:text-left">
             {t("description-1")}

@@ -1,6 +1,6 @@
-
 import { IItem } from "@interfaces/common";
 import styles from "./howweworkitem.module.css";
+import classNames from "classnames";
 
 interface HowWeWorkProps {
   data: IItem;
@@ -10,7 +10,9 @@ interface HowWeWorkProps {
 const HowWeWorkItem = ({ data, index }: HowWeWorkProps) => {
   return (
     <div className="flex items-center">
-      <p className={`${styles.num} min-w-10 min-h-14 text-6xl mr-3`}>{index}</p>
+      <p className={classNames("min-w-10 min-h-14 text-6xl mr-3", styles.num)}>
+        {index}
+      </p>
       <div>
         <h3 className="second_title text-base sm:text:lg xl:text-2xl">
           {data.title}

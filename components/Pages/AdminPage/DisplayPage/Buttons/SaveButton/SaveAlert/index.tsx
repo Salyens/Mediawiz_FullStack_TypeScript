@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import styles from "./savealert.module.css";
+import classNames from "classnames";
 
 interface SaveAlertProps {
   saveStatus: "error" | "saved" | "";
@@ -28,12 +29,12 @@ const SaveAlert: React.FC<SaveAlertProps> = ({ saveStatus, setSaveStatus }) => {
 
   return (
     <div
-      className={`${styles.alert_container} ${
+      className={classNames(
+        styles.alert_container,
         visible ? "opacity-100" : "opacity-0 transition-opacity duration-1000"
-      }`}
+      )}
     >
       <Alert variant={isErrorResponse ? "destructive" : "default"}>
-
         <AlertTitle>{alertInfo.title}</AlertTitle>
         <AlertDescription>{alertInfo.description}</AlertDescription>
       </Alert>

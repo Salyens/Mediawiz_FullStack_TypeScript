@@ -15,10 +15,10 @@ const WeWorkWith = ({ data }: { data: IItemList }) => {
     >
       <BgEllipse
         variant={1}
-        position="-right-1/4"
-        width={2000}
-        height={2000}
-        delay={2500}
+        position="-right-1/3 -top-1/4"
+        width={2500}
+        height={2500}
+        delay={1000}
       />
       <UnderlinedTitle text={data.header} />
       <WeWorkWithList list={data.list} />

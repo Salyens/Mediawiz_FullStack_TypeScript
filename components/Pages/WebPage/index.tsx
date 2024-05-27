@@ -15,8 +15,10 @@ const WebPage = ({ data }: { data: IWebLanguageContent }) => {
 
   return (
     <div className="w-full h-full min-h-screen overflow-hidden relative">
-      <Welcome main={main} page="web"/>
-      <Advantages advantages={advantages} />
+      <div className="min-h-screen">
+        <Welcome main={main} page="web" />
+        <Advantages advantages={advantages} />
+      </div>
       <RequestAndSocial />
       <WeWorkWith data={weWorkWith} />
       <HowWeWork data={howWeWork} />
