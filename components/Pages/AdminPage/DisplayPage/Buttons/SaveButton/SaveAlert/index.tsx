@@ -28,17 +28,24 @@ const SaveAlert: React.FC<SaveAlertProps> = ({ saveStatus, setSaveStatus }) => {
   }, [saveStatus]);
 
   return (
-    <div
+    <Alert
       className={classNames(
         styles.alert_container,
-        visible ? "opacity-100" : "opacity-0 transition-opacity duration-1000"
+        visible ? "opacity-100" : "opacity-0 transition-opacity duration-1000",
+        isErrorResponse ? "border-red-500" : "border-green-500"
       )}
+      variant={isErrorResponse ? "destructive" : "default"}
     >
-      <Alert variant={isErrorResponse ? "destructive" : "default"}>
-        <AlertTitle>{alertInfo.title}</AlertTitle>
-        <AlertDescription>{alertInfo.description}</AlertDescription>
-      </Alert>
-    </div>
+      <AlertTitle
+        className={classNames(
+          "font-bold text-xl",
+          isErrorResponse ? "text-red-500" : "text-green-700"
+        )}
+      >
+        {alertInfo.title}
+      </AlertTitle>
+      <AlertDescription className="text-lg">{alertInfo.description}</AlertDescription>
+    </Alert>
   );
 };
 

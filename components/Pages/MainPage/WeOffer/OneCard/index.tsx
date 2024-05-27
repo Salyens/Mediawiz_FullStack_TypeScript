@@ -2,6 +2,7 @@ import styles from "./onecard.module.css";
 import { OffersList } from "@interfaces/mainPage";
 import Link from "next/link";
 import classNames from "classnames";
+import { roboto } from "@app/[locale]/layout";
 
 const OneCard = ({ header, description, href }: OffersList) => {
   return (
@@ -14,12 +15,19 @@ const OneCard = ({ header, description, href }: OffersList) => {
     >
       <div className="flex_column w-full ">
         <h4
-          className={`${styles.card_header} xl:text-4xl lg:text-3xl md:text-4xl sm:text-4xl text-2xl mb-4`}
+          className={classNames(
+            "xl:text-4xl lg:text-2xl md:text-4xl sm:text-4xl text-2xl mb-4",
+            styles.card_header
+          )}
         >
           {header}
         </h4>
         <p
-          className={`${styles.card_description} xl:text-2xl lg:text-lg md:text-2xl sm:text-2xl text-lg`}
+          className={classNames(
+            "xl:text-2xl lg:text-lg md:text-2xl sm:text-2xl text-lg",
+            styles.card_description,
+            roboto.className
+          )}
         >
           {description}
         </p>

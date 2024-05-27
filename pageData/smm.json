@@ -14,16 +14,16 @@
         },
         "description": {
           "forAdmin": "Описание",
-          "text": "В SMM наши клиенты получают не только продвижение, но и комплексный подход. А маркетинговая стратегия, анализ конкурентов и целевой аудитории, — идут вам бонусом, совершенно бесплатно!"
+          "text": "В SMM мои клиенты получают не только продвижение, но и комплексный подход. Маркетинговая стратегия, анализ конкурентов и целевой аудитории идут вам бонусом, совершенно бесплатно!"
         }
       },
       "weWorkWith": {
-        "forAdminHeader": "Раздел 'С чем мы работаем'",
-        "header": "С ЧЕМ МЫ РАБОТАЕМ:",
+        "forAdminHeader": "Раздел 'С чем я работаю'",
+        "header": "С ЧЕМ Я РАБОТАЮ:",
         "list": [
           {
             "title": "УНИКАЛЬНЫЙ ДИЗАЙН",
-            "description": "Логотип и фирменный стиль и многое другое"
+            "description": "Логотип, фирменный стиль и многое другое"
           },
           {
             "title": "КОНТЕНТ-ПЛАН",
@@ -34,8 +34,8 @@
             "description": "Ваш бизнес в интернете"
           },
           {
-            "title": " ПРОДВИЖЕНИЕ",
-            "description": "Применение разных способов продвижения"
+            "title": "ПРОДВИЖЕНИЕ",
+            "description": "Применение различных способов продвижения"
           },
           {
             "title": "REELS",
@@ -53,8 +53,8 @@
         ]
       },
       "myProjects": {
-        "forAdminHeader": "Раздел 'С чем мы работаем'",
-        "header": "НАШИ РАБОТЫ:",
+        "forAdminHeader": "Раздел 'Мои работы'",
+        "header": "МОИ РАБОТЫ:",
         "list": [
           { "title": "project-1", "imgURL": "/media/1711969596096.png" },
           { "title": "project-2", "imgURL": "/media/1711969596096.png" }
@@ -64,7 +64,7 @@
         "forAdminHeader": "Раздел 'Цитаты'",
         "list": [
           {
-            "description": "Мы ценим результат, четкость и грамотность. Давайте сделаем ваш бизнес запоминающимся вместе!            Выбирая грамотный маркетинг в соцсетях и таргетированную рекламу, ваши продажи увеличиваются."
+            "description": "Я ценю результат, четкость и грамотность. Давайте сделаем ваш бизнес запоминающимся вместе! Выбирая грамотный маркетинг в соцсетях и таргетированную рекламу, ваши продажи увеличиваются."
           },
           {
             "description": "Как это происходит? Ваш продукт видит множество людей! Привлекаются новые покупатели, а старые доверяют вам больше и остаются с вами."
@@ -86,16 +86,16 @@
         },
         "description": {
           "forAdmin": "Description",
-          "text": "In SMM, our clients receive not only promotion but also a comprehensive approach. And marketing strategy, competitor and audience analysis are included for you as a bonus, absolutely free!"
+          "text": "In SMM, my clients receive not only promotion but also a comprehensive approach. Marketing strategy, competitor and audience analysis are included for you as a bonus, absolutely free!"
         }
       },
       "weWorkWith": {
-        "forAdminHeader": "Section 'What We Work With'",
-        "header": "WHAT WE WORK WITH:",
+        "forAdminHeader": "Section 'What I Work With'",
+        "header": "WHAT I WORK WITH:",
         "list": [
           {
             "title": "UNIQUE DESIGN",
-            "description": "Logo and corporate identity and much more"
+            "description": "Logo, corporate identity, and much more"
           },
           {
             "title": "CONTENT PLAN",
@@ -107,7 +107,7 @@
           },
           {
             "title": "PROMOTION",
-            "description": "Using different promotion methods"
+            "description": "Using various promotion methods"
           },
           {
             "title": "REELS",
@@ -125,8 +125,8 @@
         ]
       },
       "myProjects": {
-        "forAdminHeader": "Section 'What We Work With'",
-        "header": "OUR WORKS:",
+        "forAdminHeader": "Section 'My Works'",
+        "header": "MY WORKS:",
         "list": [
           { "title": "project-1", "imgURL": "/media/1711969596096.png" },
           { "title": "project-2", "imgURL": "/media/1711969596096.png" }
@@ -136,7 +136,7 @@
         "forAdminHeader": "Section 'Quotes'",
         "list": [
           {
-            "description": "We value results, clarity, and literacy. Let's make your business memorable together! By choosing competent social media marketing and targeted advertising, your sales increase."
+            "description": "I value results, clarity, and literacy. Let's make your business memorable together! By choosing competent social media marketing and targeted advertising, your sales increase."
           },
           {
             "description": "How does it work? Your product is seen by many people! New buyers are attracted, and old ones trust you more and stay with you."

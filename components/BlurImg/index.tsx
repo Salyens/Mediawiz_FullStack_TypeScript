@@ -10,7 +10,13 @@ interface BlurImgProps {
 }
 
 const BlurImg = async ({ imgURL, name, classes, sizes }: BlurImgProps) => {
-  const base64 = await generateBlurDataURL(imgURL);
+  let base64 = "";
+
+  try {
+    base64 = await generateBlurDataURL(imgURL);
+  } catch (error) {
+    return null;
+  }
 
   return (
     <Image
@@ -18,7 +24,10 @@ const BlurImg = async ({ imgURL, name, classes, sizes }: BlurImgProps) => {
       alt={name}
       fill
       sizes={sizes || "100vh"}
-      className={classNames("object-contain select-none pointer-events-none", classes)}
+      className={classNames(
+        "object-contain select-none pointer-events-none",
+        classes
+      )}
       placeholder="blur"
       blurDataURL={base64}
       priority={true}

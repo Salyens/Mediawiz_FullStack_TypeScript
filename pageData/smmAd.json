@@ -18,20 +18,20 @@
         }
       },
       "weWorkWith": {
-        "forAdminHeader": "Раздел 'С чем мы работаем'",
-        "header": "С ЧЕМ МЫ РАБОТАЕМ:",
+        "forAdminHeader": "Раздел 'С чем я работаю'",
+        "header": "С ЧЕМ Я РАБОТАЮ:",
         "list": [
           {
-            "title": "ПЕРСОНАЛИЗИРОВАННЫЙ РЕКЛАМНЫЕ КФМПАНИИ",
-            "description": "Разрабатываем стратегии, ориентированные на вашу целевую аудиторию, чтобы гарантировать максимальную отдачу от вложений."
+            "title": "ПЕРСОНАЛИЗИРОВАННЫЕ РЕКЛАМНЫЕ КАМПАНИИ",
+            "description": "Разрабатываю стратегии, ориентированные на вашу целевую аудиторию, чтобы гарантировать максимальную отдачу от вложений."
           },
           {
-            "title": "ОПТИМИЗАЦИЯ БЮДЖЕТА     ",
-            "description": "Управляем вашим рекламным бюджетом с максимальной эффективностью."
+            "title": "ОПТИМИЗАЦИЯ БЮДЖЕТА",
+            "description": "Управляю вашим рекламным бюджетом с максимальной эффективностью."
           },
           {
             "title": "АНАЛИТИКА И ОТЧЕТНОСТЬ",
-            "description": "Предоставляем полный анализ и отчеты о результатах кампаний, чтобы вы всегда были в курсе эффективности рекламы."
+            "description": "Предоставляю полный анализ и отчеты о результатах кампаний, чтобы вы всегда были в курсе эффективности рекламы."
           }
         ]
       },
@@ -74,20 +74,20 @@
         }
       },
       "weWorkWith": {
-        "forAdminHeader": "Section 'What We Work With'",
-        "header": "WHAT WE WORK WITH:",
+        "forAdminHeader": "Section 'What I Work With'",
+        "header": "WHAT I WORK WITH:",
         "list": [
           {
             "title": "PERSONALIZED AD CAMPAIGNS",
-            "description": "We develop strategies tailored to your target audience to ensure maximum return on investment."
+            "description": "I develop strategies tailored to your target audience to ensure maximum return on investment."
           },
           {
             "title": "BUDGET OPTIMIZATION",
-            "description": "We manage your advertising budget with maximum efficiency."
+            "description": "I manage your advertising budget with maximum efficiency."
           },
           {
             "title": "ANALYTICS AND REPORTING",
-            "description": "We provide comprehensive analysis and reports on campaign results so you are always aware of the effectiveness of your ads."
+            "description": "I provide comprehensive analysis and reports on campaign results so you are always aware of the effectiveness of your ads."
           }
         ]
       },

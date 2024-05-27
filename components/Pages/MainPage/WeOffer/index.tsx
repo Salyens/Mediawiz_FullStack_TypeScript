@@ -35,7 +35,7 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
         <AnimationWrapper
           initial={{ y: 450 }}
           animate={{ y: 0 }}
-          transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
         >
           <UnderlinedTitle text={text} />
           <div className="flex flex-wrap justify-between items-center gap-2">

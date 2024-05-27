@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import FindMoreLink from "@components/FindMoreLink";
 import { IItem } from "@interfaces/common";
 import classNames from "classnames";
+import { roboto } from "@app/[locale]/layout";
 
 const WeWorkItem = ({ data }: { data: IItem }) => {
   const t = useTranslations("MainPage");
@@ -22,7 +23,11 @@ const WeWorkItem = ({ data }: { data: IItem }) => {
         {data.title}
       </h3>
       <p
-        className={classNames("text-sm xl:text-2xl mt-2 xl:mt-5", styles.desc)}
+        className={classNames(
+          "text-sm xl:text-2xl mt-2 xl:mt-5",
+          styles.desc,
+          roboto.className
+        )}
       >
         {data.description}
       </p>

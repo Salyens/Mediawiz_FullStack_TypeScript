@@ -18,26 +18,26 @@
         },
         "description": {
           "forAdmin": "Описание",
-          "text": "Мы занимаемся созданием таких рекламных компаний, которые не просто заметны, но и привлекают именно вашу аудиторию. "
+          "text": "Я занимаюсь созданием таких рекламных компаний, которые не просто заметны, но и привлекают именно вашу аудиторию."
         }
       },
       "advantages": {
         "forAdminHeader": "Раздел 'Преимущества'",
-        "header": "ПРЕИМУЩЕСТВА РАБОТЫ С НАМИ:",
+        "header": "ПРЕИМУЩЕСТВА РАБОТЫ СО МНОЙ:",
         "list": [
           {
             "title": "Доступные цены",
-            "description": "Мы работаем напрямую, поэтому наши услуги стоят дешевле, а качество остается на высоте.",
+            "description": "Я работаю напрямую, поэтому мои услуги стоят дешевле, а качество остается на высоте.",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "Проверка вашего сайта и конкурентов",
-            "description": "Мы проведем аудит вашего сайта и изучим конкурентов, чтобы вы знали, как улучшить свое предложение.",
+            "description": "Я проведу аудит вашего сайта и изучу конкурентов, чтобы вы знали, как улучшить свое предложение.",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "Опыт в разработке и рекламе",
-            "description": "У нас есть знания не только в рекламе, но и в разработке сайтов. Мы понимаем, как сделать его эффективным.",
+            "description": "У меня есть знания не только в рекламе, но и в разработке сайтов. Я понимаю, как сделать его эффективным.",
             "imgURL": "/media/1711969596096.png"
           },
           {
@@ -47,7 +47,7 @@
           },
           {
             "title": "Профессионализм в контекстной рекламе",
-            "description": "Мы используем лучшие методы и подходы в рекламе, чтобы добиться максимального результата при любом бюджете.",
+            "description": "Я использую лучшие методы и подходы в рекламе, чтобы добиться максимального результата при любом бюджете.",
             "imgURL": "/media/1711969596096.png"
           }
         ]
@@ -58,60 +58,60 @@
         "list": [
           {
             "title": "НАЙДЕТ ТЕХ, КТО ИЩЕТ ВАС",
-            "description": " Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "БОЛЬШЕ КЛИКОВ, БОЛЬШЕ ВНИМАНИЯ",
-            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "description": "Эта реклама привлекает в 2-3 раза больше кликов, чем обычные объявления",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "БЫСТРО УЗНАЕТЕ РЕЗУЛЬТАТ",
-            "description": "Реклама показывается людям, которые уже ищут что-то похожее на ваши товары или услуги",
+            "description": "Реклама позволяет быстро оценить интерес аудитории и эффективность кампании",
             "imgURL": "/media/1711969596096.png"
           }
         ]
       },
       "howWeWork": {
-        "forAdminHeader": "Как мы работаем'",
-        "header": "КАК МЫ РАБОТАЕМ:",
+        "forAdminHeader": "Как я работаю'",
+        "header": "КАК Я РАБОТАЮ:",
         "list": [
           {
-            "title": "Обсуждение  целей",
-            "description": "Мы определим, чего вы хотите достичь с рекламой."
+            "title": "Обсуждение целей",
+            "description": "Я определю, чего вы хотите достичь с рекламой."
           },
           {
             "title": "Анализ конкурентов",
-            "description": "Узнаем, что делают ваши конкуренты и как это можно использовать."
+            "description": "Узнаю, что делают ваши конкуренты и как это можно использовать."
           },
           {
             "title": "Аудит сайта",
-            "description": "Проверим, насколько ваш сайт готов к продвижению."
+            "description": "Проверю, насколько ваш сайт готов к продвижению."
           },
           {
             "title": "Разработка сайта или страницы (при необходимости)",
-            "description": "Создадим сайт или страницу, оптимизированную для рекламы и поисковых систем"
+            "description": "Создам сайт или страницу, оптимизированную для рекламы и поисковых систем"
           },
           {
             "title": "Создание рекламной кампании",
-            "description": "Разработаем кампанию, основываясь на данных о конкурентах и вашей аудитории."
+            "description": "Разработаю кампанию, основываясь на данных о конкурентах и вашей аудитории."
           },
           {
             "title": "Тестирование и анализ",
-            "description": "Проверим эффективность рекламы на примере тестовой кампании."
+            "description": "Проверю эффективность рекламы на примере тестовой кампании."
           },
           {
             "title": "Корректировка стратегии",
-            "description": "Изменим подход в зависимости от результатов теста."
+            "description": "Изменю подход в зависимости от результатов теста."
           },
           {
             "title": "Запуск полноценной кампании",
-            "description": "Начнем полномасштабную рекламную кампанию."
+            "description": "Начну полномасштабную рекламную кампанию."
           },
           {
             "title": "Постоянная оптимизация",
-            "description": "Будем следить и улучшать рекламу, чтобы вы получали максимум при минимальных затратах."
+            "description": "Буду следить и улучшать рекламу, чтобы вы получали максимум при минимальных затратах."
           }
         ]
       }
@@ -134,26 +134,26 @@
         },
         "description": {
           "forAdmin": "Description",
-          "text": "We create advertising campaigns that are not just noticeable but attract your specific audience."
+          "text": "I create advertising campaigns that are not just noticeable but attract your specific audience."
         }
       },
       "advantages": {
         "forAdminHeader": "Section 'Advantages'",
-        "header": "ADVANTAGES OF WORKING WITH US:",
+        "header": "ADVANTAGES OF WORKING WITH ME:",
         "list": [
           {
             "title": "Affordable Prices",
-            "description": "We work directly, so our services are cheaper while maintaining high quality.",
+            "description": "I work directly, so my services are cheaper while maintaining high quality.",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "Website and Competitor Check",
-            "description": "We will audit your website and study competitors to help you improve your offer.",
+            "description": "I will audit your website and study competitors to help you improve your offer.",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "Experience in Development and Advertising",
-            "description": "We have knowledge not only in advertising but also in website development. We understand how to make it effective.",
+            "description": "I have knowledge not only in advertising but also in website development. I understand how to make it effective.",
             "imgURL": "/media/1711969596096.png"
           },
           {
@@ -163,7 +163,7 @@
           },
           {
             "title": "Professionalism in Contextual Advertising",
-            "description": "We use the best methods and approaches in advertising to achieve maximum results with any budget.",
+            "description": "I use the best methods and approaches in advertising to achieve maximum results with any budget.",
             "imgURL": "/media/1711969596096.png"
           }
         ]
@@ -174,60 +174,60 @@
         "list": [
           {
             "title": "FIND THOSE WHO ARE LOOKING FOR YOU",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "description": "Ads are shown to people who are already searching for something similar to your products or services",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "MORE CLICKS, MORE ATTENTION",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "description": "This advertisement attracts 2-3 times more clicks than regular ads",
             "imgURL": "/media/1711969596096.png"
           },
           {
             "title": "YOU WILL KNOW THE RESULT QUICKLY",
-            "description": "Ads are shown to people who are already searching for something similar to your products or services.",
+            "description": "Advertising allows for a quick assessment of audience interest and campaign effectiveness",
             "imgURL": "/media/1711969596096.png"
           }
         ]
       },
       "howWeWork": {
-        "forAdminHeader": "How We Work'",
-        "header": "HOW WE WORK:",
+        "forAdminHeader": "How I Work'",
+        "header": "HOW I WORK:",
         "list": [
           {
             "title": "Discussion of Goals",
-            "description": "We will determine what you want to achieve with advertising."
+            "description": "I will determine what you want to achieve with advertising."
           },
           {
             "title": "Competitor Analysis",
-            "description": "We will find out what your competitors are doing and how it can be used."
+            "description": "I will find out what your competitors are doing and how it can be used."
           },
           {
             "title": "Website Audit",
-            "description": "We will check how ready your website is for promotion."
+            "description": "I will check how ready your website is for promotion."
           },
           {
             "title": "Website or Page Development (if necessary)",
-            "description": "We will create a website or page optimized for advertising and search engines."
+            "description": "I will create a website or page optimized for advertising and search engines."
           },
           {
             "title": "Creating an Advertising Campaign",
-            "description": "We will develop a campaign based on data about competitors and your audience."
+            "description": "I will develop a campaign based on data about competitors and your audience."
           },
           {
             "title": "Testing and Analysis",
-            "description": "We will check the effectiveness of the advertising with a test campaign."
+            "description": "I will check the effectiveness of the advertising with a test campaign."
           },
           {
             "title": "Strategy Adjustment",
-            "description": "We will change the approach depending on the test results."
+            "description": "I will change the approach depending on the test results."
           },
           {
             "title": "Launch of a Full-Scale Campaign",
-            "description": "We will start a full-scale advertising campaign."
+            "description": "I will start a full-scale advertising campaign."
           },
           {
             "title": "Continuous Optimization",
-            "description": "We will monitor and improve the advertising to get the maximum results with minimal costs."
+            "description": "I will monitor and improve the advertising to get the maximum results with minimal costs."
           }
         ]
       }

@@ -10,7 +10,7 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
         animate={{ x: 0 }}
         transition={{
           ease: "easeOut",
-          duration: 1,
+          duration: 1.3,
         }}
         className="relative w-full h-full"
       >

@@ -1,6 +1,7 @@
 import { IItem } from "@interfaces/common";
 import styles from "./howweworkitem.module.css";
 import classNames from "classnames";
+import { roboto } from "@app/[locale]/layout";
 
 interface HowWeWorkProps {
   data: IItem;
@@ -17,7 +18,12 @@ const HowWeWorkItem = ({ data, index }: HowWeWorkProps) => {
         <h3 className="second_title text-base sm:text:lg xl:text-2xl">
           {data.title}
         </h3>
-        <p className="second_desc text-sm xl:text-2xl mt-2">
+        <p
+          className={classNames(
+            "second_desc text-sm xl:text-2xl mt-2",
+            roboto.className
+          )}
+        >
           {data.description}
         </p>
       </div>

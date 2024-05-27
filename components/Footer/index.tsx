@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./footer.module.css";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
+import { roboto } from "@app/[locale]/layout";
 
 interface SocialIcon {
   name: string;
@@ -53,6 +54,7 @@ const Footer = () => {
       className={classNames(
         "pt-10 pb-10 gap-4",
         styles.footer_wrapper,
+        roboto.className
       )}
     >
       <div className="flex gap-2">{renderSocialLinks()}</div>

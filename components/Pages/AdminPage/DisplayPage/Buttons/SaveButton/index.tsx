@@ -53,7 +53,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);
         updates.forEach((update) => {
-          // Обновляем данные для обеих локалей
+
           const basePath = update.filePath.split(".").slice(2).join(".");
           _.set(newData, `languages.en.${basePath}`, update.newUrl);
           _.set(newData, `languages.ru.${basePath}`, update.newUrl);

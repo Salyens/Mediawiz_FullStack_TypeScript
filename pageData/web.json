@@ -18,16 +18,16 @@
         },
         "description": {
           "forAdmin": "Описание",
-          "text": "Наша профессиональная задача - разработка сайта, который является важным элементом вашего присутствия в интернете"
+          "text": "Моя профессиональная задача - разработка сайта, который является важным элементом вашего присутствия в интернете"
         }
       },
       "advantages": {
         "forAdminHeader": "Раздел 'Преимущества'",
-        "header": "ПРЕИМУЩЕСТВА РАБОТЫ С НАМИ:",
+        "header": "ПРЕИМУЩЕСТВА РАБОТЫ СО МНОЙ:",
         "list": [
           {
             "title": "Доступные цены",
-            "description": "Я работаю напрямую, без посредников, поэтому мои услуги обходятся недорого и при этом качество остается на высоте.",
+            "description": "Я работаю напрямую, без посредников, поэтому мои услуги обходятся недорого, и при этом качество остается на высоте.",
             "imgURL": "/media/1711969596096.png"
           },
           {
@@ -37,7 +37,7 @@
           },
           {
             "title": "Всё для продвижения",
-            "description": "После создания сайта занимаемся его продвижением, обеспечивая идеальную настройку под рекламу.",
+            "description": "После создания сайта занимаюсь его продвижением, обеспечивая идеальную настройку под рекламу.",
             "imgURL": "/media/1711969596096.png"
           },
           {
@@ -52,14 +52,14 @@
           },
           {
             "title": "Уникальный подход",
-            "description": "Я не использую готовые шаблоны, как Tilda или WordPress. Ваш сайт будет создан специально для вас, со всеми нужными функциями и креативным дизайном",
+            "description": "Я не использую готовые шаблоны, как Tilda или WordPress. Ваш сайт будет создан специально для вас, со всеми нужными функциями и креативным дизайном.",
             "imgURL": "/media/1711969596096.png"
           }
         ]
       },
       "weWorkWith": {
-        "forAdminHeader": "Раздел 'С чем мы работаем'",
-        "header": "С ЧЕМ МЫ РАБОТАЕМ:",
+        "forAdminHeader": "Раздел 'С чем я работаю'",
+        "header": "С ЧЕМ Я РАБОТАЮ:",
         "list": [
           {
             "title": "КОРПОРАТИВНЫЕ САЙТЫ",
@@ -75,17 +75,17 @@
           },
           {
             "title": "САЙТЫ-КАТАЛОГИ",
-            "description": "Удобно представляем ваш ассортимент"
+            "description": "Удобно представляю ваш ассортимент"
           },
           {
-            "title": "ПАСАДОЧНЫЕ СТРАНИЦЫ",
-            "description": "Превращаем посетителей в клиентов"
+            "title": "ПОСАДОЧНЫЕ СТРАНИЦЫ",
+            "description": "Превращаю посетителей в клиентов"
           }
         ]
       },
       "howWeWork": {
-        "forAdminHeader": "Как мы работаем'",
-        "header": "КАК МЫ РАБОТАЕМ:",
+        "forAdminHeader": "Как я работаю'",
+        "header": "КАК Я РАБОТАЮ:",
         "list": [
           {
             "title": "Обсуждение вашего проекта",
@@ -109,15 +109,15 @@
           },
           {
             "title": "Контент",
-            "description": "Заполняю сайт полезной информацией и материалами, которые привлекут клиентов"
+            "description": "Заполняю сайт полезной информацией и материалами, которые привлекут клиентов."
           },
           {
             "title": "Тестирование",
-            "description": "Проверяю, чтобы все работало идеально перед тем, как сайт появится в интернете"
+            "description": "Проверяю, чтобы все работало идеально перед тем, как сайт появится в интернете."
           },
           {
             "title": "Запуск",
-            "description": "Опубликовываю ваш сайт в интернете и настраиваю все необходимые инструменты для его продвижения"
+            "description": "Опубликовываю ваш сайт в интернете и настраиваю все необходимые инструменты для его продвижения."
           },
           {
             "title": "Поддержка и обновления (при необходимости)",
@@ -136,7 +136,7 @@
         },
         "header_1": {
           "forAdmin": "Header-1",
-          "text": "WEB DEVELOPMENT"
+          "text": "WEBSITE DEVELOPMENT"
         },
         "header_2": {
           "forAdmin": "Header-2",
@@ -144,60 +144,60 @@
         },
         "description": {
           "forAdmin": "Description",
-          "text": "Our professional task is to develop a website that is an important element of your online presence"
+          "text": "My professional task is to develop a website, which is an important element of your online presence"
         }
       },
       "advantages": {
         "forAdminHeader": "Section 'Advantages'",
-        "header": "ADVANTAGES OF WORKING WITH US:",
+        "header": "ADVANTAGES OF WORKING WITH ME:",
         "list": [
           {
-            "title": "Affordable Prices",
-            "description": "I work directly, without intermediaries, so my services are inexpensive, and the quality remains high.",
+            "title": "Affordable prices",
+            "description": "I work directly, without intermediaries, so my services are inexpensive, while maintaining high quality.",
             "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "Modern Technologies",
-            "description": "I use the latest development methods to ensure your site works quickly, reliably, and doesn't require constant updates.",
+            "title": "Modern technologies",
+            "description": "I use the latest development methods to ensure your site works quickly, reliably, and does not require constant updates.",
             "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "All for Promotion",
-            "description": "After creating the site, we promote it, ensuring perfect settings for advertising.",
+            "title": "Everything for promotion",
+            "description": "After creating the site, I handle its promotion, ensuring perfect advertising settings.",
             "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "SEO Optimization",
-            "description": "I know how to make the site easily findable on the internet so that more clients can find you.",
+            "title": "SEO optimization",
+            "description": "I know how to make the site easily discoverable on the internet, so more clients can find you.",
             "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "Working Website",
-            "description": "I don't just create a website; I make it a useful tool for your business by filling it with the right and interesting content.",
+            "title": "Working site",
+            "description": "I not only create a site, but I also make it a useful tool for your business, filling it with the right and interesting content.",
             "imgURL": "/media/1711969596096.png"
           },
           {
-            "title": "Unique Approach",
-            "description": "I don't use ready-made templates like Tilda or WordPress. Your site will be created especially for you, with all the necessary functions and creative design.",
+            "title": "Unique approach",
+            "description": "I do not use ready-made templates like Tilda or WordPress. Your site will be created especially for you, with all the necessary functions and creative design.",
             "imgURL": "/media/1711969596096.png"
           }
         ]
       },
       "weWorkWith": {
-        "forAdminHeader": "Section 'We Work With'",
-        "header": "WE WORK WITH:",
+        "forAdminHeader": "Section 'What I work with'",
+        "header": "WHAT I WORK WITH:",
         "list": [
           {
             "title": "CORPORATE SITES",
-            "description": "Your business online"
+            "description": "Your business on the internet"
           },
           {
             "title": "ONLINE STORES",
-            "description": "Sell online efficiently"
+            "description": "Sell online effectively"
           },
           {
             "title": "BUSINESS CARD SITES",
-            "description": "Your business online"
+            "description": "Your business on the internet"
           },
           {
             "title": "CATALOG SITES",
@@ -205,33 +205,33 @@
           },
           {
             "title": "LANDING PAGES",
-            "description": "Turning visitors into clients"
+            "description": "Turn visitors into clients"
           }
         ]
       },
       "howWeWork": {
-        "forAdminHeader": "Section 'How We Work'",
-        "header": "HOW WE WORK:",
+        "forAdminHeader": "Section 'How I work'",
+        "header": "HOW I WORK:",
         "list": [
           {
-            "title": "Discussion of Your Project",
+            "title": "Discussing your project",
             "description": "We determine together what you need, and I offer the best solutions."
           },
           {
-            "title": "Planning",
-            "description": "I plan how your site will look and work."
+            "title": "Designing",
+            "description": "I plan how your site will look and function."
           },
           {
             "title": "Design",
-            "description": "I create a beautiful and user-friendly design that you and your clients will love."
+            "description": "I create a beautiful and user-friendly design that you and your clients will like."
           },
           {
             "title": "Layout",
-            "description": "I create site pages based on the design, ensuring they work correctly on any device."
+            "description": "I make the site pages according to the design, ensuring their proper work on any devices."
           },
           {
             "title": "Programming",
-            "description": "I configure all the technical aspects to make the site work flawlessly."
+            "description": "I set up all the technical aspects to ensure the site works like clockwork."
           },
           {
             "title": "Content",
@@ -239,15 +239,15 @@
           },
           {
             "title": "Testing",
-            "description": "I check that everything works perfectly before the site goes live."
+            "description": "I check to make sure everything works perfectly before the site goes online."
           },
           {
             "title": "Launch",
-            "description": "I publish your site on the internet and configure all the necessary tools for its promotion."
+            "description": "I publish your site on the internet and set up all the necessary tools for its promotion."
           },
           {
-            "title": "Support and Updates (if needed)",
-            "description": "I offer ongoing support and updates to keep your site relevant and effective."
+            "title": "Support and updates (if necessary)",
+            "description": "I offer ongoing support and updates to keep your site always relevant and effective."
           }
         ]
       }

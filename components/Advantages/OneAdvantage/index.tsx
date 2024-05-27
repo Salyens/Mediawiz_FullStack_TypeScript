@@ -1,4 +1,6 @@
+import { roboto } from "@app/[locale]/layout";
 import { IItemAndImg } from "@interfaces/common";
+import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
 
@@ -21,7 +23,12 @@ const OneAdvantage: React.FC<OneAdvantageProps> = ({ data }) => {
         <h3 className="second_title text-lg sm:text-2xl mb-1 sm:mb-3 sm:pt-5">
           {data.title}
         </h3>
-        <p className="second_desc text-sm sm:text-lg md:text-lg 2xl:text-2xl">
+        <p
+          className={classNames(
+            "second_desc text-sm sm:text-lg md:text-lg 2xl:text-2xl",
+            roboto.className
+          )}
+        >
           {data.description}
         </p>
       </div>

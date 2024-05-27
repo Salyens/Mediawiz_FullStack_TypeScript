@@ -25,7 +25,7 @@ const FindMoreLink = ({ href }: FindMoreLinkProp) => {
 
   const displayEl = () => {
     return (
-      <div className={styles.link_container}>
+      <div className={classNames(styles.link_container)}>
         <span className={classNames("text-2xl 2xl:text-3xl", styles.text)}>
           {t("findMore")}
         </span>

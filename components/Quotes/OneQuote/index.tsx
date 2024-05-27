@@ -7,6 +7,7 @@ import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import BgEllipse from "@components/BgEllipse";
 import BlurImg from "@components/BlurImg";
+import { roboto } from "@app/[locale]/layout";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -71,7 +72,12 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 <h5 className="second_title text-2xl mb-3 pt-5">{item.name}</h5>
               )}
               <div className={styles.left_line}>
-                <p className="second_desc text-lg md:text-lg 2xl:text-2xl">
+                <p
+                  className={classNames(
+                    "second_desc text-lg md:text-lg 2xl:text-2xl",
+                    roboto.className
+                  )}
+                >
                   {item.description}
                 </p>
               </div>
