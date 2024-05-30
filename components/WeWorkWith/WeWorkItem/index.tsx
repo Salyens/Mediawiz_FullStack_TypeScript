@@ -1,16 +1,13 @@
 import styles from "./weworkitem.module.css";
-import { useTranslations } from "next-intl";
-import FindMoreLink from "@components/FindMoreLink";
 import { IItem } from "@interfaces/common";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 
 const WeWorkItem = ({ data }: { data: IItem }) => {
-  const t = useTranslations("MainPage");
   return (
     <div
       className={classNames(
-        "w-full md:w-[45%] flex-grow lg:w-[30%] h-64 xl:h-96 flex flex-col justify-between m-2 lg:m-3",
+        "w-full sm:w-[45%] flex-grow lg:w-[30%] h-64 sm:h-72 lg:h-80 xl:h-96 flex flex-col lg:m-3 p-5 lg:p-5 xl:p-8",
         styles.rectangle
       )}
     >
@@ -24,17 +21,13 @@ const WeWorkItem = ({ data }: { data: IItem }) => {
       </h3>
       <p
         className={classNames(
-          "text-sm xl:text-2xl mt-2 xl:mt-5",
+          "text-base md:text-lg xl:text-xl mt-2 xl:mt-5",
           styles.desc,
           roboto.className
         )}
       >
         {data.description}
       </p>
-
-      <div className="mt-auto mb-4">
-        <FindMoreLink />
-      </div>
     </div>
   );
 };

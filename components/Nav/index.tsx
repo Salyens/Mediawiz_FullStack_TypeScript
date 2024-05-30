@@ -19,7 +19,7 @@ const Nav = () => {
         opacity: 0,
       }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 1, delay: 0.9 }}
+      transition={{ ease: "easeOut", duration: 1, delay: 1 }}
     >
       <Disclosure as="nav">
         {({ open }) => (

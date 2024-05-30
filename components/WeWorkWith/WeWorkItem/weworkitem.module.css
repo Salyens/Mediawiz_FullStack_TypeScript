@@ -2,9 +2,7 @@
   position: relative;
   border-radius: 12px;
   background-color: #1a1a1a;
-  padding: 1rem;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 
 .rectangle::before {

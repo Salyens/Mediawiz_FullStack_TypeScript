@@ -5,7 +5,6 @@ import { Play, Roboto } from "next/font/google";
 import Provider from "@components/Provider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { AppWrapper } from "@context";
 
 export const inter = Play({
   weight: ["400", "700"],
@@ -43,15 +42,13 @@ export default async function RootLayout({
           }}
         >
           <Provider session={session}>
-            <AppWrapper>
-              <NextIntlClientProvider messages={messages}>
-                <Nav/>
-                <main style={{ flexGrow: 1 }}>{children}</main>
-                <div style={{ marginTop: "auto" }}>
-                  <Footer />
-                </div>
-              </NextIntlClientProvider>
-            </AppWrapper>
+            <NextIntlClientProvider messages={messages}>
+              <Nav />
+              <main style={{ flexGrow: 1 }}>{children}</main>
+              <div style={{ marginTop: "auto" }}>
+                <Footer />
+              </div>
+            </NextIntlClientProvider>
           </Provider>
         </div>
       </body>

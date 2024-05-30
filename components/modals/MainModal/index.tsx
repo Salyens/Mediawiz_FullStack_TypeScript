@@ -17,7 +17,7 @@ const MainModal = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild onClick={() => setIsOpen(true)}>
           <button
-            className={classNames("w-80 m-auto sm:m-0", styles.btn_apply)}
+            className={classNames("w-80 m-auto mt-6 sm:m-0", styles.btn_apply)}
           >
             {t("request_2")}
           </button>

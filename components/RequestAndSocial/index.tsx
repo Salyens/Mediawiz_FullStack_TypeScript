@@ -1,27 +1,15 @@
-"use client";
-
 import Link from "next/link";
 import styles from "./requestandsocila.module.css";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MainModal from "@components/modals/MainModal";
 import AnimationWrapper from "@components/AnimationWrapper";
-import { useAppContext } from "@context";
-import { useEffect, useRef } from "react";
 import { socialLinks } from "@constants";
 import classNames from "classnames";
 
 const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
   const s = useTranslations("MainPage");
-  const { scrollToRef } = useAppContext();
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (scrollToRef) {
-      scrollToRef.current = sectionRef.current;
-    }
-  }, [scrollToRef]);
 
   const renderSocialLinks = () => {
     return socialLinks.map((item) => (
@@ -44,7 +32,7 @@ const RequestAndSocial = () => {
   };
 
   return (
-    <div ref={sectionRef} className={styles.bg}>
+    <div className={classNames("mt-8 mb-8", styles.bg)}>
       <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
         <AnimationWrapper
           initial={{ x: -2000 }}

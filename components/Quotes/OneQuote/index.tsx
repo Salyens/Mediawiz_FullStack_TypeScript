@@ -82,7 +82,9 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 </p>
               </div>
 
-              <FindMoreLink href={"href" in item ? item.href : undefined} />
+              {"href" in item && (
+                <FindMoreLink href={"href" in item ? item.href : undefined} />
+              )}
             </div>
           </div>
           {"imgURL" in item && item.imgURL && (

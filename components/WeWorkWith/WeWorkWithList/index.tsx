@@ -11,7 +11,7 @@ const WeWorkWithList: React.FC<AdvantagesListProps> = ({ list }) => {
     ));
   };
 
-  return <div className="flex flex-wrap justify-between">{renderItems()}</div>;
+  return <div className="flex flex-wrap justify-between gap-6 lg:gap-0">{renderItems()}</div>;
 };
 
 export default WeWorkWithList;

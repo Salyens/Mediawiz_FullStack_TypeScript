@@ -2,7 +2,7 @@
 
 import styles from "./oneaditem.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classNames from "classnames";
 import { IItemAndImg } from "@interfaces/common";
 
@@ -12,6 +12,12 @@ interface OneAdItemProp {
 
 const OneAdItem = ({ data }: OneAdItemProp) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 1000); 
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
@@ -23,7 +29,8 @@ const OneAdItem = ({ data }: OneAdItemProp) => {
       className={classNames(
         "h-96 lg:h-[500px] xl:h-[550px] 2xl:h-[650px] lg:w-[32%] w-full",
         styles.bg,
-        isHovered && styles.hovered
+        isHovered && styles.hovered,
+        isLoaded && styles.loaded 
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

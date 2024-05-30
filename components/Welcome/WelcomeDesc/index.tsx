@@ -20,7 +20,7 @@ const WelcomeDesc: React.FC<WebHeaderProps> = ({ main, page }) => {
       animate={{ x: 0 }}
       transition={{
         ease: "easeOut",
-        duration: 1.3,
+        duration: 1,
       }}
       className="flex_column text-2xl md:text-3xl lg:text-4xl xl:text-5xl w-full lg:w-3/4 xl:w-7/12 mt-4 sm:mt-0"
     >

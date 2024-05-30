@@ -1,27 +1,16 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useAppContext } from "@context";
 import Link from "next/link";
 import classNames from "classnames";
 import styles from "./findmore.module.css";
 
 interface FindMoreLinkProp {
-  href?: string;
+  href: string;
 }
 
 const FindMoreLink = ({ href }: FindMoreLinkProp) => {
   const t = useTranslations("MainPage");
-  const { scrollToRef } = useAppContext();
-
-  const handleClick = () => {
-    if (scrollToRef && scrollToRef.current) {
-      scrollToRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
-  };
 
   const displayEl = () => {
     return (
@@ -36,17 +25,10 @@ const FindMoreLink = ({ href }: FindMoreLinkProp) => {
 
   return (
     <>
-      {href ? (
+      {href && (
         <Link href={href} className={`flex ml-auto pt-5 text-3xl mt-2 lg:mt-8`}>
           {displayEl()}
         </Link>
-      ) : (
-        <button
-          onClick={handleClick}
-          className={`flex ml-auto pt-5 text-3xl mt-2 lg:mt-8`}
-        >
-          {displayEl()}
-        </button>
       )}
     </>
   );
