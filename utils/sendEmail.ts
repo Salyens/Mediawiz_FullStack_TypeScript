@@ -3,7 +3,7 @@ const validator = require("validator");
 
 interface EmailData {
   name: string;
-  phoneNumber: number;
+  phoneNumber: string;
   email: string;
 }
 

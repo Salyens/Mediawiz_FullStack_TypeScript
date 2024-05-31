@@ -5,7 +5,7 @@ import LoadingCircle from "@components/LoadingCircle";
 import axios from "axios";
 import validator from "validator";
 import styles from "../feedbackform.module.css";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
@@ -25,12 +25,15 @@ type InfoType = {
   recaptchaToken?: string;
 };
 
+
+
 const CommonForm: React.FC<CommonFormProps> = ({
   setIsOpen,
   isModal,
   setSuccess,
 }) => {
   const t = useTranslations("MainForm");
+  const localActive = useLocale();
   const [info, setInfo] = useState<InfoType>({
     name: "",
     phoneNumber: "",
@@ -79,8 +82,9 @@ const CommonForm: React.FC<CommonFormProps> = ({
       });
       if (recaptchaRef.current) recaptchaRef.current.reset();
       return res;
-    } catch (error) {
-      setError("Something went wrong");
+    } catch (error: any) {
+      const errorMessage = error.response?.data?.message || "Something went wrong";
+      setError(errorMessage);
       setLoading(false);
     }
   };
@@ -95,6 +99,7 @@ const CommonForm: React.FC<CommonFormProps> = ({
       <ReCAPTCHA
         className={styles.g_recaptcha}
         theme="dark"
+        hl={localActive}
         sitekey={recaptchaSiteKey}
         onChange={handleRecaptchaChange}
         ref={recaptchaRef}

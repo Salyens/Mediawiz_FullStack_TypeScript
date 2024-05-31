@@ -1,34 +1,62 @@
+/* inputlist.module.css */
 .input {
-    position: relative;
-    border: 0;
-    border-bottom: 2px solid rgba(233, 58, 237, 1);
-    background-color: transparent;
-    width: 100%;
-    padding: 12px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-    outline: none;
-    transition: border-color 0.3s;
-    color: white; 
-  }
-  
-  .input:focus {
-    border-bottom: 2px solid rgba(233, 58, 237, 1);
-    box-shadow: none;
-    outline: none;
-  }
-  
-  .input:-webkit-autofill,
-  .input:-webkit-autofill:hover,
-  .input:-webkit-autofill:focus,
-  .input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
-    box-shadow: 0 0 0px 1000px transparent inset !important;
-    transition: background-color 5000s ease-in-out 0s !important;
-    -webkit-text-fill-color: white !important;
-  }
-  
-  .input:-webkit-autofill {
-    border-bottom: 2px solid rgba(233, 58, 237, 1);
-    background-color: transparent;
-    -webkit-text-fill-color: white !important;
-  }
+  position: relative;
+  border: 0;
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  background-color: transparent;
+  width: 100%;
+  padding: 12px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s;
+  color: white; /* Устанавливаем цвет текста белым */
+}
+
+.input:focus {
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  box-shadow: none;
+  outline: none;
+}
+
+.phone_input {
+  background: black !important;
+  color: white !important;
+}
+
+.phone_dropdown {
+  color: black !important;
+}
+
+.button_search {
+  background-color: black !important;
+}
+
+.phone_input:-webkit-autofill,
+.phone_input:-webkit-autofill:hover,
+.phone_input:-webkit-autofill:focus {
+  background-color: black !important;
+  -webkit-box-shadow: 0 0 0px 1000px black inset !important;
+  box-shadow: 0 0 0px 1000px black inset !important;
+  -webkit-text-fill-color: white !important;
+  color: white !important;
+}
+
+.button_search:hover {
+  background-color: black !important;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.input:-webkit-autofill {
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  background-color: transparent;
+  -webkit-text-fill-color: white !important;
+}
