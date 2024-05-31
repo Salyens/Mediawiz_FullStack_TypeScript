@@ -13,7 +13,7 @@ const CustomForm = () => {
     <>
       <div
         className={classNames(
-          "flex min-h-[400px] min-w-80 w-full max-w-[500px] flex-1 flex-col justify-center px-6 lg:px-8 bg-black",
+          "flex min-h-[400px] min-w-80 w-full max-w-[500px] flex-1 flex-col justify-center p-6 lg:p-8 bg-black",
           styles.my_form
         )}
       >

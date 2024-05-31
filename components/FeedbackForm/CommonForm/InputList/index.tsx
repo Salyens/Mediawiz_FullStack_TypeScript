@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import styles from "../../feedbackform.module.css";
+import styles from "./inputlist.module.css";
 
 type InfoType = {
   name: string;
@@ -32,7 +32,7 @@ const InputList: React.FC<InputListProps> = ({ info, setInfo }) => {
         setInfo((prev) => ({ ...prev, [field.name]: e.target.value }))
       }
       required
-      className={styles.input_email}
+      className={styles.input}
     />
   ));
 };

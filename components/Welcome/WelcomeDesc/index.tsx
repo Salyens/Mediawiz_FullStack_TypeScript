@@ -28,6 +28,7 @@ const WelcomeDesc: React.FC<WebHeaderProps> = ({ main, page }) => {
       {page === "web" && <WebDesc main={main as IWebMainSection} />}
       {page === "smm" && <SmmDesc main={main as ISmmMainSection} />}
       <MainModal />
+
     </MotionDiv>
   );
 };

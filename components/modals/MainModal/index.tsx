@@ -1,6 +1,13 @@
 "use client";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import styles from ".//mainmodal.module.css";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogOverlay,
+  DialogPortal,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import styles from "./mainmodal.module.css";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 import CommonForm from "@components/FeedbackForm/CommonForm";
@@ -12,28 +19,38 @@ const MainModal = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
+  const handleButtonClick = () => {
+    setTimeout(() => {
+      document.body.style.pointerEvents = "";
+      setIsOpen(true);
+    }, 0);
+  };
+
   return (
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild onClick={() => setIsOpen(true)}>
+        <DialogTrigger asChild>
           <button
+            onClick={handleButtonClick}
             className={classNames("w-80 m-auto mt-6 sm:m-0", styles.btn_apply)}
           >
             {t("request_2")}
           </button>
         </DialogTrigger>
-        <DialogContent
-          className={classNames(
-            "top-1/3 sm:top-1/2 flex min-w-80 w-full max-w-[500px] flex-1 flex-col justify-center lg:px-8 bg-black",
-            styles.my_form
-          )}
-        >
-          <CommonForm
-            setIsOpen={setIsOpen}
-            isModal={true}
-            setSuccess={setSuccess}
-          />
-        </DialogContent>
+
+        <DialogPortal>
+          <DialogOverlay />
+          <DialogContent
+            className={classNames(styles.my_form)}
+          >
+            <CommonForm
+              setIsOpen={setIsOpen}
+              isModal={true}
+              setSuccess={setSuccess}
+            />
+            <DialogClose />
+          </DialogContent>
+        </DialogPortal>
       </Dialog>
       {success && <SuccessAlert success={success} setSuccess={setSuccess} />}
     </>
