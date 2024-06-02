@@ -1,8 +1,9 @@
-import React from 'react';
-import { useTranslations } from 'next-intl';
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-import styles from './inputlist.module.css';
+import React from "react";
+import { useTranslations } from "next-intl";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import styles from "./inputlist.module.css";
+import classNames from "classnames";
 
 type InfoType = {
   name: string;
@@ -17,10 +18,10 @@ interface InputListProps {
 }
 
 const InputList: React.FC<InputListProps> = ({ info, setInfo }) => {
-  const t = useTranslations('MainForm');
-  const fields: { name: keyof Omit<InfoType, 'accepted'>; type: string }[] = [
-    { name: 'name', type: 'text' },
-    { name: 'email', type: 'email' },
+  const t = useTranslations("MainForm");
+  const fields: { name: keyof Omit<InfoType, "accepted">; type: string }[] = [
+    { name: "name", type: "text" },
+    { name: "email", type: "email" },
   ];
 
   return (
@@ -40,18 +41,25 @@ const InputList: React.FC<InputListProps> = ({ info, setInfo }) => {
           className={styles.input}
         />
       ))}
-      <PhoneInput
-        country={'ge'}
-        value={info.phoneNumber}
-        onChange={(phone) => setInfo((prev) => ({ ...prev, phoneNumber: phone }))}
-        inputClass={styles.phone_input} 
-        dropdownClass={styles.phone_dropdown} 
-        buttonClass={styles.button_search}
-        inputProps={{
-          name: 'phoneNumber',
-          required: true,
-        }}
-      />
+      <div className={styles.input}>
+        <div className={styles.phone_container}>
+          <PhoneInput
+            country={"ge"}
+            value={info.phoneNumber}
+            onChange={(phone) =>
+              setInfo((prev) => ({ ...prev, phoneNumber: phone }))
+            }
+            inputClass={styles.phone_input}
+            dropdownClass={styles.phone_dropdown}
+            buttonClass={styles.button_search}
+            inputProps={{
+              name: "phoneNumber",
+              required: true,
+            }}
+            containerClass={styles.phone_container}
+          />
+        </div>
+      </div>
     </div>
   );
 };
