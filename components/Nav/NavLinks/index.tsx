@@ -8,7 +8,10 @@ import styles from "./navlinks.module.css";
 import { NavLink } from "@interfaces/special";
 import classNames from "classnames";
 
-const NavLinks = () => {
+interface navLinksProp {
+  isBigScreen: boolean;
+}
+const NavLinks: React.FC<navLinksProp> = ({ isBigScreen }) => {
   const pathname = usePathname();
   const [current, setCurrent] = useState<string>(pathname);
   const localActive = useLocale();
@@ -27,15 +30,19 @@ const NavLinks = () => {
   }, [pathname]);
 
   return (
-    <div className="hidden lg:flex flex-1 justify-around items-center px-4">
-      <div className="flex space-x-4">
+    <div
+      className={classNames(
+        "justify-center items-center ml-5",
+        isBigScreen ? "hidden lg:flex flex-1 gap-5" : "flex flex-col lg:hidden"
+      )}
+    >
         {navigation.map((item) => (
           <Link
             key={item.name}
             href={`/${localActive}/${item.href}`}
             prefetch={true}
             className={classNames(
-              "px-1 py-1 text-sm md:text-base",
+              "px-1 py-1 ml-0 text-sm md:text-base text-start",
               styles.navLinks,
               item.href === current ? styles.currentPage : ""
             )}
@@ -43,7 +50,7 @@ const NavLinks = () => {
             {item.name}
           </Link>
         ))}
-      </div>
+
     </div>
   );
 };

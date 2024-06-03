@@ -28,7 +28,7 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
   };
   return (
     <div className="relative">
-      {/* <DynamicBgEllipse
+      <DynamicBgEllipse
         variant={2}
         position="-top-1/2 -left-1/4"
         width={2000}
@@ -39,7 +39,7 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
         position="-right-1/4 -bottom-1/3"
         width={2000}
         height={2000}
-      /> */}
+      />
       <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
         <DynamicAnimationWrapper
           initial={{

@@ -52,13 +52,12 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         </div>
       </DynamicAnimationWrapper>
 
-      {/* <DynamicBgEllipse
+      <DynamicBgEllipse
         variant={2}
         position="-left-1/4 -top-1/4"
         width={2000}
         height={2000}
-        delay={1000}
-      /> */}
+      />
 
       <DynamicAnimationWrapper
         initial={{ x: 2000 }}

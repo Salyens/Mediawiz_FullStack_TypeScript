@@ -7,6 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavLinksSmallScreen from "../NavLinksSmallScreen";
 import SocialLinks from "../SocialLinks";
 import LocalSwitcher from "../LocalSwitcher";
+import NavLinks from "../NavLinks";
 
 interface SmallScreenMenuProps {
   open: boolean;
@@ -31,7 +32,7 @@ const SmallScreenMenu: React.FC<SmallScreenMenuProps> = ({ open, setOpen }) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-screen z-50">
         <div className="flex flex-col justify-center items-center w-full gap-3">
-          <NavLinksSmallScreen />
+          <NavLinks isBigScreen={false} />
           <SocialLinks />
           <LocalSwitcher />
         </div>

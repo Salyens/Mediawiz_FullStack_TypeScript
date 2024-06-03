@@ -9,16 +9,15 @@ const WeWorkWith = ({ data }: { data: IItemList }) => {
     <DynamicAnimationWrapper
       initial={{ y: 600, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 0.7, delay: 0.5 }}
+      transition={{ ease: "easeOut", duration: 1 }}
       classes="main_container p-3 sm:p-4 md:p-5 xl:p-6 relative mb-24"
     >
-      {/* <DynamicBgEllipse
+      <DynamicBgEllipse
         variant={1}
         position="-right-1/3 -top-1/4"
         width={2500}
         height={2500}
-        delay={2000}
-      /> */}
+      />
       <DynamicUnderlinedTitle text={data.header} />
       <WeWorkWithList list={data.list} />
     </DynamicAnimationWrapper>

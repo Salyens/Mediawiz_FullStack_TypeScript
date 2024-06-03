@@ -1,11 +1,9 @@
 import "../../styles/globals.css";
 import Footer from "@components/Footer";
 import { Play, Roboto } from "next/font/google";
-import Provider from "@components/Provider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import dynamic from "next/dynamic";
-import Nav from "@components/Nav";
 
 const DynamicNav = dynamic(() => import("@components/Nav"), { ssr: false });
 
@@ -22,7 +20,6 @@ export const roboto = Roboto({
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  session: any;
   params: {
     locale: "en" | "ru";
   };
@@ -30,7 +27,6 @@ interface RootLayoutProps {
 
 export default async function RootLayout({
   children,
-  session,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
   const messages = await getMessages();
@@ -44,15 +40,13 @@ export default async function RootLayout({
             minHeight: "100vh",
           }}
         >
-          <Provider session={session}>
-            <NextIntlClientProvider messages={messages}>
-              <Nav />
-              <main style={{ flexGrow: 1 }}>{children}</main>
-              <div style={{ marginTop: "auto" }}>
-                <Footer />
-              </div>
-            </NextIntlClientProvider>
-          </Provider>
+          <NextIntlClientProvider messages={messages}>
+            <DynamicNav />
+            <main style={{ flexGrow: 1 }}>{children}</main>
+            <div style={{ marginTop: "auto" }}>
+              <Footer />
+            </div>
+          </NextIntlClientProvider>
         </div>
       </body>
     </html>

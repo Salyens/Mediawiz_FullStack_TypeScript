@@ -29,10 +29,10 @@ const MainModal = () => {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
+        <DialogTrigger asChild >
           <button
             onClick={handleButtonClick}
-            className={classNames("w-80 m-auto mt-6 sm:m-0", styles.btn_apply)}
+            className={classNames("w-80 mt-10 flex justify-center sm:justify-start", styles.btn_apply)}
           >
             {t("request_2")}
           </button>

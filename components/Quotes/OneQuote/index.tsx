@@ -24,13 +24,12 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
 
   return (
     <div className={classNames("relative", withImg && " mt-36")}>
-      {/* {isOdd ? (
+      {isOdd ? (
         <DynamicBgEllipse
           variant={2}
           position="md:-left-1/4 md:-top-1/3"
           width={1300}
           height={1300}
-          delay={2000}
         />
       ) : (
         <DynamicBgEllipse
@@ -38,9 +37,8 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           position="md:-right-1/4 md:-top-1/3"
           width={1300}
           height={1300}
-          delay={1600}
         />
-      )} */}
+      )}
 
       <DynamicAnimationWrapper
         initial={{ x: isOdd ? -2000 : 2000 }}

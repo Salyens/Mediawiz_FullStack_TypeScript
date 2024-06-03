@@ -1,4 +1,6 @@
+'use client';
 
+import React, { useState } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -11,7 +13,6 @@ import { useLocale } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { setCookie } from "nookies";
-import { useState } from "react";
 
 const LocalSwitcher = () => {
   const localActive = useLocale();
@@ -31,7 +32,7 @@ const LocalSwitcher = () => {
   };
 
   return (
-    <Menubar onValueChange={() => handleOnChange()}>
+    <Menubar onValueChange={handleOnChange}>
       <MenubarMenu>
         <MenubarTrigger>
           <div className="flex gap-1 items-center">

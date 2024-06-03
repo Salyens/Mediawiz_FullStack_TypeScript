@@ -12,7 +12,7 @@ interface TogetherBlockProps {
 const TogetherBlock = ({ goalsList, imgURL }: TogetherBlockProps) => {
   return (
     <div className="relative">
-      {/* <DynamicBgEllipse
+      <DynamicBgEllipse
         variant={2}
         position="top-1/3 -left-1/4"
         width={2000}
@@ -23,7 +23,7 @@ const TogetherBlock = ({ goalsList, imgURL }: TogetherBlockProps) => {
         position="top-1/2 -right-1/4 -bottom-1/3"
         width={2000}
         height={2000}
-      /> */}
+      />
       <OurPhoto imgURL={imgURL} />
       <OurGoals goalsList={goalsList} page="home" />
     </div>

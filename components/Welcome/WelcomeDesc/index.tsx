@@ -7,7 +7,6 @@ import { ISmmMainSection } from "@interfaces/smmPage";
 import SmmDesc from "./SmmDesc";
 import dynamic from "next/dynamic";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import Link from "next/link";
 
 const DynamicMainModal = dynamic(() => import("@components/modals/MainModal"), {
   ssr: false,

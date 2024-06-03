@@ -1,11 +1,11 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 
 const MyPages = () => {
   const localActive = useLocale();
   const pages = [
     { pageName: "HOME PAGE", endPoint: "mainPage" },
-    { pageName: "WEB DEVELOPMENT" , endPoint: "webPage" },
+    { pageName: "WEB DEVELOPMENT", endPoint: "webPage" },
     { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
     { pageName: "SMM", endPoint: "smmPage" },
     { pageName: "SMM PROMOTION", endPoint: "smmAdPage" },
@@ -21,6 +21,7 @@ const MyPages = () => {
             key={page.endPoint}
             href={`/${localActive}/admin/pages/${page.endPoint}`}
             passHref
+            prefetch={true}
           >
             <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded min-h-32 w-full">
               {page.pageName}
