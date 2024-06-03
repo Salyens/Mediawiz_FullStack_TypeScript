@@ -22,8 +22,10 @@ const NavLinks = () => {
   ];
 
   useEffect(() => {
-    setCurrent(pathname);
+    const path = pathname.split("/");
+    setCurrent(`/${path[2]}`);
   }, [pathname]);
+
   return (
     <div className="hidden lg:flex flex-1 justify-around items-center px-4">
       <div className="flex space-x-4">
@@ -31,6 +33,7 @@ const NavLinks = () => {
           <Link
             key={item.name}
             href={`/${localActive}/${item.href}`}
+            prefetch={true}
             className={classNames(
               "px-1 py-1 text-sm md:text-base",
               styles.navLinks,

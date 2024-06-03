@@ -1,19 +1,23 @@
 import Link from "next/link";
 import styles from "./feedbackform.module.css";
 import Image from "next/image";
-import CustomForm from "./CustomForm";
 import { useTranslations } from "next-intl";
-import AnimationWrapper from "@components/AnimationWrapper";
 import classNames from "classnames";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import dynamic from "next/dynamic";
 
 const FeedbackForm = () => {
   const t = useTranslations("MainForm");
+
+  const DynamicCustomForm = dynamic(() => import("./CustomForm"), {
+    ssr: false,
+  });
 
   return (
     <div className={styles.form_wrapper}>
       <div className="main_container p-3 sm:p-4 md:p-5 xl:p-6">
         <div className="flex flex-col items-center justify-between lg:flex-row pt-12 pb-16 lg:pt-20 lg:pb-20">
-          <AnimationWrapper
+          <DynamicAnimationWrapper
             initial={{ x: -2000 }}
             animate={{ x: 0 }}
             transition={{
@@ -42,9 +46,9 @@ const FeedbackForm = () => {
             </Link>
 
             <p className="text-center lg:text-left">{t("request")}</p>
-          </AnimationWrapper>
+          </DynamicAnimationWrapper>
 
-          <AnimationWrapper
+          <DynamicAnimationWrapper
             initial={{ x: 2000 }}
             animate={{ x: 0 }}
             transition={{
@@ -52,8 +56,8 @@ const FeedbackForm = () => {
               duration: 1,
             }}
           >
-            <CustomForm />
-          </AnimationWrapper>
+            <DynamicCustomForm />
+          </DynamicAnimationWrapper>
         </div>
       </div>
     </div>

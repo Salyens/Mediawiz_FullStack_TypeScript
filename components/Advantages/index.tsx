@@ -1,8 +1,8 @@
-import UnderlinedTitle from "@components/UnderlinedTitle";
-import AdvantagesList from "./AdvantagesList";
-import BGLines from "@components/BGLines";
-import AnimationWrapper from "@components/AnimationWrapper";
 import { IItemAndImgList } from "@interfaces/common";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
+import DynamicBGLines from "@components/BGLines/DinamicBGLines";
+import AdvantagesList from "./AdvantagesList";
 
 interface AdvantagesProps {
   advantages: IItemAndImgList;
@@ -10,19 +10,19 @@ interface AdvantagesProps {
 
 const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {
   return (
-    <div className="bg_item_right">
-      <BGLines />
+    <>
+      <DynamicBGLines />
       <div className="main_container p-3 sm:p-4 md:p-5 xl:p-6 relative min-h-96">
-        <AnimationWrapper
-          initial={{ y: 600, opacity: 0}}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 0.7, delay: 0.5 }}
+        <DynamicAnimationWrapper
+          initial={{  opacity: 0 }}
+          animate={{  opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1, delay: 1 }}
         >
-          <UnderlinedTitle text={advantages.header} />
+          <DynamicUnderlinedTitle text={advantages.header} />
           <AdvantagesList list={advantages.list} />
-        </AnimationWrapper>
+        </DynamicAnimationWrapper>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
 import OneCard from "./OneCard";
 import { WeOfferSection } from "@interfaces/mainPage";
-import BGLines from "@components/BGLines";
-import AnimationWrapper from "@components/AnimationWrapper";
-import UnderlinedTitle from "@components/UnderlinedTitle";
-import BgEllipse from "@components/BgEllipse";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import DynamicBGLines from "@components/BGLines/DinamicBGLines";
+import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 
 const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
   const { text } = weOffer.title;
@@ -24,24 +24,24 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
   return (
     <div className="relative mt-6">
       <div className="main_container min-h-screen pl-2 pr-2 lg:pl-6 lg:pr-6 ">
-        <BGLines />
-        <BgEllipse
+        <DynamicBGLines />
+        {/* <DynamicBgEllipse
           variant={1}
           position="-right-1/3 top-1/2"
           width={2000}
           height={2000}
           delay={2500}
-        />
-        <AnimationWrapper
+        /> */}
+        <DynamicAnimationWrapper
           initial={{ y: 450, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.6, delay: 0.7 }}
         >
-          <UnderlinedTitle text={text} />
+          <DynamicUnderlinedTitle text={text} />
           <div className="flex flex-wrap justify-between items-center gap-2">
             {renderOfferList()}
           </div>
-        </AnimationWrapper>
+        </DynamicAnimationWrapper>
       </div>
     </div>
   );

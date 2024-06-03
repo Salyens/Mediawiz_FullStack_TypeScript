@@ -1,13 +1,17 @@
 import Image from "next/image";
 import styles from "./onequote.module.css";
-import FindMoreLink from "@components/FindMoreLink";
-import AnimationWrapper from "@components/AnimationWrapper";
 import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
-import BgEllipse from "@components/BgEllipse";
-import BlurImg from "@components/BlurImg";
 import { roboto } from "@app/[locale]/layout";
+import dynamic from "next/dynamic";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
+
+const DynamicFindMoreLink = dynamic(() => import("@components/FindMoreLink"), {
+  ssr: false,
+});
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -20,8 +24,8 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
 
   return (
     <div className={classNames("relative", withImg && " mt-36")}>
-      {isOdd ? (
-        <BgEllipse
+      {/* {isOdd ? (
+        <DynamicBgEllipse
           variant={2}
           position="md:-left-1/4 md:-top-1/3"
           width={1300}
@@ -29,16 +33,16 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
           delay={2000}
         />
       ) : (
-        <BgEllipse
+        <DynamicBgEllipse
           variant={2}
           position="md:-right-1/4 md:-top-1/3"
           width={1300}
           height={1300}
           delay={1600}
         />
-      )}
+      )} */}
 
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{ x: isOdd ? -2000 : 2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -82,9 +86,9 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 </p>
               </div>
 
-              {"href" in item && (
-                <FindMoreLink href={"href" in item ? item.href : undefined} />
-              )}
+              <DynamicFindMoreLink
+                href={"href" in item ? item.href : undefined}
+              />
             </div>
           </div>
           {"imgURL" in item && item.imgURL && (
@@ -94,11 +98,11 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 isOdd ? "left-0" : "right-0"
               )}
             >
-              <BlurImg imgURL={item.imgURL} name={item.name} />
+              <DynamicBlurImg imgURL={item.imgURL} name={item.name} />
             </div>
           )}
         </div>
-      </AnimationWrapper>
+      </DynamicAnimationWrapper>
     </div>
   );
 };

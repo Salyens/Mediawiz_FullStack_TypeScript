@@ -6,7 +6,7 @@ import classNames from "classnames";
 import styles from "./findmore.module.css";
 
 interface FindMoreLinkProp {
-  href: string;
+  href: string | undefined;
 }
 
 const FindMoreLink = ({ href }: FindMoreLinkProp) => {

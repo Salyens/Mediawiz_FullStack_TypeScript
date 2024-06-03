@@ -1,10 +1,10 @@
 import { IOneGoal } from "@interfaces/webPage";
 import OneGoal from "./OneGoal";
 import styles from "./ourgoals.module.css";
-import AnimationWrapper from "@components/AnimationWrapper";
 import { IResultItem } from "@interfaces/smmPage";
-import BgEllipse from "@components/BgEllipse";
 import classNames from "classnames";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
@@ -28,20 +28,20 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
   };
   return (
     <div className="relative">
-      <BgEllipse
+      {/* <DynamicBgEllipse
         variant={2}
         position="-top-1/2 -left-1/4"
         width={2000}
         height={2000}
       />
-      <BgEllipse
+      <DynamicBgEllipse
         variant={2}
         position="-right-1/4 -bottom-1/3"
         width={2000}
         height={2000}
-      />
+      /> */}
       <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
-        <AnimationWrapper
+        <DynamicAnimationWrapper
           initial={{
             opacity: 0,
           }}
@@ -60,8 +60,8 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
               styles.corner_bottom_right
             )}
           ></div>
-        </AnimationWrapper>
-        <AnimationWrapper
+        </DynamicAnimationWrapper>
+        <DynamicAnimationWrapper
           initial={{
             opacity: 0,
             y: 400,
@@ -70,7 +70,7 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
           transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
         >
           <div className="flex flex-col gap-3">{renderGoals()}</div>
-        </AnimationWrapper>
+        </DynamicAnimationWrapper>
       </div>
     </div>
   );

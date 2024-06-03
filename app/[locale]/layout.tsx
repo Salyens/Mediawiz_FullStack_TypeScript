@@ -1,10 +1,13 @@
-import Nav from "@components/Nav";
 import "../../styles/globals.css";
 import Footer from "@components/Footer";
 import { Play, Roboto } from "next/font/google";
 import Provider from "@components/Provider";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import dynamic from "next/dynamic";
+import Nav from "@components/Nav";
+
+const DynamicNav = dynamic(() => import("@components/Nav"), { ssr: false });
 
 export const inter = Play({
   weight: ["400", "700"],

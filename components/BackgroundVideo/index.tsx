@@ -8,7 +8,7 @@ const BackgroundVideo: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowVideo(true);
-    }, 1500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

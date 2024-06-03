@@ -1,4 +1,4 @@
-import AnimationWrapper from "@components/AnimationWrapper";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import { socialLinks } from "@constants";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -28,7 +28,7 @@ const Socials = () => {
   };
 
   return (
-    <AnimationWrapper
+    <DynamicAnimationWrapper
       initial={{
         y: 1000,
         opacity: 0,
@@ -45,7 +45,7 @@ const Socials = () => {
           {renderSocialLinks()}
         </div>
       </div>
-    </AnimationWrapper>
+    </DynamicAnimationWrapper>
   );
 };
 

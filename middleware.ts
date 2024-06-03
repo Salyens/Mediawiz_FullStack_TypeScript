@@ -1,7 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { withAuth } from 'next-auth/middleware';
 import { NextRequest, NextFetchEvent, NextResponse } from 'next/server';
-import { setCookie } from 'nookies';
+import { parseCookies, setCookie } from 'nookies';
 
 const locales = ['en', 'ru'];
 
@@ -13,19 +13,9 @@ const intlMiddleware = createMiddleware({
 
 const authMiddleware = withAuth(
   function onSuccess(req: NextRequest) {
-    const cookieHeader = req.headers.get('cookie');
-    let cookieLocale = null;
-
-    if (cookieHeader) {
-      const cookies = cookieHeader.split('; ').reduce((acc, cookie) => {
-        const [name, value] = cookie.split('=');
-        acc[name] = value;
-        return acc;
-      }, {} as { [key: string]: string });
-
-      cookieLocale = cookies['NEXT_LOCALE'];
-    }
-
+    const cookies = parseCookies({ req });
+    const cookieLocale = cookies['NEXT_LOCALE'];
+    
     if (!cookieLocale) {
       const locale = req.nextUrl.locale || 'en';
       setCookie({ res: req }, 'NEXT_LOCALE', locale, { path: '/' });
@@ -44,18 +34,8 @@ const authMiddleware = withAuth(
 );
 
 export default function middleware(req: NextRequest, event: NextFetchEvent) {
-  const cookieHeader = req.headers.get('cookie');
-  let cookieLocale = null;
-
-  if (cookieHeader) {
-    const cookies = cookieHeader.split('; ').reduce((acc, cookie) => {
-      const [name, value] = cookie.split('=');
-      acc[name] = value;
-      return acc;
-    }, {} as { [key: string]: string });
-
-    cookieLocale = cookies['NEXT_LOCALE'];
-  }
+  const cookies = parseCookies({ req });
+  const cookieLocale = cookies['NEXT_LOCALE'];
 
   const url = req.nextUrl.clone();
 

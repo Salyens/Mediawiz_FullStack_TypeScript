@@ -1,9 +1,9 @@
 import HowWeWorkItem from "../HowWeWorkItem";
 import Image from "next/image";
-import AnimationWrapper from "@components/AnimationWrapper";
-import UnderlinedTitle from "@components/UnderlinedTitle";
 import { IItem } from "@interfaces/common";
-import BgEllipse from "@components/BgEllipse";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 
 interface HowWeWorkProps {
   list: IItem[];
@@ -34,7 +34,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
 
   return (
     <div className="flex flex-wrap gap-6 mb-8 md:mb-14 lg:mb-20 relative">
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{ x: -2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -44,23 +44,23 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         }}
         classes="w-full sm:w-2/3 lg:w-[45%]"
       >
-        <UnderlinedTitle text={header} />
+        <DynamicUnderlinedTitle text={header} />
         <div className=" flex justify-between relative lg:static">
           <div className="flex flex-col gap-6 ">
             {renderHowWeWorkItem(firstHalf)}
           </div>
         </div>
-      </AnimationWrapper>
+      </DynamicAnimationWrapper>
 
-      <BgEllipse
+      {/* <DynamicBgEllipse
         variant={2}
         position="-left-1/4 -top-1/4"
         width={2000}
         height={2000}
         delay={1000}
-      />
+      /> */}
 
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{ x: 2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -70,7 +70,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         }}
         classes="md:w-[45%]"
       >
-        <AnimationWrapper
+        <DynamicAnimationWrapper
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
@@ -85,10 +85,10 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
             height={500}
             alt="circle"
           />
-        </AnimationWrapper>
-      </AnimationWrapper>
+        </DynamicAnimationWrapper>
+      </DynamicAnimationWrapper>
 
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{ x: -2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -98,7 +98,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         }}
         classes="md:w-[45%]"
       >
-        <AnimationWrapper
+        <DynamicAnimationWrapper
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
@@ -113,10 +113,10 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
             height={500}
             alt="circle"
           />
-        </AnimationWrapper>
-      </AnimationWrapper>
+        </DynamicAnimationWrapper>
+      </DynamicAnimationWrapper>
 
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{ x: 2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -131,7 +131,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
             {renderHowWeWorkItem(secondHalf, beginWith)}
           </div>
         </div>
-      </AnimationWrapper>
+      </DynamicAnimationWrapper>
     </div>
   );
 };

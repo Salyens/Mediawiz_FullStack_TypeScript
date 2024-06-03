@@ -3,9 +3,9 @@ import styles from "./requestandsocila.module.css";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MainModal from "@components/modals/MainModal";
-import AnimationWrapper from "@components/AnimationWrapper";
 import { socialLinks } from "@constants";
 import classNames from "classnames";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 
 const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
@@ -34,7 +34,7 @@ const RequestAndSocial = () => {
   return (
     <div className={classNames("mt-8 mb-8", styles.bg)}>
       <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
-        <AnimationWrapper
+        <DynamicAnimationWrapper
           initial={{ x: -2000 }}
           animate={{ x: 0 }}
           transition={{
@@ -70,9 +70,9 @@ const RequestAndSocial = () => {
           <div className="flex justify-center lg:justify-start">
             <MainModal />
           </div>
-        </AnimationWrapper>
+        </DynamicAnimationWrapper>
 
-        <AnimationWrapper
+        <DynamicAnimationWrapper
           initial={{ x: 2000 }}
           animate={{ x: 0 }}
           transition={{
@@ -88,7 +88,7 @@ const RequestAndSocial = () => {
           <div className="flex justify-center items-center">
             {renderSocialLinks()}
           </div>
-        </AnimationWrapper>
+        </DynamicAnimationWrapper>
       </div>
     </div>
   );

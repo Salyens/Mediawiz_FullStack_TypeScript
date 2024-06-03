@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import styles from ".././nav.module.css";
 import { NavLink } from "@interfaces/special";
-import { Disclosure } from "@headlessui/react";
 import classNames from "classnames";
+import Link from "next/link";
 
 const NavLinksSmallScreen = () => {
   const t = useTranslations("Navigation");
@@ -15,11 +15,11 @@ const NavLinksSmallScreen = () => {
   ];
 
   return (
-    <div className={classNames("gap-2 pb-8", styles.line_mini)}>
+    <div className={classNames("gap-2 pb-7", styles.line_mini)}>
       {navigation.map((item) => (
-        <Disclosure.Button key={item.name} as="a" href={item.href}>
+        <Link key={item.name} prefetch={true} href={item.href}>
           {item.name}
-        </Disclosure.Button>
+        </Link>
       ))}
     </div>
   );

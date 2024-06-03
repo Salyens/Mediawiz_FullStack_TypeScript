@@ -10,7 +10,7 @@ import {
 import { IProjectItem } from "@interfaces/smmPage";
 import styles from "./projectscarousel.module.css";
 import classNames from "classnames";
-import BlurImg from "@components/BlurImg";
+import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 
 const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
   return (
@@ -31,7 +31,7 @@ const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
                   )}
                 >
                   <div className="absolute inset-0">
-                    <BlurImg imgURL={item.imgURL} name={item.title} />
+                    <DynamicBlurImg imgURL={item.imgURL} name={item.title} />
                   </div>
                 </CardContent>
               </Card>

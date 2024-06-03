@@ -1,6 +1,6 @@
 import styles from "./togetherblock.module.css";
-import AnimationWrapper from "@components/AnimationWrapper";
-import BlurImg from "@components/BlurImg";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import classNames from "classnames";
 
 interface TogetherBlockProps {
@@ -10,7 +10,7 @@ interface TogetherBlockProps {
 const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
   return (
     <div className="min-h-36 relative">
-      <AnimationWrapper
+      <DynamicAnimationWrapper
         initial={{
           y: 700,
           opacity: 0,
@@ -26,10 +26,10 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
           )}
         >
           <div className={styles.img_wrapper}>
-            <BlurImg imgURL={imgURL} name="Our photo" classes="object-cover" />
+            <DynamicBlurImg imgURL={imgURL} name="Our photo" classes="object-cover" />
           </div>
         </div>
-      </AnimationWrapper>
+      </DynamicAnimationWrapper>
     </div>
   );
 };
