@@ -1,5 +1,9 @@
 import { IItem, IItemList, Img, TextContent } from "@interfaces/common";
-import { ISmmAdLanguageContent, ISmmAdLanguages, ISmmAdPageData } from "@interfaces/smmAd";
+import {
+  ISmmAdLanguageContent,
+  ISmmAdLanguages,
+  ISmmAdPageData,
+} from "@interfaces/smmAd";
 import {
   IQuotesList,
   IResultItem,
@@ -26,6 +30,7 @@ const listItemSchema = new Schema<IItem>({
 
 const quoteItemSchema = new Schema<ISmmQuoteItem>({
   description: { type: String, required: true },
+  href: { type: String },
 });
 
 const quotesSchema = new Schema<IQuotesList>({
@@ -73,6 +78,7 @@ const SmmAdPageSchema = new Schema<ISmmAdPageData>({
   languages: { type: languagesSchema, required: true },
 });
 
-const SmmAdPage = models.SmmAdPage || model<ISmmAdPageData>("SmmAdPage", SmmAdPageSchema);
+const SmmAdPage =
+  models.SmmAdPage || model<ISmmAdPageData>("SmmAdPage", SmmAdPageSchema);
 
 export default SmmAdPage;

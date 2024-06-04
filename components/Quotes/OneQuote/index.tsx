@@ -8,10 +8,7 @@ import dynamic from "next/dynamic";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
-
-const DynamicFindMoreLink = dynamic(() => import("@components/FindMoreLink"), {
-  ssr: false,
-});
+import FindMoreLink from "@components/FindMoreLink";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -84,9 +81,14 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 </p>
               </div>
 
-              <DynamicFindMoreLink
-                href={"href" in item ? item.href : undefined}
-              />
+              <div className="flex justify-end  pt-5 mt-2 lg:mt-8 ">
+                {"href" in item && item.href !== "/*" && (
+                  <div className="flex md:mt-4 xl:mt-6 2xl:mt-7 pb-4">
+                    <FindMoreLink href={item.href} />
+                  </div>
+                )}
+
+              </div>
             </div>
           </div>
           {"imgURL" in item && item.imgURL && (

@@ -17,7 +17,7 @@ const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
         <OneCard
           header={item.header}
           description={item.description}
-          href={`${localActive}/${item.href}`}
+          href={`/${localActive}${item.href}`}
         />
       </div>
     ));

@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
-import styles from "./uderlinedtitle.module.css";
 import { Text } from "@interfaces/common";
+import { MotionDiv } from "@components/MotionDiv";
+import styles from "./uderlinedtitle.module.css";
 
 const UnderlinedTitle = ({ text }: { text: Text }) => {
   return (
@@ -10,10 +8,10 @@ const UnderlinedTitle = ({ text }: { text: Text }) => {
       <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl mb-1">
         {text}
       </h3>
-      <motion.div
+      <MotionDiv
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
+        transition={{ delay: 1, duration: 0.5 }}
         className={styles.underline_title}
       />
     </div>

@@ -30,6 +30,7 @@ export interface IProjects {
 
 export interface ISmmQuoteItem {
   description: string;
+  href?: string;
 }
 
 export interface IQuotesList {

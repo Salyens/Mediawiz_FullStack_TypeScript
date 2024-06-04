@@ -1,5 +1,17 @@
-import { IItem, IItemAndImg, IItemAndImgList, IItemList, IWebMainSection, Img, TextContent } from "@interfaces/common";
-import { IWebLanguageContent, IWebLanguages, IWebPageData } from "@interfaces/webPage";
+import {
+  IItem,
+  IItemAndImg,
+  IItemAndImgList,
+  IItemList,
+  IWebMainSection,
+  Img,
+  TextContent,
+} from "@interfaces/common";
+import {
+  IWebLanguageContent,
+  IWebLanguages,
+  IWebPageData,
+} from "@interfaces/webPage";
 import { Schema, model, models } from "mongoose";
 
 const TextSchema = new Schema<TextContent>({
@@ -33,6 +45,7 @@ const advantagesListItem = new Schema<IItemAndImg>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   imgURL: { type: String, required: true },
+  href: { type: String },
 });
 
 const advantagesSchema = new Schema<IItemAndImgList>({

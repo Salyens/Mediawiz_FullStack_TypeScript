@@ -31,6 +31,7 @@
 
 .aspect {
   position: relative;
+  margin-top: 30px;
   width: 100%;
-  padding-top: 80%; /* 5:4 Aspect Ratio */
-}
+  padding-top: 80%; 
+} 

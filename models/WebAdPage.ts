@@ -1,4 +1,12 @@
-import { IItem, IItemAndImg, IItemAndImgList, IItemList, IWebMainSection, Img, TextContent } from "@interfaces/common";
+import {
+  IItem,
+  IItemAndImg,
+  IItemAndImgList,
+  IItemList,
+  IWebMainSection,
+  Img,
+  TextContent,
+} from "@interfaces/common";
 import { IWebAdLanguageContent, IWebAdPageData } from "@interfaces/webAdPage";
 import { Schema, model, models } from "mongoose";
 
@@ -21,6 +29,7 @@ const advantagesListItem = new Schema<IItemAndImg>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   imgURL: { type: String, required: true },
+  href: { type: String },
 });
 
 const howWeWorkSchema = new Schema<IItemList>({

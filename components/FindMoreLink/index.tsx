@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import classNames from "classnames";
 import styles from "./findmore.module.css";
@@ -11,6 +11,7 @@ interface FindMoreLinkProp {
 
 const FindMoreLink = ({ href }: FindMoreLinkProp) => {
   const t = useTranslations("MainPage");
+  const localActive = useLocale();
 
   const displayEl = () => {
     return (
@@ -26,7 +27,11 @@ const FindMoreLink = ({ href }: FindMoreLinkProp) => {
   return (
     <>
       {href && (
-        <Link href={href} className={`flex ml-auto pt-5 text-3xl mt-2 lg:mt-8`}>
+        <Link
+          prefetch={true}
+          href={`/${localActive}${href}`}
+          className={`flex text-3xl mt-2`}
+        >
           {displayEl()}
         </Link>
       )}

@@ -24,6 +24,7 @@ export interface IItemAndImg {
   title: string;
   description: string;
   imgURL: string;
+  href?:string
 }
 
 export interface IItemAndImgList {

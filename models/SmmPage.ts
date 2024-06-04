@@ -35,6 +35,7 @@ const projectItemSchema = new Schema<IProjectItem>({
 
 const quoteItemSchema = new Schema<ISmmQuoteItem>({
   description: { type: String, required: true },
+  href: { type: String },
 });
 
 const quotesSchema = new Schema<IQuotesList>({
