@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 
 const OneCard = ({ header, description, href }: OffersList) => {
-  console.log('href: ', href);
   return (
     <Link
       href={href}

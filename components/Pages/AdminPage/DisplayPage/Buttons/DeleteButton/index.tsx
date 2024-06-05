@@ -19,14 +19,19 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 
   const deleteItem = () => {
     onSetEmptyFields((prevEmptyFields) => {
-      // console.log("prevEmptyFields: ", prevEmptyFields);
       let updatedEmptyFields = prevEmptyFields;
+
       itemKeys.forEach((key) => {
+        const enPath = `${currentPath}.${key}`;
+        const ruPath = enPath.includes('languages.en')
+          ? enPath.replace('languages.en', 'languages.ru')
+          : enPath.replace('languages.ru', 'languages.en');
+
         updatedEmptyFields = updatedEmptyFields.filter(
-          (path) => path !== `${currentPath}.${key}`
+          (path) => path !== enPath && path !== ruPath
         );
       });
-      // console.log("updatedEmptyFields: ", updatedEmptyFields);
+
       return updatedEmptyFields;
     });
 

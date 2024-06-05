@@ -27,8 +27,10 @@ const TextArea: React.FC<TextAreaProps> = ({
   const updateEmptyFields = useCallback(
     (isEmpty: boolean) => {
       onSetEmptyFields((prevEmptyFields) => {
+
         if (isEmpty) {
           return [...prevEmptyFields, fullPath];
+
         }
 
         return prevEmptyFields.filter((path) => path !== fullPath);
