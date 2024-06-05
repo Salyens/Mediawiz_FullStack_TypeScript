@@ -24,11 +24,15 @@ const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
               <div className={styles.bg}>
                 <div
                   className={classNames(
-                    "flex items-center justify-center bg-transparent",
+                    "flex items-center justify-center bg-transparent select-none pointer-events-none touch-none",
                     styles.aspect
                   )}
                 >
-                  <DynamicBlurImg imgURL={item.imgURL} name={item.title} />
+                  <DynamicBlurImg
+                    imgURL={item.imgURL}
+                    name={item.title}
+                    classes="object-fit"
+                  />
                 </div>
               </div>
             </div>

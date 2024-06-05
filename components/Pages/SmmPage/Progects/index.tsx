@@ -26,15 +26,16 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
           duration: 1,
           delay: 0.5,
         }}
-        classes={classNames("w-full lg:w-1/2 h-full absolute", styles.img_bg)}
       >
-        <Image
-          className="object-contain absolute"
-          src="/smmPage/projectsBG.svg"
-          alt="projectsBG"
-          fill
-          sizes="100vh"
-        />
+        <div className="absolute w-full lg:w-1/2 h-screen hidden lg:flex -right-36">
+          <Image
+            className="object-contain"
+            src="/smmPage/projectsBG.svg"
+            alt="projectsBG"
+            fill
+            sizes="100vh"
+          />
+        </div>
       </DynamicAnimationWrapper>
 
       <DynamicAnimationWrapper

@@ -19,13 +19,14 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 
   const deleteItem = () => {
     onSetEmptyFields((prevEmptyFields) => {
+      // console.log("prevEmptyFields: ", prevEmptyFields);
       let updatedEmptyFields = prevEmptyFields;
       itemKeys.forEach((key) => {
         updatedEmptyFields = updatedEmptyFields.filter(
           (path) => path !== `${currentPath}.${key}`
         );
       });
-
+      // console.log("updatedEmptyFields: ", updatedEmptyFields);
       return updatedEmptyFields;
     });
 

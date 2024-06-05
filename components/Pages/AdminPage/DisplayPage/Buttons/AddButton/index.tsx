@@ -51,8 +51,10 @@ const AddButton: React.FC<AddButtonProps> = ({
 
       addItemToLocale(enPath);
       addItemToLocale(ruPath);
-
+      
+      console.log('newData: ', newData);
       return newData;
+
     });
   };
 

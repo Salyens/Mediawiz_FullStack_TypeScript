@@ -25,7 +25,7 @@ const BlurImg = async ({ imgURL, name, classes, sizes }: BlurImgProps) => {
       fill
       sizes={sizes || "100vh"}
       className={classNames(
-        "object-contain select-none pointer-events-none",
+        "object-contain select-none pointer-events-none touch-none",
         classes
       )}
       placeholder="blur"
