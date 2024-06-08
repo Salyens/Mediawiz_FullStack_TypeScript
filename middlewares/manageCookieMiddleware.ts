@@ -22,5 +22,13 @@ export default function manageCookieMiddleware(req: NextRequest) {
   } else if (!url.pathname.startsWith(`/${cookieLocale}`)) {
     url.pathname = `/${cookieLocale}${url.pathname}`;
     return NextResponse.redirect(url);
+  } else {
+    if (urlPaths.includes("ru") && urlPaths.includes("en")) {
+      const rightPath = "/" + urlPaths.slice(2).join("/");
+      url.pathname = rightPath;
+      const response = NextResponse.redirect(url);
+      response.cookies.set("NEXT_LOCALE", urlPaths[2]);
+      return response;
+    }
   }
 }
