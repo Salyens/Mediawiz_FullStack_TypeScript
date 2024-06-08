@@ -24,7 +24,7 @@ export interface IItemAndImg {
   title: string;
   description: string;
   imgURL: string;
-  href?:string
+  href?: string;
 }
 
 export interface IItemAndImgList {
@@ -50,4 +50,12 @@ export interface IWebMainSection {
   header_1: { forAdmin: ForAdmin; text: Text };
   header_2: { forAdmin: ForAdmin; text: Text };
   description: { forAdmin: ForAdmin; text: Text };
+}
+
+export type Locales = "en" | "ru";
+
+export interface socialLink {
+  name: string;
+  shortName: string;
+  href: string;
 }

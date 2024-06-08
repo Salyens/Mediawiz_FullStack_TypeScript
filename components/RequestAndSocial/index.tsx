@@ -14,6 +14,7 @@ const RequestAndSocial = () => {
   const renderSocialLinks = () => {
     return socialLinks.map((item) => (
       <Link
+        prefetch={true}
         className="w-20 h-20 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-40 2xl:h-40 relative"
         href={item.href}
         key={item.name + item.href}
@@ -21,7 +22,7 @@ const RequestAndSocial = () => {
         rel="noopener noreferrer"
       >
         <Image
-          src={`/social_icons/${item.name}.png`}
+          src={`/social_icons/${item.shortName}.png`}
           alt={item.name}
           fill
           sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
@@ -53,7 +54,11 @@ const RequestAndSocial = () => {
           <p className="sm:min text-center lg:text-left">
             {t("description-2")}
           </p>
-          <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
+          <Link
+            prefetch={true}
+            className="flex w-fit m-auto lg:m-0"
+            href="tel:+79033750261"
+          >
             <div className="flex items-center gap-2 justify-center lg:justify-start">
               <Image
                 src="/common/phone.png"

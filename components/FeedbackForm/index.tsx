@@ -31,7 +31,11 @@ const FeedbackForm = () => {
           >
             <p className="text-center lg:text-left">{t("description-1")}</p>
             <p className="text-center lg:text-left">{t("description-2")}</p>
-            <Link className="flex w-fit m-auto lg:m-0" href="tel:+79033750261">
+            <Link
+              prefetch={true}
+              className="flex w-fit m-auto lg:m-0"
+              href="tel:+79033750261"
+            >
               <div className="flex items-center gap-2">
                 <Image
                   src="/common/phone.png"

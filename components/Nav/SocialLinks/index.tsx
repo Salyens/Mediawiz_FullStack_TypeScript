@@ -7,13 +7,14 @@ const SocialLinks = () => {
   const renderLinks = () => {
     return socialLinks.map((link, index) => (
       <Link
+        prefetch={true}
         target="_blank"
         rel="noopener noreferrer"
         key={link.name + index}
         href={link.href}
       >
         <Image
-          src={`/social_icons/${link.name}.png`}
+          src={`/social_icons/${link.shortName}.png`}
           width={40}
           height={40}
           alt={link.name}

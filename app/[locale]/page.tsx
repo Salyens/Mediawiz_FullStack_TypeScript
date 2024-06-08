@@ -1,19 +1,22 @@
 import MainPage from "@components/Pages/MainPage";
 import { MainPageData } from "../../interfaces/mainPage";
-import { useLocale } from "next-intl";
 import type { Metadata } from "next";
+import { Locales } from "@interfaces/common";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const localActive = useLocale();
-
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locales };
+}): Promise<Metadata> {
+  const { locale } = params;
   return {
-    title: localActive === "en" ? "Home Page" : "Главная страница",
+    title: locale === "en" ? "Home Page" : "Главная страница",
     description:
-      localActive === "en"
+      locale === "en"
         ? "We create unique strategies for your business."
         : "Мы создаем уникальные стратегии для вашего бизнеса.",
     keywords:
-      localActive === "en"
+      locale === "en"
         ? "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
         : "разработка сайтов, SMM, маркетинг в соцсетях, контекстная реклама, цифровой маркетинг, бизнес-стратегия, онлайн-присутствие, SEO, таргетированная реклама",
   };
@@ -31,12 +34,16 @@ async function getData(): Promise<MainPageData> {
 const supportedLocales = ["en", "ru"] as const;
 type SupportedLocale = (typeof supportedLocales)[number];
 
-export default async function Home() {
-  const localActive = useLocale();
+interface HomeProps {
+  params: { locale: SupportedLocale };
+}
+
+export default async function Home({ params }: HomeProps) {
+  const { locale } = params;
   const data = await getData();
 
-  if (supportedLocales.includes(localActive as SupportedLocale)) {
-    return <MainPage data={data.languages[localActive as SupportedLocale]} />;
+  if (supportedLocales.includes(locale)) {
+    return <MainPage data={data.languages[locale]} />;
   }
 
   return <p>Locale not supported</p>;

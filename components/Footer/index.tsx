@@ -5,32 +5,15 @@ import styles from "./footer.module.css";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
-
-interface SocialIcon {
-  name: string;
-  shortName: string;
-  href: string;
-}
+import { socialLinks } from "@constants";
 
 const Footer = () => {
   const t = useTranslations("Footer");
-  const socialIcons: SocialIcon[] = [
-    // { name: "Facebook", src: "/FB" },
-    {
-      name: "Instagram",
-      shortName: "IG",
-      href: "https://www.instagram.com/mediawiz_marketing",
-    },
-    {
-      name: "WhatsApp",
-      shortName: "WA",
-      href: "https://wa.me/message/VK65WBLSQRUBL1",
-    },
-  ];
 
   const renderSocialLinks = () => {
-    return socialIcons.map((item) => (
+    return socialLinks.map((item) => (
       <Link
+        prefetch={true}
         href={item.href}
         key={item.name + item.href}
         target="_blank"
@@ -58,7 +41,9 @@ const Footer = () => {
       )}
     >
       <div className="flex gap-2">{renderSocialLinks()}</div>
-      <Link href="tel:+79033750261">8-903-375-02-61</Link>
+      <Link prefetch={true} href="tel:+79033750261">
+        8-903-375-02-61
+      </Link>
       <div className="font-bold">{t("policy")}</div>
     </div>
   );

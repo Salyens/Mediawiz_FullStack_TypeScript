@@ -15,9 +15,10 @@ const Socials = () => {
         key={item.name + item.href}
         target="_blank"
         rel="noopener noreferrer"
+        prefetch={true}
       >
         <Image
-          src={`/social_icons/${item.name}.png`}
+          src={`/social_icons/${item.shortName}.png`}
           alt={item.name}
           fill
           sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"

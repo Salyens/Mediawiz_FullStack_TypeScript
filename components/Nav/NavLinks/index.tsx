@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -14,7 +14,6 @@ interface navLinksProp {
 const NavLinks: React.FC<navLinksProp> = ({ isBigScreen }) => {
   const pathname = usePathname();
   const [current, setCurrent] = useState<string>(pathname);
-  const localActive = useLocale();
   const t = useTranslations("Navigation");
 
   const navigation: NavLink[] = [
@@ -39,7 +38,7 @@ const NavLinks: React.FC<navLinksProp> = ({ isBigScreen }) => {
         {navigation.map((item) => (
           <Link
             key={item.name}
-            href={`/${localActive}/${item.href}`}
+            href={item.href}
             prefetch={true}
             className={classNames(
               "px-1 py-1 ml-0 text-sm md:text-base text-start",

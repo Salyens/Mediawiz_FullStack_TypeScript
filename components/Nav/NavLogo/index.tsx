@@ -1,13 +1,11 @@
-import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const NavLogo = () => {
-  const localActive = useLocale();
   return (
     <div className="flex items-center">
       <Link
-        href={`/${localActive}`}
+        href="/"
         prefetch={true}
         className="w-14 h-7 sm:w-[76px] sm:h-10 lg:w-24 lg:h-12 relative"
       >

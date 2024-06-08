@@ -1,8 +1,6 @@
-import { useLocale } from "next-intl";
 import Link from "next/link";
 
 const MyPages = () => {
-  const localActive = useLocale();
   const pages = [
     { pageName: "HOME PAGE", endPoint: "mainPage" },
     { pageName: "WEB DEVELOPMENT", endPoint: "webPage" },
@@ -16,10 +14,10 @@ const MyPages = () => {
       <h2 className="text-center text-2xl mt-2 mb-2">MY PAGES</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-        {pages.map((page, index) => (
+        {pages.map((page) => (
           <Link
             key={page.endPoint}
-            href={`/${localActive}/admin/pages/${page.endPoint}`}
+            href={`/admin/pages/${page.endPoint}`}
             passHref
             prefetch={true}
           >

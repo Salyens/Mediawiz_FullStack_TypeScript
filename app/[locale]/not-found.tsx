@@ -9,7 +9,7 @@ export default function NotFound() {
       <div>
         <h2 className="mb-2">Not Found</h2>
         <p className="mb-2">Could not find requested resource</p>
-        <Link className="second_color" href="/">
+        <Link prefetch={true} className="second_color" href="/">
           Return Home
         </Link>
       </div>
