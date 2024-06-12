@@ -17,3 +17,6 @@ export const socialLinks: socialLink[] = [
     href: "https://wa.me/message/VK65WBLSQRUBL1",
   },
 ];
+
+
+

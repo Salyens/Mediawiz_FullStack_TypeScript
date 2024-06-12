@@ -1,51 +1,35 @@
 import SmmPage from "@components/Pages/SmmPage";
 import { ISmmPageData } from "@interfaces/smmPage";
 import type { Metadata } from "next";
-import { Locales } from "@interfaces/common";
+import enMetaInfo from "../../../messages/en.json";
+import ruMetaInfo from "../../../messages/ru.json";
+import { LocalesType } from "@myTypes/mainTypes";
+import ApiService from "@services/ApiService";
+import { PageLocaleProps } from "@interfaces/common";
+import { locales } from "@navigation";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locales };
+  params: { locale: LocalesType };
 }): Promise<Metadata> {
   const { locale } = params;
+  const metaInfo =
+    locale === "en" ? enMetaInfo["MetaSmmPage"] : ruMetaInfo["MetaSmmPage"];
+
   return {
-    title:
-      locale === "en" ? "Social Media Management" : "Ведение социальных сетей",
-    description:
-      locale === "en"
-        ? "In SMM, our clients receive not only promotion but also a comprehensive approach. Marketing strategy, competitor and audience analysis are included for you as a bonus, absolutely free!"
-        : "В SMM наши клиенты получают не только продвижение, но и комплексный подход. Маркетинговая стратегия, анализ конкурентов и целевой аудитории идут вам бонусом, совершенно бесплатно!",
-    keywords:
-      locale === "en"
-        ? "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
-        : "разработка сайтов, SMM, маркетинг в соцсетях, контекстная реклама, цифровой маркетинг, бизнес-стратегия, онлайн-присутствие, SEO, таргетированная реклама",
+    title: metaInfo.title,
+    description: metaInfo.description,
+    keywords: metaInfo.keywords,
   };
 }
-
-async function getData(): Promise<ISmmPageData> {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/smmPage`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Failed to fetch data");
-  const data: ISmmPageData = await res.json();
-  return data;
-}
-
-const supportedLocales = ["en", "ru"] as const;
-type SupportedLocale = (typeof supportedLocales)[number];
-
-interface SmmProps {
-  params: { locale: SupportedLocale };
-}
-
-export default async function Smm({ params }: SmmProps) {
+export default async function Smm({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await getData();
+  const data = await ApiService.getData<ISmmPageData>("smmPage");
 
-  if (supportedLocales.includes(locale)) {
+  if (locales.includes(locale)) {
     return <SmmPage data={data.languages[locale]} />;
   }
 
-  return <p>Locale not supported</p>;
+  return <p className="mt-12">Locale not supported</p>;
 }

@@ -76,3 +76,5 @@ export interface Languages {
 export interface MainPageData {
   languages: Languages;
 }
+
+

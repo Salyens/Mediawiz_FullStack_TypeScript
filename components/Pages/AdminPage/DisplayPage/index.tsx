@@ -7,7 +7,7 @@ import PageHeader from "./PageHeader";
 import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";
 import SaveAlert from "./Buttons/SaveButton/SaveAlert";
-import { SaveAlertProps } from "../../../../types/admin";
+import { SaveAlertType } from "@myTypes/adminTypes";
 
 interface DisplayPageProps {
   endPoint: string;
@@ -17,7 +17,7 @@ const DisplayPage = ({ endPoint }: DisplayPageProps) => {
   const [data, setData] = useState<MainPageData | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
   const [formData, setFormData] = useState<FormData>(new FormData());
-  const [saveStatus, setSaveStatus] = useState<SaveAlertProps>("");
+  const [saveStatus, setSaveStatus] = useState<SaveAlertType>("");
   const [error, setError] = useState<string>("");
 
   useEffect(() => {

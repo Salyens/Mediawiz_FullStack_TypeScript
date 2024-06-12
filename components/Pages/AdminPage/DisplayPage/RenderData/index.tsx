@@ -4,15 +4,15 @@ import DeleteButton from "../Buttons/DeleteButton";
 import { MainPageData } from "@interfaces/mainPage";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
-import { SaveAlertProps } from "../../../../../types/admin";
 import styles from "../displaydata.module.css";
+import { SaveAlertType } from "@myTypes/adminTypes";
 
 interface RenderDataProps {
   data: MainPageData;
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   setEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertProps;
+  saveStatus: SaveAlertType;
 }
 
 const RenderData: React.FC<RenderDataProps> = ({

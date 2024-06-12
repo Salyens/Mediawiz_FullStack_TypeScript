@@ -1,42 +1,36 @@
 import SmmAdPage from "@components/Pages/SmmAdPage";
 import { ISmmAdPageData } from "@interfaces/smmAd";
 import type { Metadata } from "next";
-import { Locales } from "@interfaces/common";
+import enMetaInfo from "../../../messages/en.json";
+import ruMetaInfo from "../../../messages/ru.json";
+import { LocalesType } from "@myTypes/mainTypes";
+import ApiService from "@services/ApiService";
+import { PageLocaleProps } from "@interfaces/common";
+import { locales } from "@navigation";
 
-export async function generateMetadata({ params }: { params: { locale: Locales } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: LocalesType };
+}): Promise<Metadata> {
   const { locale } = params;
+  const metaInfo =
+    locale === "en" ? enMetaInfo["MetaSmmAdPage"] : ruMetaInfo["MetaSmmAdPage"];
+
   return {
-    title: locale === "en" ? "Targeted Advertising" : "Таргетированная реклама",
-    description: locale === "en"
-      ? "In the modern world, SMM is not limited to just social media content. Targeted advertising is the key to attracting the right audience and increasing sales."
-      : "В современном мире SMM не ограничивается только контентом в социальных сетях. Таргетированная реклама — это ключ к привлечению правильной аудитории и увеличению продаж.",
-    keywords: locale === "en"
-      ? "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
-      : "разработка сайтов, SMM, маркетинг в соцсетях, контекстная реклама, цифровой маркетинг, бизнес-стратегия, онлайн-присутствие, SEO, таргетированная реклама",
+    title: metaInfo.title,
+    description: metaInfo.description,
+    keywords: metaInfo.keywords,
   };
 }
 
-async function getData(): Promise<ISmmAdPageData> {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/smmAdPage`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to fetch data");
-  const data: ISmmAdPageData = await res.json();
-  return data;
-}
-
-const supportedLocales = ["en", "ru"] as const;
-type SupportedLocale = (typeof supportedLocales)[number];
-
-interface SmmAdProps {
-  params: { locale: SupportedLocale };
-}
-
-export default async function SmmAd({ params }: SmmAdProps) {
+export default async function SmmAd({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await getData();
+  const data = await ApiService.getData<ISmmAdPageData>("smmAdPage");
 
-  if (supportedLocales.includes(locale)) {
+  if (locales.includes(locale)) {
     return <SmmAdPage data={data.languages[locale]} />;
   }
 
-  return <p>Locale not supported</p>;
+  return <p className="mt-12">Locale not supported</p>;
 }

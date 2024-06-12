@@ -1,50 +1,35 @@
 import MainPage from "@components/Pages/MainPage";
 import { MainPageData } from "../../interfaces/mainPage";
-import type { Metadata } from "next";
-import { Locales } from "@interfaces/common";
+import { PageLocaleProps } from "@interfaces/common";
+import ApiService from "@services/ApiService";
+import { locales } from "@navigation";
+import { LocalesType } from "@myTypes/mainTypes";
+import { Metadata } from "next";
+import enMetaInfo from "../../messages/en.json";
+import ruMetaInfo from "../../messages/ru.json";
 
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locales };
+  params: { locale: LocalesType };
 }): Promise<Metadata> {
   const { locale } = params;
+  const metaInfo =
+    locale === "en" ? enMetaInfo["MetaHomePage"] : ruMetaInfo["MetaHomePage"];
+
   return {
-    title: locale === "en" ? "Home Page" : "Главная страница",
-    description:
-      locale === "en"
-        ? "We create unique strategies for your business."
-        : "Мы создаем уникальные стратегии для вашего бизнеса.",
-    keywords:
-      locale === "en"
-        ? "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
-        : "разработка сайтов, SMM, маркетинг в соцсетях, контекстная реклама, цифровой маркетинг, бизнес-стратегия, онлайн-присутствие, SEO, таргетированная реклама",
+    title: metaInfo.title,
+    description: metaInfo.description,
+    keywords: metaInfo.keywords,
   };
 }
-
-async function getData(): Promise<MainPageData> {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/mainPage`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Failed to fetch data");
-  const data: MainPageData = await res.json();
-  return data;
-}
-
-const supportedLocales = ["en", "ru"] as const;
-type SupportedLocale = (typeof supportedLocales)[number];
-
-interface HomeProps {
-  params: { locale: SupportedLocale };
-}
-
-export default async function Home({ params }: HomeProps) {
+export default async function Home({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await getData();
+  const data = await ApiService.getData<MainPageData>("mainPage");
 
-  if (supportedLocales.includes(locale)) {
+  if (locales.includes(locale)) {
     return <MainPage data={data.languages[locale]} />;
   }
 
-  return <p>Locale not supported</p>;
+  return <p className="mt-12">Locale not supported</p>;
 }

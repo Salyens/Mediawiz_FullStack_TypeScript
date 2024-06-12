@@ -5,15 +5,15 @@ import styles from "../../../DisplayPage/displaydata.module.css";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
 import { MainPageData } from "@interfaces/mainPage";
-import { SaveAlertProps } from "../../../../../../types/admin";
 import DisplayNewFile from "./DisplayNewFile";
+import { SaveAlertType } from "@myTypes/adminTypes";
 
 interface UploadMediaFileProps {
   type: "image" | "video";
   path: string;
   data: MainPageData;
   onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertProps;
+  saveStatus: SaveAlertType;
 }
 
 const UploadMediaFile: React.FC<UploadMediaFileProps> = ({

@@ -1,3 +1,5 @@
+import { SupportedLocale } from "@myTypes/mainTypes";
+
 export interface ILocal {
   locale: "en" | "ru";
 }
@@ -53,10 +55,18 @@ export interface IWebMainSection {
   description: { forAdmin: ForAdmin; text: Text };
 }
 
-export type Locales = "en" | "ru";
-
 export interface socialLink {
   name: string;
   shortName: string;
   href: string;
+}
+
+export interface PageLocaleProps {
+  params: { locale: SupportedLocale };
+}
+
+export interface Meta {
+  title: string;
+  description: string;
+  keywords: string;
 }

@@ -4,8 +4,8 @@
     "findMore": "Find out more"
   },
   "MainForm": {
-    "description-1":"IF YOU HAVE ANY QUESTIONS -",
-    "description-2":"CONTACT US",
+    "description-1": "IF YOU HAVE ANY QUESTIONS -",
+    "description-2": "CONTACT US",
     "request": "OR LEAVE A REQUEST",
     "policy_1": "I agree with",
     "policy_2": "the Privacy Policy",
@@ -13,10 +13,10 @@
     "request_2": "Leave a request",
     "name": "Name",
     "phoneNumber": "Phone number",
-    "email":"E-Mail",
+    "email": "E-Mail",
     "fillPolicy": "Please provide your consent for the processing of personal data",
-    "fillFields":"Please fill in all the fields",
-    "errorEmail":"Invalid E-Mail address format"
+    "fillFields": "Please fill in all the fields",
+    "errorEmail": "Invalid E-Mail address format"
   },
   "SuccessForm": {
     "success": "Success",
@@ -49,5 +49,30 @@
     "deleteBlock": "DELETE BLOCK",
     "addBlock": "ADD A NEW BLOCK",
     "block": "Block"
+  },
+  "MetaHomePage": {
+    "title": "Home Page",
+    "description": "We create unique strategies for your business.",
+    "keywords": "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
+  },
+  "MetaWebPage": {
+    "title": "Website Development",
+    "description": "Our professional task is to develop a website, which is an important element of your online presence.",
+    "keywords": "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
+  },
+  "MetaWebAdPage": {
+    "title": "Web Ad",
+    "description": "We create advertising campaigns that are not just noticeable but attract your specific audience.",
+    "keywords": "contextual advertising, website promotion, digital marketing, business strategy, online presence, SEO, targeted advertising, affordable prices, website audit, competitor analysis"
+  },
+  "MetaSmmAdPage": {
+    "title": "Targeted Advertising",
+    "description": "In the modern world, SMM is not limited to just social media content. Targeted advertising is the key to attracting the right audience and increasing sales.",
+    "keywords": "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
+  },
+  "MetaSmmPage": {
+    "title": "Social Media Management",
+    "description": "In SMM, our clients receive not only promotion but also a comprehensive approach. Marketing strategy, competitor and audience analysis are included for you as a bonus, absolutely free!",
+    "keywords": "website development, SMM, social media marketing, contextual advertising, digital marketing, business strategy, online presence, SEO, targeted advertising"
   }
 }
