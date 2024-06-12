@@ -38,7 +38,7 @@ export interface IItemAndImgList {
 export interface IItem {
   title: string;
   description: string;
-  imgURL: string
+  imgURL: string;
 }
 
 export interface IItemList {
@@ -69,4 +69,12 @@ export interface Meta {
   title: string;
   description: string;
   keywords: string;
+}
+
+export interface IEndpoint {
+  endPoint: string;
+}
+
+export interface IUpdatePageDataProps extends IEndpoint {
+  formDataToSend: FormData;
 }

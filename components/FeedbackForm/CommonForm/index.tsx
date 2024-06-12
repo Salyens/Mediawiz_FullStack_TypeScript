@@ -2,7 +2,6 @@
 
 import React, { useState, FormEvent, useRef } from "react";
 import LoadingCircle from "@components/LoadingCircle";
-import axios from "axios";
 import validator from "validator";
 import styles from "../feedbackform.module.css";
 import { useLocale, useTranslations } from "next-intl";
@@ -10,22 +9,14 @@ import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
 import ReCAPTCHA from "react-google-recaptcha";
+import { InfoType } from "@myTypes/mainTypes";
+import ApiService from "@services/ApiService";
 
 interface CommonFormProps {
   setIsOpen?: (isOpen: boolean) => void;
   isModal: boolean;
   setSuccess: (success: boolean) => void;
 }
-
-type InfoType = {
-  name: string;
-  phoneNumber: string;
-  email: string;
-  accepted: boolean;
-  recaptchaToken?: string;
-};
-
-
 
 const CommonForm: React.FC<CommonFormProps> = ({
   setIsOpen,
@@ -68,7 +59,7 @@ const CommonForm: React.FC<CommonFormProps> = ({
     setLoading(true);
 
     try {
-      const res = await axios.post("/api/feedback", info);
+      const res = await ApiService.createFeedback(info)
       setError("");
       setLoading(false);
       setSuccess(true);

@@ -20,13 +20,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import LoadingCircle from "@components/LoadingCircle";
 import { IClient, ITableRow } from "@interfaces/Table";
 import { tableColumns } from "./TableColumns";
 import TableSearch from "./TableSearch";
 import TablePagination from "./TablePagination";
+import ApiService from "@services/ApiService";
 const columns = tableColumns;
 
 const ClientList = () => {
@@ -42,9 +42,8 @@ const ClientList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/feedback");
-        const responseData = response.data as IClient[];
-        const dataWithOrder: ITableRow[] = responseData.map((item, index) => ({
+        const data = await ApiService.getFeedback() as IClient[]
+        const dataWithOrder: ITableRow[] = data.map((item, index) => ({
           ...item,
           order: index + 1,
         }));

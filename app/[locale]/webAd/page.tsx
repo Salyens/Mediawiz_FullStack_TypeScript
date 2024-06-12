@@ -26,7 +26,7 @@ export async function generateMetadata({
 
 export default async function WebAd({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await ApiService.getData<IWebAdPageData>("webAdPage");
+  const data = await ApiService.getPageData<IWebAdPageData>("webAdPage");
 
   if (locales.includes(locale)) {
     return <WebAdPage data={data.languages[locale]} />;

@@ -25,7 +25,7 @@ export async function generateMetadata({
 }
 export default async function Home({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await ApiService.getData<MainPageData>("mainPage");
+  const data = await ApiService.getPageData<MainPageData>("mainPage");
 
   if (locales.includes(locale)) {
     return <MainPage data={data.languages[locale]} />;

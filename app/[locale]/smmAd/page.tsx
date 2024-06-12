@@ -26,7 +26,7 @@ export async function generateMetadata({
 
 export default async function SmmAd({ params }: PageLocaleProps) {
   const { locale } = params;
-  const data = await ApiService.getData<ISmmAdPageData>("smmAdPage");
+  const data = await ApiService.getPageData<ISmmAdPageData>("smmAdPage");
 
   if (locales.includes(locale)) {
     return <SmmAdPage data={data.languages[locale]} />;

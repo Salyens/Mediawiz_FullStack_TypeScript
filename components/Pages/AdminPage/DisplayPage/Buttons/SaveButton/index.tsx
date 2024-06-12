@@ -1,12 +1,11 @@
 import _ from "lodash";
-import styles from "./savebutton.module.css";
-import axios from "axios";
 import { useState } from "react";
 import { MainPageData } from "@interfaces/mainPage";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
-
-type SaveAlertProps = "error" | "saved" | "";
+import ApiService from "@services/ApiService";
+import styles from "./savebutton.module.css";
+import { SaveAlertType } from "@myTypes/adminTypes";
 
 interface SaveButtonProps {
   emptyFields: string[];
@@ -14,7 +13,7 @@ interface SaveButtonProps {
   data: MainPageData | null;
   setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  setSaveStatus: React.Dispatch<React.SetStateAction<SaveAlertProps>>;
+  setSaveStatus: React.Dispatch<React.SetStateAction<SaveAlertType>>;
   endPoint: string;
 }
 
@@ -47,13 +46,12 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     }
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
-      const result = await axios.patch(`/api/${endPoint}`, formDataToSend);
-      const { updates }: { updates: IUpdatesFile[] } = result.data;
+      const result = await ApiService.updatePageData({ endPoint, formDataToSend });
+      const { updates }: { updates: IUpdatesFile[] } = result;
 
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);
         updates.forEach((update) => {
-
           const basePath = update.filePath.split(".").slice(2).join(".");
           _.set(newData, `languages.en.${basePath}`, update.newUrl);
           _.set(newData, `languages.ru.${basePath}`, update.newUrl);
