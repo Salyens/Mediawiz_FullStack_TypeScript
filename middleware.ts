@@ -1,4 +1,3 @@
-// middleware.ts
 import { NextRequest, NextResponse } from "next/server";
 import { corsMiddleware } from "@middlewares/cors-middleware";
 import { intlMiddleware } from "@middlewares/intl-middleware";
