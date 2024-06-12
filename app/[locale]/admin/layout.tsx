@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@navigation";
 import Provider from "@components/Provider";
 
 interface AdminLayoutProps {
@@ -18,12 +18,12 @@ export default function AdminLayout({
     <Provider session={session}>
       <div className="main_container p-2 pt-16 sm:pt-20 lg:pt-24 xl:pt-28">
         <div className="flex gap-2 mt-3 mb-2">
-          <Link href={`/${locale}/admin`} prefetch={true} passHref>
+          <Link href="/admin" prefetch={true} passHref>
             <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
               MY CLIENTS
             </button>
           </Link>
-          <Link href={`/${locale}/admin/pages`} prefetch={true} passHref>
+          <Link href="/admin/pages" prefetch={true} passHref>
             <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
               PAGES EDITING
             </button>

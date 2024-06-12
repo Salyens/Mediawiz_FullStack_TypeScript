@@ -1,6 +1,6 @@
 import { socialLinks } from "@constants";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@navigation";
 import React from "react";
 
 const SocialLinks = () => {

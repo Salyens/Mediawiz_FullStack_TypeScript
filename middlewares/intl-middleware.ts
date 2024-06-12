@@ -1,10 +1,8 @@
-import createMiddleware from 'next-intl/middleware';
+import createIntlMiddleware from "next-intl/middleware";
+import { locales } from "../navigation";
 
-const locales = ['en', 'ru'];
-
-export const intlMiddleware = createMiddleware({
-  locales: locales,
-  defaultLocale: 'en',
-  localeDetection: false,
+export const intlMiddleware = createIntlMiddleware({
+  locales,
+  localePrefix: "as-needed",
+  defaultLocale: "en",
 });
-

@@ -1,28 +1,20 @@
-import { NextRequest, NextFetchEvent } from "next/server";
+// middleware.ts
+import { NextRequest, NextResponse } from "next/server";
 import { corsMiddleware } from "@middlewares/cors-middleware";
-import { authMiddleware } from "@middlewares/auth-middleware";
 import { intlMiddleware } from "@middlewares/intl-middleware";
-import manageCookieMiddleware from "@middlewares/manageCookieMiddleware";
+import { authMiddleware } from "@middlewares/auth-middleware";
+import { isPublicPage } from "@utils/isPublicPage";
 
-export default async function middleware(req: NextRequest, event: NextFetchEvent) {
-
+export default function middleware(req: NextRequest) {
   const corsResponse = corsMiddleware(req);
-  if (corsResponse.status !== 200) {
-    return corsResponse;
-  }
+  if (corsResponse.status !== 200) return corsResponse;
+  if (req.nextUrl.pathname.startsWith("/api")) return NextResponse.next();
 
-  const cookieResponse = manageCookieMiddleware(req);
-  if (cookieResponse) {
-    return cookieResponse;
+  if (isPublicPage(req.nextUrl.pathname)) {
+    return intlMiddleware(req);
+  } else {
+    return (authMiddleware as any)(req);
   }
-
-  const url = req.nextUrl.clone();
-  const urlPaths = url.pathname.split("/");
-  if (urlPaths.includes("admin")) {
-    return authMiddleware(req as any, event);
-  }
-
-  return intlMiddleware(req);
 }
 
 export const config = {

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import {
@@ -11,28 +11,23 @@ import {
 import classNames from "classnames";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import LoadingCircle from "@components/LoadingCircle";
+import LoadingCircle from "@/components/LoadingCircle"; 
+import { Link, usePathname } from "@navigation";
 
 const LocalSwitcher = () => {
   const localActive = useLocale();
+  const otherLocale = localActive === 'en' ? 'ru' : 'en';
   const pathname = usePathname();
-  const anotherLocale = localActive === "ru" ? "en" : "ru";
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleOnChange = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const handleOnClick = () => {
-    setIsLoading(true);
-  };
-
-  const buildLink = (lang: string) => {
-    return pathname.replace(/^\/[a-z]{2}(\/|$)/, `/${lang}$1`);
-  };
+  const handleSetLoading = () => {
+    setLoading(true)
+  }
 
   return (
     <Menubar onValueChange={handleOnChange}>
@@ -50,7 +45,6 @@ const LocalSwitcher = () => {
             </div>
             <span className="text-lg">{localActive.toUpperCase()}</span>
           </div>
-
           <div className="w-4 h-4 m-auto relative">
             <Image
               src="/nav/arrow-nav.png"
@@ -66,24 +60,27 @@ const LocalSwitcher = () => {
         </MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            <Link href={buildLink(anotherLocale)} onClick={handleOnClick}>
-              <div className="flex gap-1 cursor-pointer relative">
-                <div className="w-8 h-6 relative">
-                  <Image
-                    src={`/flags/${anotherLocale}.png`}
-                    fill
-                    sizes="5vh"
-                    className="object-cover"
-                    alt="flag"
-                  />
-                  {isLoading && (
-                    <div className="absolute inset-0 bg-white bg-opacity-50">
-                      <LoadingCircle />
-                    </div>
-                  )}
-                </div>
-                <span className="text-lg">{anotherLocale.toUpperCase()}</span>
+            <Link
+              href={pathname}
+              locale={otherLocale}
+              className="flex gap-1 cursor-pointer"
+              onClick={handleSetLoading}
+            >
+              <div className="w-8 h-6 relative">
+                <Image
+                  src={`/flags/${otherLocale}.png`}
+                  fill
+                  sizes="5vh"
+                  className="object-cover"
+                  alt="flag"
+                />
+                {loading && (
+                  <div className="absolute inset-0 bg-white bg-opacity-50">
+                    <LoadingCircle />
+                  </div>
+                )}
               </div>
+              <span className="text-lg">{otherLocale.toUpperCase()}</span>
             </Link>
           </MenubarItem>
         </MenubarContent>

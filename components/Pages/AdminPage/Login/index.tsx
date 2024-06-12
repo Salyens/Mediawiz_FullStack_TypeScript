@@ -2,24 +2,20 @@
 
 import LoadingCircle from "@components/LoadingCircle";
 import { signIn, useSession } from "next-auth/react";
-import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Login = () => {
-  const localActive = useLocale();
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { status } = useSession();
 
-
   useEffect(() => {
-
     if (status === "authenticated") {
-      router.replace(`/${localActive}/admin`);
+      router.replace("/admin");
     }
   }, [status]);
 
@@ -42,7 +38,7 @@ const Login = () => {
         return setError("Invalid email or password");
       }
 
-      router.replace(`/${localActive}/admin`);
+      router.replace("/admin");
     } catch (error: any) {
       setIsLoading(false);
       setError(error.response?.data?.message || "An error occurred");

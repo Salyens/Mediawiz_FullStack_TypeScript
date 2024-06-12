@@ -1,6 +1,6 @@
 import styles from "./onecard.module.css";
 import { OffersList } from "@interfaces/mainPage";
-import Link from "next/link";
+import { Link } from "@navigation";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 

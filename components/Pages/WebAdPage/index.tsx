@@ -3,8 +3,8 @@ import FeedbackForm from "@components/FeedbackForm";
 import HowWeWork from "@components/HowWeWork";
 import RequestAndSocial from "@components/RequestAndSocial";
 import Welcome from "@components/Welcome";
-import HowAdWorks from "./HowAdWorks";
 import { IWebAdLanguageContent } from "@interfaces/webAdPage";
+import WeWorkWithSection from "@components/WeWorkWithSection";
 
 const WebAdPage = ({ data }: { data: IWebAdLanguageContent }) => {
   const { main } = data;
@@ -19,7 +19,7 @@ const WebAdPage = ({ data }: { data: IWebAdLanguageContent }) => {
         <Advantages advantages={advantages} />
       </div>
       <RequestAndSocial />
-      <HowAdWorks data={howAdWorks} />
+      <WeWorkWithSection data={howAdWorks} />
       <HowWeWork data={howWeWork} />
       <FeedbackForm />
     </div>

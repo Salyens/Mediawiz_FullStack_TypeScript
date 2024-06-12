@@ -27,6 +27,7 @@ const imgSchema = new Schema<Img>({
 const listItemSchema = new Schema<IItem>({
   title: { type: String, required: true },
   description: { type: String, required: true },
+  imgURL: { type: String }
 });
 
 const howWeWorkSchema = new Schema<IItemList>({

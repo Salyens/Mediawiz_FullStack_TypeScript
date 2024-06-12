@@ -1,18 +1,11 @@
 import { withAuth } from 'next-auth/middleware';
-import { NextRequest } from 'next/server';
 import { intlMiddleware } from './intl-middleware';
 
-
-export const authMiddleware = withAuth(
-  function onSuccess(req: NextRequest) {
-    return intlMiddleware(req);
+ export const authMiddleware = withAuth((req) => intlMiddleware(req), {
+  callbacks: {
+    authorized: ({ token }) => token != null,
   },
-  {
-    callbacks: {
-      authorized: ({ token }) => token != null,
-    },
-    pages: {
-      signIn: "/login",
-    },
-  }
-);
+  pages: {
+    signIn: "/login",
+  },
+});

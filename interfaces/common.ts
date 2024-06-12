@@ -36,6 +36,7 @@ export interface IItemAndImgList {
 export interface IItem {
   title: string;
   description: string;
+  imgURL: string
 }
 
 export interface IItemList {

@@ -8,7 +8,6 @@ const BigScreenMenu = () => {
   return (
     <>
       <NavLogo />
-
       <div className={classNames("flex-1 items-center hidden lg:flex")}>
         <NavLinks isBigScreen={true} />
       </div>

@@ -2,10 +2,10 @@ import FeedbackForm from "@components/FeedbackForm";
 import OurGoals from "@components/OurGoals";
 import Quotes from "@components/Quotes";
 import RequestAndSocial from "@components/RequestAndSocial";
-import WeWorkWith from "@components/WeWorkWith";
 import Welcome from "@components/Welcome";
 import { ISmmLanguageContent } from "@interfaces/smmPage";
 import Projects from "./Progects";
+import WeWorkWithSection from "@components/WeWorkWithSection";
 
 const SmmPage = ({ data }: { data: ISmmLanguageContent }) => {
   const { main } = data;
@@ -18,7 +18,7 @@ const SmmPage = ({ data }: { data: ISmmLanguageContent }) => {
     <div className="w-full h-full min-h-screen overflow-hidden relative">
       <div className="min-h-screen">
         <Welcome main={main} page="smm" />
-        <WeWorkWith data={weWorkWith} />
+        <WeWorkWithSection data={weWorkWith}/>
       </div>
       <RequestAndSocial />
       <OurGoals goalsList={list} page="smm" />
