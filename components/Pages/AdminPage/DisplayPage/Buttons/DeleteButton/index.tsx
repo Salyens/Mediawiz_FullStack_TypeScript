@@ -4,7 +4,7 @@ import _ from "lodash";
 
 interface DeleteButtonProps {
   currentPath: string;
-  item: { [key: string]: string };
+  item: { [key: string]: any };
 }
 
 const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
@@ -13,22 +13,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
   const itemKeys = Object.keys(item);
 
   const deleteItem = () => {
-    setEmptyFields((prevEmptyFields) => {
-      let updatedEmptyFields = prevEmptyFields;
-
-      itemKeys.forEach((key) => {
-        const enPath = `${currentPath}.${key}`;
-        const ruPath = enPath.includes("languages.en")
-          ? enPath.replace("languages.en", "languages.ru")
-          : enPath.replace("languages.ru", "languages.en");
-
-        updatedEmptyFields = updatedEmptyFields.filter(
-          (path) => path !== enPath && path !== ruPath
-        );
-      });
-
-      return updatedEmptyFields;
-    });
+    let canDelete = true;
 
     setData((prevData) => {
       if (!prevData) return null;
@@ -38,11 +23,11 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
         const pathArray = localePath.split(".");
         const index = parseInt(pathArray.pop() || "", 10);
         const parentPath = pathArray.join(".");
-
         const parentArray = _.get(newData, parentPath, []);
 
         if (parentArray.length <= 1) {
-          alert("You cannot delete the last item.");
+          canDelete = false;
+          return;
         } else {
           parentArray.splice(index, 1);
           _.set(newData, parentPath, parentArray);
@@ -58,6 +43,27 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
 
       return newData;
     });
+
+    if (canDelete) {
+      setEmptyFields((prevEmptyFields) => {
+        let updatedEmptyFields = prevEmptyFields;
+
+        itemKeys.forEach((key) => {
+          const enPath = `${currentPath}.${key}`;
+          const ruPath = enPath.includes("languages.en")
+            ? enPath.replace("languages.en", "languages.ru")
+            : enPath.replace("languages.ru", "languages.en");
+
+          updatedEmptyFields = updatedEmptyFields.filter(
+            (path) => path !== enPath && path !== ruPath
+          );
+        });
+
+        return updatedEmptyFields;
+      });
+    } else {
+      alert("You cannot delete the last item.");
+    }
   };
 
   return (

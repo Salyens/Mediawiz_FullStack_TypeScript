@@ -5,33 +5,25 @@ import { debounce } from "lodash";
 import { useDisplayPageContext } from "@context/DisplayPageContext";
 
 interface TextAreaProps {
-  itemKey: string;
   initialValue: string;
-  mainKey: string;
-  currentPath: string;
+  pathWithKey: string;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({
-  itemKey,
-  initialValue,
-  mainKey,
-  currentPath,
-}) => {
+const TextArea: React.FC<TextAreaProps> = ({ initialValue, pathWithKey }) => {
   const { setData, setEmptyFields } = useDisplayPageContext();
   const [value, setValue] = useState(initialValue);
-  const fullPath = `${currentPath}.${mainKey}`;
 
   const updateEmptyFields = useCallback(
     (isEmpty: boolean) => {
       setEmptyFields((prevEmptyFields) => {
         if (isEmpty) {
-          return [...prevEmptyFields, fullPath];
+          return [...prevEmptyFields, pathWithKey];
         }
 
-        return prevEmptyFields.filter((path) => path !== fullPath);
+        return prevEmptyFields.filter((path) => path !== pathWithKey);
       });
     },
-    [fullPath, setEmptyFields]
+    [pathWithKey, setEmptyFields]
   );
 
   const debouncedUpdate = useCallback(
@@ -55,7 +47,7 @@ const TextArea: React.FC<TextAreaProps> = ({
           return null;
         }
         const newData = _.cloneDeep(prevData);
-        _.set(newData, fullPath, value);
+        _.set(newData, pathWithKey, value);
         return newData;
       });
     } else {
@@ -65,15 +57,15 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   useEffect(() => {
     if (initialValue === "") {
-      setEmptyFields((prevEmptyFields) => [...prevEmptyFields, fullPath]);
+      setEmptyFields((prevEmptyFields) => [...prevEmptyFields, pathWithKey]);
     }
     return () => {
       debouncedUpdate.cancel();
     };
-  }, [initialValue, debouncedUpdate, fullPath, setEmptyFields]);
+  }, [initialValue, debouncedUpdate, pathWithKey, setEmptyFields]);
 
   return (
-    <div key={itemKey} className={styles.container}>
+    <div className="mb-2">
       <textarea
         className={
           value === ""

@@ -3,7 +3,7 @@ import { MainPageData } from "@interfaces/mainPage";
 
 interface AddButtonProps {
   currentPath: string;
-  item: { [key: string]: string };
+  item: { [key: string]: any };
 }
 
 const AddButton: React.FC<AddButtonProps> = ({ currentPath, item }) => {
