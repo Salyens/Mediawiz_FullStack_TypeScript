@@ -3,21 +3,15 @@ import { IWebPageData } from "@interfaces/webPage";
 import { IWebAdPageData } from "@interfaces/webAdPage";
 import { ISmmPageData } from "@interfaces/smmPage";
 import { ISmmAdPageData } from "@interfaces/smmAd";
+import { Endpoints } from "@myTypes/mainTypes";
 
-export type EndpointKey = '/mainPage' | '/webPage' | '/webAdPage' | '/smmPage' | '/smmAdPage';
+export type DataForEndpoint<E extends Endpoints> = 
+  E extends "mainPage" ? MainPageData :
+  E extends "webPage" ? IWebPageData :
+  E extends "webAdPage" ? IWebAdPageData :
+  E extends "smmPage" ? ISmmPageData :
+  E extends "smmAdPage" ? ISmmAdPageData : never;
 
-export interface EndpointMap {
-  '/mainPage': MainPageData;
-  '/webPage': IWebPageData;
-  '/webAdPage': IWebAdPageData;
-  '/smmPage': ISmmPageData;
-  '/smmAdPage': ISmmAdPageData;
+export interface IEndpoint {
+  endPoint: Endpoints;
 }
-
-export const endpointDataTypes: { [key in EndpointKey]: string } = {
-  '/mainPage': 'MainPageData',
-  '/webPage': 'IWebPageData',
-  '/webAdPage': 'IWebAdPageData',
-  '/smmPage': 'ISmmPageData',
-  '/smmAdPage': 'ISmmAdPageData'
-};

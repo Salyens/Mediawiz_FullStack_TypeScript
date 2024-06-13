@@ -72,7 +72,7 @@ export interface Meta {
 }
 
 export interface IEndpoint {
-  endPoint: "/mainPage" | "/webPage" | "/webAdPage" | "/smmPage" | "/smmAdPage";
+  endPoint: "mainPage" | "webPage" | "webAdPage" | "smmPage" | "smmAdPage";
 }
 
 export interface IUpdatePageDataProps extends IEndpoint {

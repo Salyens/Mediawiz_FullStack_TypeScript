@@ -1,9 +1,10 @@
 import DisplayPage from "@components/Pages/AdminPage/DisplayPage";
 import { DisplayPageWrapper } from "@context/DisplayPageContext";
+import { Endpoints } from "@myTypes/mainTypes";
 
 interface SinglePageProps {
   params: {
-    pageName: string;
+    pageName: Endpoints;
   };
 }
 

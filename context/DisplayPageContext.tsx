@@ -1,12 +1,13 @@
 "use client"
 
-import { MainPageData } from "@interfaces/mainPage";
 import { SaveAlertType } from "@myTypes/adminTypes";
+import { Endpoints } from "@myTypes/mainTypes";
+import { DataForEndpoint } from "@utils/endpointHelper";
 import { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction, useMemo } from "react";
 
-type DisplayPageContextType = {
-  data: MainPageData | null;
-  setData: Dispatch<SetStateAction<MainPageData | null>>;
+type DisplayPageContextType<E extends Endpoints> = {
+  data: DataForEndpoint<E> | null;
+  setData: Dispatch<SetStateAction<DataForEndpoint<E> | null>>;
   emptyFields: string[];
   setEmptyFields: Dispatch<SetStateAction<string[]>>;
   formData: FormData;
@@ -17,16 +18,16 @@ type DisplayPageContextType = {
   setError: Dispatch<SetStateAction<string>>;
 };
 
-const DisplayPageContext = createContext<DisplayPageContextType | undefined>(undefined);
+const DisplayPageContext = createContext<DisplayPageContextType<Endpoints> | undefined>(undefined);
 
-export function DisplayPageWrapper({ children }: { children: ReactNode }) {
-  const [data, setData] = useState<MainPageData | null>(null);
+export function DisplayPageWrapper<E extends Endpoints>({ children }: { children: ReactNode }) {
+  const [data, setData] = useState<DataForEndpoint<E> | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
   const [formData, setFormData] = useState<FormData>(new FormData());
   const [saveStatus, setSaveStatus] = useState<SaveAlertType>("");
   const [error, setError] = useState<string>("");
 
-  const contextValue = useMemo(
+  const contextValue = useMemo<DisplayPageContextType<E>>(
     () => ({
       data,
       setData,
@@ -49,8 +50,8 @@ export function DisplayPageWrapper({ children }: { children: ReactNode }) {
   );
 }
 
-export function useDisplayPageContext() {
-  const context = useContext(DisplayPageContext);
+export function useDisplayPageContext<E extends Endpoints>() {
+  const context = useContext(DisplayPageContext) as DisplayPageContextType<E>;
   if (context === undefined) {
     throw new Error("useDisplayPageContext must be used within a DisplayPageWrapper");
   }

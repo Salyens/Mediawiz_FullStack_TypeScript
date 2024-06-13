@@ -12,4 +12,6 @@ export type InfoType = {
   recaptchaToken?: string;
 };
 
+export type Endpoints = "mainPage" | "webPage" | "webAdPage" | "smmPage" | "smmAdPage";
+
 
