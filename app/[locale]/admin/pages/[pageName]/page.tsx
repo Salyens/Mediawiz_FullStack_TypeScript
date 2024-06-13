@@ -1,4 +1,5 @@
 import DisplayPage from "@components/Pages/AdminPage/DisplayPage";
+import { DisplayPageWrapper } from "@context/DisplayPageContext";
 
 interface SinglePageProps {
   params: {
@@ -7,7 +8,11 @@ interface SinglePageProps {
 }
 
 const SinglePage = ({ params: { pageName } }: SinglePageProps) => {
-  return <DisplayPage endPoint={pageName} />;
+  return (
+    <DisplayPageWrapper>
+      <DisplayPage endPoint={pageName} />;
+    </DisplayPageWrapper>
+  );
 };
 
 export default SinglePage;

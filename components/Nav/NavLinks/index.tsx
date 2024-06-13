@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./navlinks.module.css";

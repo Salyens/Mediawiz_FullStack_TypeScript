@@ -47,6 +47,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
       const result = await ApiService.updatePageData({ endPoint, formDataToSend });
+      console.log('result: ', result);
       const { updates }: { updates: IUpdatesFile[] } = result;
 
       if (data && updates && updates.length) {

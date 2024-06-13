@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://mediawiz.store"
+  "https://www.mediawiz.store",
+  "https://mediawiz.store",
 ];
 
 export function corsMiddleware(req: NextRequest) {
