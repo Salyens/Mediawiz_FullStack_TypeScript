@@ -4,25 +4,17 @@ import MotionDivImg from "./MotionDivImg";
 import styles from "../../../DisplayPage/displaydata.module.css";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
-import { MainPageData } from "@interfaces/mainPage";
 import DisplayNewFile from "./DisplayNewFile";
 import { SaveAlertType } from "@myTypes/adminTypes";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 
 interface UploadMediaFileProps {
   type: "image" | "video";
   path: string;
-  data: MainPageData;
-  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertType;
 }
 
-const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
-  type,
-  path,
-  data,
-  onSetFormData,
-  saveStatus,
-}) => {
+const UploadMediaFile: React.FC<UploadMediaFileProps> = ({ type, path }) => {
+  const { data, saveStatus } = useDisplayPageContext();
   const lodashPath = path.replace(/\[(\d+)\]/g, ".$1");
   const [fileURL, setFileURL] = useState<string>(_.get(data, lodashPath));
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -63,7 +55,6 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
           fileInputRef={fileInputRef}
           setFile={setFile}
           setPreviews={setPreviews}
-          onSetFormData={onSetFormData}
           lodashPath={lodashPath}
         />
 
@@ -73,7 +64,6 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
               file={file}
               type={type}
               previews={previews}
-              onSetFormData={onSetFormData}
               setPreviews={setPreviews}
               setFile={setFile}
               fileInputRef={fileInputRef}

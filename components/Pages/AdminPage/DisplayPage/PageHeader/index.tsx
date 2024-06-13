@@ -1,17 +1,12 @@
-import { MainPageData } from "@interfaces/mainPage";
-import { useLocale, useTranslations } from "next-intl";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
+import { LocalesType } from "@myTypes/mainTypes";
+import { useLocale } from "next-intl";
 
-interface PageHeaderProps {
-  data: MainPageData;
-}
-
-const PageHeader = ({ data }: PageHeaderProps) => {
+const PageHeader = () => {
+  const { data } = useDisplayPageContext();
   const localActive = useLocale();
-  const t = useTranslations("AdminEditPage");
-  const pageName =
-    localActive === "en" || localActive === "ru"
-      ? data.languages[localActive]?.pageName
-      : "";
+
+  const pageName = data?.languages[localActive as LocalesType]?.pageName;
   return <h2 className="text-center text-3xl">Editing page "{pageName}"</h2>;
 };
 

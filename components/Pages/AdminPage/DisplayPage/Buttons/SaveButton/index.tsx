@@ -1,36 +1,20 @@
 import _ from "lodash";
 import { useState } from "react";
-import { MainPageData } from "@interfaces/mainPage";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
 import ApiService from "@services/ApiService";
 import styles from "./savebutton.module.css";
-import { SaveAlertType } from "@myTypes/adminTypes";
-
-interface SaveButtonProps {
-  emptyFields: string[];
-  formData: FormData;
-  data: MainPageData | null;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
-  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  setSaveStatus: React.Dispatch<React.SetStateAction<SaveAlertType>>;
-  endPoint: string;
-}
+import { useDisplayPageContext } from "@context/DisplayPageContext";
+import { IEndpoint } from "@interfaces/common";
 
 interface IUpdatesFile {
   filePath: string;
   newUrl: string;
 }
 
-const SaveButton: React.FC<SaveButtonProps> = ({
-  emptyFields,
-  formData,
-  data,
-  setData,
-  setFormData,
-  setSaveStatus,
-  endPoint,
-}) => {
+const SaveButton: React.FC<IEndpoint> = ({ endPoint }) => {
+  const { emptyFields, formData, data, setData, setFormData, setSaveStatus } =
+    useDisplayPageContext();
   const [loading, setLoading] = useState(false);
   const isDisabled = Boolean(emptyFields.length);
   const buttonContent = isDisabled
@@ -46,8 +30,10 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     }
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
-      const result = await ApiService.updatePageData({ endPoint, formDataToSend });
-      console.log('result: ', result);
+      const result = await ApiService.updatePageData({
+        endPoint,
+        formDataToSend,
+      });
       const { updates }: { updates: IUpdatesFile[] } = result;
 
       if (data && updates && updates.length) {

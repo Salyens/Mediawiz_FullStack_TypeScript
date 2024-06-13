@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import styles from "./savealert.module.css";
 import classNames from "classnames";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 
-interface SaveAlertProps {
-  saveStatus: "error" | "saved" | "";
-  setSaveStatus: React.Dispatch<React.SetStateAction<"error" | "saved" | "">>;
-}
-
-const SaveAlert: React.FC<SaveAlertProps> = ({ saveStatus, setSaveStatus }) => {
+const SaveAlert = () => {
+  const { saveStatus, setSaveStatus } = useDisplayPageContext();
   const [visible, setVisible] = useState(true);
   const isErrorResponse = saveStatus === "error";
   const alertInfo = {
@@ -44,7 +41,9 @@ const SaveAlert: React.FC<SaveAlertProps> = ({ saveStatus, setSaveStatus }) => {
       >
         {alertInfo.title}
       </AlertTitle>
-      <AlertDescription className="text-lg">{alertInfo.description}</AlertDescription>
+      <AlertDescription className="text-lg">
+        {alertInfo.description}
+      </AlertDescription>
     </Alert>
   );
 };

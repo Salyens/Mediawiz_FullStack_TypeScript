@@ -1,13 +1,13 @@
 import React, { ChangeEvent } from "react";
 import UploadFileButton from "./UploadFileButton";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 
 interface UploadInputProps {
-  type: 'image' | 'video';
+  type: "image" | "video";
   handleButtonClick: () => void;
   fileInputRef: React.RefObject<HTMLInputElement>;
   setFile: React.Dispatch<React.SetStateAction<File | null>>;
   setPreviews: React.Dispatch<React.SetStateAction<string | null>>;
-  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
   lodashPath: string;
 }
 
@@ -17,9 +17,9 @@ const UploadInput: React.FC<UploadInputProps> = ({
   fileInputRef,
   setFile,
   setPreviews,
-  onSetFormData,
   lodashPath,
 }) => {
+  const { setFormData } = useDisplayPageContext();
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
@@ -33,13 +33,13 @@ const UploadInput: React.FC<UploadInputProps> = ({
         return;
       }
       setFile(file);
-      onSetFormData((prevFormData) => {
+      setFormData((prevFormData) => {
         const updatedFormData = new FormData();
         prevFormData.forEach((value, key) => {
           if (value instanceof File) {
-            updatedFormData.append(key, value, value.name); 
+            updatedFormData.append(key, value, value.name);
           } else {
-            updatedFormData.append(key, value); 
+            updatedFormData.append(key, value);
           }
         });
         updatedFormData.append("files", file, lodashPath);

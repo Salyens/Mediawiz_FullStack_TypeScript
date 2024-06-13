@@ -10,7 +10,7 @@ interface SinglePageProps {
 const SinglePage = ({ params: { pageName } }: SinglePageProps) => {
   return (
     <DisplayPageWrapper>
-      <DisplayPage endPoint={pageName} />;
+      <DisplayPage endPoint={pageName} />
     </DisplayPageWrapper>
   );
 };

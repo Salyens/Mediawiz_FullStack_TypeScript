@@ -1,33 +1,24 @@
 import React from "react";
 import TextArea from "../TextArea";
 import DeleteButton from "../Buttons/DeleteButton";
-import { MainPageData } from "@interfaces/mainPage";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
 import styles from "../displaydata.module.css";
-import { SaveAlertType } from "@myTypes/adminTypes";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
+import LoadingCircle from "@components/LoadingCircle";
 
-interface RenderDataProps {
-  data: MainPageData;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
-  setEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
-  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertType;
-}
+const RenderData = () => {
+  const { data } = useDisplayPageContext();
 
-const RenderData: React.FC<RenderDataProps> = ({
-  data,
-  setData,
-  setEmptyFields,
-  setFormData,
-  saveStatus,
-}) => {
   const renderData = (dataToRender: any, currentPath = "") => {
     const sortedKeys = Object.keys(dataToRender).sort((a, b) => {
       if (a === "en" && b === "ru") return -1;
       if (a === "ru" && b === "en") return 1;
       return 0;
     });
+
+    if (!data) return <LoadingCircle />;
+
     return (
       <div className="text-xl">
         {sortedKeys.map((key, index) => {
@@ -48,22 +39,16 @@ const RenderData: React.FC<RenderDataProps> = ({
             return (
               <UploadMediaFile
                 type="image"
-                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
-                data={data}
                 key={itemKey}
-                onSetFormData={setFormData}
               />
             );
           } else if (key === "videoURL")
             return (
               <UploadMediaFile
                 type="video"
-                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
-                data={data}
                 key={itemKey}
-                onSetFormData={setFormData}
               />
             );
           else if (key === "en" || key === "ru") {
@@ -84,9 +69,7 @@ const RenderData: React.FC<RenderDataProps> = ({
                   itemKey={itemKey}
                   initialValue={value}
                   mainKey={key}
-                  setData={setData}
                   currentPath={currentPath}
-                  onSetEmptyFields={setEmptyFields}
                 />
               </div>
             );
@@ -102,8 +85,6 @@ const RenderData: React.FC<RenderDataProps> = ({
                         {renderData(item, `${newPath}[${arrayIndex}]`)}
                         <DeleteButton
                           currentPath={`${newPath}[${arrayIndex}]`}
-                          setData={setData}
-                          onSetEmptyFields={setEmptyFields}
                           item={item}
                         />
                       </>
@@ -112,11 +93,7 @@ const RenderData: React.FC<RenderDataProps> = ({
                     )}
                   </React.Fragment>
                 ))}
-                <AddButton
-                  currentPath={newPath}
-                  item={value[0] || {}}
-                  setData={setData}
-                />
+                <AddButton currentPath={newPath} item={value[0] || {}} />
               </React.Fragment>
             );
           } else if (typeof value === "object" && value !== null) {

@@ -2,41 +2,36 @@ import React, { useEffect, useState, useCallback } from "react";
 import styles from "../displaydata.module.css";
 import _ from "lodash";
 import { debounce } from "lodash";
-import { MainPageData } from "@interfaces/mainPage";
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 
 interface TextAreaProps {
   itemKey: string;
   initialValue: string;
   mainKey: string;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   currentPath: string;
-  onSetEmptyFields: (callback: (prevEmptyFields: string[]) => string[]) => void;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
   itemKey,
   initialValue,
   mainKey,
-  setData,
   currentPath,
-  onSetEmptyFields,
 }) => {
+  const { setData, setEmptyFields } = useDisplayPageContext();
   const [value, setValue] = useState(initialValue);
   const fullPath = `${currentPath}.${mainKey}`;
 
   const updateEmptyFields = useCallback(
     (isEmpty: boolean) => {
-      onSetEmptyFields((prevEmptyFields) => {
-
+      setEmptyFields((prevEmptyFields) => {
         if (isEmpty) {
           return [...prevEmptyFields, fullPath];
-
         }
 
         return prevEmptyFields.filter((path) => path !== fullPath);
       });
     },
-    [fullPath, onSetEmptyFields]
+    [fullPath, setEmptyFields]
   );
 
   const debouncedUpdate = useCallback(
@@ -70,12 +65,12 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   useEffect(() => {
     if (initialValue === "") {
-      onSetEmptyFields((prevEmptyFields) => [...prevEmptyFields, fullPath]);
+      setEmptyFields((prevEmptyFields) => [...prevEmptyFields, fullPath]);
     }
     return () => {
       debouncedUpdate.cancel();
     };
-  }, [initialValue, debouncedUpdate, fullPath, onSetEmptyFields]);
+  }, [initialValue, debouncedUpdate, fullPath, setEmptyFields]);
 
   return (
     <div key={itemKey} className={styles.container}>

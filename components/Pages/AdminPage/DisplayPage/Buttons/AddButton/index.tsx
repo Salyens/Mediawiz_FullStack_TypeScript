@@ -1,16 +1,13 @@
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 import { MainPageData } from "@interfaces/mainPage";
 
 interface AddButtonProps {
   currentPath: string;
   item: { [key: string]: string };
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({
-  currentPath,
-  item,
-  setData,
-}) => {
+const AddButton: React.FC<AddButtonProps> = ({ currentPath, item }) => {
+  const { setData } = useDisplayPageContext();
   const createEmptyItem = () => {
     return Object.keys(item).reduce((acc, key) => {
       if (key !== "_id") acc[key] = "";
@@ -53,7 +50,6 @@ const AddButton: React.FC<AddButtonProps> = ({
       addItemToLocale(ruPath);
 
       return newData;
-
     });
   };
 

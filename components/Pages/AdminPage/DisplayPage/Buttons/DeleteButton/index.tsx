@@ -1,31 +1,26 @@
+import { useDisplayPageContext } from "@context/DisplayPageContext";
 import { MainPageData } from "@interfaces/mainPage";
 import _ from "lodash";
 
 interface DeleteButtonProps {
   currentPath: string;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
-  onSetEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
   item: { [key: string]: string };
 }
 
-const DeleteButton: React.FC<DeleteButtonProps> = ({
-  currentPath,
-  setData,
-  onSetEmptyFields,
-  item,
-}) => {
+const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
+  const { setData, setEmptyFields } = useDisplayPageContext();
   const lodashPath = currentPath.replace(/\[(\d+)\]/g, ".$1");
   const itemKeys = Object.keys(item);
 
   const deleteItem = () => {
-    onSetEmptyFields((prevEmptyFields) => {
+    setEmptyFields((prevEmptyFields) => {
       let updatedEmptyFields = prevEmptyFields;
 
       itemKeys.forEach((key) => {
         const enPath = `${currentPath}.${key}`;
-        const ruPath = enPath.includes('languages.en')
-          ? enPath.replace('languages.en', 'languages.ru')
-          : enPath.replace('languages.ru', 'languages.en');
+        const ruPath = enPath.includes("languages.en")
+          ? enPath.replace("languages.en", "languages.ru")
+          : enPath.replace("languages.ru", "languages.en");
 
         updatedEmptyFields = updatedEmptyFields.filter(
           (path) => path !== enPath && path !== ruPath
