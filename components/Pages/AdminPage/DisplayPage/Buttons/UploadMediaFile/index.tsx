@@ -5,7 +5,6 @@ import styles from "../../../DisplayPage/displaydata.module.css";
 import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
 import DisplayNewFile from "./DisplayNewFile";
-import { SaveAlertType } from "@myTypes/adminTypes";
 import { useDisplayPageContext } from "@context/DisplayPageContext";
 
 interface UploadMediaFileProps {

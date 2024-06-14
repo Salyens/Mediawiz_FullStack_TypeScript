@@ -19,7 +19,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
       if (!prevData) return null;
       const newData = _.cloneDeep(prevData as MainPageData);
 
-      const deleteItemFromLocale = (localePath: string) => {
+      const deleteItem = (localePath: string) => {
         const pathArray = localePath.split(".");
         const index = parseInt(pathArray.pop() || "", 10);
         const parentPath = pathArray.join(".");
@@ -38,8 +38,8 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ currentPath, item }) => {
       const enPath = `languages.en.${basePath}`;
       const ruPath = `languages.ru.${basePath}`;
 
-      deleteItemFromLocale(enPath);
-      deleteItemFromLocale(ruPath);
+      deleteItem(enPath);
+      deleteItem(ruPath);
 
       return newData;
     });

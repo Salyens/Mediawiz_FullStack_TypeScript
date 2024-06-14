@@ -1,11 +1,11 @@
-import { IUpdatePageDataProps } from "@interfaces/common";
-import { InfoType } from "@myTypes/mainTypes";
+import { IEndpoint, IUpdatePageDataProps } from "@interfaces/common";
+import { Endpoints, InfoType } from "@myTypes/mainTypes";
 import axios from "axios";
 
 class ApiService {
   static apiBase = process.env.NEXT_PUBLIC_API_URL;
 
-  static async getPageData<T>(endpoint: string): Promise<T> {
+  static async getPageData<T>(endpoint: Endpoints): Promise<T> {
     const res = await fetch(`${ApiService.apiBase}/api/${endpoint}`, {
       cache: "no-store",
     });

@@ -6,17 +6,18 @@ import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";
 import SaveAlert from "./Buttons/SaveButton/SaveAlert";
 import { useDisplayPageContext } from "@context/DisplayPageContext";
-import { IEndpoint } from "@interfaces/common";
 import ApiService from "@services/ApiService";
-import { DataForEndpoint } from "@utils/endpointHelper";
+import { IRenderData } from "@interfaces/admin";
+import { Endpoints } from "@myTypes/mainTypes";
 
-const DisplayPage = <E extends IEndpoint>({ endPoint }: { endPoint: E["endPoint"] }) => {
-  const { data, setData, saveStatus, error, setError } = useDisplayPageContext<E["endPoint"]>();
+const DisplayPage = ({ endPoint }: { endPoint: Endpoints }) => {
+  const { data, setData, saveStatus, error, setError } =
+    useDisplayPageContext();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedData = await ApiService.getPageData<DataForEndpoint<E["endPoint"]>>(endPoint);
+        const fetchedData = await ApiService.getPageData<IRenderData>(endPoint);
         setData(fetchedData);
       } catch (err) {
         setError("Something went wrong");
@@ -25,7 +26,6 @@ const DisplayPage = <E extends IEndpoint>({ endPoint }: { endPoint: E["endPoint"
 
     fetchData();
   }, [endPoint, setData, setError]);
-
 
   return (
     <div className={styles.container}>
