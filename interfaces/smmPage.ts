@@ -1,10 +1,10 @@
-import { ForAdmin, ForAdminHeader, IItemList, Img, Text } from "./common";
+import { ForAdminHeader, IItemList, Img, TextContent } from "./common";
 
 export interface ISmmMainSection {
   forAdminHeader: ForAdminHeader;
   img: Img;
-  header: { forAdmin: ForAdmin; text: Text };
-  description: { forAdmin: ForAdmin; text: Text };
+  header: TextContent;
+  description: TextContent;
 }
 
 export interface IResultList {

@@ -4,13 +4,14 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./navlinks.module.css";
-import { NavLink } from "@interfaces/special";
 import classNames from "classnames";
 import { Link } from "@navigation";
+import { NavLink } from "@interfaces/common";
 
 interface navLinksProp {
   isBigScreen: boolean;
 }
+
 const NavLinks: React.FC<navLinksProp> = ({ isBigScreen }) => {
   const pathname = usePathname();
   const [current, setCurrent] = useState<string>(pathname);

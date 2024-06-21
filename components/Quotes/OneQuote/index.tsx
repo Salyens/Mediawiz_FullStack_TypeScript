@@ -1,14 +1,13 @@
 import Image from "next/image";
-import styles from "./onequote.module.css";
 import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
-import dynamic from "next/dynamic";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import FindMoreLink from "@components/FindMoreLink";
+import styles from "./onequote.module.css";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;

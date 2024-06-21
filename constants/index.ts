@@ -1,4 +1,4 @@
-import { socialLink } from "@interfaces/common";
+import { IPages, socialLink } from "@interfaces/common";
 
 export const socialLinks: socialLink[] = [
   {
@@ -18,5 +18,10 @@ export const socialLinks: socialLink[] = [
   },
 ];
 
-
-
+export const pages: IPages[] = [
+  { pageName: "HOME PAGE", endPoint: "mainPage" },
+  { pageName: "WEB DEVELOPMENT", endPoint: "webPage" },
+  { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
+  { pageName: "SMM", endPoint: "smmPage" },
+  { pageName: "SMM PROMOTION", endPoint: "smmAdPage" },
+];

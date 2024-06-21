@@ -4,14 +4,10 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import dynamic from "next/dynamic";
+import CustomForm from "./CustomForm";
 
 const FeedbackForm = () => {
   const t = useTranslations("MainForm");
-
-  const DynamicCustomForm = dynamic(() => import("./CustomForm"), {
-    ssr: false,
-  });
 
   return (
     <div className={styles.form_wrapper}>
@@ -60,7 +56,7 @@ const FeedbackForm = () => {
               duration: 1,
             }}
           >
-            <DynamicCustomForm />
+            <CustomForm />
           </DynamicAnimationWrapper>
         </div>
       </div>

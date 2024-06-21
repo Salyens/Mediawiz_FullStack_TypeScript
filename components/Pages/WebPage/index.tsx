@@ -5,7 +5,6 @@ import FeedbackForm from "@components/FeedbackForm";
 import Welcome from "@components/Welcome";
 import Advantages from "@components/Advantages";
 import HowWeWork from "@components/HowWeWork";
-import WeWorkWith from "@components/WeWorkWith";
 import WeWorkWithSection from "@components/WeWorkWithSection";
 
 const WebPage = ({ data }: { data: IWebLanguageContent }) => {
@@ -22,7 +21,6 @@ const WebPage = ({ data }: { data: IWebLanguageContent }) => {
       </div>
       <RequestAndSocial />
       <WeWorkWithSection data={weWorkWith} />
-      {/* <WeWorkWith data={weWorkWith} /> */}
       <HowWeWork data={howWeWork} />
       <FeedbackForm />
     </div>

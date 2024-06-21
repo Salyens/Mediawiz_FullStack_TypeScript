@@ -1,13 +1,7 @@
+import { pages } from "@constants";
 import { Link } from "@navigation";
 
 const MyPages = () => {
-  const pages = [
-    { pageName: "HOME PAGE", endPoint: "mainPage" },
-    { pageName: "WEB DEVELOPMENT", endPoint: "webPage" },
-    { pageName: "WEBSITE PROMOTION", endPoint: "webAdPage" },
-    { pageName: "SMM", endPoint: "smmPage" },
-    { pageName: "SMM PROMOTION", endPoint: "smmAdPage" },
-  ];
 
   return (
     <>

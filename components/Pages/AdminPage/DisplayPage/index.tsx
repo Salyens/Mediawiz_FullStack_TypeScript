@@ -9,6 +9,7 @@ import { useDisplayPageContext } from "@context/DisplayPageContext";
 import ApiService from "@services/ApiService";
 import { IRenderData } from "@interfaces/admin";
 import { Endpoints } from "@myTypes/mainTypes";
+import axios from "axios";
 
 const DisplayPage = ({ endPoint }: { endPoint: Endpoints }) => {
   const { data, setData, saveStatus, error, setError } =
@@ -17,8 +18,8 @@ const DisplayPage = ({ endPoint }: { endPoint: Endpoints }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchedData = await ApiService.getPageData<IRenderData>(endPoint);
-        setData(fetchedData);
+        const res = await axios.get(`/api/${endPoint}`);
+        setData(res.data);
       } catch (err) {
         setError("Something went wrong");
       }

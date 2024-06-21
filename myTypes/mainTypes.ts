@@ -1,7 +1,3 @@
-import { locales } from "@navigation";
-
-export type SupportedLocale = (typeof locales)[number];
-
 export type LocalesType = "en" | "ru";
 
 export type InfoType = {
@@ -11,6 +7,10 @@ export type InfoType = {
   accepted: boolean;
   recaptchaToken?: string;
 };
+
+export type ImgURL = string;
+export type ForAdmin = string;
+export type Text = string;
 
 export type Endpoints = "mainPage" | "webPage" | "webAdPage" | "smmPage" | "smmAdPage";
 

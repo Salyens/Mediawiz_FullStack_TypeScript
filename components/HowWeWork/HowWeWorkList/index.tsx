@@ -1,16 +1,11 @@
 import HowWeWorkItem from "../HowWeWorkItem";
 import Image from "next/image";
-import { IItem } from "@interfaces/common";
+import { IItem, IItemList } from "@interfaces/common";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 
-interface HowWeWorkProps {
-  list: IItem[];
-  header: string;
-}
-
-const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
+const HowWeWorkList: React.FC<IItemList> = ({ list, header }) => {
   const middleIndex = Math.ceil(list.length / 2);
   const firstHalf = list.slice(0, middleIndex);
   const secondHalf = list.slice(middleIndex);

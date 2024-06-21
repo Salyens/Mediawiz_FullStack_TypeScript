@@ -1,4 +1,4 @@
-const BackgroundVideo: React.FC = () => {
+const BackgroundVideo = () => {
   return (
     <video
       autoPlay

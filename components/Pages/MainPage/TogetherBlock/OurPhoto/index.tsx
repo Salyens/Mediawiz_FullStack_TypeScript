@@ -1,13 +1,10 @@
 import styles from "./togetherblock.module.css";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
+import { Img } from "@interfaces/common";
 import classNames from "classnames";
 
-interface TogetherBlockProps {
-  imgURL: string;
-}
-
-const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
+const OurPhoto: React.FC<Img> = ({ imgURL }) => {
   return (
     <div className="min-h-36 relative">
       <DynamicAnimationWrapper

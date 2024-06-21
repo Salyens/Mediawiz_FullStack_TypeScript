@@ -4,7 +4,11 @@ import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 
-const WeWorkWith = ({ data }: { data: IItemList }) => {
+interface WeWorkWithProp {
+  data: IItemList;
+}
+
+const WeWorkWith: React.FC<WeWorkWithProp> = ({ data }) => {
   return (
     <DynamicAnimationWrapper
       initial={{ y: 600, opacity: 0 }}

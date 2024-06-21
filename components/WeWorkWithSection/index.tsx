@@ -1,4 +1,4 @@
-import { IItemAndImgList, IItemList } from "@interfaces/common";
+import { IItemList } from "@interfaces/common";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 import dynamic from "next/dynamic";
@@ -9,7 +9,7 @@ interface WeWorkWithSectionProp {
   data: IItemList;
 }
 
-const WeWorkWithSection = ({ data }: WeWorkWithSectionProp) => {
+const WeWorkWithSection: React.FC<WeWorkWithSectionProp> = ({ data }) => {
   return (
     <DynamicAnimationWrapper
       initial={{ y: 600, opacity: 0 }}

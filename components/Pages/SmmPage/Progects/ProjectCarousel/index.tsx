@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +10,11 @@ import styles from "./projectscarousel.module.css";
 import classNames from "classnames";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 
-const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
+interface ProjectCarouselProp {
+  list: IProjectItem[];
+}
+
+const ProjectCarousel: React.FC<ProjectCarouselProp> = ({ list }) => {
   return (
     <Carousel className="lg:w-2/3 xl:w-1/2">
       <CarouselContent>

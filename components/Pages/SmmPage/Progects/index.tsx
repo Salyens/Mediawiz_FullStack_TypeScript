@@ -10,7 +10,11 @@ const DynamicProjectCarousel = dynamic(() => import("./ProjectCarousel"), {
   ssr: false,
 });
 
-const Projects = ({ myProjects }: { myProjects: IProjects }) => {
+interface ProjectsProp {
+  myProjects: IProjects;
+}
+
+const Projects: React.FC<ProjectsProp> = ({ myProjects }) => {
   return (
     <div
       className={classNames(
@@ -19,12 +23,12 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
       )}
     >
       <DynamicAnimationWrapper
-        initial={{ x: 1000 }}
-        animate={{ x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           ease: "easeOut",
           duration: 1,
-          delay: 0.5,
+          delay: 1,
         }}
       >
         <div className="absolute w-full lg:w-1/2 h-screen hidden lg:flex -right-36">

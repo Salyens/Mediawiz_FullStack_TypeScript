@@ -3,7 +3,11 @@ import { IItem } from "@interfaces/common";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 
-const WeWorkItem = ({ data }: { data: IItem }) => {
+interface WeWorkItemProp {
+  data: IItem
+}
+
+const WeWorkItem:React.FC<WeWorkItemProp> = ({ data }) => {
   return (
     <div
       className={classNames(

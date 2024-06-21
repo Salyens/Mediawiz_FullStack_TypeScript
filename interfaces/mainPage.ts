@@ -1,4 +1,5 @@
-import { ForAdmin, ForAdminHeader, Img, ImgURL, Text, TextContent } from "./common";
+import { ForAdmin, ImgURL } from "@myTypes/mainTypes";
+import { ForAdminHeader, Img, TextContent } from "./common";
 
 export interface OffersList {
   header: string;
@@ -7,7 +8,7 @@ export interface OffersList {
 }
 
 export interface Offers {
-  forAdmin: string;
+  forAdmin: ForAdmin;
   offersList: OffersList[];
 }
 
@@ -18,17 +19,17 @@ export interface WeOfferSection {
 }
 
 export interface Video {
-  forAdmin: string;
+  forAdmin: ForAdmin;
   videoURL: string;
 }
 
 export interface MainSection {
   forAdminHeader: ForAdminHeader;
   img: Img;
-  header_1: { forAdmin: ForAdmin; text: Text };
-  header_2: { forAdmin: ForAdmin; text: Text };
-  description_1: { forAdmin: ForAdmin; text: Text };
-  description_2: { forAdmin: ForAdmin; text: Text };
+  header_1: TextContent;
+  header_2: TextContent;
+  description_1: TextContent;
+  description_2: TextContent;
 }
 
 export interface QuoteItem {
@@ -50,7 +51,7 @@ export interface GoalsList {
 }
 
 export interface Goals {
-  forAdmin: string;
+  forAdmin: ForAdmin;
   goalsList: GoalsList[];
 }
 

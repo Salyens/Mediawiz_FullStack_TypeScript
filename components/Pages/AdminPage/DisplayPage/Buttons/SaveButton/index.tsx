@@ -6,6 +6,7 @@ import ApiService from "@services/ApiService";
 import styles from "./savebutton.module.css";
 import { useDisplayPageContext } from "@context/DisplayPageContext";
 import { IEndpoint } from "@interfaces/common";
+import axios from "axios";
 
 interface IUpdatesFile {
   filePath: string;
@@ -30,11 +31,8 @@ const SaveButton: React.FC<IEndpoint> = ({ endPoint }) => {
     }
     formDataToSend.append("jsonData", JSON.stringify(data));
     try {
-      const result = await ApiService.updatePageData({
-        endPoint,
-        formDataToSend,
-      });
-      const { updates }: { updates: IUpdatesFile[] } = result;
+      const res = await axios.patch(`/api/${endPoint}`, formDataToSend);
+      const { updates }: { updates: IUpdatesFile[] } = res.data;
 
       if (data && updates && updates.length) {
         const newData = _.cloneDeep(data);

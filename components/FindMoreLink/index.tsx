@@ -9,7 +9,7 @@ interface FindMoreLinkProp {
   href: string | undefined;
 }
 
-const FindMoreLink = ({ href }: FindMoreLinkProp) => {
+const FindMoreLink: React.FC<FindMoreLinkProp> = ({ href }) => {
   const t = useTranslations("MainPage");
 
   const displayEl = () => {
@@ -26,11 +26,7 @@ const FindMoreLink = ({ href }: FindMoreLinkProp) => {
   return (
     <>
       {href && (
-        <Link
-          prefetch={true}
-          href={href}
-          className={`flex text-3xl mt-2`}
-        >
+        <Link prefetch={true} href={href} className={`flex text-3xl mt-2`}>
           {displayEl()}
         </Link>
       )}

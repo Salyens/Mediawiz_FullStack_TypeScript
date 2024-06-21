@@ -1,4 +1,4 @@
-import { IEndpoint, IUpdatePageDataProps } from "@interfaces/common";
+import { IUpdatePageDataProps } from "@interfaces/common";
 import { Endpoints, InfoType } from "@myTypes/mainTypes";
 import axios from "axios";
 

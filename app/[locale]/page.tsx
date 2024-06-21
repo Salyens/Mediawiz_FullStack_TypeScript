@@ -23,6 +23,7 @@ export async function generateMetadata({
     keywords: metaInfo.keywords,
   };
 }
+
 export default async function Home({ params }: PageLocaleProps) {
   const { locale } = params;
   const data = await ApiService.getPageData<MainPageData>("mainPage");

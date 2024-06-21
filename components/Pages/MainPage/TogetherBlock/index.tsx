@@ -9,7 +9,7 @@ interface TogetherBlockProps {
   imgURL: string;
 }
 
-const TogetherBlock = ({ goalsList, imgURL }: TogetherBlockProps) => {
+const TogetherBlock: React.FC<TogetherBlockProps> = ({ goalsList, imgURL }) => {
   return (
     <div className="relative">
       <DynamicBgEllipse

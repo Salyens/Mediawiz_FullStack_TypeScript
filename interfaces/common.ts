@@ -1,26 +1,23 @@
-import { SupportedLocale } from "@myTypes/mainTypes";
+import { ForAdmin } from "@myTypes/mainTypes";
 
 export interface ILocal {
   locale: "en" | "ru";
 }
 
 export interface ForAdminHeader {
-  forAdminHeader: string;
+  forAdminHeader?: string;
+  header: string;
 }
 
 export interface TextContent {
   forAdmin: ForAdmin;
-  text: Text;
+  text: string;
 }
 
 export interface Img {
-  forAdmin: string;
+  forAdmin?: ForAdmin;
   imgURL: string;
 }
-
-export type ImgURL = string;
-export type ForAdmin = string;
-export type Text = string;
 
 export interface IItemAndImg {
   title: string;
@@ -29,9 +26,7 @@ export interface IItemAndImg {
   href?: string;
 }
 
-export interface IItemAndImgList {
-  forAdminHeader: ForAdminHeader;
-  header: string;
+export interface IItemAndImgList extends ForAdminHeader {
   list: IItemAndImg[];
 }
 
@@ -41,18 +36,16 @@ export interface IItem {
   imgURL: string;
 }
 
-export interface IItemList {
-  forAdminHeader: ForAdminHeader;
-  header: string;
+export interface IItemList extends ForAdminHeader {
   list: IItem[];
 }
 
 export interface IWebMainSection {
   forAdminHeader: ForAdminHeader;
   img: Img;
-  header_1: { forAdmin: ForAdmin; text: Text };
-  header_2: { forAdmin: ForAdmin; text: Text };
-  description: { forAdmin: ForAdmin; text: Text };
+  header_1: TextContent;
+  header_2: TextContent;
+  description: TextContent;
 }
 
 export interface socialLink {
@@ -62,7 +55,7 @@ export interface socialLink {
 }
 
 export interface PageLocaleProps {
-  params: { locale: SupportedLocale };
+  params: ILocal;
 }
 
 export interface Meta {
@@ -78,3 +71,22 @@ export interface IEndpoint {
 export interface IUpdatePageDataProps extends IEndpoint {
   formDataToSend: FormData;
 }
+
+export interface NavLink {
+  name: string;
+  href: string;
+}
+
+export interface IPages {
+  pageName: string;
+  endPoint: string;
+}
+
+export interface ISession {
+  user: {
+    name: string;
+    email: string;
+  };
+  expires: string;
+}
+

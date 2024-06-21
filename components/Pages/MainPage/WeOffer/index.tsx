@@ -4,12 +4,10 @@ import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBGLines from "@components/BGLines/DinamicBGLines";
 import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
-import { useLocale } from "next-intl";
 
 const WeOffer = ({ weOffer }: { weOffer: WeOfferSection }) => {
   const { text } = weOffer.title;
   const offersList = weOffer.offers.offersList;
-  const localActive = useLocale();
 
   const renderOfferList = () => {
     return offersList.map((item, index) => (

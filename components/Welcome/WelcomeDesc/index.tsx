@@ -1,16 +1,11 @@
-import React from "react";
 import HomeDesc from "./HomeDesc";
 import WebDesc from "./WebDesc";
 import { MainSection } from "@interfaces/mainPage";
 import { IWebMainSection } from "@interfaces/common";
 import { ISmmMainSection } from "@interfaces/smmPage";
 import SmmDesc from "./SmmDesc";
-import dynamic from "next/dynamic";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-
-const DynamicMainModal = dynamic(() => import("@components/modals/MainModal"), {
-  ssr: false,
-});
+import MainModal from "@components/modals/MainModal";
 
 interface WebHeaderProps {
   main: IWebMainSection | MainSection | ISmmMainSection;
@@ -32,7 +27,7 @@ const WelcomeDesc: React.FC<WebHeaderProps> = ({ main, page }) => {
       {page === "web" && <WebDesc main={main as IWebMainSection} />}
       {page === "smm" && <SmmDesc main={main as ISmmMainSection} />}
 
-      <DynamicMainModal />
+      <MainModal />
     </DynamicAnimationWrapper>
   );
 };

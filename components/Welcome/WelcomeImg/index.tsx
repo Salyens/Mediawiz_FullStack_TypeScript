@@ -1,8 +1,8 @@
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
-import { ImgURL } from "@interfaces/common";
+import { Img } from "@interfaces/common";
 
-const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
+const WelcomeImg: React.FC<Img> = ({ imgURL }) => {
   return (
     <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
       <DynamicAnimationWrapper

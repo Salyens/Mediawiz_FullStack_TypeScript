@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, FormEvent, useRef } from "react";
+import React, { useState, FormEvent, useRef, Dispatch, SetStateAction } from "react";
 import LoadingCircle from "@components/LoadingCircle";
 import validator from "validator";
 import styles from "../feedbackform.module.css";
@@ -13,9 +13,9 @@ import { InfoType } from "@myTypes/mainTypes";
 import ApiService from "@services/ApiService";
 
 interface CommonFormProps {
-  setIsOpen?: (isOpen: boolean) => void;
+  setIsOpen?: Dispatch<SetStateAction<boolean>>;
   isModal: boolean;
-  setSuccess: (success: boolean) => void;
+  setSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
 const CommonForm: React.FC<CommonFormProps> = ({
@@ -35,7 +35,8 @@ const CommonForm: React.FC<CommonFormProps> = ({
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTURE_1 as string;
+  
   const handleRecaptchaChange = (token: string | null) => {
     setInfo({ ...info, recaptchaToken: token || "" });
   };
@@ -79,8 +80,6 @@ const CommonForm: React.FC<CommonFormProps> = ({
       setLoading(false);
     }
   };
-
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTURE_1 as string;
 
   return (
     <form tabIndex={-1} onSubmit={handleSubmit}>
