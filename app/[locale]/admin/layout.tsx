@@ -3,19 +3,13 @@ import Provider from "@components/Provider";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
-  session: any;
-  params: {
-    locale: string;
-  };
 }
 
 export default function AdminLayout({
   children,
-  session,
-  params: { locale },
 }: Readonly<AdminLayoutProps>) {
   return (
-    <Provider session={session}>
+    <Provider >
       <div className="main_container p-2 pt-16 sm:pt-20 lg:pt-24 xl:pt-28">
         <div className="flex gap-2 mt-3 mb-2">
           <Link href="/admin" prefetch={true} passHref>

@@ -1,8 +1,9 @@
 import { connectToDB } from "@utils/database";
-import NextAuth, { DefaultSession } from "next-auth"
+import NextAuth, { DefaultSession, NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import Admin from "@models/Admin";
+import { JWT } from "next-auth/jwt";
 
 interface ICredentials {
   email: string;
@@ -15,7 +16,7 @@ interface ICredentials {
 
 async function login(credentials: ICredentials) {
   try {
-    connectToDB();
+    await connectToDB();
     const email = credentials.email.toLowerCase();
 
     const user = await Admin.findOne({ email });
@@ -28,7 +29,7 @@ async function login(credentials: ICredentials) {
   }
 }
 
-export const authOptions = {
+const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
@@ -40,7 +41,6 @@ export const authOptions = {
         if (!credentials) return null;
         try {
           const user = await login(credentials as ICredentials);
-
           return user;
         } catch (error) {
           throw new Error("Failed to login");
@@ -49,21 +49,21 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }: any) {
+    async jwt({ token, user }: { token: JWT, user?: User }) {
       if (user) {
         token.email = user.email;
         token.id = user.id;
       }
       return token;
     },
-    async session({ session, token }: any) {
-      if (token) {
+    async session({ session, token }: { session: DefaultSession, token: JWT }) {
+      if (token && session.user) {
         session.user.email = token.email;
-        session.user.id = token.id;
       }
       return session;
     },
   },
 };
+
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
