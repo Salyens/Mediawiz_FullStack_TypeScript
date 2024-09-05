@@ -1,0 +1,27 @@
+.link_container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.link_container:hover .link {
+  background-image: url("/common/arrow_hover.png");
+}
+
+.link_container:hover .text {
+  border-bottom: 1px solid rgb(233, 58, 237);
+}
+
+.link {
+  background-image: url("/common/arrow.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in;
+  margin-left: 10px;
+}
+
+.text {
+  transition: all 0.2s ease-in;
+  border-bottom: 1px solid transparent;
+}

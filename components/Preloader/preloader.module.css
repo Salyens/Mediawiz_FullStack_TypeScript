@@ -1,0 +1,15 @@
+.video_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.video_media {
+  width: auto; 
+  height: auto;
+  object-fit: contain; 
+}

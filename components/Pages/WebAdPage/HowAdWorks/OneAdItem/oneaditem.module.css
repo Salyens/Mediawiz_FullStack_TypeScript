@@ -1,0 +1,117 @@
+.bg {
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 16px;
+  background: linear-gradient(rgb(255, 0, 230), rgb(36, 0, 255));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loaded::before {
+  opacity: 1;
+}
+
+.image {
+  transition: filter 0.5s ease-in-out;
+}
+
+.bg.hovered .image {
+  filter: grayscale(100%) contrast(1.2) brightness(1.1);
+}
+
+.arrow_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 40px 40px 0px 0px;
+  width: 80px;
+  height: 90px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.arrow_container::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 42px 42px 0px 0px;
+  background: linear-gradient(rgb(255, 0, 230), rgb(36, 0, 255));
+  z-index: -1;
+}
+
+.arrow_container::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  border-radius: 38px 38px 0px 0px;
+  background: rgb(29, 27, 31);
+  z-index: -1;
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: 125px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #1a1a1a;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.description {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.bg.hovered .title,
+.bg.hovered .arrow_container {
+  opacity: 0;
+}
+
+.bg.hovered .description {
+  opacity: 1;
+}

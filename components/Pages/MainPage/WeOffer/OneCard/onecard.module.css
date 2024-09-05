@@ -1,0 +1,84 @@
+.wrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: transparent;
+  margin-bottom: 8px;
+  position: relative;
+  border-radius: 40px;
+  transition: all 0.2s ease-in-out;
+  background-color: #1a1a1a;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 42px;
+  background: linear-gradient(rgb(255, 0, 230), rgb(36, 0, 255));
+  z-index: -1;
+}
+
+.wrapper:hover {
+  background-color: black;
+  box-shadow: 0px 4px 60px 0px rgba(255, 0, 184, 0.4),
+    0px 4px 20px 0px rgb(255, 0, 184);
+}
+
+.wrapper:hover::before {
+  border-radius: 40px;
+}
+
+.arrow {
+  background-image: url("/common/arrow.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper:hover .circle_wrapper {
+  box-shadow: 0px 4px 60px 0px rgba(255, 0, 184, 0.4),
+    0px 4px 20px 0px rgb(255, 0, 184);
+}
+
+.wrapper:hover .arrow {
+  background-image: url("/common/arrow_hover.png");
+}
+
+.card_header {
+  padding: 0;
+  position: relative;
+  padding-left: 15px;
+  line-height: 140%;
+}
+
+.card_header::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  border: 2px solid rgb(233, 58, 237);
+  box-shadow: 0px 4px 5px 0px rgb(124, 58, 237),
+    0px 4px 20px 0px rgba(124, 58, 237, 0.5),
+    0px 4px 100px 0px rgb(124, 58, 237), 0px 4px 250px 0px rgb(124, 58, 237);
+}
+
+.card_description {
+  color: rgba(156, 163, 175, 1);
+}
+
+.circle_wrapper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid rgba(252, 104, 255, 0.37);
+  border-radius: 100%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}

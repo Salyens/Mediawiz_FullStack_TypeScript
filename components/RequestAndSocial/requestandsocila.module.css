@@ -1,0 +1,12 @@
+.bg {
+  background-image: url("/common/requestAndSocialBG.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.description {
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}

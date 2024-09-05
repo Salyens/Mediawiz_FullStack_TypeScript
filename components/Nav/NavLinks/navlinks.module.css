@@ -1,0 +1,16 @@
+.navLinks {
+    margin-right: 8px;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    transition: border-bottom 0.2s ease, color 0.2s ease;
+  }
+  
+  .navLinks:hover {
+    border-bottom: 2px solid rgba(151, 71, 255, 1);
+  }
+  
+  
+  .currentPage {
+    border-bottom: 2px solid rgba(151, 71, 255, 1);
+  }
+  

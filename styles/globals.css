@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgba(255, 255, 255, 1);
+  background-color: #1a1a1a;
+  font-family: "Play", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease-in;
+  color: rgba(255, 255, 255, 1);
+}
+
+a:hover {
+  transition: all 0.4s ease-in;
+}
+
+.max_width {
+  max-width: 1512px;
+}
+
+.second_color {
+  color: rgba(151, 71, 255, 1);
+}
+
+.main_container {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex_align_center {
+  display: flex;
+  align-items: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.stroke_text {
+  -webkit-text-stroke: 1px rgba(224, 42, 114, 1);
+  line-height: 140%;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.stroke_text_2 {
+  -webkit-text-stroke: 1px rgba(67, 42, 224, 1);
+}
+
+.header_description {
+  color: rgb(252, 231, 243);
+  font-weight: 400;
+}
+
+.header_logo {
+  width: 40%;
+  height: 400px;
+}
+
+.second_title {
+  color: rgb(249, 168, 212);
+}
+
+.second_desc {
+  color: rgb(252, 231, 243);
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.bg_item_right {
+  position: relative;
+}
+
+.bg_item_right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40%;
+  bottom: 0;
+  left: 0;
+  background-image: url("/ellipses/ellipse-2.svg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(70px);
+  z-index: -1;
+}
+
+.bg_item_left {
+  position: relative;
+}
+
+.bg_item_left::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: -40%;
+  background-image: url("/ellipses/ellipse-1.svg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.bg_item_left_blue {
+  position: relative;
+  min-height: 50vh;
+}
+
+.bg_item_left_blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -20%;
+  background-image: url("/ellipses/ellipse-2.svg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(70px);
+  z-index: -1;
+}
+
+.arrows:hover {
+  background: transparent;
+  width: 110%;
+  height: 110%;
+}
+

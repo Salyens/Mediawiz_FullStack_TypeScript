@@ -1,0 +1,94 @@
+.my_form {
+  box-sizing: border-box;
+  border: 4px solid rgb(204, 0, 255);
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px 0px rgb(204, 0, 255),
+    0px 0px 40px 0px rgba(204, 0, 255, 0.5), 0px 0px 100px 0px rgb(204, 0, 255),
+    0px 0px 150px 0px rgb(204, 0, 255);
+  background: rgb(0, 0, 0);
+  max-width: 500px;
+}
+.input {
+  position: relative;
+  border: 0;
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  background-color: transparent;
+  width: 100%;
+  padding: 12px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s;
+  color: white;
+}
+
+.input:focus {
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  box-shadow: none;
+  outline: none;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.input:-webkit-autofill {
+  border-bottom: 2px solid rgba(233, 58, 237, 1);
+  background-color: transparent;
+  -webkit-text-fill-color: white !important;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin-top: 25px;
+  background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  max-width: 320px;
+}
+
+.btn_apply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.btn,
+.btn_apply:hover {
+  transition: 0.2s ease-in;
+  background: linear-gradient(180deg, #ff39c7 0%, #770cff 100%);
+  box-shadow: 0px 4px 20px 0px rgba(255, 57, 199, 0.7),
+    0px 4px 4px 0px rgba(255, 57, 199, 0.25);
+}
+
+.description {
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
