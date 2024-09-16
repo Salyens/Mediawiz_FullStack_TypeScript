@@ -1,5 +1,7 @@
+"use client";
 import DisplayPage from "@components/Pages/AdminPage/DisplayPage";
-import { DisplayPageWrapper } from "@context/DisplayPageContext";
+import { Provider } from "react-redux";
+import { store } from "../../../../../lib/store";
 
 interface SinglePageProps {
   params: {
@@ -7,11 +9,13 @@ interface SinglePageProps {
   };
 }
 
-const SinglePage = ({ params: { pageName } }: SinglePageProps) => {
+const SinglePage = ({
+  params: { pageName },
+}: SinglePageProps) => {
   return (
-    <DisplayPageWrapper>
-      <DisplayPage endPoint={pageName} />;
-    </DisplayPageWrapper>
+    <Provider store={store}>
+      <DisplayPage endPoint={pageName} />
+    </Provider>
   );
 };
 

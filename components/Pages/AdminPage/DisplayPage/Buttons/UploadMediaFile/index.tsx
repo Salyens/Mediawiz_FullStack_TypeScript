@@ -6,28 +6,37 @@ import RenderMediaFiles from "./RenderMediaFiles";
 import UploadInput from "./UploadInput";
 import { MainPageData } from "@interfaces/mainPage";
 import DisplayNewFile from "./DisplayNewFile";
-import { SaveAlertType } from "@myTypes/adminTypes";
+import { useSelector } from "react-redux";
+import { RootState } from "@lib/store";
 
 interface UploadMediaFileProps {
   type: "image" | "video";
   path: string;
-  data: MainPageData;
-  onSetFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertType;
+  onSetFormData: React.Dispatch<
+    React.SetStateAction<FormData>
+  >;
 }
 
 const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   type,
   path,
-  data,
   onSetFormData,
-  saveStatus,
 }) => {
+  const data = useSelector(
+    (state: RootState) => state.adminPageData.value
+  );
+  const saveResult = useSelector(
+    (state: RootState) => state.adminPageData.saveResult
+  );
   const lodashPath = path.replace(/\[(\d+)\]/g, ".$1");
-  const [fileURL, setFileURL] = useState<string>(_.get(data, lodashPath));
+  const [fileURL, setFileURL] = useState<string>(
+    _.get(data, lodashPath)
+  );
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [previews, setPreviews] = useState<string | null>(null);
+  const [previews, setPreviews] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
     if (!file) return;
@@ -40,11 +49,11 @@ const UploadMediaFile: React.FC<UploadMediaFileProps> = ({
   }, [file]);
 
   useEffect(() => {
-    if (saveStatus === "saved") {
+    if (saveResult === "Success") {
       setPreviews(null);
       setFile(null);
     }
-  }, [saveStatus]);
+  }, [saveResult]);
 
   useEffect(() => {
     setFileURL(_.get(data, lodashPath));

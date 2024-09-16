@@ -1,39 +1,45 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, {
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 import styles from "../displaydata.module.css";
 import _ from "lodash";
 import { debounce } from "lodash";
-import { MainPageData } from "@interfaces/mainPage";
+import { useDispatch } from "react-redux";
+import { textAreaBlock } from "@lib/features/adminPageDataSlice";
 
 interface TextAreaProps {
   itemKey: string;
   initialValue: string;
   mainKey: string;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
   currentPath: string;
-  onSetEmptyFields: (callback: (prevEmptyFields: string[]) => string[]) => void;
+  onSetEmptyFields: (
+    callback: (prevEmptyFields: string[]) => string[]
+  ) => void;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
   itemKey,
   initialValue,
   mainKey,
-  setData,
   currentPath,
   onSetEmptyFields,
 }) => {
   const [value, setValue] = useState(initialValue);
+  const dispatch = useDispatch();
   const fullPath = `${currentPath}.${mainKey}`;
 
   const updateEmptyFields = useCallback(
     (isEmpty: boolean) => {
       onSetEmptyFields((prevEmptyFields) => {
-
         if (isEmpty) {
           return [...prevEmptyFields, fullPath];
-
         }
 
-        return prevEmptyFields.filter((path) => path !== fullPath);
+        return prevEmptyFields.filter(
+          (path) => path !== fullPath
+        );
       });
     },
     [fullPath, onSetEmptyFields]
@@ -46,7 +52,9 @@ const TextArea: React.FC<TextAreaProps> = ({
     []
   );
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const newValue = event.target.value;
 
     setValue(newValue);
@@ -55,14 +63,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   const handleBlur = () => {
     if (value !== "") {
-      setData((prevData) => {
-        if (prevData === null) {
-          return null;
-        }
-        const newData = _.cloneDeep(prevData);
-        _.set(newData, fullPath, value);
-        return newData;
-      });
+      dispatch(textAreaBlock({ path: fullPath, value }));
     } else {
       updateEmptyFields(true);
     }
@@ -70,12 +71,20 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   useEffect(() => {
     if (initialValue === "") {
-      onSetEmptyFields((prevEmptyFields) => [...prevEmptyFields, fullPath]);
+      onSetEmptyFields((prevEmptyFields) => [
+        ...prevEmptyFields,
+        fullPath,
+      ]);
     }
     return () => {
       debouncedUpdate.cancel();
     };
-  }, [initialValue, debouncedUpdate, fullPath, onSetEmptyFields]);
+  }, [
+    initialValue,
+    debouncedUpdate,
+    fullPath,
+    onSetEmptyFields,
+  ]);
 
   return (
     <div key={itemKey} className={styles.container}>
@@ -88,7 +97,9 @@ const TextArea: React.FC<TextAreaProps> = ({
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
-        placeholder={value === "" ? "This field cannot be empty" : ""}
+        placeholder={
+          value === "" ? "This field cannot be empty" : ""
+        }
       />
     </div>
   );

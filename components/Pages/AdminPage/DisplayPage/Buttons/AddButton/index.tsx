@@ -1,16 +1,17 @@
 import { MainPageData } from "@interfaces/mainPage";
+import { addItemToData } from "@lib/features/adminPageDataSlice";
+import { useDispatch } from "react-redux";
 
 interface AddButtonProps {
   currentPath: string;
   item: { [key: string]: string };
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
   currentPath,
   item,
-  setData,
 }) => {
+  const dispatch = useDispatch();
   const createEmptyItem = () => {
     return Object.keys(item).reduce((acc, key) => {
       if (key !== "_id") acc[key] = "";
@@ -20,41 +21,9 @@ const AddButton: React.FC<AddButtonProps> = ({
   };
 
   const addItem = () => {
-    setData((prevData) => {
-      if (!prevData) return null;
-      const newData: MainPageData = { ...(prevData as MainPageData) };
-
-      const addItemToLocale = (localePath: string) => {
-        const keys = localePath.split(".");
-        let currentSection: any = newData;
-
-        for (let i = 0; i < keys.length - 1; i++) {
-          currentSection[keys[i]] = { ...(currentSection[keys[i]] || {}) };
-          currentSection = currentSection[keys[i]];
-        }
-
-        const lastKey = keys[keys.length - 1];
-        currentSection[lastKey] = [
-          ...(currentSection[lastKey] || []),
-          createEmptyItem(),
-        ];
-      };
-
-      const enPath = `languages.en.${currentPath
-        .split(".")
-        .slice(2)
-        .join(".")}`;
-      const ruPath = `languages.ru.${currentPath
-        .split(".")
-        .slice(2)
-        .join(".")}`;
-
-      addItemToLocale(enPath);
-      addItemToLocale(ruPath);
-
-      return newData;
-
-    });
+    dispatch(
+      addItemToData({ currentPath, createEmptyItem })
+    );
   };
 
   return (

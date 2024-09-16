@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://localhost:3001",
   "https://www.mediawiz.store",
   "https://mediawiz.store",
 ];

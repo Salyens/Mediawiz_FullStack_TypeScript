@@ -1,16 +1,14 @@
-import { MainPageData } from "@interfaces/mainPage";
+import { RootState } from "@lib/store";
 import { useLocale, useTranslations } from "next-intl";
+import { useSelector } from "react-redux";
 
-interface PageHeaderProps {
-  data: MainPageData;
-}
-
-const PageHeader = ({ data }: PageHeaderProps) => {
+const PageHeader = () => {
+  const data = useSelector((state:RootState) => state.adminPageData.value)
   const localActive = useLocale();
   const t = useTranslations("AdminEditPage");
   const pageName =
     localActive === "en" || localActive === "ru"
-      ? data.languages[localActive]?.pageName
+      ? data?.languages[localActive]?.pageName
       : "";
   return <h2 className="text-center text-3xl">Editing page "{pageName}"</h2>;
 };

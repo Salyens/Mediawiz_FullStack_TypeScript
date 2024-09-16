@@ -1,4 +1,9 @@
 import { SupportedLocale } from "@myTypes/mainTypes";
+import { MainPageData } from "./mainPage";
+import { IWebPageData } from "./webPage";
+import { IWebAdPageData } from "./webAdPage";
+import { ISmmPageData } from "./smmPage";
+import { ISmmAdPageData } from "./smmAd";
 
 export interface ILocal {
   locale: "en" | "ru";
@@ -78,3 +83,4 @@ export interface IEndpoint {
 export interface IUpdatePageDataProps extends IEndpoint {
   formDataToSend: FormData;
 }
+

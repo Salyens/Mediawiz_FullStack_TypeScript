@@ -1,46 +1,59 @@
 import React from "react";
 import TextArea from "../TextArea";
 import DeleteButton from "../Buttons/DeleteButton";
-import { MainPageData } from "@interfaces/mainPage";
 import UploadMediaFile from "../Buttons/UploadMediaFile";
 import AddButton from "../Buttons/AddButton";
 import styles from "../displaydata.module.css";
-import { SaveAlertType } from "@myTypes/adminTypes";
+import { useSelector } from "react-redux";
+import { RootState } from "@lib/store";
 
 interface RenderDataProps {
-  data: MainPageData;
-  setData: React.Dispatch<React.SetStateAction<MainPageData | null>>;
-  setEmptyFields: React.Dispatch<React.SetStateAction<string[]>>;
-  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  saveStatus: SaveAlertType;
+  setEmptyFields: React.Dispatch<
+    React.SetStateAction<string[]>
+  >;
+  setFormData: React.Dispatch<
+    React.SetStateAction<FormData>
+  >;
 }
 
 const RenderData: React.FC<RenderDataProps> = ({
-  data,
-  setData,
   setEmptyFields,
   setFormData,
-  saveStatus,
 }) => {
-  const renderData = (dataToRender: any, currentPath = "") => {
-    const sortedKeys = Object.keys(dataToRender).sort((a, b) => {
-      if (a === "en" && b === "ru") return -1;
-      if (a === "ru" && b === "en") return 1;
-      return 0;
-    });
+  const data = useSelector(
+    (state: RootState) => state.adminPageData.value
+  );
+  const renderData = (
+    dataToRender: any,
+    currentPath = ""
+  ) => {
+    const sortedKeys = Object.keys(dataToRender).sort(
+      (a, b) => {
+        if (a === "en" && b === "ru") return -1;
+        if (a === "ru" && b === "en") return 1;
+        return 0;
+      }
+    );
     return (
       <div className="text-xl">
         {sortedKeys.map((key, index) => {
           const value = dataToRender[key];
-          if (key === "_id" || key === "pageName") return null;
+          if (key === "_id" || key === "pageName")
+            return null;
 
-          const newPath = currentPath ? `${currentPath}.${key}` : key;
+          const newPath = currentPath
+            ? `${currentPath}.${key}`
+            : key;
           const itemKey = `${newPath}-${index}`;
 
-          if (key === "forAdmin") return <h6 key={itemKey}>{value}</h6>;
+          if (key === "forAdmin")
+            return <h6 key={itemKey}>{value}</h6>;
           else if (key === "forAdminHeader")
             return (
-              <h5 className="text-center mt-2" key={itemKey}>
+              <h5
+                className="text-center mt-2"
+                key={itemKey}
+              >
                 {value}
               </h5>
             );
@@ -48,9 +61,7 @@ const RenderData: React.FC<RenderDataProps> = ({
             return (
               <UploadMediaFile
                 type="image"
-                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
-                data={data}
                 key={itemKey}
                 onSetFormData={setFormData}
               />
@@ -59,9 +70,7 @@ const RenderData: React.FC<RenderDataProps> = ({
             return (
               <UploadMediaFile
                 type="video"
-                saveStatus={saveStatus}
                 path={`${currentPath}.${key}`}
-                data={data}
                 key={itemKey}
                 onSetFormData={setFormData}
               />
@@ -72,19 +81,24 @@ const RenderData: React.FC<RenderDataProps> = ({
                 <h3 className="text-center m-3 font-bold">
                   {key === "en" ? "English" : "Russian"}
                 </h3>
-                <div className={styles.lang_style} key={itemKey}>
+                <div
+                  className={styles.lang_style}
+                  key={itemKey}
+                >
                   {renderData(value, newPath)}
                 </div>
               </div>
             );
-          } else if (typeof value === "string" && key !== "forAdmin") {
+          } else if (
+            typeof value === "string" &&
+            key !== "forAdmin"
+          ) {
             return (
               <div className="mb-2" key={key}>
                 <TextArea
                   itemKey={itemKey}
                   initialValue={value}
                   mainKey={key}
-                  setData={setData}
                   currentPath={currentPath}
                   onSetEmptyFields={setEmptyFields}
                 />
@@ -94,15 +108,19 @@ const RenderData: React.FC<RenderDataProps> = ({
             return (
               <React.Fragment key={itemKey}>
                 {value.map((item, arrayIndex) => (
-                  <React.Fragment key={`${newPath}-${arrayIndex}`}>
+                  <React.Fragment
+                    key={`${newPath}-${arrayIndex}`}
+                  >
                     <h6>{`№${arrayIndex + 1}`}</h6>
 
                     {typeof item === "object" ? (
                       <>
-                        {renderData(item, `${newPath}[${arrayIndex}]`)}
+                        {renderData(
+                          item,
+                          `${newPath}[${arrayIndex}]`
+                        )}
                         <DeleteButton
                           currentPath={`${newPath}[${arrayIndex}]`}
-                          setData={setData}
                           onSetEmptyFields={setEmptyFields}
                           item={item}
                         />
@@ -115,11 +133,13 @@ const RenderData: React.FC<RenderDataProps> = ({
                 <AddButton
                   currentPath={newPath}
                   item={value[0] || {}}
-                  setData={setData}
                 />
               </React.Fragment>
             );
-          } else if (typeof value === "object" && value !== null) {
+          } else if (
+            typeof value === "object" &&
+            value !== null
+          ) {
             return (
               <React.Fragment key={itemKey}>
                 {renderData(value, newPath)}
