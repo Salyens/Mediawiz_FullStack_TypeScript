@@ -4,17 +4,17 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { AdminPageDataType } from "@myTypes/adminTypes";
 import axios from "axios";
 import { RootState } from "@lib/store";
 import ApiService from "@services/ApiService";
+import { AdminPageDataType } from "@customTypes/adminTypes";
 
 interface AdminPageData {
   value: AdminPageDataType | null;
   error: string | null;
   saveError: string | null;
   isLoading: boolean;
-  saveResult: "Error" | "Success" | null
+  saveResult: "Error" | "Success" | null;
 }
 
 const initialState: AdminPageData = {
@@ -29,7 +29,7 @@ export const getAdminPageData = createAsyncThunk(
   "adminPage/getData",
   async (endPoint: string) => {
     const response = await axios.get(`/api/${endPoint}`);
-    return response.data; // Return the data directly
+    return response.data;
   }
 );
 
@@ -57,7 +57,7 @@ export const saveAdminPageData = createAsyncThunk(
       formDataToSend,
     });
 
-    return response.data; 
+    return response.data;
   }
 );
 
@@ -71,7 +71,6 @@ const adminPageDataSlice = createSlice({
     ) => {
       const { path, value } = action.payload;
 
-      // Perform deep clone and update using lodash
       if (state.value !== null) {
         const newData = _.cloneDeep(state.value);
         _.set(newData, path, value);
@@ -119,11 +118,10 @@ const adminPageDataSlice = createSlice({
       state,
       action: PayloadAction<{
         currentPath: string;
-        createEmptyItem: () => { [key: string]: string };
+        emptyItem: { [key: string]: string };
       }>
     ) => {
-      const { currentPath, createEmptyItem } =
-        action.payload;
+      const { currentPath, emptyItem } = action.payload;
 
       if (!state.value) return;
 
@@ -143,7 +141,7 @@ const adminPageDataSlice = createSlice({
         const lastKey = keys[keys.length - 1];
         currentSection[lastKey] = [
           ...(currentSection[lastKey] || []),
-          createEmptyItem(),
+          emptyItem,
         ];
       };
 

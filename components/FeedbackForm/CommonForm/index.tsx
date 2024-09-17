@@ -9,7 +9,7 @@ import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
 import ReCAPTCHA from "react-google-recaptcha";
-import { InfoType } from "@myTypes/mainTypes";
+import { InfoType } from "@customTypes/mainTypes";
 import ApiService from "@services/ApiService";
 
 interface CommonFormProps {
@@ -40,7 +40,9 @@ const CommonForm: React.FC<CommonFormProps> = ({
     setInfo({ ...info, recaptchaToken: token || "" });
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
     if (!info.name || !info.phoneNumber || !info.email) {
       return setError(t("fillFields"));
@@ -59,7 +61,7 @@ const CommonForm: React.FC<CommonFormProps> = ({
     setLoading(true);
 
     try {
-      const res = await ApiService.createFeedback(info)
+      const res = await ApiService.createFeedback(info);
       setError("");
       setLoading(false);
       setSuccess(true);
@@ -71,16 +73,20 @@ const CommonForm: React.FC<CommonFormProps> = ({
         accepted: false,
         recaptchaToken: "",
       });
-      if (recaptchaRef.current) recaptchaRef.current.reset();
+      if (recaptchaRef.current)
+        recaptchaRef.current.reset();
       return res;
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || "Something went wrong";
+      const errorMessage =
+        error.response?.data?.message ||
+        "Something went wrong";
       setError(errorMessage);
       setLoading(false);
     }
   };
 
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTURE_1 as string;
+  const recaptchaSiteKey = process.env
+    .NEXT_PUBLIC_RECAPTURE_1 as string;
 
   return (
     <form tabIndex={-1} onSubmit={handleSubmit}>
@@ -96,7 +102,10 @@ const CommonForm: React.FC<CommonFormProps> = ({
         ref={recaptchaRef}
       />
 
-      <button type="submit" className={classNames("mt-6", styles.btn)}>
+      <button
+        type="submit"
+        className={classNames("mt-6", styles.btn)}
+      >
         {loading ? (
           <div className="w-5">
             <LoadingCircle />

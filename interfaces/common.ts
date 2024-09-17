@@ -1,4 +1,4 @@
-import { SupportedLocale } from "@myTypes/mainTypes";
+import { SupportedLocale } from "@customTypes/mainTypes";
 import { MainPageData } from "./mainPage";
 import { IWebPageData } from "./webPage";
 import { IWebAdPageData } from "./webAdPage";
@@ -83,4 +83,3 @@ export interface IEndpoint {
 export interface IUpdatePageDataProps extends IEndpoint {
   formDataToSend: FormData;
 }
-

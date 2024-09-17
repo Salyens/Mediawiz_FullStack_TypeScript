@@ -1,7 +1,7 @@
 import WebPage from "@components/Pages/WebPage";
 import { PageLocaleProps } from "@interfaces/common";
 import { IWebPageData } from "@interfaces/webPage";
-import { LocalesType } from "@myTypes/mainTypes";
+import { LocalesType } from "@customTypes/mainTypes";
 import { locales } from "@navigation";
 import ApiService from "@services/ApiService";
 import type { Metadata } from "next";
@@ -15,7 +15,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = params;
   const metaInfo =
-    locale === "en" ? enMetaInfo["MetaWebPage"] : ruMetaInfo["MetaWebPage"];
+    locale === "en"
+      ? enMetaInfo["MetaWebPage"]
+      : ruMetaInfo["MetaWebPage"];
 
   return {
     title: metaInfo.title,
@@ -24,9 +26,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function Web({ params }: PageLocaleProps) {
+export default async function Web({
+  params,
+}: PageLocaleProps) {
   const { locale } = params;
-  const data = await ApiService.getPageData<IWebPageData>("webPage");
+  const data = await ApiService.getPageData<IWebPageData>(
+    "webPage"
+  );
 
   if (locales.includes(locale)) {
     return <WebPage data={data.languages[locale]} />;

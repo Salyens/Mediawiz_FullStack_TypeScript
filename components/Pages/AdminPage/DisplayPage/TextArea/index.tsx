@@ -8,15 +8,13 @@ import _ from "lodash";
 import { debounce } from "lodash";
 import { useDispatch } from "react-redux";
 import { textAreaBlock } from "@lib/features/adminPageDataSlice";
+import { updateEmptyFields } from "@lib/features/adminFormSlice";
 
 interface TextAreaProps {
   itemKey: string;
   initialValue: string;
   mainKey: string;
   currentPath: string;
-  onSetEmptyFields: (
-    callback: (prevEmptyFields: string[]) => string[]
-  ) => void;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -24,30 +22,19 @@ const TextArea: React.FC<TextAreaProps> = ({
   initialValue,
   mainKey,
   currentPath,
-  onSetEmptyFields,
 }) => {
   const [value, setValue] = useState(initialValue);
   const dispatch = useDispatch();
   const fullPath = `${currentPath}.${mainKey}`;
 
-  const updateEmptyFields = useCallback(
-    (isEmpty: boolean) => {
-      onSetEmptyFields((prevEmptyFields) => {
-        if (isEmpty) {
-          return [...prevEmptyFields, fullPath];
-        }
-
-        return prevEmptyFields.filter(
-          (path) => path !== fullPath
-        );
-      });
-    },
-    [fullPath, onSetEmptyFields]
-  );
-
   const debouncedUpdate = useCallback(
     debounce((newValue) => {
-      updateEmptyFields(newValue === "");
+      dispatch(
+        updateEmptyFields({
+          isEmpty: newValue === "",
+          fullPath,
+        })
+      );
     }, 200),
     []
   );
@@ -65,26 +52,20 @@ const TextArea: React.FC<TextAreaProps> = ({
     if (value !== "") {
       dispatch(textAreaBlock({ path: fullPath, value }));
     } else {
-      updateEmptyFields(true);
+      updateEmptyFields({ isEmpty: true, fullPath })
     }
   };
 
   useEffect(() => {
     if (initialValue === "") {
-      onSetEmptyFields((prevEmptyFields) => [
-        ...prevEmptyFields,
-        fullPath,
-      ]);
+      dispatch(
+        updateEmptyFields({ isEmpty: true, fullPath })
+      );
     }
     return () => {
       debouncedUpdate.cancel();
     };
-  }, [
-    initialValue,
-    debouncedUpdate,
-    fullPath,
-    onSetEmptyFields,
-  ]);
+  }, [initialValue, debouncedUpdate, fullPath]);
 
   return (
     <div key={itemKey} className={styles.container}>

@@ -8,16 +8,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "@lib/store";
 
 interface RenderDataProps {
-  setEmptyFields: React.Dispatch<
-    React.SetStateAction<string[]>
-  >;
   setFormData: React.Dispatch<
     React.SetStateAction<FormData>
   >;
 }
 
 const RenderData: React.FC<RenderDataProps> = ({
-  setEmptyFields,
   setFormData,
 }) => {
   const data = useSelector(
@@ -100,7 +96,6 @@ const RenderData: React.FC<RenderDataProps> = ({
                   initialValue={value}
                   mainKey={key}
                   currentPath={currentPath}
-                  onSetEmptyFields={setEmptyFields}
                 />
               </div>
             );
@@ -121,7 +116,6 @@ const RenderData: React.FC<RenderDataProps> = ({
                         )}
                         <DeleteButton
                           currentPath={`${newPath}[${arrayIndex}]`}
-                          onSetEmptyFields={setEmptyFields}
                           item={item}
                         />
                       </>

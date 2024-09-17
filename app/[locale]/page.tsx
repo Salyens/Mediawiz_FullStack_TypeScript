@@ -3,7 +3,7 @@ import { MainPageData } from "../../interfaces/mainPage";
 import { PageLocaleProps } from "@interfaces/common";
 import ApiService from "@services/ApiService";
 import { locales } from "@navigation";
-import { LocalesType } from "@myTypes/mainTypes";
+import { LocalesType } from "@customTypes/mainTypes";
 import { Metadata } from "next";
 import enMetaInfo from "../../messages/en.json";
 import ruMetaInfo from "../../messages/ru.json";
@@ -15,7 +15,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = params;
   const metaInfo =
-    locale === "en" ? enMetaInfo["MetaHomePage"] : ruMetaInfo["MetaHomePage"];
+    locale === "en"
+      ? enMetaInfo["MetaHomePage"]
+      : ruMetaInfo["MetaHomePage"];
 
   return {
     title: metaInfo.title,
@@ -23,9 +25,13 @@ export async function generateMetadata({
     keywords: metaInfo.keywords,
   };
 }
-export default async function Home({ params }: PageLocaleProps) {
+export default async function Home({
+  params,
+}: PageLocaleProps) {
   const { locale } = params;
-  const data = await ApiService.getPageData<MainPageData>("mainPage");
+  const data = await ApiService.getPageData<MainPageData>(
+    "mainPage"
+  );
 
   if (locales.includes(locale)) {
     return <MainPage data={data.languages[locale]} />;

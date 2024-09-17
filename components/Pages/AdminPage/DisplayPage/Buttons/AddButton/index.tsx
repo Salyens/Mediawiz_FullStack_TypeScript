@@ -1,4 +1,3 @@
-import { MainPageData } from "@interfaces/mainPage";
 import { addItemToData } from "@lib/features/adminPageDataSlice";
 import { useDispatch } from "react-redux";
 
@@ -20,9 +19,11 @@ const AddButton: React.FC<AddButtonProps> = ({
     }, {} as { [key: string]: string });
   };
 
+  const emptyItem = createEmptyItem();
+
   const addItem = () => {
     dispatch(
-      addItemToData({ currentPath, createEmptyItem })
+      addItemToData({ currentPath, emptyItem })
     );
   };
 

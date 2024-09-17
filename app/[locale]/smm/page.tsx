@@ -3,7 +3,7 @@ import { ISmmPageData } from "@interfaces/smmPage";
 import type { Metadata } from "next";
 import enMetaInfo from "../../../messages/en.json";
 import ruMetaInfo from "../../../messages/ru.json";
-import { LocalesType } from "@myTypes/mainTypes";
+import { LocalesType } from "@customTypes/mainTypes";
 import ApiService from "@services/ApiService";
 import { PageLocaleProps } from "@interfaces/common";
 import { locales } from "@navigation";
@@ -15,7 +15,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = params;
   const metaInfo =
-    locale === "en" ? enMetaInfo["MetaSmmPage"] : ruMetaInfo["MetaSmmPage"];
+    locale === "en"
+      ? enMetaInfo["MetaSmmPage"]
+      : ruMetaInfo["MetaSmmPage"];
 
   return {
     title: metaInfo.title,
@@ -23,7 +25,9 @@ export async function generateMetadata({
     keywords: metaInfo.keywords,
   };
 }
-export default async function Smm({ params }: PageLocaleProps) {
+export default async function Smm({
+  params,
+}: PageLocaleProps) {
   const { locale } = params;
   const data = await ApiService.getPageData("/smmPage");
 

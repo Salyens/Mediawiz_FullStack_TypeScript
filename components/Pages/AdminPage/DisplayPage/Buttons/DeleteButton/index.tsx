@@ -1,19 +1,15 @@
-import { MainPageData } from "@interfaces/mainPage";
+import { removeEmptyFields } from "@lib/features/adminFormSlice";
 import { deleteItemFromData } from "@lib/features/adminPageDataSlice";
 import _ from "lodash";
 import { useDispatch } from "react-redux";
 
 interface DeleteButtonProps {
   currentPath: string;
-  onSetEmptyFields: React.Dispatch<
-    React.SetStateAction<string[]>
-  >;
   item: { [key: string]: string };
 }
 
 const DeleteButton: React.FC<DeleteButtonProps> = ({
   currentPath,
-  onSetEmptyFields,
   item,
 }) => {
   const dispatch = useDispatch();
@@ -24,23 +20,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
   const itemKeys = Object.keys(item);
 
   const deleteItem = () => {
-    onSetEmptyFields((prevEmptyFields) => {
-      let updatedEmptyFields = prevEmptyFields;
-
-      itemKeys.forEach((key) => {
-        const enPath = `${currentPath}.${key}`;
-        const ruPath = enPath.includes("languages.en")
-          ? enPath.replace("languages.en", "languages.ru")
-          : enPath.replace("languages.ru", "languages.en");
-
-        updatedEmptyFields = updatedEmptyFields.filter(
-          (path) => path !== enPath && path !== ruPath
-        );
-      });
-
-      return updatedEmptyFields;
-    });
-
+    dispatch(removeEmptyFields({ currentPath, itemKeys }));
     dispatch(deleteItemFromData(lodashPath));
   };
 

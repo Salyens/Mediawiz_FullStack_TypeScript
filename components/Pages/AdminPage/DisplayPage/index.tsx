@@ -15,9 +15,6 @@ interface DisplayPageProps {
 }
 
 const DisplayPage = ({ endPoint }: DisplayPageProps) => {
-  const [emptyFields, setEmptyFields] = useState<string[]>(
-    []
-  );
   const [formData, setFormData] = useState<FormData>(
     new FormData()
   );
@@ -45,11 +42,9 @@ const DisplayPage = ({ endPoint }: DisplayPageProps) => {
         <>
           <PageHeader />
           <RenderData
-            setEmptyFields={setEmptyFields}
             setFormData={setFormData}
           />
           <SaveButton
-            emptyFields={emptyFields}
             formData={formData}
             setFormData={setFormData}
             endPoint={endPoint}

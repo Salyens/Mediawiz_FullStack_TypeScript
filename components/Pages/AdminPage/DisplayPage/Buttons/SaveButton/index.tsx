@@ -1,16 +1,12 @@
 import _ from "lodash";
-import { useState } from "react";
-import { MainPageData } from "@interfaces/mainPage";
 import LoadingCircle from "@components/LoadingCircle";
 import Tooltip from "./SaveTooltip";
 import styles from "./savebutton.module.css";
-import { SaveAlertType } from "@myTypes/adminTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@lib/store";
 import { saveAdminPageData } from "@lib/features/adminPageDataSlice";
 
 interface SaveButtonProps {
-  emptyFields: string[];
   formData: FormData;
   setFormData: React.Dispatch<
     React.SetStateAction<FormData>
@@ -19,7 +15,6 @@ interface SaveButtonProps {
 }
 
 const SaveButton: React.FC<SaveButtonProps> = ({
-  emptyFields,
   formData,
   setFormData,
   endPoint,
@@ -28,6 +23,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     (state: RootState) => state.adminPageData.isLoading
   );
   const dispatch = useDispatch<AppDispatch>();
+  const emptyFields = useSelector((state:RootState) => state.adminForm.emptyFields)
   const isDisabled = Boolean(emptyFields.length);
   const buttonContent = isDisabled
     ? "Please fill in all required fields"
