@@ -39,12 +39,8 @@
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
     "react-phone-input-2": "^2.15.1",
-<<<<<<< HEAD
     "react-redux": "^9.1.2",
     "sharp": "^0.33.5",
-=======
-    "sharp": "^0.33.4",
->>>>>>> cda3116e6e3971edf1f459aff0834d72fd9cc594
     "tailwind-merge": "^2.3.0",
     "uploadthing": "^6.9.0",
     "validator": "^13.11.0"

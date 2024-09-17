@@ -1,5 +1,5 @@
-import { IUpdatePageDataProps } from "@interfaces/common";
 import { InfoType } from "@customTypes/mainTypes";
+import { IUpdatePageDataProps } from "@interfaces/common";
 import axios from "axios";
 
 class ApiService {

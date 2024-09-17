@@ -3,11 +3,7 @@ import { ISmmAdPageData } from "@interfaces/smmAd";
 import type { Metadata } from "next";
 import enMetaInfo from "../../../messages/en.json";
 import ruMetaInfo from "../../../messages/ru.json";
-<<<<<<< HEAD
 import { LocalesType } from "@customTypes/mainTypes";
-=======
-import { LocalesType } from "@myTypes/mainTypes";
->>>>>>> cda3116e6e3971edf1f459aff0834d72fd9cc594
 import ApiService from "@services/ApiService";
 import { PageLocaleProps } from "@interfaces/common";
 import { locales } from "@navigation";
