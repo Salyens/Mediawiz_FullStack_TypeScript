@@ -3,10 +3,10 @@ import { IWebAdPageData } from "@interfaces/webAdPage";
 import type { Metadata } from "next";
 import enMetaInfo from "../../../messages/en.json";
 import ruMetaInfo from "../../../messages/ru.json";
-import { LocalesType } from "@customTypes/mainTypes";
 import ApiService from "@services/ApiService";
 import { PageLocaleProps } from "@interfaces/common";
 import { locales } from "@navigation";
+import { LocalesType } from "@customTypes/mainTypes";
 
 export async function generateMetadata({
   params,

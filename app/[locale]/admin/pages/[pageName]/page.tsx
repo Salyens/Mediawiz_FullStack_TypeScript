@@ -1,7 +1,8 @@
 "use client";
 import DisplayPage from "@components/Pages/AdminPage/DisplayPage";
+import { store } from "@lib/store";
 import { Provider } from "react-redux";
-import { store } from "../../../../../lib/store";
+
 
 interface SinglePageProps {
   params: {

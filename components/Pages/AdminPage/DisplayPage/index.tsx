@@ -5,10 +5,10 @@ import PageHeader from "./PageHeader";
 import RenderData from "./RenderData";
 import SaveButton from "./Buttons/SaveButton";
 import SaveAlert from "./Buttons/SaveButton/SaveAlert";
-import { AppDispatch } from "@lib/store";
 import { useDispatch, useSelector } from "react-redux";
 import { getAdminPageData } from "@lib/features/adminPageDataSlice";
 import { RootState } from "@lib/store";
+import { AppDispatch } from "@lib/store";
 
 interface DisplayPageProps {
   endPoint: string;

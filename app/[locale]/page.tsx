@@ -3,10 +3,10 @@ import { MainPageData } from "../../interfaces/mainPage";
 import { PageLocaleProps } from "@interfaces/common";
 import ApiService from "@services/ApiService";
 import { locales } from "@navigation";
-import { LocalesType } from "@customTypes/mainTypes";
 import { Metadata } from "next";
 import enMetaInfo from "../../messages/en.json";
 import ruMetaInfo from "../../messages/ru.json";
+import { LocalesType } from "@customTypes/mainTypes";
 
 export async function generateMetadata({
   params,

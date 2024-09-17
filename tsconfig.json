@@ -3,7 +3,11 @@
     "baseUrl": "./",
     "paths": {
       "@*": ["./*"],
+<<<<<<< HEAD
       "@types/*": ["customTypes/*"]
+=======
+      "@types/*": ["myTypes/*"]
+>>>>>>> cda3116e6e3971edf1f459aff0834d72fd9cc594
     },
     "lib": ["dom", "dom.iterable", "esnext", "es6"],
     "target": "es2015",

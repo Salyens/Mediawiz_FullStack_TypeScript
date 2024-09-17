@@ -1,12 +1,12 @@
 import WebPage from "@components/Pages/WebPage";
 import { PageLocaleProps } from "@interfaces/common";
 import { IWebPageData } from "@interfaces/webPage";
-import { LocalesType } from "@customTypes/mainTypes";
 import { locales } from "@navigation";
 import ApiService from "@services/ApiService";
 import type { Metadata } from "next";
 import enMetaInfo from "../../../messages/en.json";
 import ruMetaInfo from "../../../messages/ru.json";
+import { LocalesType } from "@customTypes/mainTypes";
 
 export async function generateMetadata({
   params,

@@ -9,8 +9,8 @@ import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
 import ReCAPTCHA from "react-google-recaptcha";
-import { InfoType } from "@customTypes/mainTypes";
 import ApiService from "@services/ApiService";
+import { InfoType } from "@customTypes/mainTypes";
 
 interface CommonFormProps {
   setIsOpen?: (isOpen: boolean) => void;
