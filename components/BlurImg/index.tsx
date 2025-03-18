@@ -16,7 +16,7 @@ const BlurImg = async ({ imgURL, name, classes, sizes }: BlurImgProps) => {
   //   base64 = await generateBlurDataURL(imgURL);
   // } catch (error) {
   //   return null;
-  // }
+  // }\
 
   return (
     <Image
