@@ -5,6 +5,7 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://www.mediawiz.store",
   "https://mediawiz.store",
+  "https://mediawiz.site",
 ];
 
 export function corsMiddleware(req: NextRequest) {
