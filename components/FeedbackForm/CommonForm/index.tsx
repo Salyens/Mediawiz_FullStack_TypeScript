@@ -86,7 +86,7 @@ const CommonForm: React.FC<CommonFormProps> = ({
   };
 
   const recaptchaSiteKey = process.env
-    .NEXT_PUBLIC_RECAPTURE_1 as string;
+    .NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
   return (
     <form tabIndex={-1} onSubmit={handleSubmit}>

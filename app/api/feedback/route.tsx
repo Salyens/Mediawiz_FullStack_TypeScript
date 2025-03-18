@@ -10,7 +10,7 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 const window = new JSDOM("").window;
 const purify = DOMPurify(window);
 
-const RECAPTCHA_SECRET_KEY = process.env.RECAPTURE_2;
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
 const verifyRecaptcha = async (token: string) => {
   const { data } = await axios.post(
