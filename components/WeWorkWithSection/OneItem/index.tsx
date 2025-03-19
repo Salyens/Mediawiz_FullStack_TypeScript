@@ -2,7 +2,6 @@ import styles from "./oneaditem.module.css";
 import Image from "next/image";
 import classNames from "classnames";
 import { IItem } from "@interfaces/common";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 
 interface OneAdItemProp {
   data: IItem;
@@ -16,11 +15,12 @@ const OneItem = ({ data }: OneAdItemProp) => {
         styles.bg
       )}
     >
-      <DynamicBlurImg
-        imgURL={data.imgURL}
-        name={data.title}
-        classes={classNames("rounded-2xl object-cover", styles.image)}
+      <Image
+        src={data.imgURL}
+        alt={data.title}
+        fill
         sizes="70vh"
+        className={classNames("rounded-2xl object-cover", styles.image)}
       />
 
       <p className={classNames("text-xl md:text-2xl", styles.title)}>

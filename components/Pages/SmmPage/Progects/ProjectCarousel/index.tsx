@@ -1,4 +1,3 @@
-import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,9 +8,13 @@ import {
 import { IProjectItem } from "@interfaces/smmPage";
 import styles from "./projectscarousel.module.css";
 import classNames from "classnames";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
+import Image from "next/image";
 
-const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
+const ProjectCarousel = ({
+  list,
+}: {
+  list: IProjectItem[];
+}) => {
   return (
     <Carousel className="lg:w-2/3 xl:w-1/2">
       <CarouselContent>
@@ -24,14 +27,16 @@ const ProjectCarousel = ({ list }: { list: IProjectItem[] }) => {
               <div className={styles.bg}>
                 <div
                   className={classNames(
-                    "flex items-center justify-center bg-transparent select-none pointer-events-none touch-none",
+                    "flex items-center justify-center bg-transparent select-none pointer-events-none touch-none relative",
                     styles.aspect
                   )}
                 >
-                  <DynamicBlurImg
-                    imgURL={item.imgURL}
-                    name={item.title}
-                    classes="object-fit"
+                  <Image
+                    src={item.imgURL}
+                    alt={item.title}
+                    fill
+                    sizes="100vw"
+                    className="object-fit"
                   />
                 </div>
               </div>

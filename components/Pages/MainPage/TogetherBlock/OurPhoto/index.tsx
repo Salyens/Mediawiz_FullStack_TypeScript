@@ -1,6 +1,6 @@
 import styles from "./togetherblock.module.css";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import { MotionDiv } from "@components/MotionDiv";
+import Image from "next/image";
 import classNames from "classnames";
 
 interface TogetherBlockProps {
@@ -29,10 +29,12 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({
           )}
         >
           <div className={styles.img_wrapper}>
-            <DynamicBlurImg
-              imgURL={imgURL}
-              name="Our photo"
-              classes="object-cover"
+            <Image
+              src={imgURL}
+              alt="Our photo"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           </div>
         </div>

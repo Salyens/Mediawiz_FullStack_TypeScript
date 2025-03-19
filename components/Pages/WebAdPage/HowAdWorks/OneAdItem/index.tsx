@@ -27,7 +27,7 @@ const OneAdItem = ({ data }: OneAdItemProp) => {
   return (
     <div
       className={classNames(
-        "h-96 lg:h-[500px] xl:h-[550px] 2xl:h-[650px] lg:w-[32%] w-full",
+        "h-96 lg:h-[500px] xl:h-[550px] 2xl:h-[650px] lg:w-[32%] w-full relative",
         styles.bg,
         isHovered && styles.hovered,
         isLoaded && styles.loaded 

@@ -5,7 +5,6 @@ import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import FindMoreLink from "@components/FindMoreLink";
 import { MotionDiv } from "@components/MotionDiv";
 
@@ -14,12 +13,20 @@ interface QuoteProps {
   index: number;
 }
 
-const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
+const OneQuote: React.FC<QuoteProps> = ({
+  item,
+  index,
+}) => {
   const isOdd = index % 2 !== 0;
   const withImg = "imgURL" in item;
 
   return (
-    <div className={classNames("relative", withImg && " mt-36")}>
+    <div
+      className={classNames(
+        "relative",
+        withImg && " mt-36"
+      )}
+    >
       {isOdd ? (
         <DynamicBgEllipse
           variant={2}
@@ -62,13 +69,17 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
               height={350}
               sizes="25vw"
               className={`absolute md:-top-24 md:w-48 w-40 -top-20 lg:w-96 lg:-top-48 ${
-                isOdd ? "md:-right-5 -right-6" : "md:-left-5 -left-6"
+                isOdd
+                  ? "md:-right-5 -right-6"
+                  : "md:-left-5 -left-6"
               }`}
             />
 
             <div className="xl:p-24 p-8">
               {"name" in item && (
-                <h5 className="second_title text-2xl mb-3 pt-5">{item.name}</h5>
+                <h5 className="second_title text-2xl mb-3 pt-5">
+                  {item.name}
+                </h5>
               )}
               <div className={styles.left_line}>
                 <p
@@ -87,7 +98,6 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                     <FindMoreLink href={item.href} />
                   </div>
                 )}
-
               </div>
             </div>
           </div>
@@ -98,7 +108,13 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
                 isOdd ? "left-0" : "right-0"
               )}
             >
-              <DynamicBlurImg imgURL={item.imgURL} name={item.name} />
+              <Image
+                src={item.imgURL}
+                alt={item.name}
+                fill
+                sizes="100vw"
+                className="object-contain select-none pointer-events-none touch-none"
+              />
             </div>
           )}
         </div>

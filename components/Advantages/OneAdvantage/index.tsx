@@ -1,5 +1,4 @@
 import { roboto } from "@app/[locale]/layout";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import FindMoreLink from "@components/FindMoreLink";
 import { IItemAndImg } from "@interfaces/common";
 import classNames from "classnames";
@@ -9,12 +8,19 @@ import React from "react";
 interface OneAdvantageProps {
   data: IItemAndImg;
 }
-const OneAdvantage: React.FC<OneAdvantageProps> = ({ data }) => {
-
+const OneAdvantage: React.FC<OneAdvantageProps> = ({
+  data,
+}) => {
   return (
     <div className="flex min-w-72 xl:w-6/12 ">
       <div className="min-w-10 min-h-10 sm:min-w-24 sm:min-h-24 relative m-auto">
-      <DynamicBlurImg imgURL={data.imgURL} name={`Icon ${data.title} `}/>
+        <Image
+          src={data.imgURL}
+          alt={`Icon ${data.title} `}
+          fill
+          sizes="15vw"
+          className="object-contain"
+        />
       </div>
 
       <div className="flex flex-col p-2 sm:p-5">

@@ -1,11 +1,11 @@
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
+import { MotionDiv } from "@components/MotionDiv";
 import { ImgURL } from "@interfaces/common";
+import Image from "next/image";
 
 const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
     <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
-      <DynamicAnimationWrapper
+      <MotionDiv
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -13,14 +13,16 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
           delay: 0.5,
           duration: 0.7,
         }}
-        classes="relative w-full h-full"
+        className="relative w-full h-full"
       >
-        <DynamicBlurImg
-          imgURL={imgURL}
-          name="Welcome image"
+        <Image
+          src={imgURL}
+          alt="Welcome image"
+          fill
           sizes="(max-width: 640px) 0px, (max-width: 1024px) 65vh, 50vh"
+          className="object-contain select-none pointer-events-none touch-none"
         />
-      </DynamicAnimationWrapper>
+      </MotionDiv>
     </div>
   );
 };

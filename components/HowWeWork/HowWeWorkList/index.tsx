@@ -4,13 +4,17 @@ import { IItem } from "@interfaces/common";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
+import { MotionDiv } from "@components/MotionDiv";
 
 interface HowWeWorkProps {
   list: IItem[];
   header: string;
 }
 
-const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
+const HowWeWorkList = ({
+  list,
+  header,
+}: HowWeWorkProps) => {
   const middleIndex = Math.ceil(list.length / 2);
   const firstHalf = list.slice(0, middleIndex);
   const secondHalf = list.slice(middleIndex);
@@ -69,14 +73,14 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
         }}
         classes="md:w-[45%]"
       >
-        <DynamicAnimationWrapper
+        <MotionDiv
           animate={{ rotate: 360 }}
           transition={{
             repeat: Infinity,
             duration: 5,
             ease: "linear",
           }}
-          classes="flex items-center justify-center absolute z-20 lg:static w-2/3 sm:w-1/2 lg:w-full right-0 -top-1/3"
+          className="flex items-center justify-center absolute z-20 lg:static w-2/3 sm:w-1/2 lg:w-full right-0 -top-1/3"
         >
           <Image
             src="/common/circle_right.svg"
@@ -84,7 +88,7 @@ const HowWeWorkList = ({ list, header }: HowWeWorkProps) => {
             height={500}
             alt="circle"
           />
-        </DynamicAnimationWrapper>
+        </MotionDiv>
       </DynamicAnimationWrapper>
 
       <DynamicAnimationWrapper
