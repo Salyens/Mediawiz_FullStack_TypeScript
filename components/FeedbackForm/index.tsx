@@ -3,8 +3,8 @@ import styles from "./feedbackform.module.css";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import classNames from "classnames";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import dynamic from "next/dynamic";
+import { MotionDiv } from "@components/MotionDiv";
 
 const FeedbackForm = () => {
   const t = useTranslations("MainForm");
@@ -17,14 +17,15 @@ const FeedbackForm = () => {
     <div className={styles.form_wrapper}>
       <div className="main_container p-3 sm:p-4 md:p-5 xl:p-6">
         <div className="flex flex-col items-center justify-between lg:flex-row pt-12 pb-16 lg:pt-20 lg:pb-20">
-          <DynamicAnimationWrapper
-            initial={{ x: -2000 }}
-            animate={{ x: 0 }}
+          <MotionDiv
+            initial={{ x: -200 }}
+            whileInView={{ x: 0 }}
+            viewport={{ once: true }}
             transition={{
               ease: "easeOut",
-              duration: 1,
+              duration: 0.5,
             }}
-            classes={classNames(
+            className={classNames(
               "flex flex-col xl:text-2xl 2xl:text-4xl md:text:xl text-lg gap-3 w-full lg:w-2/5 xl:w-1/2  mb-16",
               styles.description
             )}
@@ -50,18 +51,19 @@ const FeedbackForm = () => {
             </Link>
 
             <p className="text-center lg:text-left">{t("request")}</p>
-          </DynamicAnimationWrapper>
+          </MotionDiv>
 
-          <DynamicAnimationWrapper
-            initial={{ x: 2000 }}
-            animate={{ x: 0 }}
+          <MotionDiv
+            initial={{ x: 200 }}
+            whileInView={{ x: 0 }}
+            viewport={{ once: true }}
             transition={{
               ease: "easeOut",
-              duration: 1,
+              duration: 0.5,
             }}
           >
             <DynamicCustomForm />
-          </DynamicAnimationWrapper>
+          </MotionDiv>
         </div>
       </div>
     </div>

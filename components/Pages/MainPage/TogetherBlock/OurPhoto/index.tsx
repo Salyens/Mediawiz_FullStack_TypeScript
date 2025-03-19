@@ -1,23 +1,26 @@
 import styles from "./togetherblock.module.css";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
+import { MotionDiv } from "@components/MotionDiv";
 import classNames from "classnames";
 
 interface TogetherBlockProps {
   imgURL: string;
 }
 
-const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
+const OurPhoto: React.FC<TogetherBlockProps> = ({
+  imgURL,
+}) => {
   return (
     <div className="min-h-36 relative">
-      <DynamicAnimationWrapper
+      <MotionDiv
         initial={{
-          y: 700,
+          paddingTop: 700,
           opacity: 0,
         }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 1 }}
-        classes="main_container mb-20 md:mb-40 lg:mb-60 xl:mb-64"
+        whileInView={{ paddingTop: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ ease: "easeOut", duration: 0.6 }}
+        className="main_container mb-20 md:mb-40 lg:mb-60 xl:mb-64"
       >
         <div
           className={classNames(
@@ -26,10 +29,14 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({ imgURL }) => {
           )}
         >
           <div className={styles.img_wrapper}>
-            <DynamicBlurImg imgURL={imgURL} name="Our photo" classes="object-cover" />
+            <DynamicBlurImg
+              imgURL={imgURL}
+              name="Our photo"
+              classes="object-cover"
+            />
           </div>
         </div>
-      </DynamicAnimationWrapper>
+      </MotionDiv>
     </div>
   );
 };

@@ -4,11 +4,10 @@ import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
-import dynamic from "next/dynamic";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 import DynamicBlurImg from "@components/BlurImg/DynamicBlurImg";
 import FindMoreLink from "@components/FindMoreLink";
+import { MotionDiv } from "@components/MotionDiv";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -37,14 +36,15 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
         />
       )}
 
-      <DynamicAnimationWrapper
-        initial={{ x: isOdd ? -2000 : 2000 }}
-        animate={{ x: 0 }}
+      <MotionDiv
+        initial={isOdd ? { x: -300 } : { x: 300 }}
+        whileInView={{ x: 0 }}
+        viewport={{ once: true }}
         transition={{
           ease: "easeOut",
-          duration: 1,
+          duration: 0.6,
         }}
-        classes="main_container relative"
+        className="main_container relative"
       >
         <div className="flex justify-center p-3 sm:p-4 md:p-5 xl:p-6">
           <div
@@ -102,7 +102,7 @@ const OneQuote: React.FC<QuoteProps> = ({ item, index }) => {
             </div>
           )}
         </div>
-      </DynamicAnimationWrapper>
+      </MotionDiv>
     </div>
   );
 };

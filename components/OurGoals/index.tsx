@@ -4,7 +4,7 @@ import styles from "./ourgoals.module.css";
 import { IResultItem } from "@interfaces/smmPage";
 import classNames from "classnames";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import { MotionDiv } from "@components/MotionDiv";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
@@ -41,11 +41,12 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
         height={2000}
       />
       <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
-        <DynamicAnimationWrapper
+        <MotionDiv
           initial={{
             opacity: 0,
           }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ ease: "easeOut", duration: 0.3, delay: 1.5 }}
         >
           <div
@@ -60,17 +61,18 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
               styles.corner_bottom_right
             )}
           ></div>
-        </DynamicAnimationWrapper>
-        <DynamicAnimationWrapper
+        </MotionDiv>
+        <MotionDiv
           initial={{
             opacity: 0,
-            y: 400,
+            paddingTop: 400,
           }}
-          animate={{ y: 0, opacity: 1 }}
+          whileInView={{ paddingTop: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
         >
           <div className="flex flex-col gap-3">{renderGoals()}</div>
-        </DynamicAnimationWrapper>
+        </MotionDiv>
       </div>
     </div>
   );

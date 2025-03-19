@@ -6,7 +6,7 @@ import classNames from "classnames";
 import SmallScreenMenu from "./SmallScreenMenu";
 import BigScreenMenu from "./BigScreenMenu";
 import styles from "./nav.module.css";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import { MotionDiv } from "@components/MotionDiv";
 
 const Nav = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -17,7 +17,7 @@ const Nav = () => {
   }, [pathname]);
 
   return (
-    <DynamicAnimationWrapper
+    <MotionDiv
       initial={{
         y: -120,
         opacity: 0,
@@ -33,7 +33,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-    </DynamicAnimationWrapper>
+    </MotionDiv>
   );
 };
 
