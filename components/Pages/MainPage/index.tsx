@@ -21,6 +21,7 @@ const DynamicTogetherBlock = dynamic(
   () => import("./TogetherBlock"),
   {
     loading: () => <Preloader />,
+    ssr: false,
   }
 );
 
