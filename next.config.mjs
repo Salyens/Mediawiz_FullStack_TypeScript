@@ -13,7 +13,22 @@ const nextConfig = {
       },
     ],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: [/\.(png|jpg|gif)$/, /_raw\.svg$/],
+      use: {
+        loader: "url-loader",
+        options: {
+          limit: 16 * 1024,
+          name: "[name]-[hash].[ext]",
+        },
+      },
+    });
+
+    return config;
   },
 };
 
