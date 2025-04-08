@@ -2,13 +2,9 @@ import { IProjects } from "@interfaces/smmPage";
 import Image from "next/image";
 import classNames from "classnames";
 import styles from "./ProjectCarousel/projectscarousel.module.css";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
-import dynamic from "next/dynamic";
-
-const DynamicProjectCarousel = dynamic(() => import("./ProjectCarousel"), {
-  ssr: false,
-});
+import AnimationWrapper from "@components/AnimationWrapper";
+import UnderlinedTitle from "@components/UnderlinedTitle";
+import ProjectCarousel from "./ProjectCarousel";
 
 const Projects = ({ myProjects }: { myProjects: IProjects }) => {
   return (
@@ -18,7 +14,7 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
         styles.container
       )}
     >
-      <DynamicAnimationWrapper
+      <AnimationWrapper
         initial={{ x: 1000 }}
         animate={{ x: 0 }}
         transition={{
@@ -36,9 +32,9 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
             sizes="100vh"
           />
         </div>
-      </DynamicAnimationWrapper>
+      </AnimationWrapper>
 
-      <DynamicAnimationWrapper
+      <AnimationWrapper
         initial={{ x: -2000 }}
         animate={{ x: 0 }}
         transition={{
@@ -48,9 +44,9 @@ const Projects = ({ myProjects }: { myProjects: IProjects }) => {
         }}
         classes="main_container p-3 sm:p-4 md:p-5 xl:p-6"
       >
-        <DynamicUnderlinedTitle text={myProjects.header} />
-        <DynamicProjectCarousel list={myProjects.list} />
-      </DynamicAnimationWrapper>
+        <UnderlinedTitle text={myProjects.header} />
+        <ProjectCarousel list={myProjects.list} />
+      </AnimationWrapper>
     </div>
   );
 };

@@ -22,7 +22,6 @@ const WebPage = ({ data }: { data: IWebLanguageContent }) => {
       </div>
       <RequestAndSocial />
       <WeWorkWithSection data={weWorkWith} />
-      {/* <WeWorkWith data={weWorkWith} /> */}
       <HowWeWork data={howWeWork} />
       <FeedbackForm />
     </div>

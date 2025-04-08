@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import MainModal from "@components/modals/MainModal";
 import { socialLinks } from "@constants";
 import classNames from "classnames";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+import AnimationWrapper from "@components/AnimationWrapper";
 
 const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
@@ -35,7 +35,7 @@ const RequestAndSocial = () => {
   return (
     <div className={classNames("mt-8 mb-8", styles.bg)}>
       <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
-        <DynamicAnimationWrapper
+        <AnimationWrapper
           initial={{ x: -2000 }}
           animate={{ x: 0 }}
           transition={{
@@ -75,9 +75,9 @@ const RequestAndSocial = () => {
           <div className="flex justify-center lg:justify-start">
             <MainModal />
           </div>
-        </DynamicAnimationWrapper>
+        </AnimationWrapper>
 
-        <DynamicAnimationWrapper
+        <AnimationWrapper
           initial={{ x: 2000 }}
           animate={{ x: 0 }}
           transition={{
@@ -93,7 +93,7 @@ const RequestAndSocial = () => {
           <div className="flex justify-center items-center">
             {renderSocialLinks()}
           </div>
-        </DynamicAnimationWrapper>
+        </AnimationWrapper>
       </div>
     </div>
   );
