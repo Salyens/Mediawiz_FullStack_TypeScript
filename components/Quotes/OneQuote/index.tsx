@@ -4,9 +4,9 @@ import { ISmmQuoteItem } from "@interfaces/smmPage";
 import { QuoteItem } from "@interfaces/mainPage";
 import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
-import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import FindMoreLink from "@components/FindMoreLink";
 import { MotionDiv } from "@components/MotionDiv";
+import BgEllipse from "@components/BgEllipse";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -28,14 +28,14 @@ const OneQuote: React.FC<QuoteProps> = ({
       )}
     >
       {isOdd ? (
-        <DynamicBgEllipse
+        <BgEllipse
           variant={2}
           position="md:-left-1/4 md:-top-1/3"
           width={1300}
           height={1300}
         />
       ) : (
-        <DynamicBgEllipse
+        <BgEllipse
           variant={2}
           position="md:-right-1/4 md:-top-1/3"
           width={1300}

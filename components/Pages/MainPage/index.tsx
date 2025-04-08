@@ -1,45 +1,42 @@
-import WeOffer from "./WeOffer";
+import Preloader from "@components/Preloader";
 import { LanguageContent } from "../../../interfaces/mainPage";
-import Socials from "./Socials";
-import FeedbackForm from "@components/FeedbackForm";
-import TogetherBlock from "./TogetherBlock";
-import Welcome from "@components/Welcome";
-import Quotes from "@components/Quotes";
 import dynamic from "next/dynamic";
 
 const DynamicWeOffer = dynamic(() => import("./WeOffer"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
+  loading: () => <Preloader />,
 });
 
 const DynamicSocials = dynamic(() => import("./Socials"), {
-  ssr: false,
+  loading: () => <Preloader />,
 });
 
 const DynamicQuotes = dynamic(
   () => import("@components/Quotes"),
   {
-    ssr: false,
+    loading: () => <Preloader />,
   }
 );
 
 const DynamicTogetherBlock = dynamic(
   () => import("./TogetherBlock"),
   {
-    ssr: false,
+    loading: () => <Preloader />,
   }
 );
 
 const DynamicFeedbackForm = dynamic(
   () => import("@components/FeedbackForm"),
   {
-    ssr: false,
+    loading: () => <Preloader />,
   }
 );
 
-const DynamicWelcome = dynamic(() => import("@components/Welcome"), {
-  ssr: false,
-});
+const DynamicWelcome = dynamic(
+  () => import("@components/Welcome"),
+  {
+    loading: () => <Preloader />,
+  }
+);
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;

@@ -2,7 +2,7 @@ import React from "react";
 import OurPhoto from "./OurPhoto";
 import { IOneGoal } from "@interfaces/webPage";
 import OurGoals from "@components/OurGoals";
-import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import BgEllipse from "@components/BgEllipse";
 
 interface TogetherBlockProps {
   goalsList: IOneGoal[];
@@ -12,13 +12,13 @@ interface TogetherBlockProps {
 const TogetherBlock = ({ goalsList, imgURL }: TogetherBlockProps) => {
   return (
     <div className="relative">
-      <DynamicBgEllipse
+      <BgEllipse
         variant={2}
         position="top-1/3 -left-1/4"
         width={2000}
         height={2000}
       />
-      <DynamicBgEllipse
+      <BgEllipse
         variant={2}
         position="top-1/2 -right-1/4 -bottom-1/3"
         width={2000}
