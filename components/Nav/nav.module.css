@@ -6,15 +6,13 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: rgba(180, 58, 237, 0.2);
   border-bottom: 2px solid rgb(233, 58, 237);
-  box-shadow: 0px 2px 10px 0px rgba(124, 58, 237, 0.5),
-    0px 0px 20px 0px rgb(124, 58, 237);
+  box-shadow: var(--line-shadow);
 }
 
 .line {
   z-index: 50;
   border: 2px solid rgb(233, 58, 237);
-  box-shadow: 0px 4px 20px 0px rgba(124, 58, 237, 0.5),
-    0px 4px 100px 0px rgb(124, 58, 237);
+  box-shadow: var(--line-shadow);
 }
 
 .line_mini {

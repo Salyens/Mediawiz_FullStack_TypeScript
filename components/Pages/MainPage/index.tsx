@@ -1,6 +1,12 @@
 import Preloader from "@components/Preloader";
 import { LanguageContent } from "../../../interfaces/mainPage";
 import dynamic from "next/dynamic";
+import WeOffer from "./WeOffer";
+import Quotes from "@components/Quotes";
+import Socials from "./Socials";
+import Welcome from "@components/Welcome";
+import TogetherBlock from "./TogetherBlock";
+import FeedbackForm from "@components/FeedbackForm";
 
 const DynamicWeOffer = dynamic(() => import("./WeOffer"), {
   loading: () => <Preloader />,
@@ -48,15 +54,15 @@ const MainPage = ({ data }: { data: LanguageContent }) => {
 
   return (
     <div className="w-full h-full min-h-screen overflow-hidden relative">
-      <DynamicWelcome main={main} page="home" />
-      <DynamicWeOffer weOffer={weOffer} />
-      <DynamicSocials />
-      <DynamicQuotes quotesList={quotesList} />
-      <DynamicTogetherBlock
+      <Welcome main={main} page="home" />
+      <WeOffer weOffer={weOffer} />
+      <Socials />
+      <Quotes quotesList={quotesList} />
+      <TogetherBlock
         imgURL={imgURL}
         goalsList={goalsList}
       />
-      <DynamicFeedbackForm />
+      <FeedbackForm />
     </div>
   );
 };

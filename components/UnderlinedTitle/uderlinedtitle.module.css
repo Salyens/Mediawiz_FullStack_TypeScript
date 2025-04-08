@@ -7,9 +7,7 @@
   height: 1px;
   width: auto;
   border: 1px solid rgb(233, 58, 237);
-  box-shadow: 0px 4px 5px 0px rgb(124, 58, 237),
-    0px 4px 20px 0px rgba(124, 58, 237, 0.5),
-    0px 4px 100px 0px rgb(124, 58, 237), 0px 4px 250px 0px rgb(124, 58, 237);
+  box-shadow: var(--line-shadow);
 }
 
 @media (min-width: 1280px) {

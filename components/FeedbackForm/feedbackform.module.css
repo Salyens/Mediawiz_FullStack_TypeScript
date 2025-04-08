@@ -6,14 +6,10 @@
 
 .my_form {
   box-sizing: border-box;
-  border: 4px solid rgb(204, 0, 255);
+  border: 2px solid rgb(204, 0, 255);
   border-radius: 12px;
-
-  box-shadow: 0px 0px 20px 0px rgb(204, 0, 255),
-    0px 0px 40px 0px rgba(204, 0, 255, 0.5), 0px 0px 100px 0px rgb(204, 0, 255),
-    0px 0px 150px 0px rgb(115, 102, 118);
+  box-shadow: 0px 0px 50px rgb(204, 0, 255);
   background: rgb(0, 0, 0);
-  z-index: 100;
 }
 
 .btn {
@@ -25,7 +21,11 @@
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(180deg, #f65ccb 0%, #a05cf6 100%);
+  background: linear-gradient(
+    180deg,
+    #f65ccb 0%,
+    #a05cf6 100%
+  );
   border-radius: 12px;
   font-size: 18px;
   font-weight: 700;
@@ -38,7 +38,11 @@
 
 .btn:hover {
   transition: 0.2s ease-in;
-  background: linear-gradient(180deg, #ff39c7 0%, #770cff 100%);
+  background: linear-gradient(
+    180deg,
+    #ff39c7 0%,
+    #770cff 100%
+  );
   box-shadow: 0px 4px 20px 0px rgba(255, 57, 199, 0.7),
     0px 4px 4px 0px rgba(255, 57, 199, 0.25);
 }
