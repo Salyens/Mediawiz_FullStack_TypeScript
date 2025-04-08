@@ -23,12 +23,14 @@ body {
 
 a {
   text-decoration: none;
-  transition: all 0.4s ease-in;
+  transition: all 0.3s ease-in;
   color: rgba(255, 255, 255, 1);
+  scale: 1;
 }
 
 a:hover {
-  transition: all 0.4s ease-in;
+  transition: all 0.3s ease-in;
+  scale: 1.1;
 }
 
 .max_width {
@@ -153,9 +155,4 @@ a:hover {
   background: transparent;
   width: 110%;
   height: 110%;
-}
-
-.line_shadow {
-  box-shadow: 0px 0px 10px rgba(233, 58, 237, 0.7),
-    0px 0px 20px rgba(233, 58, 237, 0.5);
 }

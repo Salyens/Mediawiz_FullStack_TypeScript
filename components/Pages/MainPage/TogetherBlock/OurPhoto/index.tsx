@@ -14,7 +14,7 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({
     <div className="min-h-36 relative">
       <MotionDiv
         initial={{
-          paddingTop: 700,
+          paddingTop: 200,
           opacity: 0,
         }}
         whileInView={{ paddingTop: 0, opacity: 1 }}

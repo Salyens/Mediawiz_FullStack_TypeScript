@@ -3,8 +3,8 @@ import OneGoal from "./OneGoal";
 import styles from "./ourgoals.module.css";
 import { IResultItem } from "@interfaces/smmPage";
 import classNames from "classnames";
-import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 import { MotionDiv } from "@components/MotionDiv";
+import BgEllipse from "@components/BgEllipse";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
@@ -28,13 +28,13 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
   };
   return (
     <div className="relative">
-      <DynamicBgEllipse
+      <BgEllipse
         variant={2}
         position="-top-1/2 -left-1/4"
         width={2000}
         height={2000}
       />
-      <DynamicBgEllipse
+      <BgEllipse
         variant={2}
         position="-right-1/4 -bottom-1/3"
         width={2000}

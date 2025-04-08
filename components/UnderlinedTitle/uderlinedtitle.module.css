@@ -6,7 +6,7 @@
   bottom: -2px;
   height: 1px;
   width: auto;
-  border: 1px solid rgb(233, 58, 237);
+  border: 1px solid var(--line-color);
   box-shadow: var(--line-shadow);
 }
 

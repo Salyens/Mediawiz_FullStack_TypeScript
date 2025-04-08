@@ -10,7 +10,7 @@ const OneCard = ({ header, description, href }: OffersList) => {
       href={href}
       prefetch={true}
       className={classNames(
-        "p-8 sm:p-8 md:p-12 lg:p-14 xl:p-18 h-72 sm:h-96  ",
+        "p-8 sm:p-8 md:p-12 lg:p-14 xl:p-18 h-72 sm:h-96 ",
         styles.wrapper
       )}
     >

@@ -1,7 +1,4 @@
 import { WeOfferSection } from "@interfaces/mainPage";
-import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
-import DynamicBGLines from "@components/BGLines/DinamicBGLines";
-import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 import { MotionDiv } from "@components/MotionDiv";
 import WeOfferCards from "./WeOfferCards";
 import BgEllipse from "@components/BgEllipse";

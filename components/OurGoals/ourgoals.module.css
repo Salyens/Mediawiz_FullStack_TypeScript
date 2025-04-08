@@ -5,10 +5,8 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: rgba(233, 58, 237, 1);
-  box-shadow: 0px 2px 5px rgba(124, 58, 237, 1),
-    0px 2px 20px rgba(124, 58, 237, 0.5), 0px 2px 50px rgba(124, 58, 237, 1),
-    0px 2px 150px rgba(124, 58, 237, 1);
+  background-color: var(--line-color);
+  box-shadow: var(--line-shadow);
 }
 
 .corner_top_left::after {
@@ -18,10 +16,8 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: rgba(233, 58, 237, 1);
-  box-shadow: 2px 0px 5px rgba(124, 58, 237, 1),
-    2px 0px 20px rgba(124, 58, 237, 0.5), 2px 0px 50px rgba(124, 58, 237, 1),
-    2px 0px 150px rgba(124, 58, 237, 1);
+  background-color: var(--line-color);
+  box-shadow: var(--line-shadow);
 }
 
 .corner_bottom_right::before {
@@ -31,21 +27,17 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: rgba(233, 58, 237, 1);
-  box-shadow: 0px 2px 5px rgba(124, 58, 237, 1),
-    0px 2px 20px rgba(124, 58, 237, 0.5), 0px 2px 50px rgba(124, 58, 237, 1),
-    0px 2px 150px rgba(124, 58, 237, 1);
+  background-color: var(--line-color);
+  box-shadow: var(--line-shadow);
 }
 
 .corner_bottom_right::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: rgba(233, 58, 237, 1);
-    box-shadow: 2px 0px 5px rgba(124, 58, 237, 1),
-      2px 0px 20px rgba(124, 58, 237, 0.5), 2px 0px 50px rgba(124, 58, 237, 1),
-      2px 0px 150px rgba(124, 58, 237, 1);
-  }
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--line-color);
+  box-shadow: var(--line-shadow);
+}

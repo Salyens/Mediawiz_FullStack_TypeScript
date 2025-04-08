@@ -1,4 +1,5 @@
 .wrapper {
+  scale: unset; 
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -7,6 +8,7 @@
   position: relative;
   border-radius: 40px;
   background-color: #1a1a1a;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .wrapper::before {
@@ -22,12 +24,13 @@
     rgb(36, 0, 255)
   );
   z-index: -1;
+  scale: unset; 
 }
 
 .wrapper:hover {
   background-color: black;
   box-shadow: var(--line-shadow);
-  transition: all 0s;
+  scale: unset; 
 }
 
 .wrapper:hover::before {
