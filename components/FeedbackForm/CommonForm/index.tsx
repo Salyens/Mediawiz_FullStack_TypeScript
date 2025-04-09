@@ -2,7 +2,6 @@
 
 import React, { useState, FormEvent, useRef } from "react";
 import LoadingCircle from "@components/LoadingCircle";
-import validator from "validator";
 import styles from "../feedbackform.module.css";
 import { useTranslations } from "next-intl";
 import InputList from "./InputList";
@@ -13,6 +12,7 @@ import { InfoType } from "@customTypes/mainTypes";
 import dynamic from "@node_modules/next/dynamic";
 import Preloader from "@components/Preloader";
 import ReCAPTCHA from "@node_modules/@types/react-google-recaptcha";
+import isValidEmail from "@utils/isValidEmail";
 
 interface CommonFormProps {
   setIsOpen?: (isOpen: boolean) => void;
@@ -55,7 +55,7 @@ const CommonForm: React.FC<CommonFormProps> = ({
     e.preventDefault();
     if (!info.name || !info.phoneNumber || !info.email) {
       return setError(t("fillFields"));
-    } else if (!validator.isEmail(info.email)) {
+    } else if (!isValidEmail(info.email)) {
       return setError(t("errorEmail"));
     } else if (!info.accepted) {
       return setError(t("fillPolicy"));

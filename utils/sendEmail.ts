@@ -1,5 +1,5 @@
+import isValidEmail from "./isValidEmail";
 const nodemailer = require("nodemailer");
-const validator = require("validator");
 
 interface EmailData {
   name: string;
@@ -15,7 +15,7 @@ interface EmailResponse {
 const sendEmail = async (data: EmailData): Promise<EmailResponse> => {
   const { name, phoneNumber, email } = data;
 
-  if (!validator.isEmail(email)) {
+  if (!isValidEmail(email)) {
     return { error: "Invalid email format" };
   }
 
