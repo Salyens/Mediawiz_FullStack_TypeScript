@@ -1,10 +1,10 @@
 import { LanguageContent } from "../../../interfaces/mainPage";
-import WeOffer from "./WeOffer";
-import Quotes from "@components/Quotes";
-import Socials from "./Socials";
-import Welcome from "@components/Welcome";
 import TogetherBlock from "./TogetherBlock";
 import FeedbackForm from "@components/FeedbackForm";
+import WeOffer from "./WeOffer";
+import Welcome from "@components/Welcome";
+import Socials from "./Socials";
+import Quotes from "@components/Quotes";
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;
