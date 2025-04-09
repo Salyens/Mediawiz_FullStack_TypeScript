@@ -3,30 +3,19 @@
 import React, { useState, FormEvent, useRef } from "react";
 import LoadingCircle from "@components/LoadingCircle";
 import styles from "../feedbackform.module.css";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
 import ApiService from "@services/ApiService";
 import { InfoType } from "@customTypes/mainTypes";
-import dynamic from "@node_modules/next/dynamic";
-import Preloader from "@components/Preloader";
-import ReCAPTCHA from "@node_modules/@types/react-google-recaptcha";
 import isValidEmail from "@utils/isValidEmail";
-
+import ReCAPTCHA from "react-google-recaptcha";
 interface CommonFormProps {
   setIsOpen?: (isOpen: boolean) => void;
   isModal: boolean;
   setSuccess: (success: boolean) => void;
 }
-
-const DynamicRecaptcha = dynamic(
-  () => import("./Recaptcha"),
-  {
-    ssr: false,
-    loading: () => <Preloader />,
-  }
-);
 
 const CommonForm: React.FC<CommonFormProps> = ({
   setIsOpen,
@@ -44,6 +33,9 @@ const CommonForm: React.FC<CommonFormProps> = ({
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const localActive = useLocale();
+  const recaptchaSiteKey = process.env
+    .NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
   const handleRecaptchaChange = (token: string | null) => {
     setInfo({ ...info, recaptchaToken: token || "" });
@@ -99,8 +91,12 @@ const CommonForm: React.FC<CommonFormProps> = ({
       {error && <p className="text-red-500">{error}</p>}
       <InputList info={info} setInfo={setInfo} />
       <Policy accepted={info.accepted} setInfo={setInfo} />
-      <DynamicRecaptcha
-        handleRecaptchaChange={handleRecaptchaChange}
+      <ReCAPTCHA
+        className={styles.g_recaptcha}
+        theme="dark"
+        hl={localActive}
+        sitekey={recaptchaSiteKey}
+        onChange={handleRecaptchaChange}
         ref={recaptchaRef}
       />
 
