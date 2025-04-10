@@ -6,8 +6,8 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
     <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ x: 1500 }}
+        animate={{ x: 0 }}
         transition={{
           ease: "easeOut",
           duration: 0.7,
@@ -16,7 +16,7 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
       >
         <Image
           src={imgURL}
-          alt="Welcome image"
+          alt="MediaWiz platform welcome image - main promotional banner"
           priority
           fill
           sizes="(max-width: 640px) 0px, (max-width: 1024px) 65vh, 50vh"
