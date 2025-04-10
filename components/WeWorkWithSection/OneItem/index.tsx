@@ -18,18 +18,28 @@ const OneItem = ({ data }: Prop) => {
       <Image
         src={data.imgURL}
         alt={data.title}
+        priority
         fill
         sizes="70vh"
-        className={classNames("rounded-2xl object-cover", styles.image)}
+        className={classNames(
+          "rounded-2xl object-cover",
+          styles.image
+        )}
       />
 
-      <p className={classNames("text-xl md:text-2xl", styles.title)}>
+      <p
+        className={classNames(
+          "text-xl md:text-2xl",
+          styles.title
+        )}
+      >
         {data.title}
       </p>
       <div className={classNames(styles.arrow_container)}>
         <Image
           src="/webAdPage/arrow.png"
           alt="arrow"
+          priority
           width={48}
           height={48}
           className="object-contain"

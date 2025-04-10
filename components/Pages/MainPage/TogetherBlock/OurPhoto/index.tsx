@@ -32,6 +32,7 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({
             <Image
               src={imgURL}
               alt="Our photo"
+              priority
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 80vw"
               className="object-cover"

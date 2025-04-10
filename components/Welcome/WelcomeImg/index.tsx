@@ -17,6 +17,7 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
         <Image
           src={imgURL}
           alt="Welcome image"
+          priority
           fill
           sizes="(max-width: 640px) 0px, (max-width: 1024px) 65vh, 50vh"
           className="object-contain select-none pointer-events-none touch-none"
