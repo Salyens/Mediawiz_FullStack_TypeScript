@@ -6,8 +6,8 @@ const WelcomeImg = ({ imgURL }: { imgURL: ImgURL }) => {
   return (
     <div className="relative hidden sm:flex sm:w-5/12 sm:h-[300px] lg:h-[600px]">
       <MotionDiv
-        initial={{ x: 1500 }}
-        animate={{ x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           ease: "easeOut",
           duration: 0.7,
