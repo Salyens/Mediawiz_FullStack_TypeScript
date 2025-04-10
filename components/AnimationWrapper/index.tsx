@@ -2,23 +2,24 @@
 
 import { MotionDiv } from "@components/MotionDiv";
 import classNames from "classnames";
-import { useInView } from "framer-motion";
-import { useEffect, useRef, useState, ReactNode } from "react";
+import { useInView, HTMLMotionProps } from "framer-motion";
+import {
+  useEffect,
+  useRef,
+  useState,
+  ReactNode,
+} from "react";
 
-interface AnimationWrapperProps {
+interface AnimationWrapperProps
+  extends HTMLMotionProps<"div"> {
   children: ReactNode;
-  initial?: object;
-  animate?: object;
-  transition?: object;
   classes?: string;
 }
 
 const AnimationWrapper: React.FC<AnimationWrapperProps> = ({
   children,
-  initial,
-  animate,
-  transition,
   classes,
+  ...motionProps
 }) => {
   const [isAnimate, setIsAnimate] = useState(false);
   const ref = useRef(null);
@@ -29,11 +30,12 @@ const AnimationWrapper: React.FC<AnimationWrapperProps> = ({
   }, [isInView]);
 
   return (
-    <div ref={ref} className={classNames("-bottom-12", classes)}>
+    <div
+      ref={ref}
+      className={classNames("-bottom-12", classes)}
+    >
       {isAnimate && (
-        <MotionDiv initial={initial} animate={animate} transition={transition}>
-          {children}
-        </MotionDiv>
+        <MotionDiv {...motionProps}>{children}</MotionDiv>
       )}
     </div>
   );

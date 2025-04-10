@@ -17,9 +17,17 @@ const CustomForm = () => {
           styles.my_form
         )}
       >
-        <CommonForm isModal={false} setSuccess={setSuccess} />
+        <CommonForm
+          isModal={false}
+          setSuccess={setSuccess}
+        />
       </div>
-      {success && <SuccessAlert success={success} setSuccess={setSuccess} />}
+      {success && (
+        <SuccessAlert
+          success={success}
+          setSuccess={setSuccess}
+        />
+      )}
     </>
   );
 };

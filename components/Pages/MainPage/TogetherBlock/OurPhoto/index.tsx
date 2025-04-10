@@ -33,7 +33,7 @@ const OurPhoto: React.FC<TogetherBlockProps> = ({
               src={imgURL}
               alt="Our photo"
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 80vw"
               className="object-cover"
             />
           </div>

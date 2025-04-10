@@ -6,9 +6,9 @@
 
 .my_form {
   box-sizing: border-box;
-  border: 2px solid rgb(204, 0, 255);
+  border: 2px solid var(--line-color);
   border-radius: 12px;
-  box-shadow: 0px 0px 50px rgb(204, 0, 255);
+  box-shadow: 0px 0px 50px var(--line-color);
   background: rgb(0, 0, 0);
 }
 
@@ -43,8 +43,7 @@
     #ff39c7 0%,
     #770cff 100%
   );
-  box-shadow: 0px 4px 20px 0px rgba(255, 57, 199, 0.7),
-    0px 4px 4px 0px rgba(255, 57, 199, 0.25);
+  box-shadow: 0px 4px 20px 0px var(--line-color);
 }
 
 .description {

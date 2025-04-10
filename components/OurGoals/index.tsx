@@ -5,27 +5,17 @@ import { IResultItem } from "@interfaces/smmPage";
 import classNames from "classnames";
 import { MotionDiv } from "@components/MotionDiv";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
+import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
 
 interface OurGoalsProps {
   goalsList: IOneGoal[] | IResultItem[];
   page: "home" | "smm";
 }
 
-const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
-  const renderGoals = () => {
-    return goalsList.map((item, index) => (
-      <div
-        key={item.partOne + index}
-        className="flex items-center mt-2 lg:mt-8"
-      >
-        {page === "home" ? (
-          <OneGoal item={item} page={page} />
-        ) : (
-          <OneGoal item={item} page={page} />
-        )}
-      </div>
-    ));
-  };
+const OurGoals: React.FC<OurGoalsProps> = ({
+  goalsList,
+  page,
+}) => {
   return (
     <div className="relative">
       <DynamicBgEllipse
@@ -41,13 +31,17 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
         height={2000}
       />
       <div className="w-fit m-auto p-10 sm:pl-20 sm:pr-20 xl:pl-44 xl:pr-44 mt-12 md:mt-24 md:mb-24 mb-12 lg:mt-36 lg:mb-36 relative main_container">
-        <MotionDiv
+        <DynamicAnimationWrapper
           initial={{
             opacity: 0,
           }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ease: "easeOut", duration: 0.3, delay: 1.5 }}
+          transition={{
+            ease: "easeOut",
+            duration: 0.3,
+            delay: 1.5,
+          }}
         >
           <div
             className={classNames(
@@ -61,7 +55,7 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
               styles.corner_bottom_right
             )}
           ></div>
-        </MotionDiv>
+        </DynamicAnimationWrapper>
         <MotionDiv
           initial={{
             opacity: 0,
@@ -69,9 +63,26 @@ const OurGoals: React.FC<OurGoalsProps> = ({ goalsList, page }) => {
           }}
           whileInView={{ paddingTop: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}
+          transition={{
+            ease: "easeOut",
+            duration: 1,
+            delay: 0.5,
+          }}
         >
-          <div className="flex flex-col gap-3">{renderGoals()}</div>
+          <div className="flex flex-col gap-3">
+            {goalsList.map((item, index) => (
+              <div
+                key={item.partOne + index}
+                className="flex items-center mt-2 lg:mt-8"
+              >
+                {page === "home" ? (
+                  <OneGoal item={item} page={page} />
+                ) : (
+                  <OneGoal item={item} page={page} />
+                )}
+              </div>
+            ))}
+          </div>
         </MotionDiv>
       </div>
     </div>
