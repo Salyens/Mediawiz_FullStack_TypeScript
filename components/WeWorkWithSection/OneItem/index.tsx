@@ -3,11 +3,11 @@ import Image from "next/image";
 import classNames from "classnames";
 import { IItem } from "@interfaces/common";
 
-interface OneAdItemProp {
+interface Prop {
   data: IItem;
 }
 
-const OneItem = ({ data }: OneAdItemProp) => {
+const OneItem = ({ data }: Prop) => {
   return (
     <div
       className={classNames(

@@ -1,14 +1,16 @@
 import { IItemAndImgList } from "@interfaces/common";
 import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
 import DynamicBGLines from "@components/BGLines/DinamicBGLines";
 import AdvantagesList from "./AdvantagesList";
+import UnderlinedTitle from "@components/UnderlinedTitle";
 
 interface AdvantagesProps {
   advantages: IItemAndImgList;
 }
 
-const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {
+const Advantages: React.FC<AdvantagesProps> = ({
+  advantages,
+}) => {
   return (
     <>
       <DynamicBGLines />
@@ -18,7 +20,7 @@ const Advantages: React.FC<AdvantagesProps> = ({ advantages }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1 }}
         >
-          <DynamicUnderlinedTitle text={advantages.header} />
+          <UnderlinedTitle text={advantages.header} />
           <AdvantagesList list={advantages.list} />
         </DynamicAnimationWrapper>
       </div>

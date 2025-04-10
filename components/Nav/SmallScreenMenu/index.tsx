@@ -4,7 +4,6 @@ import {
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import NavLinksSmallScreen from "../NavLinksSmallScreen";
 import SocialLinks from "../SocialLinks";
 import LocalSwitcher from "../LocalSwitcher";
 import NavLinks from "../NavLinks";

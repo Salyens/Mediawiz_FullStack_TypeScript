@@ -11,29 +11,15 @@ const RequestAndSocial = () => {
   const t = useTranslations("MainForm");
   const s = useTranslations("MainPage");
 
-  const renderSocialLinks = () => {
-    return socialLinks.map((item) => (
-      <Link
-        prefetch={true}
-        className="w-20 h-20 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-40 2xl:h-40 relative"
-        href={item.href}
-        key={item.name + item.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src={`/social_icons/${item.shortName}.png`}
-          alt={item.name}
-          fill
-          sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
-          className="object-contain"
-        />
-      </Link>
-    ));
-  };
-
   return (
-    <div className={classNames("mt-8 mb-8", styles.bg)}>
+    <div className="mt-8 mb-8 relative">
+      <Image
+        src="/common/requestAndSocialBG.png"
+        alt="requestAndSocialBG"
+        fill
+        className="object-cover top-0 left-0 -z-10"
+      />
+
       <div className="flex items-center justify-between flex-col lg:flex-row main_container p-3 sm:p-4 md:p-5 xl:p-6 pt-12 pb-12 lg:pt-16 lg:pb-16 xl:pt-24 xl:pb-24">
         <AnimationWrapper
           initial={{ x: -2000 }}
@@ -71,7 +57,9 @@ const RequestAndSocial = () => {
               </span>
             </div>
           </Link>
-          <p className="text-center lg:text-left">{t("request")}</p>
+          <p className="text-center lg:text-left">
+            {t("request")}
+          </p>
           <div className="flex justify-center lg:justify-start">
             <MainModal />
           </div>
@@ -91,7 +79,24 @@ const RequestAndSocial = () => {
             {s("weInSocial")}
           </p>
           <div className="flex justify-center items-center">
-            {renderSocialLinks()}
+            {socialLinks.map((item) => (
+              <Link
+                prefetch={true}
+                className="w-20 h-20 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-40 2xl:h-40 relative"
+                href={item.href}
+                key={item.name + item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={`/social_icons/${item.shortName}.png`}
+                  alt={item.name}
+                  fill
+                  sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
+                  className="object-contain"
+                />
+              </Link>
+            ))}
           </div>
         </AnimationWrapper>
       </div>
