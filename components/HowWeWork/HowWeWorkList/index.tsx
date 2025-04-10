@@ -4,7 +4,7 @@ import { IItem } from "@interfaces/common";
 import AnimationWrapper from "@components/AnimationWrapper";
 import { MotionDiv } from "@components/MotionDiv";
 import UnderlinedTitle from "@components/UnderlinedTitle";
-import BgEllipse from "@components/BgEllipse";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 
 interface HowWeWorkProps {
   list: IItem[];
@@ -56,7 +56,7 @@ const HowWeWorkList = ({
         </div>
       </AnimationWrapper>
 
-      <BgEllipse
+      <DynamicBgEllipse
         variant={2}
         position="-left-1/4 -top-1/4"
         width={2000}

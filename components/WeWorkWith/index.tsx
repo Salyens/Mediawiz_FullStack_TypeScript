@@ -1,12 +1,12 @@
 import WeWorkWithList from "./WeWorkWithList";
 import { IItemList } from "@interfaces/common";
 import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
-import DynamicUnderlinedTitle from "@components/UnderlinedTitle/DynamicUnderlinedTitle";
+import UnderlinedTitle from "@components/UnderlinedTitle";
+import AnimationWrapper from "@components/AnimationWrapper";
 
 const WeWorkWith = ({ data }: { data: IItemList }) => {
   return (
-    <DynamicAnimationWrapper
+    <AnimationWrapper
       initial={{ y: 600, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
@@ -18,9 +18,9 @@ const WeWorkWith = ({ data }: { data: IItemList }) => {
         width={2500}
         height={2500}
       />
-      <DynamicUnderlinedTitle text={data.header} />
+      <UnderlinedTitle text={data.header} />
       <WeWorkWithList list={data.list} />
-    </DynamicAnimationWrapper>
+    </AnimationWrapper>
   );
 };
 

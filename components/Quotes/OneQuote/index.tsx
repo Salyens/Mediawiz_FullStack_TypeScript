@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { roboto } from "@app/[locale]/layout";
 import FindMoreLink from "@components/FindMoreLink";
 import { MotionDiv } from "@components/MotionDiv";
-import BgEllipse from "@components/BgEllipse";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 
 interface QuoteProps {
   item: ISmmQuoteItem | QuoteItem;
@@ -28,14 +28,14 @@ const OneQuote: React.FC<QuoteProps> = ({
       )}
     >
       {isOdd ? (
-        <BgEllipse
+        <DynamicBgEllipse
           variant={2}
           position="md:-left-1/4 md:-top-1/3"
           width={1300}
           height={1300}
         />
       ) : (
-        <BgEllipse
+        <DynamicBgEllipse
           variant={2}
           position="md:-right-1/4 md:-top-1/3"
           width={1300}

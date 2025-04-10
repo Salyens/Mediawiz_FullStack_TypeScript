@@ -1,9 +1,9 @@
 import { MainSection } from "@interfaces/mainPage";
 import { IWebMainSection } from "@interfaces/common";
 import { ISmmMainSection } from "@interfaces/smmPage";
-import BgEllipse from "@components/BgEllipse";
 import WelcomeDesc from "./WelcomeDesc";
 import WelcomeImg from "./WelcomeImg";
+import DynamicBgEllipse from "@components/BgEllipse/DynamicBgEllipse";
 
 interface WebHeaderProps {
   main: IWebMainSection | MainSection | ISmmMainSection;
@@ -17,7 +17,7 @@ const Welcome: React.FC<WebHeaderProps> = ({
   const { imgURL } = main.img;
   return (
     <div className="relative lg:h-screen flex flex-col justify-center">
-      <BgEllipse
+      <DynamicBgEllipse
         variant={1}
         position="md:-left-1/4 md:-top-1/3"
         width={1300}
