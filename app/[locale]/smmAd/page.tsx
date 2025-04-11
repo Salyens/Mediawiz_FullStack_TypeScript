@@ -1,9 +1,9 @@
 import SmmAdPage from "@components/Pages/SmmAdPage";
 import { ISmmAdPageData } from "@interfaces/smmAd";
 import type { Metadata } from "next";
-import enMetaInfo from "../../../messages/en.json";
-import ruMetaInfo from "../../../messages/ru.json";
-import { LocalesType } from "@customTypes/mainTypes";
+import enMetaInfo from "@messages/en.json";
+import ruMetaInfo from "@messages/ru.json";
+import { LocalesType } from "@/types/mainTypes";
 import ApiService from "@services/ApiService";
 import { PageLocaleProps } from "@interfaces/common";
 import { locales } from "@navigation";

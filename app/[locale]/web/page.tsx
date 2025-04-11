@@ -4,9 +4,9 @@ import { IWebPageData } from "@interfaces/webPage";
 import { locales } from "@navigation";
 import ApiService from "@services/ApiService";
 import type { Metadata } from "next";
-import enMetaInfo from "../../../messages/en.json";
-import ruMetaInfo from "../../../messages/ru.json";
-import { LocalesType } from "@customTypes/mainTypes";
+import enMetaInfo from "@messages/en.json";
+import ruMetaInfo from "@messages/ru.json";
+import { LocalesType } from "@/types/mainTypes";
 
 export async function generateMetadata({
   params,

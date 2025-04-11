@@ -9,7 +9,8 @@
       "@lib/*": ["lib/*"],
       "@services/*": ["services/*"],
       "@utils/*": ["utils/*"],
-      "@constants/*": ["constants/*"]
+      "@constants/*": ["constants/*"],
+      "@messages/*": ["messages/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext", "es6"],
     "target": "es2015",
