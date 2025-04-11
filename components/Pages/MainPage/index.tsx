@@ -1,10 +1,18 @@
 import { LanguageContent } from "../../../interfaces/mainPage";
-import TogetherBlock from "./TogetherBlock";
-import FeedbackForm from "@components/FeedbackForm";
 import WeOffer from "./WeOffer";
 import Welcome from "@components/Welcome";
-import Socials from "./Socials";
-import Quotes from "@components/Quotes";
+import dynamic from "next/dynamic";
+
+const DynamicSocials = dynamic(() => import("./Socials"));
+const DynamicQuotes = dynamic(
+  () => import("@components/Quotes")
+);
+const DynamicFeedbackForm = dynamic(
+  () => import("@components/FeedbackForm")
+);
+const DynamicTogetherBlock = dynamic(
+  () => import("./TogetherBlock")
+);
 
 const MainPage = ({ data }: { data: LanguageContent }) => {
   const { main } = data;
@@ -17,13 +25,13 @@ const MainPage = ({ data }: { data: LanguageContent }) => {
     <div className="w-full h-full min-h-screen overflow-hidden relative">
       <Welcome main={main} page="home" />
       <WeOffer weOffer={weOffer} />
-      <Socials />
-      <Quotes quotesList={quotesList} />
-      <TogetherBlock
+      <DynamicSocials />
+      <DynamicQuotes quotesList={quotesList} />
+      <DynamicTogetherBlock
         imgURL={imgURL}
         goalsList={goalsList}
       />
-      <FeedbackForm />
+      <DynamicFeedbackForm />
     </div>
   );
 };

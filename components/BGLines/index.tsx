@@ -1,9 +1,10 @@
-import DynamicAnimationWrapper from "@components/AnimationWrapper/DynamicAnimationWrapper";
+
+import AnimationWrapper from "@components/AnimationWrapper";
 import Image from "next/image";
 
 const BGLines = () => {
   return (
-    <DynamicAnimationWrapper
+    <AnimationWrapper
       initial={{ y: 0 }}
       animate={{ y: 750 }}
       transition={{
@@ -11,7 +12,7 @@ const BGLines = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="absolute -z-20 w-full left-0 h-full"
+      className="absolute -z-20 w-full left-0 min-h-[1000px]"
     >
       <Image
         fill
@@ -20,7 +21,7 @@ const BGLines = () => {
         src="/common/bg_line.svg"
         alt="bg"
       />
-    </DynamicAnimationWrapper>
+    </AnimationWrapper>
   );
 };
 
