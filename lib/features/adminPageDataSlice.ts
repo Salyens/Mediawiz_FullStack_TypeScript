@@ -7,7 +7,7 @@ import _ from "lodash";
 import axios from "axios";
 import { RootState } from "@lib/store";
 import ApiService from "@services/ApiService";
-import { AdminPageDataType } from "@customTypes/adminTypes";
+import { AdminPageDataType } from "@/types/adminTypes";
 
 interface AdminPageData {
   value: AdminPageDataType | null;

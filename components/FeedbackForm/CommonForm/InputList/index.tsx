@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import styles from "./inputlist.module.css";
-import classNames from "classnames";
 
 type InfoType = {
   name: string;

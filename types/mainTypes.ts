@@ -1,8 +1,6 @@
-import { locales } from "@navigation";
+import { locales } from "@/navigation";
 
 export type SupportedLocale = (typeof locales)[number];
-
-export type LocalesType = "en" | "ru";
 
 export type InfoType = {
   name: string;
@@ -11,5 +9,3 @@ export type InfoType = {
   accepted: boolean;
   recaptchaToken?: string;
 };
-
-

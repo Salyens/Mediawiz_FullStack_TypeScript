@@ -4,8 +4,6 @@ import { ISmmPageData } from "@interfaces/smmPage";
 import { IWebAdPageData } from "@interfaces/webAdPage";
 import { IWebPageData } from "@interfaces/webPage";
 
-export type SaveAlertType = "error" | "saved" | "";
-
 export type AdminPageDataType =
   | MainPageData
   | IWebPageData

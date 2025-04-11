@@ -8,7 +8,7 @@ import InputList from "./InputList";
 import Policy from "./Policy";
 import classNames from "classnames";
 import ApiService from "@services/ApiService";
-import { InfoType } from "@customTypes/mainTypes";
+import { InfoType } from "@/types/mainTypes";
 import isValidEmail from "@utils/isValidEmail";
 import ReCAPTCHA from "react-google-recaptcha";
 interface CommonFormProps {

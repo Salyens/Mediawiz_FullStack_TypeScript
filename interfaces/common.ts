@@ -1,9 +1,4 @@
-import { SupportedLocale } from "@customTypes/mainTypes";
-import { MainPageData } from "./mainPage";
-import { IWebPageData } from "./webPage";
-import { IWebAdPageData } from "./webAdPage";
-import { ISmmPageData } from "./smmPage";
-import { ISmmAdPageData } from "./smmAd";
+import { SupportedLocale } from "@/types/mainTypes";
 
 export interface ILocal {
   locale: "en" | "ru";

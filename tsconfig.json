@@ -3,7 +3,13 @@
     "baseUrl": "./",
     "paths": {
       "@*": ["./*"],
-      "@types/*": ["customTypes/*"]
+      "@components/*": ["components/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@types/*": ["types/*"],
+      "@lib/*": ["lib/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext", "es6"],
     "target": "es2015",
