@@ -11,7 +11,7 @@ class ApiService {
     const res = await fetch(
       `${ApiService.apiBase}/api/${endpoint}`,
       {
-        cache: "no-store",
+        next: { revalidate: 100 },
       }
     );
     if (!res.ok) throw new Error("Failed to fetch data");
