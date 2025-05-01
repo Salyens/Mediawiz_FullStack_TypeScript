@@ -52,7 +52,7 @@ const SaveAlert = () => {
       >
         {alertInfo.title}
       </AlertTitle>
-      <AlertDescription className="text-lg">
+      <AlertDescription className="text-lg text-black">
         {alertInfo.description}
       </AlertDescription>
     </Alert>
