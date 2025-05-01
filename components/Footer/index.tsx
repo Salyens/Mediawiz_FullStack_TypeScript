@@ -32,6 +32,7 @@ const Footer = () => {
                 width={40}
                 height={40}
                 alt={item.name}
+                unoptimized
               />
               {item.name}
             </span>

@@ -25,7 +25,7 @@ const Socials = () => {
         <div className="flex justify-between items-center">
           {socialLinks.map((item) => (
             <Link
-              className="xl:w-36 xl:h-36 lg:h-28 lg:w-28 md:h-24 md:w-24 sm:w-20 sm:h-20 w-20 h-20 relative"
+              className="lg:h-28 lg:w-28 md:h-24 md:w-24 sm:w-20 sm:h-20 w-20 h-20 relative"
               href={item.href}
               key={item.name + item.href}
               target="_blank"
@@ -36,6 +36,7 @@ const Socials = () => {
                 src={`/social_icons/${item.shortName}.png`}
                 alt={item.name}
                 fill
+                unoptimized
                 sizes="(max-width: 768px) 10vw, (max-width: 1200px) 20vw, 15vw"
                 className="object-contain"
               />

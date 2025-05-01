@@ -19,6 +19,7 @@ const SocialLinks = () => {
             width={40}
             height={40}
             alt={link.name}
+            unoptimized
             priority={true}
           />
         </Link>
