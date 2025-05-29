@@ -66,7 +66,7 @@ const languageContentSchema = new Schema<IWebAdLanguageContent>({
   howWeWork: { type: howWeWorkSchema, required: true },
 });
 
-export interface Languages {
+interface Languages {
   ru: IWebAdLanguageContent;
   en: IWebAdLanguageContent;
 }
